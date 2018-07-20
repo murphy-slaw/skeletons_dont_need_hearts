@@ -251,7 +251,7 @@ path2Target_state = NodePath("../../States/Walking")
 
 [node name="on_left_ground" parent="FSM2D/Transitions" index="1" instance=ExtResource( 11 )]
 
-path2SourceStates = [ NodePath(""), NodePath("../../States/Idle"), NodePath("../../States/Walking"), NodePath("../../States/Jumping") ]
+path2SourceStates = [ NodePath(""), NodePath("../../States/Idle"), NodePath("../../States/Walking"), NodePath("../../States/Jumping"), NodePath("../../States/Climbing") ]
 path2Target_state = NodePath("../../States/Falling")
 
 [node name="on_landed" parent="FSM2D/Transitions" index="2" instance=ExtResource( 12 )]
@@ -261,7 +261,7 @@ path2Target_state = NodePath("../../States/Idle")
 
 [node name="on_no_input" parent="FSM2D/Transitions" index="3" instance=ExtResource( 13 )]
 
-path2SourceStates = [ NodePath(""), NodePath("../../States/Walking"), NodePath("../../States/Climbing") ]
+path2SourceStates = [ NodePath(""), NodePath("../../States/Walking") ]
 path2Target_state = NodePath("../../States/Idle")
 
 [node name="on_jump_input" parent="FSM2D/Transitions" index="4" instance=ExtResource( 14 )]
