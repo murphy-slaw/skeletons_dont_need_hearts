@@ -8,7 +8,7 @@ func transition_init(args = []):
 	#you can optionally implement this to initialize transition on it's creation time
 	pass
 
-func prepare(new_state, args = []): 
+func prepare(new_state, args = []):
 	#you can optionally implement this to reset transition when related state has been activated
 	pass
 
