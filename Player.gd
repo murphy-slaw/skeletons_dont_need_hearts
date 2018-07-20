@@ -34,7 +34,6 @@ func is_landed():
 
 
 func can_climb():
-	return is_on_wall()
 	return facing_ray.is_colliding()
 
 func walk(delta, normal_vec):
