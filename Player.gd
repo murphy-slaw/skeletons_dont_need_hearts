@@ -43,7 +43,7 @@ func walk(delta, normal_vec):
 func nudge(delta, normal_vec):
 	var nudge_vec = Vector2(walk_accel * nudge_factor,0)
 	move (delta, normal_vec * nudge_vec)
-	
+
 func move(delta, the_move):
 	
 	# always add gravity. it's good and good for you!
