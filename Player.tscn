@@ -187,7 +187,7 @@ debug_enabled = true
 "Create new:/Create state with name:" = null
 "Create new:/Create transition with name:" = null
 GraphData = {
-"Climbing": Vector2( 433, 330 ),
+"Climbing": Vector2( 391, 385 ),
 "Climbing_": Vector2( 433, 330 ),
 "Climbing__": Vector2( 438, 239 ),
 "Falling": Vector2( 1471, 815 ),
@@ -261,7 +261,7 @@ path2Target_state = NodePath("../../States/Idle")
 
 [node name="on_no_input" parent="FSM2D/Transitions" index="3" instance=ExtResource( 13 )]
 
-path2SourceStates = [ NodePath(""), NodePath("../../States/Walking") ]
+path2SourceStates = [ NodePath(""), NodePath("../../States/Walking"), NodePath("../../States/Climbing") ]
 path2Target_state = NodePath("../../States/Idle")
 
 [node name="on_jump_input" parent="FSM2D/Transitions" index="4" instance=ExtResource( 14 )]
