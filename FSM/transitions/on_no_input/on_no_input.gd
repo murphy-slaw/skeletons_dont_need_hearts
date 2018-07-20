@@ -13,7 +13,7 @@ func prepare(new_state, args = []):
 	pass
 
 func transition_condition(delta, args = []):
-	if logic_root.can_climb:
+	if logic_root.can_climb()
 		return false
 	for action in ["ui_left","ui_right","ui_up"]:
 		if Input.is_action_pressed(action):
