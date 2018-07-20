@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Mob.gd" type="Script" id=1]
 [ext_resource path="res://art/samson.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://addons/moe.ero-one.fsm/assets/ico2d.png" type="Texture" id=4]
 [ext_resource path="res://FSM/states/Idle/Idle.tscn" type="PackedScene" id=5]
 [ext_resource path="res://FSM/states/Idle/Idle.gd" type="Script" id=6]
+[ext_resource path="res://FSM-mob/states/Idle/Idle.tscn" type="PackedScene" id=7]
+[ext_resource path="res://FSM-mob/states/Idle/Idle.gd" type="Script" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -86,21 +88,27 @@ _sections_unfolded = [ "Playback Options" ]
 [node name="FSM2D" type="Node2D" parent="." index="6"]
 
 script = ExtResource( 3 )
+_sections_unfolded = [ "Create new:" ]
 __meta__ = {
 "_editor_icon": ExtResource( 4 )
 }
 logic_root_path = NodePath("..")
 only_active_state_on_scene = false
 init_manually = false
-update_mode = 1
+update_mode = 2
 receive_singals_only_on_activated_items = true
 debug_enabled = false
 "Initial state:" = ""
-"Create new:/Subdirectory for FSM nodes:" = "FSM"
+"Create new:/Subdirectory for FSM nodes:" = "FSM-mob"
 "Create new:/Create state with name:" = null
 "Create new:/Create transition with name:" = null
 GraphData = {
-"Idle": Vector2( 582, 644 )
+"Idle": Vector2( 582, 644 ),
+"Idle2": Vector2( 627, 210 ),
+"Idle2_": Vector2( 627, 210 ),
+"Idle2__": Vector2( 627, 210 ),
+"Idle_": Vector2( 582, 644 ),
+"Idle__": Vector2( 582, 644 )
 }
 
 [node name="States" type="Node2D" parent="FSM2D" index="0"]
@@ -108,6 +116,10 @@ GraphData = {
 [node name="Idle" type="Node" parent="FSM2D/States" index="0" instance=ExtResource( 5 )]
 
 script = ExtResource( 6 )
+
+[node name="Idle2" type="Node" parent="FSM2D/States" index="1" instance=ExtResource( 7 )]
+
+script = ExtResource( 8 )
 
 [node name="Transitions" type="Node2D" parent="FSM2D" index="1"]
 
