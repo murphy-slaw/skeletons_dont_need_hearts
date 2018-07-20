@@ -16,7 +16,7 @@ var flip_sprite = false setget set_flip_sprite, get_flip_sprite
 
 func get_flip_sprite():
 	return $Sprite.flip_h
-	
+
 onready var ground_ray = get_node("ground_ray")
 onready var facing_ray = get_node("facing_ray")
 
@@ -82,7 +82,7 @@ func raw_move(vec=Vector2()):
 
 func show_walk():
 	$AnimationPlayer.play("Walk")
-	
+
 func show_idle():
 	$AnimationPlayer.play("Idle")
 
@@ -91,6 +91,6 @@ func show_falling():
 
 func show_jumping():
 	$AnimationPlayer.play("Jump")
-	
+
 func get_normalized_motion():
 	return (int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left")))
