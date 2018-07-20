@@ -1,7 +1,5 @@
 extends KinematicBody2D
 
-var acceleration = Vector2()
-
 export var walk_accel = 7
 export var friction = 0.03
 export var gravity = 9.8
