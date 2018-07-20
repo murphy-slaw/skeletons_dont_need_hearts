@@ -22,5 +22,5 @@ func update(delta, args=null):
 #when exiting state
 func exit(to_state=null):
 	if to_state == "Climbing":
-		logic_root.motion.y = 0
+		logic_root.my_motion.y = 0
 	.exit(to_state)
