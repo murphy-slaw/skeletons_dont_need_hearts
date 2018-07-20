@@ -88,5 +88,5 @@ func show_jumping():
 	$AnimationPlayer.play("Jump")
 
 func get_normalized_motion():
-	return 0
+	pass
 
