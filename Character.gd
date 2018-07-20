@@ -25,7 +25,6 @@ func _physics_process(delta):
 	if not ((ground_ray and ground_ray.is_colliding()) or is_on_floor()):
 		cur_accel *= .25
 
-
 	get_acc_x()
 	acc.x *= cur_accel
 
