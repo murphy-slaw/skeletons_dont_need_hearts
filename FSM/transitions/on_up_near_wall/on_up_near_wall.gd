@@ -14,4 +14,4 @@ func prepare(new_state, args = []):
 
 func transition_condition(delta, args = []): 
 	return logic_root.can_climb()\
-	 and Input.is_action_pressed('ui_left')
+	 and Input.is_action_pressed('ui_select')

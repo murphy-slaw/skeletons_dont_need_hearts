@@ -188,7 +188,7 @@ debug_enabled = true
 "Create new:/Create transition with name:" = null
 GraphData = {
 "Climbing": Vector2( 391, 385 ),
-"Climbing_": Vector2( 433, 330 ),
+"Climbing_": Vector2( 391, 385 ),
 "Climbing__": Vector2( 438, 239 ),
 "Falling": Vector2( 1471, 815 ),
 "Falling_": Vector2( 1471, 815 ),
