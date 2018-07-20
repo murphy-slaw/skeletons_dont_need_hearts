@@ -45,10 +45,10 @@ func nudge(delta, normal_vec):
 	move (delta, normal_vec * nudge_vec)
 
 func move(delta, the_move):
-	
+
 	# always add gravity. it's good and good for you!
 	my_motion.y += gravity
-	
+
 	# reduce the actual horizontal movement by
 	# our current linear velocity * frictional constant
 	if is_on_floor():
@@ -56,27 +56,27 @@ func move(delta, the_move):
 
 	# add the requested motion to our vector
 	my_motion += the_move
-	
+
 	# bounce is how perfectly we rebound. Without these
 	# we stop dead when hiting walls or ceilings.
 	if is_on_ceiling():
 		my_motion.y *= bounce
 	if is_on_wall():
 		my_motion.x *= -bounce
-	
+
 	# This is dark magic. We get the velocity of the floor
 	# (which will be non-zero if we're standing on a moving
 	# object. Then we move and slide with our linear
 	# velocity plus the floor velocity.
 	var floor_vec = get_floor_velocity()
 	my_motion = move_and_slide(my_motion + floor_vec, Vector2(0,-1),1,1,0.872665)
-	
+
 	# And now we REMOVE the floor velocity from our remaining
 	# movement vector, because otherwise we'll gradually
 	# accelerate instead of just keeping pace with the thing
 	# we're standing on!
 	my_motion -= floor_vec
-	
+
 func raw_move(vec=Vector2()):
 	move_and_slide(my_motion+vec)
 
