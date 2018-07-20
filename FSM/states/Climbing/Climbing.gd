@@ -19,6 +19,7 @@ func update(delta, args=null):
 	.update(delta, args)
 	var motion = Vector2(0,-10 + fatigue)
 	fatigue += .05 * delta
+	motion.y = clamp (0, -10, motion.y)
 
 	logic_root.move(delta,motion)
 
