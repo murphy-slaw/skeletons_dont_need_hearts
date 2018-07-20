@@ -3,10 +3,6 @@ extends "res://Character.gd"
 onready var target = get_parent().get_node("Player")
 
 func _ready():
-	gravity = 500
-	accel = 500
-	max_speed = 200
-	jump_speed = -200
 	if target == null:
 		target = self
 
