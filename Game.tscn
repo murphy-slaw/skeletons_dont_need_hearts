@@ -1,25 +1,12 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
-[ext_resource path="res://art/brinstone.png" type="Texture" id=2]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Mover.tscn" type="PackedScene" id=4]
-[ext_resource path="res://tiles/navtiles.tres" type="TileSet" id=5]
-[ext_resource path="res://art/roughtiles.tres" type="TileSet" id=6]
-
-[sub_resource type="PackedScene" id=1]
-
-_bundled = {
-"conn_count": 0,
-"conns": PoolIntArray(  ),
-"editable_instances": [  ],
-"names": PoolStringArray(  ),
-"node_count": 0,
-"node_paths": [  ],
-"nodes": PoolIntArray(  ),
-"variants": [  ],
-"version": 2
-}
+[ext_resource path="res://Mob.tscn" type="PackedScene" id=2]
+[ext_resource path="res://art/brinstone.png" type="Texture" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Mover.tscn" type="PackedScene" id=5]
+[ext_resource path="res://tiles/navtiles.tres" type="TileSet" id=6]
+[ext_resource path="res://art/roughtiles.tres" type="TileSet" id=7]
 
 [sub_resource type="SegmentShape2D" id=2]
 
@@ -41,7 +28,7 @@ __meta__ = {
 "_edit_horizontal_guides_": [  ],
 "_edit_vertical_guides_": [  ]
 }
-Mob = SubResource( 1 )
+Mob = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
 
@@ -78,11 +65,11 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 1
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 stretch_mode = 2
 _sections_unfolded = [ "Material", "Visibility" ]
 
-[node name="Player" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Player" parent="." index="2" instance=ExtResource( 4 )]
 
 show_behind_parent = true
 position = Vector2( 245, 412 )
@@ -124,13 +111,13 @@ _sections_unfolded = [ "Collision", "Transform" ]
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Mover" parent="." index="5" instance=ExtResource( 4 )]
+[node name="Mover" parent="." index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 437, 409 )
 motion = Vector2( 0, 16 )
 cycle = 16.0
 
-[node name="Mover2" parent="." index="6" instance=ExtResource( 4 )]
+[node name="Mover2" parent="." index="6" instance=ExtResource( 5 )]
 
 position = Vector2( 246, 434 )
 motion = Vector2( 16, 0 )
@@ -144,7 +131,7 @@ editor/display_folded = true
 
 visible = false
 mode = 0
-tile_set = ExtResource( 5 )
+tile_set = ExtResource( 6 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -165,7 +152,7 @@ tile_data = PoolIntArray( 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0
 
 position = Vector2( 0, 240 )
 mode = 0
-tile_set = ExtResource( 6 )
+tile_set = ExtResource( 7 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
