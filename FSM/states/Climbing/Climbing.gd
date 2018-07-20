@@ -14,8 +14,10 @@ func enter(from_state = null, from_transition = null, args = []):
 func update(delta, args=null):
 	.update(delta, args)
 	var motion = Vector2(0,-11)
-	logic_root.move(delta,motion)
+
 	logic_root.my_motion.y = clamp(5,-5, logic_root.my_motion.y)
+	logic_root.move(delta,motion)
+
 
 #when exiting state
 func exit(to_state=null):
