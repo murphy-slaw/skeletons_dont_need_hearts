@@ -72,7 +72,7 @@ playback_speed = 7.0
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="Facing_ray" type="RayCast2D" parent="." index="5"]
+[node name="facing_ray" type="RayCast2D" parent="." index="5"]
 
 enabled = false
 exclude_parent = true
