@@ -197,10 +197,10 @@ GraphData = {
 "Idle_": Vector2( 1133, 137 ),
 "Idle__": Vector2( 1148, 315 ),
 "Jumping": Vector2( 266, 804 ),
-"Jumping_": Vector2( 1219, 1019 ),
+"Jumping_": Vector2( 266, 804 ),
 "Jumping__": Vector2( 1219, 1019 ),
 "Walking": Vector2( 420, 616 ),
-"Walking_": Vector2( 394, 612 ),
+"Walking_": Vector2( 420, 616 ),
 "Walking__": Vector2( 394, 612 ),
 "on_finish": Vector2( 581, 597 ),
 "on_finish_": Vector2( 581, 597 ),
@@ -209,7 +209,7 @@ GraphData = {
 "on_idle_": Vector2( 185, 48 ),
 "on_idle__": Vector2( 191, 47 ),
 "on_jump_input": Vector2( 637, 754 ),
-"on_jump_input_": Vector2( 530, 996 ),
+"on_jump_input_": Vector2( 637, 754 ),
 "on_jump_input__": Vector2( 479, 816 ),
 "on_landed": Vector2( 1476, 433 ),
 "on_landed_": Vector2( 1476, 433 ),
@@ -271,7 +271,7 @@ path2Target_state = NodePath("../../States/Jumping")
 
 [node name="on_up_near_wall" parent="FSM2D/Transitions" index="5" instance=ExtResource( 15 )]
 
-path2SourceStates = [ NodePath(""), NodePath("../../States/Walking"), NodePath("../../States/Idle"), NodePath("../../States/Jumping") ]
+path2SourceStates = [ NodePath(""), NodePath("../../States/Walking"), NodePath("../../States/Idle"), NodePath("../../States/Falling") ]
 path2Target_state = NodePath("../../States/Climbing")
 
 [node name="Label" type="Label" parent="." index="8"]
