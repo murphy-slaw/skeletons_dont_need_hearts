@@ -89,4 +89,3 @@ func show_jumping():
 
 func get_normalized_motion():
 	pass
-
