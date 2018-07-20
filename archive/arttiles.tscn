@@ -1,0 +1,1115 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://art/Art Tileset.png" type="Texture" id=1]
+
+[node name="Node" type="Node" index="0"]
+
+[node name="Art Tileset0" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset0" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset0/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset1" type="Sprite" parent="." index="1"]
+
+position = Vector2( 32, 0 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 1
+region_enabled = true
+region_rect = Rect2( 32, 0, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset1" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset1/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset2" type="Sprite" parent="." index="2"]
+
+position = Vector2( 64, 0 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 2
+region_enabled = true
+region_rect = Rect2( 64, 0, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset2/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset3" type="Sprite" parent="." index="3"]
+
+position = Vector2( 96, 0 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 3
+region_enabled = true
+region_rect = Rect2( 96, 0, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset3/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset4" type="Sprite" parent="." index="4"]
+
+position = Vector2( 128, 0 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 4
+region_enabled = true
+region_rect = Rect2( 128, 0, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset4" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset4/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset5" type="Sprite" parent="." index="5"]
+
+position = Vector2( 160, 0 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 5
+region_enabled = true
+region_rect = Rect2( 160, 0, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset5" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset5/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset8" type="Sprite" parent="." index="6"]
+
+position = Vector2( 0, 32 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 8
+region_enabled = true
+region_rect = Rect2( 0, 32, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset8" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset8/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset9" type="Sprite" parent="." index="7"]
+
+position = Vector2( 32, 32 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 9
+region_enabled = true
+region_rect = Rect2( 32, 32, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset9" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset9/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset10" type="Sprite" parent="." index="8"]
+
+position = Vector2( 64, 32 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 10
+region_enabled = true
+region_rect = Rect2( 64, 32, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset10" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset10/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset11" type="Sprite" parent="." index="9"]
+
+position = Vector2( 96, 32 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 11
+region_enabled = true
+region_rect = Rect2( 96, 32, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset11" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset11/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset12" type="Sprite" parent="." index="10"]
+
+position = Vector2( 128, 32 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 12
+region_enabled = true
+region_rect = Rect2( 128, 32, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset12" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset12/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset13" type="Sprite" parent="." index="11"]
+
+position = Vector2( 160, 32 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 13
+region_enabled = true
+region_rect = Rect2( 160, 32, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset13" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset13/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset16" type="Sprite" parent="." index="12"]
+
+position = Vector2( 0, 64 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 16
+region_enabled = true
+region_rect = Rect2( 0, 64, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset16" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset16/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset17" type="Sprite" parent="." index="13"]
+
+position = Vector2( 32, 64 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 17
+region_enabled = true
+region_rect = Rect2( 32, 64, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset17" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset17/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset18" type="Sprite" parent="." index="14"]
+
+position = Vector2( 64, 64 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 18
+region_enabled = true
+region_rect = Rect2( 64, 64, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset18" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset18/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset19" type="Sprite" parent="." index="15"]
+
+position = Vector2( 96, 64 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 19
+region_enabled = true
+region_rect = Rect2( 96, 64, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset19" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset19/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset20" type="Sprite" parent="." index="16"]
+
+position = Vector2( 128, 64 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 20
+region_enabled = true
+region_rect = Rect2( 128, 64, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset20" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset20/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset21" type="Sprite" parent="." index="17"]
+
+position = Vector2( 160, 64 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 21
+region_enabled = true
+region_rect = Rect2( 160, 64, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset21" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset21/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset24" type="Sprite" parent="." index="18"]
+
+position = Vector2( 0, 96 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 24
+region_enabled = true
+region_rect = Rect2( 0, 96, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset24" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset24/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset25" type="Sprite" parent="." index="19"]
+
+position = Vector2( 32, 96 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 25
+region_enabled = true
+region_rect = Rect2( 32, 96, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset25" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset25/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset26" type="Sprite" parent="." index="20"]
+
+position = Vector2( 64, 96 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 26
+region_enabled = true
+region_rect = Rect2( 64, 96, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset26" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset26/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset27" type="Sprite" parent="." index="21"]
+
+position = Vector2( 96, 96 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 27
+region_enabled = true
+region_rect = Rect2( 96, 96, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset27" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset27/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset28" type="Sprite" parent="." index="22"]
+
+position = Vector2( 128, 96 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 28
+region_enabled = true
+region_rect = Rect2( 128, 96, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset28" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset28/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset29" type="Sprite" parent="." index="23"]
+
+position = Vector2( 160, 96 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 29
+region_enabled = true
+region_rect = Rect2( 160, 96, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset29" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset29/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset32" type="Sprite" parent="." index="24"]
+
+position = Vector2( 0, 128 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 32
+region_enabled = true
+region_rect = Rect2( 0, 128, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset32" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset32/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset33" type="Sprite" parent="." index="25"]
+
+position = Vector2( 32, 128 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 33
+region_enabled = true
+region_rect = Rect2( 32, 128, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset33" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset33/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset34" type="Sprite" parent="." index="26"]
+
+position = Vector2( 64, 128 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 34
+region_enabled = true
+region_rect = Rect2( 64, 128, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset34" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset34/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset35" type="Sprite" parent="." index="27"]
+
+position = Vector2( 96, 128 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 35
+region_enabled = true
+region_rect = Rect2( 96, 128, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset35" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset35/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset36" type="Sprite" parent="." index="28"]
+
+position = Vector2( 128, 128 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 36
+region_enabled = true
+region_rect = Rect2( 128, 128, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset36" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset36/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset37" type="Sprite" parent="." index="29"]
+
+position = Vector2( 160, 128 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 37
+region_enabled = true
+region_rect = Rect2( 160, 128, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset37" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset37/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset40" type="Sprite" parent="." index="30"]
+
+position = Vector2( 0, 160 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 40
+region_enabled = true
+region_rect = Rect2( 0, 160, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset40" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset40/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset41" type="Sprite" parent="." index="31"]
+
+position = Vector2( 32, 160 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 41
+region_enabled = true
+region_rect = Rect2( 32, 160, 32, 32 )
+
+[node name="Art Tileset42" type="Sprite" parent="." index="32"]
+
+position = Vector2( 64, 160 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 42
+region_enabled = true
+region_rect = Rect2( 64, 160, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset42" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset42/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset48" type="Sprite" parent="." index="33"]
+
+position = Vector2( 0, 192 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 48
+region_enabled = true
+region_rect = Rect2( 0, 192, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset48" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset48/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset49" type="Sprite" parent="." index="34"]
+
+position = Vector2( 32, 192 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 49
+region_enabled = true
+region_rect = Rect2( 32, 192, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset49" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset49/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset50" type="Sprite" parent="." index="35"]
+
+position = Vector2( 64, 192 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 50
+region_enabled = true
+region_rect = Rect2( 64, 192, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset50" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset50/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset51" type="Sprite" parent="." index="36"]
+
+position = Vector2( 96, 192 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 51
+region_enabled = true
+region_rect = Rect2( 96, 192, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset51" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset51/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset52" type="Sprite" parent="." index="37"]
+
+position = Vector2( 128, 192 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 52
+region_enabled = true
+region_rect = Rect2( 128, 192, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset52" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset52/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset53" type="Sprite" parent="." index="38"]
+
+position = Vector2( 160, 192 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 53
+region_enabled = true
+region_rect = Rect2( 160, 192, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset53" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset53/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset56" type="Sprite" parent="." index="39"]
+
+position = Vector2( 0, 224 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 56
+region_enabled = true
+region_rect = Rect2( 0, 224, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset56" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset56/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset57" type="Sprite" parent="." index="40"]
+
+position = Vector2( 32, 224 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 57
+region_enabled = true
+region_rect = Rect2( 32, 224, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset57" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset57/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset58" type="Sprite" parent="." index="41"]
+
+position = Vector2( 64, 224 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 58
+region_enabled = true
+region_rect = Rect2( 64, 224, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset58" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset58/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset59" type="Sprite" parent="." index="42"]
+
+position = Vector2( 96, 224 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 59
+region_enabled = true
+region_rect = Rect2( 96, 224, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset59" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset59/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset60" type="Sprite" parent="." index="43"]
+
+position = Vector2( 128, 224 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 60
+region_enabled = true
+region_rect = Rect2( 128, 224, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset60" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset60/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+[node name="Art Tileset61" type="Sprite" parent="." index="44"]
+
+position = Vector2( 160, 224 )
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 8
+frame = 61
+region_enabled = true
+region_rect = Rect2( 160, 224, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Art Tileset61" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Art Tileset61/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+
+

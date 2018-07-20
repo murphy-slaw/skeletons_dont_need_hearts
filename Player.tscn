@@ -1,0 +1,293 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://art/newguy.png" type="Texture" id=2]
+[ext_resource path="res://addons/moe.ero-one.fsm/content/fsm.gd" type="Script" id=3]
+[ext_resource path="res://addons/moe.ero-one.fsm/assets/ico2d.png" type="Texture" id=4]
+[ext_resource path="res://FSM/states/Idle/Idle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://FSM/states/Walking/Walking.tscn" type="PackedScene" id=6]
+[ext_resource path="res://FSM/states/Falling/Falling.tscn" type="PackedScene" id=7]
+[ext_resource path="res://FSM/states/Jumping/Jumping.tscn" type="PackedScene" id=8]
+[ext_resource path="res://FSM/states/Climbing/Climbing.tscn" type="PackedScene" id=9]
+[ext_resource path="res://FSM/transitions/on_move/on_move.tscn" type="PackedScene" id=10]
+[ext_resource path="res://FSM/transitions/on_left_ground/on_left_ground.tscn" type="PackedScene" id=11]
+[ext_resource path="res://FSM/transitions/on_landed/on_landed.tscn" type="PackedScene" id=12]
+[ext_resource path="res://FSM/transitions/on_no_input/on_no_input.tscn" type="PackedScene" id=13]
+[ext_resource path="res://FSM/transitions/on_jump_input/on_jump_input.tscn" type="PackedScene" id=14]
+[ext_resource path="res://FSM/transitions/on_up_near_wall/on_up_near_wall.tscn" type="PackedScene" id=15]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 5, 12 )
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "Idle"
+length = 1.0
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "Jump"
+length = 0.75
+loop = true
+step = 0.75
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.75 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 6, 6 ]
+}
+
+[sub_resource type="Animation" id=4]
+
+length = 1.75
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6 ]
+}
+
+[node name="Player" type="KinematicBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( -1, 1 )
+texture = ExtResource( 2 )
+hframes = 12
+frame = 6
+_sections_unfolded = [ "Animation", "Material", "Offset", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 0, 1 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 0
+playback_default_blend_time = 0.0
+playback_speed = 2.0
+anims/Idle = SubResource( 2 )
+anims/Jump = SubResource( 3 )
+anims/Walk = SubResource( 4 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="JumpTimer" type="Timer" parent="." index="3"]
+
+process_mode = 0
+wait_time = 0.25
+one_shot = false
+autostart = false
+
+[node name="PlayerCamera" type="Camera2D" parent="." index="4"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = 0
+limit_top = 0
+limit_right = 640
+limit_bottom = 480
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Drag Margin", "Limit", "Offset", "Transform" ]
+
+[node name="ground_ray" type="RayCast2D" parent="." index="5"]
+
+position = Vector2( -1, 0 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 16 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="facing_ray" type="RayCast2D" parent="." index="6"]
+
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 7, 0 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="FSM2D" type="Node2D" parent="." index="7"]
+
+script = ExtResource( 3 )
+_sections_unfolded = [ "Create new:" ]
+__meta__ = {
+"_editor_icon": ExtResource( 4 )
+}
+logic_root_path = NodePath("..")
+only_active_state_on_scene = true
+init_manually = false
+update_mode = 2
+receive_singals_only_on_activated_items = false
+debug_enabled = true
+"Initial state:" = ""
+"Create new:/Subdirectory for FSM nodes:" = "FSM"
+"Create new:/Create state with name:" = null
+"Create new:/Create transition with name:" = null
+GraphData = {
+"Climbing": Vector2( 438, 239 ),
+"Climbing_": Vector2( 438, 239 ),
+"Climbing__": Vector2( 438, 239 ),
+"Falling": Vector2( 1471, 815 ),
+"Falling_": Vector2( 1471, 815 ),
+"Falling__": Vector2( 1471, 815 ),
+"Idle": Vector2( 1148, 315 ),
+"Idle_": Vector2( 1148, 315 ),
+"Idle__": Vector2( 1148, 315 ),
+"Jumping": Vector2( 1219, 1019 ),
+"Jumping_": Vector2( 1219, 1019 ),
+"Jumping__": Vector2( 1219, 1019 ),
+"Walking": Vector2( 394, 612 ),
+"Walking_": Vector2( 394, 612 ),
+"Walking__": Vector2( 394, 612 ),
+"on_finish": Vector2( 581, 597 ),
+"on_finish_": Vector2( 581, 597 ),
+"on_finish__": Vector2( 626, 463 ),
+"on_idle": Vector2( 185, 48 ),
+"on_idle_": Vector2( 185, 48 ),
+"on_idle__": Vector2( 191, 47 ),
+"on_jump_input": Vector2( 479, 816 ),
+"on_jump_input_": Vector2( 479, 816 ),
+"on_jump_input__": Vector2( 479, 816 ),
+"on_landed": Vector2( 1476, 433 ),
+"on_landed_": Vector2( 1476, 433 ),
+"on_landed__": Vector2( 1476, 433 ),
+"on_left_ground": Vector2( 1186, 619 ),
+"on_left_ground_": Vector2( 1186, 619 ),
+"on_left_ground__": Vector2( 1186, 619 ),
+"on_move": Vector2( 811, 415 ),
+"on_move_": Vector2( 811, 415 ),
+"on_move__": Vector2( 811, 415 ),
+"on_no_input": Vector2( 693, 304 ),
+"on_no_input_": Vector2( 693, 304 ),
+"on_no_input__": Vector2( 693, 304 ),
+"on_up_near_wall": Vector2( 191, 47 ),
+"on_up_near_wall_": Vector2( 191, 47 ),
+"on_up_near_wall__": Vector2( 191, 47 )
+}
+
+[node name="States" type="Node2D" parent="FSM2D" index="0"]
+
+[node name="Idle" parent="FSM2D/States" index="0" instance=ExtResource( 5 )]
+
+[node name="Walking" parent="FSM2D/States" index="1" instance=ExtResource( 6 )]
+
+[node name="Falling" parent="FSM2D/States" index="2" instance=ExtResource( 7 )]
+
+[node name="Jumping" parent="FSM2D/States" index="3" instance=ExtResource( 8 )]
+
+[node name="Climbing" parent="FSM2D/States" index="4" instance=ExtResource( 9 )]
+
+[node name="Transitions" type="Node2D" parent="FSM2D" index="1"]
+
+position = Vector2( -1, 1 )
+
+[node name="on_move" parent="FSM2D/Transitions" index="0" instance=ExtResource( 10 )]
+
+path2SourceStates = [ NodePath("../../States/Idle") ]
+path2Target_state = NodePath("../../States/Walking")
+
+[node name="on_left_ground" parent="FSM2D/Transitions" index="1" instance=ExtResource( 11 )]
+
+path2SourceStates = [ NodePath(""), NodePath("../../States/Idle"), NodePath("../../States/Walking"), NodePath("../../States/Jumping"), NodePath("../../States/Climbing") ]
+path2Target_state = NodePath("../../States/Falling")
+
+[node name="on_landed" parent="FSM2D/Transitions" index="2" instance=ExtResource( 12 )]
+
+path2SourceStates = [ NodePath("../../States/Falling") ]
+path2Target_state = NodePath("../../States/Idle")
+
+[node name="on_no_input" parent="FSM2D/Transitions" index="3" instance=ExtResource( 13 )]
+
+path2SourceStates = [ NodePath(""), NodePath("../../States/Walking"), NodePath("../../States/Climbing") ]
+path2Target_state = NodePath("../../States/Idle")
+
+[node name="on_jump_input" parent="FSM2D/Transitions" index="4" instance=ExtResource( 14 )]
+
+path2SourceStates = [ NodePath(""), NodePath("../../States/Idle"), NodePath("../../States/Walking") ]
+path2Target_state = NodePath("../../States/Jumping")
+
+[node name="on_up_near_wall" parent="FSM2D/Transitions" index="5" instance=ExtResource( 15 )]
+
+path2SourceStates = [ NodePath(""), NodePath("../../States/Walking"), NodePath("../../States/Idle") ]
+path2Target_state = NodePath("../../States/Climbing")
+
+[node name="Label" type="Label" parent="." index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -48.0
+margin_top = -5.0
+margin_right = -8.0
+margin_bottom = 9.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[connection signal="timeout" from="JumpTimer" to="." method="_on_JumpTimer_timeout"]
+
+
