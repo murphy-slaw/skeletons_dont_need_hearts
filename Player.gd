@@ -16,7 +16,7 @@ var flip_sprite = false setget set_flip_sprite, get_flip_sprite
 
 func get_flip_sprite():
 	return $Sprite.flip_h
-
+	
 onready var ground_ray = get_node("ground_ray")
 onready var facing_ray = get_node("facing_ray")
 
@@ -39,7 +39,7 @@ func can_climb():
 func walk(delta, normal_vec):
 	var walk_vec = Vector2(walk_accel,0)
 	move(delta, normal_vec * walk_vec)
-	
+
 func nudge(delta, normal_vec):
 	var nudge_vec = Vector2(walk_accel * nudge_factor,0)
 	move (delta, normal_vec * nudge_vec)
