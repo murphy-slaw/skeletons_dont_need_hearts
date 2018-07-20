@@ -15,6 +15,7 @@ func update(delta, args=null):
 	.update(delta, args)
 	var motion = Vector2(0,-11)
 	logic_root.move(delta,motion)
+	logic_root.my_motion.y = clamp(10,-10, my_motion.y)
 
 #when exiting state
 func exit(to_state=null):
