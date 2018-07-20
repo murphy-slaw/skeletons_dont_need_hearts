@@ -6,7 +6,7 @@
 
 script = ExtResource( 1 )
 path2SourceStates = [ NodePath("") ]
-path2Target_state = NodePath(".")
+path2Target_state = null
 intervalBetweenChecks = -1.0
 
 
