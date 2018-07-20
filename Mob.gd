@@ -19,3 +19,6 @@ func _ready():
 
 func _on_Lifespan_timeout():
 	queue_free()
+
+func get_vision_normal():
+    return ($facing_ray.position * $facing_ray.cast_to).normalized()
