@@ -18,8 +18,8 @@ func get_acc_x():
 	
 func get_motion_y():
 	if (randi() % 3 == 1):
-	if is_on_floor():
-		motion.y = jump_speed
+        if is_on_floor():
+            motion.y = jump_speed
 
 func _on_Lifespan_timeout():
 	queue_free()
