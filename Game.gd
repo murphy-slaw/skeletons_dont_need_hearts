@@ -13,9 +13,8 @@ func _on_Boinger_boing(boing_vec,body):
 		body.vel = boing_vec
 
 func _on_MobSpawnTimer_timeout():
-	pass
-#	for i in range(randi() % 2):
-#		call_deferred("spawn_mob")
+	for i in range(randi() % 2):
+		call_deferred("spawn_mob")
 
 	
 func spawn_mob():
