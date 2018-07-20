@@ -261,6 +261,9 @@ path2Target_state = NodePath("../../States/Idle")
 
 [node name="on_no_input" parent="FSM2D/Transitions" index="3" instance=ExtResource( 13 )]
 
+path2SourceStates = [ NodePath(""), NodePath("../../States/Walking") ]
+path2Target_state = NodePath("../../States/Idle")
+
 [node name="on_jump_input" parent="FSM2D/Transitions" index="4" instance=ExtResource( 14 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Idle"), NodePath("../../States/Walking") ]
