@@ -13,7 +13,7 @@ func enter(from_state = null, from_transition = null, args = []):
 #when updating state, paramx can be used only if updating fsm manually
 func update(delta, args=null):
 	.update(delta, args)
-	var motion = Vector2(0,-9.9)
+	var motion = Vector2(0,-11)
 	logic_root.move(delta,motion)
 
 #when exiting state
