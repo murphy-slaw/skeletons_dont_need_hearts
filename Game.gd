@@ -21,4 +21,4 @@ func spawn_mob():
 	$MobPath/MobSpawnLocation.set_offset(randi())
 	var mob = Mob.instance()
 	call_deferred("add_child",mob)
-	mob.global_position = $MobPath/MobSpawnLocation.position
+	mob.position = $MobPath/MobSpawnLocation.position
