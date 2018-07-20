@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Mob.gd" type="Script" id=1]
 [ext_resource path="res://art/samson.png" type="Texture" id=2]
+[ext_resource path="res://addons/moe.ero-one.fsm/content/fsm.gd" type="Script" id=3]
+[ext_resource path="res://addons/moe.ero-one.fsm/assets/ico2d.png" type="Texture" id=4]
+[ext_resource path="res://FSM/states/Idle/Idle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://FSM/states/Idle/Idle.gd" type="Script" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -27,7 +31,7 @@ tracks/0/keys = {
 "values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 10, 11, 12, 13 ]
 }
 
-[node name="Mob" type="KinematicBody2D" index="0"]
+[node name="Mob" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -54,14 +58,21 @@ exclude_parent = true
 cast_to = Vector2( 0, 9 )
 collision_mask = 1
 
-[node name="Lifespan" type="Timer" parent="." index="3"]
+[node name="facing_ray" type="RayCast2D" parent="." index="3"]
+
+enabled = false
+exclude_parent = true
+cast_to = Vector2( 10, 0 )
+collision_mask = 1
+
+[node name="Lifespan" type="Timer" parent="." index="4"]
 
 process_mode = 1
 wait_time = 4.0
 one_shot = false
 autostart = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
 
 root_node = NodePath("..")
 autoplay = "New Anim"
@@ -72,12 +83,33 @@ playback_speed = 7.0
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="facing_ray" type="RayCast2D" parent="." index="5"]
+[node name="FSM2D" type="Node2D" parent="." index="6"]
 
-enabled = false
-exclude_parent = true
-cast_to = Vector2( 10, 0 )
-collision_mask = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_editor_icon": ExtResource( 4 )
+}
+logic_root_path = NodePath("..")
+only_active_state_on_scene = false
+init_manually = false
+update_mode = 1
+receive_singals_only_on_activated_items = true
+debug_enabled = false
+"Initial state:" = ""
+"Create new:/Subdirectory for FSM nodes:" = "FSM"
+"Create new:/Create state with name:" = null
+"Create new:/Create transition with name:" = null
+GraphData = {
+"Idle": Vector2( 582, 644 )
+}
+
+[node name="States" type="Node2D" parent="FSM2D" index="0"]
+
+[node name="Idle" type="Node" parent="FSM2D/States" index="0" instance=ExtResource( 5 )]
+
+script = ExtResource( 6 )
+
+[node name="Transitions" type="Node2D" parent="FSM2D" index="1"]
 
 [connection signal="timeout" from="Lifespan" to="." method="_on_Lifespan_timeout"]
 
