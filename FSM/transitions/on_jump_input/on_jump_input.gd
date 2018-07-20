@@ -13,4 +13,4 @@ func prepare(new_state, args = []):
 	pass
 
 func transition_condition(delta, args = []):
-	return Input.is_action_pressed("ui_up") and not logic_root.is_on_wall()
+	return Input.is_action_just_pressed("ui_up") and not logic_root.is_on_wall()
