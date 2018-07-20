@@ -11,7 +11,7 @@ func _ready():
 #	acc.x = direction.x
 #	acc.y += direction.y
 #
-#	
+
 #func get_motion_y():
 #	if (randi() % 30 == 1):
 #        if is_on_floor():
