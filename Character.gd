@@ -34,45 +34,59 @@ func is_landed():
 func can_climb():
 	return false
 
-func _physics_process(delta):
-	var cur_accel = accel
+func move(delta, the_move):
 
-	if not is_on_floor():
-		acc.y = gravity
+	# always add gravity. it's good and good for you!
+	my_motion.y += gravity
 
-	if not ((ground_ray and ground_ray.is_colliding()) or is_on_floor()):
-		cur_accel *= .25
-
-	get_acc_x()
-	acc.x *= cur_accel
-
+	# reduce the actual horizontal movement by
+	# our current linear velocity * frictional constant
 	if is_on_floor():
-		acc.x += motion.x * friction * delta
-		motion.y = 0 # don't accumulate gravitational acceleration
+		the_move.x -= my_motion.x * friction
 
+	# add the requested motion to our vector
+	my_motion += the_move
 
-	get_motion_y()
-
-	motion += acc * delta
+	# bounce is how perfectly we rebound. Without these
+	# we stop dead when hiting walls or ceilings.
 	if is_on_ceiling():
-		motion.y *= -bounce
+		my_motion.y *= bounce
 	if is_on_wall():
-		motion.x *= -bounce
+		my_motion.x *= -bounce
 
+	# This is dark magic. We get the velocity of the floor
+	# (which will be non-zero if we're standing on a moving
+	# object. Then we move and slide with our linear
+	# velocity plus the floor velocity.
+	var floor_vec = get_floor_velocity()
+	my_motion = move_and_slide(my_motion + floor_vec, Vector2(0,-1),1,1,0.872665)
 
-	motion.x = clamp(motion.x, -max_speed, max_speed)
+	# And now we REMOVE the floor velocity from our remaining
+	# movement vector, because otherwise we'll gradually
+	# accelerate instead of just keeping pace with the thing
+	# we're standing on!
+	my_motion -= floor_vec
 
-	motion += get_floor_velocity() * delta
+func walk(delta, normal_vec):
+	var walk_vec = Vector2(walk_accel,0)
+	move(delta, normal_vec * walk_vec)
 
-	move_and_slide(motion, Vector2(0,-1),4,4,0.872665)
+func nudge(delta, normal_vec):
+	var nudge_vec = Vector2(walk_accel * nudge_factor,0)
+	move (delta, normal_vec * nudge_vec)
 
-	update_animations()
+func show_walk():
+	$AnimationPlayer.play("Walk")
 
-func update_animations():
-	pass
+func show_idle():
+	$AnimationPlayer.play("Idle")
 
-func get_motion_y():
-	return Vector2()
+func show_falling():
+	$AnimationPlayer.play("Jump")
 
-func get_acc_x():
-	return Vector2()
+func show_jumping():
+	$AnimationPlayer.play("Jump")
+
+func get_normalized_motion():
+	return 0
+
