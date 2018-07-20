@@ -17,7 +17,7 @@ func get_acc_x():
 
 	
 func get_motion_y():
-	if (randi() % 3 == 1):
+	if (randi() % 30 == 1):
         if is_on_floor():
             motion.y = jump_speed
 
