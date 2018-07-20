@@ -2,13 +2,13 @@
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Game.tscn" type="PackedScene" id=2]
-[ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://fonts/romance_fatal_pix.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 
-size = 16
+size = 36
 use_mipmaps = false
-use_filter = true
+use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
@@ -37,7 +37,7 @@ anchor_bottom = 0.0
 margin_left = 5.0
 margin_top = 2.0
 margin_right = 253.0
-margin_bottom = 27.0
+margin_bottom = 36.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -50,6 +50,6 @@ text = "OMG A Game!"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Theme", "custom_colors", "custom_fonts" ]
+_sections_unfolded = [ "Mouse", "custom_colors", "custom_fonts", "custom_styles" ]
 
 
