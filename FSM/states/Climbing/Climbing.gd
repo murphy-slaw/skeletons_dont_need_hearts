@@ -15,7 +15,7 @@ func update(delta, args=null):
 	.update(delta, args)
 	var motion = Vector2(0,-11)
 
-	logic_root.my_motion.y = clamp(5,-5, logic_root.my_motion.y)
+	logic_root.my_motion.y = clamp(1,1, logic_root.my_motion.y)
 	logic_root.move(delta,motion)
 
 
