@@ -8,7 +8,7 @@
 
 texture = ExtResource( 1 )
 vframes = 3
-hframes = 6
+hframes = 9
 region_enabled = true
 region_rect = Rect2( 0, 0, 16, 16 )
 
@@ -32,7 +32,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 position = Vector2( 16, 0 )
 texture = ExtResource( 1 )
 vframes = 3
-hframes = 6
+hframes = 9
 frame = 1
 region_enabled = true
 region_rect = Rect2( 16, 0, 16, 16 )
@@ -57,7 +57,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 position = Vector2( 32, 0 )
 texture = ExtResource( 1 )
 vframes = 3
-hframes = 6
+hframes = 9
 frame = 2
 region_enabled = true
 region_rect = Rect2( 32, 0, 16, 16 )
@@ -82,7 +82,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 position = Vector2( 48, 0 )
 texture = ExtResource( 1 )
 vframes = 3
-hframes = 6
+hframes = 9
 frame = 3
 region_enabled = true
 region_rect = Rect2( 48, 0, 16, 16 )
@@ -107,7 +107,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 position = Vector2( 64, 0 )
 texture = ExtResource( 1 )
 vframes = 3
-hframes = 6
+hframes = 9
 frame = 4
 region_enabled = true
 region_rect = Rect2( 64, 0, 16, 16 )
@@ -132,7 +132,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 position = Vector2( 80, 0 )
 texture = ExtResource( 1 )
 vframes = 3
-hframes = 6
+hframes = 9
 frame = 5
 region_enabled = true
 region_rect = Rect2( 80, 0, 16, 16 )
@@ -152,90 +152,15 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="rough6" type="Sprite" parent="." index="6"]
+[node name="rough9" type="Sprite" parent="." index="6"]
 
 position = Vector2( 0, 16 )
 texture = ExtResource( 1 )
 vframes = 3
-hframes = 6
-frame = 6
-region_enabled = true
-region_rect = Rect2( 0, 16, 16, 16 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="rough6" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough6/StaticBody2D" index="0"]
-
-build_mode = 0
-polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
-
-[node name="rough7" type="Sprite" parent="." index="7"]
-
-position = Vector2( 16, 16 )
-texture = ExtResource( 1 )
-vframes = 3
-hframes = 6
-frame = 7
-region_enabled = true
-region_rect = Rect2( 16, 16, 16, 16 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="rough7" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough7/StaticBody2D" index="0"]
-
-build_mode = 0
-polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
-
-[node name="rough8" type="Sprite" parent="." index="8"]
-
-position = Vector2( 32, 16 )
-texture = ExtResource( 1 )
-vframes = 3
-hframes = 6
-frame = 8
-region_enabled = true
-region_rect = Rect2( 32, 16, 16, 16 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="rough8" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough8/StaticBody2D" index="0"]
-
-build_mode = 0
-polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
-
-[node name="rough9" type="Sprite" parent="." index="9"]
-
-position = Vector2( 48, 16 )
-texture = ExtResource( 1 )
-vframes = 3
-hframes = 6
+hframes = 9
 frame = 9
 region_enabled = true
-region_rect = Rect2( 48, 16, 16, 16 )
+region_rect = Rect2( 0, 16, 16, 16 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="rough9" index="0"]
 
@@ -252,15 +177,15 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="rough10" type="Sprite" parent="." index="10"]
+[node name="rough10" type="Sprite" parent="." index="7"]
 
-position = Vector2( 64, 16 )
+position = Vector2( 16, 16 )
 texture = ExtResource( 1 )
 vframes = 3
-hframes = 6
+hframes = 9
 frame = 10
 region_enabled = true
-region_rect = Rect2( 64, 16, 16, 16 )
+region_rect = Rect2( 16, 16, 16, 16 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="rough10" index="0"]
 
@@ -277,15 +202,15 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="rough11" type="Sprite" parent="." index="11"]
+[node name="rough11" type="Sprite" parent="." index="8"]
 
-position = Vector2( 80, 16 )
+position = Vector2( 32, 16 )
 texture = ExtResource( 1 )
 vframes = 3
-hframes = 6
+hframes = 9
 frame = 11
 region_enabled = true
-region_rect = Rect2( 80, 16, 16, 16 )
+region_rect = Rect2( 32, 16, 16, 16 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="rough11" index="0"]
 
@@ -302,15 +227,15 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="rough12" type="Sprite" parent="." index="12"]
+[node name="rough12" type="Sprite" parent="." index="9"]
 
-position = Vector2( 0, 32 )
+position = Vector2( 48, 16 )
 texture = ExtResource( 1 )
 vframes = 3
-hframes = 6
+hframes = 9
 frame = 12
 region_enabled = true
-region_rect = Rect2( 0, 32, 16, 16 )
+region_rect = Rect2( 48, 16, 16, 16 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="rough12" index="0"]
 
@@ -327,15 +252,15 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="rough13" type="Sprite" parent="." index="13"]
+[node name="rough13" type="Sprite" parent="." index="10"]
 
-position = Vector2( 16, 32 )
+position = Vector2( 64, 16 )
 texture = ExtResource( 1 )
 vframes = 3
-hframes = 6
+hframes = 9
 frame = 13
 region_enabled = true
-region_rect = Rect2( 16, 32, 16, 16 )
+region_rect = Rect2( 64, 16, 16, 16 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="rough13" index="0"]
 
@@ -352,15 +277,15 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="rough14" type="Sprite" parent="." index="14"]
+[node name="rough14" type="Sprite" parent="." index="11"]
 
-position = Vector2( 32, 32 )
+position = Vector2( 80, 16 )
 texture = ExtResource( 1 )
 vframes = 3
-hframes = 6
+hframes = 9
 frame = 14
 region_enabled = true
-region_rect = Rect2( 32, 32, 16, 16 )
+region_rect = Rect2( 80, 16, 16, 16 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="rough14" index="0"]
 
@@ -377,17 +302,102 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="rough15" type="Sprite" parent="." index="15"]
+[node name="rough15" type="Sprite" parent="." index="12"]
+
+position = Vector2( 96, 16 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 9
+frame = 15
+region_enabled = true
+region_rect = Rect2( 96, 16, 16, 16 )
+
+[node name="rough18" type="Sprite" parent="." index="13"]
+
+position = Vector2( 0, 32 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 9
+frame = 18
+region_enabled = true
+region_rect = Rect2( 0, 32, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="rough18" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough18/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[node name="rough19" type="Sprite" parent="." index="14"]
+
+position = Vector2( 16, 32 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 9
+frame = 19
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="rough19" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough19/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[node name="rough20" type="Sprite" parent="." index="15"]
+
+position = Vector2( 32, 32 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 9
+frame = 20
+region_enabled = true
+region_rect = Rect2( 32, 32, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="rough20" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough20/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[node name="rough21" type="Sprite" parent="." index="16"]
 
 position = Vector2( 48, 32 )
 texture = ExtResource( 1 )
 vframes = 3
-hframes = 6
-frame = 15
+hframes = 9
+frame = 21
 region_enabled = true
 region_rect = Rect2( 48, 32, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="rough15" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="rough21" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -397,22 +407,22 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough15/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough21/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="rough16" type="Sprite" parent="." index="16"]
+[node name="rough22" type="Sprite" parent="." index="17"]
 
 position = Vector2( 64, 32 )
 texture = ExtResource( 1 )
 vframes = 3
-hframes = 6
-frame = 16
+hframes = 9
+frame = 22
 region_enabled = true
 region_rect = Rect2( 64, 32, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="rough16" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="rough22" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -422,22 +432,22 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough16/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough22/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[node name="rough17" type="Sprite" parent="." index="17"]
+[node name="rough23" type="Sprite" parent="." index="18"]
 
 position = Vector2( 80, 32 )
 texture = ExtResource( 1 )
 vframes = 3
-hframes = 6
-frame = 17
+hframes = 9
+frame = 23
 region_enabled = true
 region_rect = Rect2( 80, 32, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="rough17" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="rough23" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -447,9 +457,19 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough17/StaticBody2D" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough23/StaticBody2D" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[node name="rough24" type="Sprite" parent="." index="19"]
+
+position = Vector2( 96, 32 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 9
+frame = 24
+region_enabled = true
+region_rect = Rect2( 96, 32, 16, 16 )
 
 
