@@ -16,6 +16,6 @@ func transition_condition(delta, args = []):
 	for action in ["ui_left","ui_right","ui_up"]:
 		if Input.is_action_pressed(action):
 			return false
-		if logic_root.can_climb():
-			return false
+#		if logic_root.can_climb():
+#			return false
 	return true
