@@ -12,7 +12,7 @@ func prepare(new_state, args = []):
 	#you can optionally implement this to reset transition when related state has been activated
 	pass
 
-func transition_condition(delta, args = []): 
+func transition_condition(delta, args = []):
 	# Return true/false
 	return (not logic_root.is_landed()\
             and not (logic_root.can_climb()\
