@@ -16,7 +16,7 @@ var flip_sprite = false setget set_flip_sprite, get_flip_sprite
 
 func get_flip_sprite():
 	return $Sprite.flip_h
-	
+
 onready var ground_ray = get_node("ground_ray")
 onready var facing_ray = get_node("facing_ray")
 
