@@ -13,4 +13,4 @@ func prepare(new_state, args = []):
 	pass
 
 func transition_condition(delta, args = []):
-	return logic_root.is_on_floor() and not logic_root.can_climb()
+	return logic_root.is_on_floor()
