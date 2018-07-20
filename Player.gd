@@ -47,7 +47,8 @@ func nudge(delta, normal_vec):
 func move(delta, the_move):
 	
 	# always add gravity. it's good and good for you!
-	my_motion.y += gravity
+	if not can_climb():
+		my_motion.y += gravity
 	
 	# reduce the actual horizontal movement by
 	# our current linear velocity * frictional constant
