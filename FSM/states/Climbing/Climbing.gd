@@ -18,7 +18,7 @@ func enter(from_state = null, from_transition = null, args = []):
 func update(delta, args=null):
 	.update(delta, args)
 	var motion = Vector2(0,-9.85 + fatigue)
-	fatigue += .01
+	fatigue += .01 * delta
 
 	logic_root.my_motion.y = clamp(1,-1, logic_root.my_motion.y)
 	logic_root.move(delta,motion)
