@@ -26,3 +26,9 @@ func get_vision_normal():
 
 func get_normalized_motion():
 	return Vector2(0,0)
+	
+func check_ahead():
+	var test_motion = logic_root.my_motion
+	test_motion.y = 0
+	test_motion = test_motion.normalized() * 5
+	return logic_root.test_move(logic_root.transform, test_motion)
