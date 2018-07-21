@@ -31,5 +31,5 @@ func check_ahead():
 	var test_motion = Vector2(1,0)
 	if sprite_is_flipped():
 		test_motion = Vector2(-1,0)
-	test_motion = test_motion.normalized() * 5
+	test_motion *=  5
 	return test_move(transform, test_motion)
