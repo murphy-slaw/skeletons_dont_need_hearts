@@ -28,7 +28,9 @@ func get_normalized_motion():
 	return Vector2(0,0)
 	
 func check_ahead():
-	var test_motion = my_motion
+	var test_motion = (1,0)
+	if sprite_is_flipped():
+	test_motion = (-1,0)
 	test_motion.y = 0
 	test_motion = test_motion.normalized() * 5
 	return test_move(transform, test_motion)
