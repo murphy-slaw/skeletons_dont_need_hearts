@@ -31,7 +31,7 @@ func get_circle_arc_poly(center, radius, angle_from, angle_to):
 
 func _ready():
     var circle_sector = get_circle_arc_poly(Vector2(), sight_radius, FOV/2, -FOV/2)
-    $VisionArea.CollisionPolygon2D.polygon = circle_sector
+    $VisionArea/CollisionPolygon2D.polygon = circle_sector
 
 onready var ground_ray = get_node("ground_ray")
 onready var facing_ray = get_node("facing_ray")
