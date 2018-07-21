@@ -31,5 +31,5 @@ func check_ahead():
 	var test_motion = Vector2(1,0)
 	if get_flip_sprite():
 		test_motion = Vector2(-1,0)
-	test_motion *=  5
+	test_motion *= 2
 	return test_move(transform, test_motion)
