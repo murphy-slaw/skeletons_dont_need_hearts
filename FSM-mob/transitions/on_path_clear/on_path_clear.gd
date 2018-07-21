@@ -13,6 +13,4 @@ func prepare(new_state, args = []):
 	pass
 
 func transition_condition(delta, args = []):
-	var test_motion = logic_root.my_motion
-	test_motion.y = 0
-	return not logic_root.test_move(logic_root.transform, test_motion)
+	return not_ logic_root.check_ahead()
