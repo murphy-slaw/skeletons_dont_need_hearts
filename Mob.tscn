@@ -45,7 +45,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 1, 2, 3, 4, 5, 1 ]
 }
 
-[node name="Mob" type="KinematicBody2D" index="0"]
+[node name="Mob" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -178,8 +178,8 @@ intervalBetweenChecks = -1.0
 [node name="on_left_ground" type="Node" parent="FSM2D/Transitions" index="1" instance=ExtResource( 15 )]
 
 script = ExtResource( 16 )
-path2SourceStates = [ NodePath("") ]
-path2Target_state = null
+path2SourceStates = [ NodePath(""), NodePath("../../States/Idle") ]
+path2Target_state = NodePath("../../States/Falling")
 intervalBetweenChecks = -1.0
 
 [node name="on_collision" type="Node" parent="FSM2D/Transitions" index="2" instance=ExtResource( 17 )]
