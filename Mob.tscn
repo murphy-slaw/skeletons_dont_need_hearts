@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Mob.gd" type="Script" id=1]
-[ext_resource path="res://art/samson.png" type="Texture" id=2]
+[ext_resource path="res://art/skellingtorn.png" type="Texture" id=2]
 [ext_resource path="res://addons/moe.ero-one.fsm/content/fsm.gd" type="Script" id=3]
 [ext_resource path="res://addons/moe.ero-one.fsm/assets/ico2d.png" type="Texture" id=4]
 [ext_resource path="res://FSM/states/Idle/Idle.tscn" type="PackedScene" id=5]
@@ -31,7 +31,7 @@ tracks/0/keys = {
 "values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 10, 11, 12, 13 ]
 }
 
-[node name="Mob" type="KinematicBody2D" index="0"]
+[node name="Mob" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
