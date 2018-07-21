@@ -9,7 +9,7 @@ export var bounce = .99
 export var nudge_factor = 0.15
 
 var FOV = 45
-var sight_radius = 200
+var sight_radius = 150
 
 
 var my_motion = Vector2()
