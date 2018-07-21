@@ -13,6 +13,6 @@ func prepare(new_state, args = []):
 	pass
 
 func transition_condition(delta, args = []):
-	return logic_root.is_on_wall()
+	return logic_root.test_move(Transform2D(),logic_root.my_motion)
 	# Return true/false
 	return false;
