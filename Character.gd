@@ -40,7 +40,7 @@ onready var facing_ray = get_node("facing_ray")
 func set_flip_sprite(active=true):
 	$Sprite.flip_h = active
     $facing_ray.global_rotation_degrees += 180
-    $VisionArea/CollisionPolygon2D.rotation_degrees += 90
+    $VisionArea/CollisionPolygon2D.rotation_degrees += 180
 	if $Sprite.flip_h:
 		$Sprite.offset = Vector2(2,0)
 	else:
