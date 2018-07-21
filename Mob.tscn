@@ -4,8 +4,8 @@
 [ext_resource path="res://art/skellingtorn.png" type="Texture" id=2]
 [ext_resource path="res://addons/moe.ero-one.fsm/content/fsm.gd" type="Script" id=3]
 [ext_resource path="res://addons/moe.ero-one.fsm/assets/ico2d.png" type="Texture" id=4]
-[ext_resource path="res://FSM/states/Idle/Idle.tscn" type="PackedScene" id=5]
-[ext_resource path="res://FSM-mob/states/Idle/Idle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://FSM-mob/states/Patrolling/Patrolling.tscn" type="PackedScene" id=5]
+[ext_resource path="res://FSM-mob/states/Patrolling/Patrolling.gd" type="Script" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -31,7 +31,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 1, 2, 3, 4, 5, 1 ]
 }
 
-[node name="Mob" type="KinematicBody2D" index="0"]
+[node name="Mob" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -90,7 +90,6 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="FSM2D" type="Node2D" parent="." index="6"]
 
-editor/display_folded = true
 script = ExtResource( 3 )
 _sections_unfolded = [ "Create new:" ]
 __meta__ = {
@@ -112,14 +111,16 @@ GraphData = {
 "Idle2_": Vector2( 627, 210 ),
 "Idle2__": Vector2( 627, 210 ),
 "Idle_": Vector2( 582, 644 ),
-"Idle__": Vector2( 582, 644 )
+"Idle__": Vector2( 582, 644 ),
+"Patrolling": Vector2( 353, 209 ),
+"Patrolling_": Vector2( 353, 209 )
 }
 
 [node name="States" type="Node2D" parent="FSM2D" index="0"]
 
-[node name="Idle" parent="FSM2D/States" index="0" instance=ExtResource( 5 )]
+[node name="Patrolling" type="Node" parent="FSM2D/States" index="0" instance=ExtResource( 5 )]
 
-[node name="Idle2" parent="FSM2D/States" index="1" instance=ExtResource( 6 )]
+script = ExtResource( 6 )
 
 [node name="Transitions" type="Node2D" parent="FSM2D" index="1"]
 
