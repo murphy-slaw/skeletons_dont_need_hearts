@@ -192,6 +192,9 @@ intervalBetweenChecks = 0.1
 [node name="on_path_clear" type="Node" parent="FSM2D/Transitions" index="3" instance=ExtResource( 19 )]
 
 script = ExtResource( 20 )
+path2SourceStates = [ NodePath(""), NodePath("../../States/Reversing") ]
+path2Target_state = NodePath("../../States/Patrolling")
+intervalBetweenChecks = -1.0
 
 [node name="VisionArea" type="Area2D" parent="." index="7"]
 
