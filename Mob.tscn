@@ -129,7 +129,7 @@ GraphData = {
 "Idle2__": Vector2( 627, 210 ),
 "Idle_": Vector2( 242, 411 ),
 "Idle__": Vector2( 242, 411 ),
-"Patrolling": Vector2( 958, 473 ),
+"Patrolling": Vector2( 408, 243 ),
 "Patrolling_": Vector2( 958, 473 ),
 "Patrolling__": Vector2( 965, 484 ),
 "Reversing": Vector2( 473, 812 ),
@@ -178,7 +178,7 @@ intervalBetweenChecks = -1.0
 [node name="on_left_ground" type="Node" parent="FSM2D/Transitions" index="1" instance=ExtResource( 15 )]
 
 script = ExtResource( 16 )
-path2SourceStates = [ NodePath(""), NodePath("../../States/Idle") ]
+path2SourceStates = [ NodePath(""), NodePath("../../States/Idle"), NodePath("../../States/Patrolling") ]
 path2Target_state = NodePath("../../States/Falling")
 intervalBetweenChecks = -1.0
 

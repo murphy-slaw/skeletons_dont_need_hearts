@@ -14,7 +14,6 @@ func enter(from_state = null, from_transition = null, args = []):
 
 func update(delta, args=null):
 	.update(delta, args)
-	logic_root.my_motion.x = 0
 	var motion = Vector2()
 	logic_root.move(delta, motion)
 
