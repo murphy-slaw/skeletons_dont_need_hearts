@@ -12,7 +12,7 @@ light_mode = 0
 
 [sub_resource type="DynamicFont" id=2]
 
-size = 36
+size = 18
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 3 )
