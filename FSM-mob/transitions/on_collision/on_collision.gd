@@ -15,5 +15,5 @@ func prepare(new_state, args = []):
 func transition_condition(delta, args = []):
 	var test_motion = logic_root.my_motion
 	test_motion.y = 0
-	test_motion = test_motion.normalized()
+	test_motion = test_motion.normalized() * 5
 	return logic_root.test_move(logic_root.transform, test_motion)
