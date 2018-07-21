@@ -13,6 +13,8 @@ func prepare(new_state, args = []):
 	pass
 
 func transition_condition(delta, args = []):
-	return logic_root.test_move(Transform2D(),logic_root.my_motion)
+	test_motion = logic_root.my_motion
+	test_motion.y = 0
+	return logic_root.test_move(Transform2D(), test_motion)
 	# Return true/false
 	return false;
