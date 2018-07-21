@@ -77,7 +77,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -171,7 +171,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="FSM2D" type="Node2D" parent="." index="7"]
 
-editor/display_folded = true
 script = ExtResource( 3 )
 _sections_unfolded = [ "Create new:" ]
 __meta__ = {
