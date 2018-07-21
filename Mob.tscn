@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Mob.gd" type="Script" id=1]
 [ext_resource path="res://art/skellingtorn.png" type="Texture" id=2]
@@ -10,10 +10,16 @@
 [ext_resource path="res://FSM-mob/states/Idle/Idle.gd" type="Script" id=8]
 [ext_resource path="res://FSM-mob/states/Falling/Falling.tscn" type="PackedScene" id=9]
 [ext_resource path="res://FSM-mob/states/Falling/Falling.gd" type="Script" id=10]
-[ext_resource path="res://FSM-mob/transitions/on_landed/on_landed.tscn" type="PackedScene" id=11]
-[ext_resource path="res://FSM/transitions/on_landed/on_landed.gd" type="Script" id=12]
-[ext_resource path="res://FSM-mob/transitions/on_left_ground/on_left_ground.tscn" type="PackedScene" id=13]
-[ext_resource path="res://FSM/transitions/on_left_ground/on_left_ground.gd" type="Script" id=14]
+[ext_resource path="res://FSM-mob/states/Reversing/Reversing.tscn" type="PackedScene" id=11]
+[ext_resource path="res://FSM-mob/states/Reversing/Reversing.gd" type="Script" id=12]
+[ext_resource path="res://FSM-mob/transitions/on_landed/on_landed.tscn" type="PackedScene" id=13]
+[ext_resource path="res://FSM/transitions/on_landed/on_landed.gd" type="Script" id=14]
+[ext_resource path="res://FSM-mob/transitions/on_left_ground/on_left_ground.tscn" type="PackedScene" id=15]
+[ext_resource path="res://FSM/transitions/on_left_ground/on_left_ground.gd" type="Script" id=16]
+[ext_resource path="res://FSM-mob/transitions/on_collision/on_collision.tscn" type="PackedScene" id=17]
+[ext_resource path="res://FSM-mob/transitions/on_collision/on_collision.gd" type="Script" id=18]
+[ext_resource path="res://FSM-mob/transitions/on_path_clear/on_path_clear.tscn" type="PackedScene" id=19]
+[ext_resource path="res://FSM-mob/transitions/on_path_clear/on_path_clear.gd" type="Script" id=20]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -122,16 +128,23 @@ GraphData = {
 "Idle2_": Vector2( 627, 210 ),
 "Idle2__": Vector2( 627, 210 ),
 "Idle_": Vector2( 242, 411 ),
-"Idle__": Vector2( 171, 488 ),
+"Idle__": Vector2( 242, 411 ),
 "Patrolling": Vector2( 965, 484 ),
 "Patrolling_": Vector2( 965, 484 ),
-"Patrolling__": Vector2( 492, 296 ),
+"Patrolling__": Vector2( 965, 484 ),
+"Reversing": Vector2( 473, 812 ),
+"Reversing_": Vector2( 462, 755 ),
+"Reversing__": Vector2( 462, 755 ),
+"on_collision": Vector2( 943, 832 ),
+"on_collision_": Vector2( 943, 832 ),
+"on_collision__": Vector2( 943, 832 ),
 "on_landed": Vector2( 518, 476 ),
 "on_landed_": Vector2( 518, 476 ),
 "on_landed__": Vector2( 518, 476 ),
 "on_left_ground": Vector2( 191, 47 ),
 "on_left_ground_": Vector2( 191, 47 ),
-"on_left_ground__": Vector2( 191, 47 )
+"on_left_ground__": Vector2( 191, 47 ),
+"on_path_clear": Vector2( 705, 604 )
 }
 
 [node name="States" type="Node2D" parent="FSM2D" index="0"]
@@ -148,20 +161,38 @@ script = ExtResource( 8 )
 
 script = ExtResource( 10 )
 
-[node name="Transitions" type="Node2D" parent="FSM2D" index="1"]
-
-[node name="on_landed" type="Node" parent="FSM2D/Transitions" index="0" instance=ExtResource( 11 )]
+[node name="Reversing" type="Node" parent="FSM2D/States" index="3" instance=ExtResource( 11 )]
 
 script = ExtResource( 12 )
+
+[node name="Transitions" type="Node2D" parent="FSM2D" index="1"]
+
+[node name="on_landed" type="Node" parent="FSM2D/Transitions" index="0" instance=ExtResource( 13 )]
+
+script = ExtResource( 14 )
 path2SourceStates = [ NodePath(""), NodePath("../../States/Falling") ]
 path2Target_state = NodePath("../../States/Patrolling")
 intervalBetweenChecks = -1.0
 
-[node name="on_left_ground" type="Node" parent="FSM2D/Transitions" index="1" instance=ExtResource( 13 )]
+[node name="on_left_ground" type="Node" parent="FSM2D/Transitions" index="1" instance=ExtResource( 15 )]
 
-script = ExtResource( 14 )
+script = ExtResource( 16 )
 path2SourceStates = [ NodePath("../../States/Idle") ]
 path2Target_state = NodePath("../../States/Falling")
+intervalBetweenChecks = -1.0
+
+[node name="on_collision" type="Node" parent="FSM2D/Transitions" index="2" instance=ExtResource( 17 )]
+
+script = ExtResource( 18 )
+path2SourceStates = [ NodePath("../../States/Patrolling") ]
+path2Target_state = NodePath("../../States/Reversing")
+intervalBetweenChecks = -1.0
+
+[node name="on_path_clear" type="Node" parent="FSM2D/Transitions" index="3" instance=ExtResource( 19 )]
+
+script = ExtResource( 20 )
+path2SourceStates = [ NodePath(""), NodePath("../../States/Reversing") ]
+path2Target_state = NodePath("../../States/Patrolling")
 intervalBetweenChecks = -1.0
 
 [node name="VisionArea" type="Area2D" parent="." index="7"]
