@@ -8,8 +8,8 @@ var jump_speed = gravity * jump_power
 export var bounce = .99
 export var nudge_factor = 0.15
 
-var FOV = 90
-var sight_radius = 100
+var FOV = 75
+var sight_radius = 200
 
 
 var my_motion = Vector2()
