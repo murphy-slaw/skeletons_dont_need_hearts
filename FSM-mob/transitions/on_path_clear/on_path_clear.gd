@@ -12,6 +12,7 @@ func prepare(new_state, args = []):
 	#you can optionally implement this to reset transition when related state has been activated
 	pass
 
-func transition_condition(delta, args = []): 
+func transition_condition(delta, args = []):
+	return not logic_root.is_on_wall() 
 	# Return true/false
 	return false;
