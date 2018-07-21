@@ -133,7 +133,7 @@ GraphData = {
 "Patrolling_": Vector2( 965, 484 ),
 "Patrolling__": Vector2( 965, 484 ),
 "Reversing": Vector2( 473, 812 ),
-"Reversing_": Vector2( 462, 755 ),
+"Reversing_": Vector2( 473, 812 ),
 "Reversing__": Vector2( 462, 755 ),
 "on_collision": Vector2( 943, 832 ),
 "on_collision_": Vector2( 943, 832 ),
@@ -144,7 +144,8 @@ GraphData = {
 "on_left_ground": Vector2( 191, 47 ),
 "on_left_ground_": Vector2( 191, 47 ),
 "on_left_ground__": Vector2( 191, 47 ),
-"on_path_clear": Vector2( 705, 604 )
+"on_path_clear": Vector2( 705, 604 ),
+"on_path_clear_": Vector2( 705, 604 )
 }
 
 [node name="States" type="Node2D" parent="FSM2D" index="0"]
@@ -177,7 +178,7 @@ intervalBetweenChecks = -1.0
 [node name="on_left_ground" type="Node" parent="FSM2D/Transitions" index="1" instance=ExtResource( 15 )]
 
 script = ExtResource( 16 )
-path2SourceStates = [ NodePath("../../States/Idle") ]
+path2SourceStates = [ NodePath("../../States/Idle"), NodePath("../../States/Patrolling") ]
 path2Target_state = NodePath("../../States/Falling")
 intervalBetweenChecks = -1.0
 
