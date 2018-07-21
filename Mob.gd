@@ -3,7 +3,7 @@ extends "res://character.gd"
 onready var target = get_parent().get_node("Player")
 
 func _ready():
-	bounce = 0
+	bounce = .9
 	if target == null:
 		target = self
 
