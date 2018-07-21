@@ -45,10 +45,10 @@ tracks/0/keys = {
 "values": [ 0, 1, 1, 2, 3, 4, 5, 1 ]
 }
 
-[node name="Mob" type="KinematicBody2D" index="0"]
+[node name="Mob" type="KinematicBody2D"]
 
 input_pickable = false
-collision_layer = 1
+collision_layer = 2
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
