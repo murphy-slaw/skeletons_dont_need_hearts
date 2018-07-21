@@ -105,7 +105,6 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="FSM2D" type="Node2D" parent="." index="6"]
 
-editor/display_folded = true
 script = ExtResource( 3 )
 _sections_unfolded = [ "Create new:" ]
 __meta__ = {
