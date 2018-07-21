@@ -130,7 +130,7 @@ GraphData = {
 "Idle_": Vector2( 242, 411 ),
 "Idle__": Vector2( 242, 411 ),
 "Patrolling": Vector2( 408, 243 ),
-"Patrolling_": Vector2( 958, 473 ),
+"Patrolling_": Vector2( 408, 243 ),
 "Patrolling__": Vector2( 965, 484 ),
 "Reversing": Vector2( 473, 812 ),
 "Reversing_": Vector2( 473, 812 ),
