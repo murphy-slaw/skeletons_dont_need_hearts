@@ -14,6 +14,7 @@ func enter(from_state = null, from_transition = null, args = []):
 func update(delta, args=null):
 	.update(delta, args)
 	logic_root.flip_sprite = true
+	logic_root.my_motion.x = 0
 	var movement = Vector2(1,0)
 	if logic_root.get_flip_sprite():
 		movement = Vector2(-1,0)
