@@ -19,7 +19,7 @@ var flip_sprite = false setget set_flip_sprite, get_flip_sprite
 func get_flip_sprite():
 	return $Sprite.flip_h
 
-func get_circle_arc_poly(center, radius, angle_from, angle_to)
+func get_circle_arc_poly(center, radius, angle_from, angle_to):
     var nb_points = 32
     var points_arc = PoolVector2Array()
     points_arc.push_back(center)
