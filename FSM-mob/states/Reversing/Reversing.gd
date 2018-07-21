@@ -15,10 +15,10 @@ func update(delta, args=null):
 	.update(delta, args)
 	logic_root.flip_sprite = true
 	logic_root.my_motion.x = 0
-#	var movement = Vector2(1,0)
-#	if logic_root.get_flip_sprite():
-#		movement = Vector2(-1,0)
-#	logic_root.walk(delta, movement)
+	var movement = Vector2(1,0)
+	if logic_root.get_flip_sprite():
+		movement = Vector2(-1,0)
+	logic_root.walk(delta, movement)
 
 #when exiting state
 func exit(to_state=null):
