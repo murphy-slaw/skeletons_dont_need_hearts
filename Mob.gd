@@ -1,4 +1,4 @@
-extends "res://Character.gd"
+extends "res://character.gd"
 
 onready var target = get_parent().get_node("Player")
 
