@@ -9,7 +9,7 @@
 [ext_resource path="res://FSM-mob/states/Idle/Idle.tscn" type="PackedScene" id=7]
 [ext_resource path="res://FSM-mob/states/Idle/Idle.gd" type="Script" id=8]
 [ext_resource path="res://FSM-mob/states/Falling/Falling.tscn" type="PackedScene" id=9]
-[ext_resource path="res://FSM-mob/states/Falling/Falling.gd" type="Script" id=10]
+[ext_resource path="res://FSM/states/Falling/Falling.gd" type="Script" id=10]
 [ext_resource path="res://FSM-mob/transitions/on_landed/on_landed.tscn" type="PackedScene" id=11]
 [ext_resource path="res://FSM-mob/transitions/on_landed/on_landed.gd" type="Script" id=12]
 [ext_resource path="res://FSM-mob/transitions/on_left_ground/on_left_ground.tscn" type="PackedScene" id=13]
@@ -39,7 +39,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 1, 2, 3, 4, 5, 1 ]
 }
 
-[node name="Mob" type="KinematicBody2D"]
+[node name="Mob" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
