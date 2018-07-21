@@ -11,7 +11,7 @@
 [ext_resource path="res://FSM-mob/states/Falling/Falling.tscn" type="PackedScene" id=9]
 [ext_resource path="res://FSM-mob/states/Falling/Falling.gd" type="Script" id=10]
 [ext_resource path="res://FSM-mob/transitions/on_landed/on_landed.tscn" type="PackedScene" id=11]
-[ext_resource path="res://FSM-mob/transitions/on_landed/on_landed.gd" type="Script" id=12]
+[ext_resource path="res://FSM/states/Falling/Falling.gd" type="Script" id=12]
 [ext_resource path="res://FSM-mob/transitions/on_left_ground/on_left_ground.tscn" type="PackedScene" id=13]
 [ext_resource path="res://FSM/transitions/on_left_ground/on_left_ground.gd" type="Script" id=14]
 
@@ -153,9 +153,6 @@ script = ExtResource( 10 )
 [node name="on_landed" type="Node" parent="FSM2D/Transitions" index="0" instance=ExtResource( 11 )]
 
 script = ExtResource( 12 )
-path2SourceStates = [ NodePath(""), NodePath("../../States/Falling") ]
-path2Target_state = NodePath("../../States/Patrolling")
-intervalBetweenChecks = -1.0
 
 [node name="on_left_ground" type="Node" parent="FSM2D/Transitions" index="1" instance=ExtResource( 13 )]
 
