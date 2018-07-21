@@ -22,3 +22,6 @@ func _on_Lifespan_timeout():
 
 func get_vision_normal():
     return ($facing_ray.position * $facing_ray.cast_to).normalized()
+
+func get_normalized_motion():
+	return Vector2()
