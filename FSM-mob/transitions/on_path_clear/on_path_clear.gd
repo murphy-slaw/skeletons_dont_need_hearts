@@ -13,4 +13,4 @@ func prepare(new_state, args = []):
 	pass
 
 func transition_condition(delta, args = []):
-	return not_ logic_root.check_ahead()
+	return not logic_root.check_ahead()
