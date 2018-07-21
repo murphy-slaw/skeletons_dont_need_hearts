@@ -17,18 +17,18 @@ radius = 12.0
 resource_name = "Idle"
 length = 7.0
 loop = true
-step = 0.5
+step = 1.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 0
-tracks/0/loop_wrap = false
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.878485, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.29649, 5.5, 6, 6.5, 7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 10, 11, 12, 13 ]
+"values": [ 0, 1, 1, 2, 3, 4, 5, 1 ]
 }
 
 [node name="Mob" type="KinematicBody2D"]
@@ -49,9 +49,8 @@ nudge_factor = 0.15
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
-hframes = 14
-frame = 10
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+hframes = 7
+_sections_unfolded = [ "Animation" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
