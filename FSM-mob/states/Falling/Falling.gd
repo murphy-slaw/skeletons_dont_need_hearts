@@ -11,8 +11,11 @@ func enter(from_state = null, from_transition = null, args = []):
 	.enter(from_state, from_transition, args)
 
 #when updating state, paramx can be used only if updating fsm manually
+
 func update(delta, args=null):
 	.update(delta, args)
+	var motion = Vector2()
+	motion.x = logic_root.get_normalized_motion()
 
 #when exiting state
 func exit(to_state=null):
