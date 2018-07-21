@@ -82,7 +82,7 @@ collision_mask = 1
 
 enabled = false
 exclude_parent = true
-cast_to = Vector2( 10, 0 )
+cast_to = Vector2( 8, 0 )
 collision_mask = 1
 
 [node name="Lifespan" type="Timer" parent="." index="4"]
