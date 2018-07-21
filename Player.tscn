@@ -230,6 +230,8 @@ GraphData = {
 
 [node name="States" type="Node2D" parent="FSM2D" index="0"]
 
+editor/display_folded = true
+
 [node name="Idle" parent="FSM2D/States" index="0" instance=ExtResource( 5 )]
 
 [node name="Walking" parent="FSM2D/States" index="1" instance=ExtResource( 6 )]
