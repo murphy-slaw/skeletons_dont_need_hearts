@@ -45,7 +45,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 1, 2, 3, 4, 5, 1 ]
 }
 
-[node name="Mob" type="KinematicBody2D" index="0"]
+[node name="Mob" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -187,14 +187,14 @@ intervalBetweenChecks = -1.0
 script = ExtResource( 18 )
 path2SourceStates = [ NodePath("../../States/Patrolling") ]
 path2Target_state = NodePath("../../States/Reversing")
-intervalBetweenChecks = -1.0
+intervalBetweenChecks = 0.5
 
 [node name="on_path_clear" type="Node" parent="FSM2D/Transitions" index="3" instance=ExtResource( 19 )]
 
 script = ExtResource( 20 )
 path2SourceStates = [ NodePath(""), NodePath("../../States/Reversing") ]
 path2Target_state = NodePath("../../States/Patrolling")
-intervalBetweenChecks = -1.0
+intervalBetweenChecks = 0.5
 
 [node name="VisionArea" type="Area2D" parent="." index="7"]
 
