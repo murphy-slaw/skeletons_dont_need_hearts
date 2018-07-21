@@ -15,7 +15,7 @@
 [ext_resource path="res://FSM-mob/transitions/on_landed/on_landed.tscn" type="PackedScene" id=13]
 [ext_resource path="res://FSM/transitions/on_landed/on_landed.gd" type="Script" id=14]
 [ext_resource path="res://FSM-mob/transitions/on_left_ground/on_left_ground.tscn" type="PackedScene" id=15]
-[ext_resource path="res://FSM/transitions/on_left_ground/on_left_ground.gd" type="Script" id=16]
+[ext_resource path="res://FSM-mob/transitions/on_left_ground/on_left_ground.gd" type="Script" id=16]
 [ext_resource path="res://FSM-mob/transitions/on_collision/on_collision.tscn" type="PackedScene" id=17]
 [ext_resource path="res://FSM-mob/transitions/on_collision/on_collision.gd" type="Script" id=18]
 [ext_resource path="res://FSM-mob/transitions/on_path_clear/on_path_clear.tscn" type="PackedScene" id=19]
@@ -130,7 +130,7 @@ GraphData = {
 "Idle_": Vector2( 242, 411 ),
 "Idle__": Vector2( 242, 411 ),
 "Patrolling": Vector2( 958, 473 ),
-"Patrolling_": Vector2( 965, 484 ),
+"Patrolling_": Vector2( 958, 473 ),
 "Patrolling__": Vector2( 965, 484 ),
 "Reversing": Vector2( 473, 812 ),
 "Reversing_": Vector2( 473, 812 ),
@@ -178,8 +178,8 @@ intervalBetweenChecks = -1.0
 [node name="on_left_ground" type="Node" parent="FSM2D/Transitions" index="1" instance=ExtResource( 15 )]
 
 script = ExtResource( 16 )
-path2SourceStates = [ NodePath("../../States/Idle"), NodePath("../../States/Patrolling") ]
-path2Target_state = NodePath("../../States/Falling")
+path2SourceStates = [ NodePath("") ]
+path2Target_state = null
 intervalBetweenChecks = -1.0
 
 [node name="on_collision" type="Node" parent="FSM2D/Transitions" index="2" instance=ExtResource( 17 )]
