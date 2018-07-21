@@ -16,6 +16,7 @@ func _on_MobSpawnTimer_timeout():
 	for i in range(randi() % 10):
 		call_deferred("spawn_mob")
 
+func spawn_mob():
 	var mob = Mob.instance()
 	mob.position = $MobPath/MobSpawnLocation.position
 	call_deferred("add_child",mob)
