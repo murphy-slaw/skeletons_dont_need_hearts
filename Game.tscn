@@ -21,7 +21,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 639, 0 )
 }
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -172,7 +172,7 @@ lookahead = 4.0
 [node name="MobSpawnTimer" type="Timer" parent="." index="9"]
 
 process_mode = 1
-wait_time = 0.25
+wait_time = 1.0
 one_shot = false
 autostart = false
 
