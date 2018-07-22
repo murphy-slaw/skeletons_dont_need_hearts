@@ -88,7 +88,7 @@ Mob = ExtResource( 2 )
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
 
-modulate = Color( 1, 1, 1, 0.196078 )
+self_modulate = Color( 0.733967, 0.668826, 0.914062, 1 )
 show_behind_parent = true
 light_mask = 0
 anchor_left = 0.0
