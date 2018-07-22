@@ -127,7 +127,6 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Progress" type="ProgressBar" parent="UICanvas/MarginContainer/Container" index="0"]
 
-visible = false
 anchor_left = 1.0
 anchor_top = 0.0
 anchor_right = 1.0
