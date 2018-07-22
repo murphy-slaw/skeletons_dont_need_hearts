@@ -15,7 +15,7 @@ use_filter = false
 font_data = SubResource( 1 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Splash" type="CanvasLayer"]
+[node name="Splash" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -23,27 +23,17 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="CenterContainer" type="CenterContainer" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-use_top_left = false
-
-[node name="TextureRect" type="TextureRect" parent="CenterContainer" index="0"]
+[node name="TextureRect" type="TextureRect" parent="." index="0"]
 
 show_behind_parent = true
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 300.0
+margin_bottom = 220.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -55,16 +45,34 @@ expand = true
 stretch_mode = 2
 _sections_unfolded = [ "Margin", "Rect", "Visibility" ]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" index="1"]
+[node name="marg" type="MarginContainer" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+_sections_unfolded = [ "Anchor", "custom_constants" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="marg" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 59.0
-margin_top = 88.0
-margin_right = 261.0
-margin_bottom = 151.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 300.0
+margin_bottom = 220.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -73,14 +81,13 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="ColorRect" type="ColorRect" parent="CenterContainer/VBoxContainer" index="0"]
+[node name="ColorRect" type="ColorRect" parent="marg/VBoxContainer" index="0"]
 
-show_behind_parent = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 202.0
+margin_right = 280.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -90,14 +97,14 @@ size_flags_vertical = 1
 color = Color( 0.992188, 0.924966, 0.924966, 1 )
 _sections_unfolded = [ "Rect", "Visibility" ]
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" index="1"]
+[node name="Label" type="Label" parent="marg/VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 4.0
-margin_right = 202.0
+margin_right = 280.0
 margin_bottom = 63.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
