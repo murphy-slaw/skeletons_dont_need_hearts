@@ -9,4 +9,7 @@ windows:
 	godot project.godot --export "Windows Desktop" artifacts/prototype.exe
 
 itch: 
-	cd artifacts; butler push prototype murph-makes-games/waypoint2:html5	
+	cd artifacts; butler push prototype murph-makes-games/waypoint2:html5
+
+clean:
+	rm -rf artifacts/*
