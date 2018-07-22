@@ -1,4 +1,5 @@
-all: html5 itch
+all: build itch
+build: html5 osx
 osx:
 	godot project.godot --export "Mac OSX" artifacts/prototype.dmg
 html5: 
