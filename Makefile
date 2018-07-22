@@ -12,4 +12,4 @@ itch:
 	cd artifacts; butler push prototype murph-makes-games/waypoint2:html5
 
 clean:
-	rm -rf artifacts/*
+	find artifacts -type f -exec rm {} \;
