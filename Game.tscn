@@ -285,6 +285,7 @@ _sections_unfolded = [ "Anchor", "Margin", "Material", "Percent", "Radial Fill",
 
 [node name="Light2D" type="Light2D" parent="CanvasLayer/MarginContainer" index="1"]
 
+light_mask = 3
 z_as_relative = false
 enabled = true
 editor_only = false
