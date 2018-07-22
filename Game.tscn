@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=2]
-[ext_resource path="res://art/heart-mask.png" type="Texture" id=3]
+[ext_resource path="res://art/heart.png" type="Texture" id=3]
 [ext_resource path="res://tiles/navtiles.tres" type="TileSet" id=4]
 [ext_resource path="res://art/brinstone.png" type="Texture" id=5]
 [ext_resource path="res://art/roughtiles.tres" type="TileSet" id=6]
