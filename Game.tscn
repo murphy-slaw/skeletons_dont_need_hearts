@@ -109,7 +109,7 @@ _sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="TextureRect" type="TextureRect" parent="." index="1"]
 
-self_modulate = Color( 0.656233, 0.769531, 0.53179, 1 )
+self_modulate = Color( 0.438395, 0.535156, 0.332116, 0.756353 )
 show_behind_parent = true
 light_mask = 0
 anchor_left = 0.0
