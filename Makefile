@@ -1,5 +1,5 @@
 all: build itch
-build: html5 osx
+build: html5 osx windows
 osx:
 	godot project.godot --export "Mac OSX" artifacts/prototype.dmg
 html5: 
@@ -10,4 +10,3 @@ windows:
 
 itch: 
 	cd artifacts; butler push prototype murph-makes-games/waypoint2:html5	
-
