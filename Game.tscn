@@ -83,7 +83,15 @@ b = Vector2( 0, 0 )
 script = ExtResource( 1 )
 Mob = ExtResource( 2 )
 
-[node name="TextureRect" type="TextureRect" parent="." index="0"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="." index="1"]
 
 visible = false
 modulate = Color( 1, 1, 1, 0.196078 )
@@ -104,7 +112,7 @@ texture = ExtResource( 3 )
 stretch_mode = 2
 _sections_unfolded = [ "Rect" ]
 
-[node name="MarginContainer" type="MarginContainer" parent="." index="1"]
+[node name="MarginContainer" type="MarginContainer" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -171,18 +179,6 @@ shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Transform", "Visibility" ]
-
-[node name="UICanvas" type="CanvasLayer" parent="." index="2"]
-
-layer = 1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-
-[node name="Node2D" type="Node2D" parent="UICanvas" index="0"]
-
-_sections_unfolded = [ "Transform" ]
 
 [node name="MobPath" type="Path2D" parent="." index="3"]
 
