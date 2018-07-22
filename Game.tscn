@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=2]
@@ -7,15 +7,6 @@
 [ext_resource path="res://art/roughtiles.tres" type="TileSet" id=5]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Mover.tscn" type="PackedScene" id=7]
-
-[sub_resource type="Shader" id=6]
-
-code = ""
-
-[sub_resource type="ShaderMaterial" id=7]
-
-render_priority = 0
-shader = SubResource( 6 )
 
 [sub_resource type="StyleBoxFlat" id=5]
 
@@ -102,7 +93,6 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 [node name="Progress" type="ProgressBar" parent="UICanvas" index="0"]
 
 light_mask = 2
-material = SubResource( 7 )
 anchor_left = 1.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -131,7 +121,6 @@ _sections_unfolded = [ "Material", "Percent", "Radial Fill", "Textures", "Visibi
 
 [node name="Light2D" type="Light2D" parent="UICanvas" index="1"]
 
-show_behind_parent = true
 light_mask = 2
 enabled = true
 editor_only = false
@@ -140,8 +129,8 @@ offset = Vector2( 16, 16 )
 texture_scale = 1.0
 color = Color( 0.0546875, 0.0508342, 0.0508342, 1 )
 energy = 1.0
-mode = 1
-range_height = 0.0
+mode = 0
+range_height = 32.0
 range_z_min = -1024
 range_z_max = 1024
 range_layer_min = 0
@@ -154,6 +143,7 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
+_sections_unfolded = [ "Range", "Transform", "Visibility", "Z Index" ]
 
 [node name="MobPath" type="Path2D" parent="." index="2"]
 
