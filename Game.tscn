@@ -168,7 +168,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
+color = Color( 0.679688, 0.13078, 0.13078, 1 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="Light2D" type="Light2D" parent="UICanvas/MarginContainer/Container" index="2"]
