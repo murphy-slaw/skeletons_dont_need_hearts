@@ -149,6 +149,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 640.0
 margin_bottom = 480.0
+rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -156,8 +157,8 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 1
 texture = ExtResource( 5 )
-stretch_mode = 2
-_sections_unfolded = [ "Material", "Visibility" ]
+stretch_mode = 4
+_sections_unfolded = [ "Rect" ]
 
 [node name="TileMap" type="TileMap" parent="." index="5"]
 
