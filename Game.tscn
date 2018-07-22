@@ -131,10 +131,12 @@ _sections_unfolded = [ "Material", "Percent", "Radial Fill", "Textures", "Visibi
 
 [node name="Light2D" type="Light2D" parent="UICanvas" index="1"]
 
+show_behind_parent = true
+light_mask = 2
 enabled = true
 editor_only = false
 texture = ExtResource( 4 )
-offset = Vector2( 0, 0 )
+offset = Vector2( 16, 16 )
 texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
 energy = 1.0
@@ -152,7 +154,6 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
-_sections_unfolded = [ "Range" ]
 
 [node name="MobPath" type="Path2D" parent="." index="2"]
 
@@ -181,7 +182,6 @@ autostart = false
 
 [node name="TileMap" type="TileMap" parent="." index="4"]
 
-visible = false
 show_behind_parent = true
 position = Vector2( 0, 240 )
 mode = 0
@@ -205,7 +205,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Player" parent="." index="5" instance=ExtResource( 6 )]
 
-visible = false
 show_behind_parent = true
 position = Vector2( 245, 412 )
 _sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Pickable", "Transform", "Visibility", "collision" ]
