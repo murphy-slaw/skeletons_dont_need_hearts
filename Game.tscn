@@ -101,6 +101,7 @@ margin_left = -320.0
 margin_right = -288.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
+rect_rotation = -90.0
 rect_pivot_offset = Vector2( 16, 16 )
 rect_clip_content = false
 mouse_filter = 0
@@ -116,8 +117,8 @@ page = 0.0
 value = 9.0
 exp_edit = false
 rounded = false
-percent_visible = true
-_sections_unfolded = [ "Material", "Percent", "Radial Fill", "Textures", "Visibility" ]
+percent_visible = false
+_sections_unfolded = [ "Material", "Radial Fill", "Rect", "Textures", "Visibility" ]
 
 [node name="Light2D" type="Light2D" parent="UICanvas" index="1"]
 
@@ -127,9 +128,9 @@ editor_only = false
 texture = ExtResource( 4 )
 offset = Vector2( 16, 16 )
 texture_scale = 1.0
-color = Color( 0.0546875, 0.0508342, 0.0508342, 1 )
+color = Color( 1, 1, 1, 1 )
 energy = 1.0
-mode = 0
+mode = 3
 range_height = 32.0
 range_z_min = -1024
 range_z_max = 1024
