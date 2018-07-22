@@ -5,8 +5,8 @@
 [ext_resource path="res://art/brinstone.png" type="Texture" id=3]
 [ext_resource path="res://art/roughtiles.tres" type="TileSet" id=4]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Mover.tscn" type="PackedScene" id=6]
-[ext_resource path="res://art/heart-mask.png" type="Texture" id=7]
+[ext_resource path="res://art/heart-mask.png" type="Texture" id=6]
+[ext_resource path="res://Mover.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Curve2D" id=3]
 
@@ -14,12 +14,6 @@ bake_interval = 5.0
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 639, 0 )
 }
-
-[sub_resource type="SegmentShape2D" id=4]
-
-custom_solver_bias = 0.0
-a = Vector2( 0, -1000 )
-b = Vector2( 0, 0 )
 
 [sub_resource type="StyleBoxFlat" id=5]
 
@@ -77,6 +71,12 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 _sections_unfolded = [ "Corner Radius" ]
+
+[sub_resource type="SegmentShape2D" id=4]
+
+custom_solver_bias = 0.0
+a = Vector2( 0, -1000 )
+b = Vector2( 0, 0 )
 
 [node name="Game" type="Node2D" index="0"]
 
@@ -183,55 +183,7 @@ show_behind_parent = true
 position = Vector2( 245, 412 )
 _sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Pickable", "Transform", "Visibility", "collision" ]
 
-[node name="ScreenLeft" type="StaticBody2D" parent="." index="6"]
-
-editor/display_folded = true
-position = Vector2( 0, 500 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.5
-_sections_unfolded = [ "Transform" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenLeft" index="0"]
-
-shape = SubResource( 4 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="ScreenRight" type="StaticBody2D" parent="." index="7"]
-
-editor/display_folded = true
-position = Vector2( 640, 500 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.5
-_sections_unfolded = [ "Collision", "Transform" ]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="ScreenRight" index="0"]
-
-shape = SubResource( 4 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Mover" parent="." index="8" instance=ExtResource( 6 )]
-
-position = Vector2( 437, 409 )
-motion = Vector2( 0, 16 )
-cycle = 16.0
-
-[node name="Mover2" parent="." index="9" instance=ExtResource( 6 )]
-
-position = Vector2( 316, 273 )
-motion = Vector2( 16, 0 )
-cycle = 8.0
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="10"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="6"]
 
 layer = 0
 offset = Vector2( 0, 0 )
@@ -289,7 +241,7 @@ light_mask = 3
 z_as_relative = false
 enabled = true
 editor_only = false
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 offset = Vector2( 24, 16 )
 texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
@@ -309,6 +261,54 @@ shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Range", "Transform", "Visibility", "Z Index" ]
+
+[node name="ScreenLeft" type="StaticBody2D" parent="." index="7"]
+
+editor/display_folded = true
+position = Vector2( 0, 500 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.5
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenLeft" index="0"]
+
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ScreenRight" type="StaticBody2D" parent="." index="8"]
+
+editor/display_folded = true
+position = Vector2( 640, 500 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.5
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ScreenRight" index="0"]
+
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Mover" parent="." index="9" instance=ExtResource( 7 )]
+
+position = Vector2( 437, 409 )
+motion = Vector2( 0, 16 )
+cycle = 16.0
+
+[node name="Mover2" parent="." index="10" instance=ExtResource( 7 )]
+
+position = Vector2( 316, 273 )
+motion = Vector2( 16, 0 )
+cycle = 8.0
 
 [connection signal="timeout" from="MobSpawnTimer" to="." method="_on_MobSpawnTimer_timeout"]
 
