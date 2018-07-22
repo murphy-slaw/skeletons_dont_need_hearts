@@ -91,32 +91,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Light2D" type="Light2D" parent="UICanvas" index="0"]
-
-enabled = true
-editor_only = false
-texture = ExtResource( 4 )
-offset = Vector2( 0, 0 )
-texture_scale = 1.0
-color = Color( 1, 1, 1, 1 )
-energy = 100.0
-mode = 3
-range_height = 0.0
-range_z_min = -1024
-range_z_max = 1024
-range_layer_min = 0
-range_layer_max = 0
-range_item_cull_mask = 1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 0 )
-shadow_buffer_size = 2048
-shadow_gradient_length = 0.0
-shadow_filter = 0
-shadow_filter_smooth = 0.0
-shadow_item_cull_mask = 1
-_sections_unfolded = [ "Shadow", "Transform" ]
-
-[node name="Progress" type="ProgressBar" parent="UICanvas" index="1"]
+[node name="Progress" type="ProgressBar" parent="UICanvas" index="0"]
 
 anchor_left = 1.0
 anchor_top = 0.0
@@ -143,6 +118,31 @@ exp_edit = false
 rounded = false
 percent_visible = false
 _sections_unfolded = [ "Percent", "Radial Fill", "Rect", "Textures", "Theme", "custom_styles" ]
+
+[node name="Light2D" type="Light2D" parent="UICanvas" index="1"]
+
+enabled = true
+editor_only = false
+texture = ExtResource( 4 )
+offset = Vector2( 0, 0 )
+texture_scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 100.0
+mode = 3
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+_sections_unfolded = [ "Shadow", "Transform" ]
 
 [node name="Navigation2D" type="Navigation2D" parent="." index="2"]
 
