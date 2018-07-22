@@ -3,7 +3,7 @@ build: html5 osx windows
 osx:
 	godot project.godot --export "Mac OSX" artifacts/prototype.dmg
 html5: 
-	mkdir artifacts/prototype
+	mkdir -p artifacts/prototype
 	godot project.godot --export HTML5 artifacts/prototype/index.html
 windows:
 	godot project.godot --export "Windows Desktop" artifacts/prototype.exe
