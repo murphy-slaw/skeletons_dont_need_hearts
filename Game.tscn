@@ -99,33 +99,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Light2D" type="Light2D" parent="UICanvas" index="0"]
-
-show_behind_parent = true
-light_mask = 2
-enabled = true
-editor_only = false
-texture = ExtResource( 4 )
-offset = Vector2( 16, 16 )
-texture_scale = 1.0
-color = Color( 1, 1, 1, 1 )
-energy = 1.0
-mode = 3
-range_height = 0.0
-range_z_min = -1024
-range_z_max = 1024
-range_layer_min = 0
-range_layer_max = 0
-range_item_cull_mask = 2
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 0 )
-shadow_buffer_size = 2048
-shadow_gradient_length = 0.0
-shadow_filter = 0
-shadow_filter_smooth = 0.0
-shadow_item_cull_mask = 1
-
-[node name="Progress" type="ProgressBar" parent="UICanvas" index="1"]
+[node name="Progress" type="ProgressBar" parent="UICanvas" index="0"]
 
 light_mask = 2
 material = SubResource( 7 )
@@ -154,6 +128,32 @@ exp_edit = false
 rounded = false
 percent_visible = true
 _sections_unfolded = [ "Material", "Percent", "Radial Fill", "Textures", "Visibility" ]
+
+[node name="Light2D" type="Light2D" parent="UICanvas" index="1"]
+
+show_behind_parent = true
+light_mask = 2
+enabled = true
+editor_only = false
+texture = ExtResource( 4 )
+offset = Vector2( 16, 16 )
+texture_scale = 1.0
+color = Color( 0.0546875, 0.0508342, 0.0508342, 1 )
+energy = 1.0
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 2
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
 
 [node name="MobPath" type="Path2D" parent="." index="2"]
 
