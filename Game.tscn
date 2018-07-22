@@ -1,13 +1,70 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=2]
-[ext_resource path="res://art/heart-maskt.png" type="Texture" id=3]
+[ext_resource path="res://art/heart-mask.png" type="Texture" id=3]
 [ext_resource path="res://tiles/navtiles.tres" type="TileSet" id=4]
 [ext_resource path="res://art/brinstone.png" type="Texture" id=5]
 [ext_resource path="res://art/roughtiles.tres" type="TileSet" id=6]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Mover.tscn" type="PackedScene" id=8]
+
+[sub_resource type="StyleBoxFlat" id=3]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.886719, 0.0504637, 0.697255, 1 )
+draw_center = false
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.8, 0.8, 0.8, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=4]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.945312, 0.0819783, 0.0819783, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.09375, 0.0193089, 0.0193089, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = false
+anti_aliasing_size = 1
+_sections_unfolded = [ "Anti Aliasing", "Border", "Corner Radius" ]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -22,7 +79,7 @@ custom_solver_bias = 0.0
 a = Vector2( 0, -1000 )
 b = Vector2( 0, 0 )
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 Mob = ExtResource( 2 )
@@ -73,6 +130,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Light2D" type="Light2D" parent="UICanvas/MarginContainer/Container" index="0"]
 
+visible = false
 position = Vector2( 280, 32 )
 enabled = true
 editor_only = false
@@ -106,20 +164,21 @@ anchor_bottom = 0.0
 margin_left = -32.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
-rect_rotation = 270.0
 rect_pivot_offset = Vector2( 16, 16 )
 rect_clip_content = true
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
 min_value = 0.0
 max_value = 10.0
 step = 1.0
 page = 0.0
 value = 3.0
 exp_edit = false
-rounded = true
+rounded = false
 percent_visible = false
 _sections_unfolded = [ "Percent", "Radial Fill", "Rect", "Textures", "Theme", "custom_styles" ]
 
