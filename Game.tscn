@@ -83,34 +83,7 @@ texture = ExtResource( 3 )
 stretch_mode = 2
 _sections_unfolded = [ "Rect" ]
 
-[node name="Light2D" type="Light2D" parent="." index="1"]
-
-light_mask = 3
-position = Vector2( 186, 161 )
-enabled = true
-editor_only = false
-texture = ExtResource( 4 )
-offset = Vector2( 32, 32 )
-texture_scale = 1.0
-color = Color( 1, 1, 1, 1 )
-energy = 1.0
-mode = 3
-range_height = 0.0
-range_z_min = -1024
-range_z_max = 1024
-range_layer_min = 0
-range_layer_max = 0
-range_item_cull_mask = 2
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 0 )
-shadow_buffer_size = 2048
-shadow_gradient_length = 0.0
-shadow_filter = 0
-shadow_filter_smooth = 0.0
-shadow_item_cull_mask = 1
-_sections_unfolded = [ "Range", "Transform", "Visibility", "Z Index" ]
-
-[node name="UICanvas" type="CanvasLayer" parent="." index="2"]
+[node name="UICanvas" type="CanvasLayer" parent="." index="1"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -148,15 +121,42 @@ rounded = false
 percent_visible = false
 _sections_unfolded = [ "Material", "Radial Fill", "Rect", "Textures", "Visibility" ]
 
-[node name="Sprite" type="Sprite" parent="UICanvas" index="1"]
+[node name="Light2D" type="Light2D" parent="UICanvas" index="1"]
 
 light_mask = 3
-scale = Vector2( 4, 4 )
+scale = Vector2( 2, 2 )
+enabled = true
+editor_only = false
+texture = ExtResource( 4 )
+offset = Vector2( 32, 32 )
+texture_scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 2
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="UICanvas" index="2"]
+
+light_mask = 3
+scale = Vector2( 16, 16 )
 texture = ExtResource( 5 )
 centered = false
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
-[node name="MobPath" type="Path2D" parent="." index="3"]
+[node name="MobPath" type="Path2D" parent="." index="2"]
 
 editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
@@ -174,14 +174,14 @@ cubic_interp = true
 loop = true
 lookahead = 4.0
 
-[node name="MobSpawnTimer" type="Timer" parent="." index="4"]
+[node name="MobSpawnTimer" type="Timer" parent="." index="3"]
 
 process_mode = 1
 wait_time = 3.0
 one_shot = false
 autostart = false
 
-[node name="TileMap" type="TileMap" parent="." index="5"]
+[node name="TileMap" type="TileMap" parent="." index="4"]
 
 show_behind_parent = true
 position = Vector2( 0, 240 )
@@ -204,13 +204,13 @@ format = 1
 tile_data = PoolIntArray( -196608, 1, 0, -196607, 1, 0, -196606, 1, 0, -196605, 1, 0, -196604, 1, 0, -196603, 1, 0, -196602, 1, 0, -196601, 1, 0, -196600, 1, 0, -196599, 1, 0, -196598, 1, 0, -196597, 1, 0, -196596, 1, 0, -196595, 2, 0, -131072, 14, 0, -131071, 14, 0, -131070, 14, 0, -131069, 14, 0, -131068, 14, 0, -131067, 14, 0, -131066, 14, 0, -131065, 14, 0, -131064, 14, 0, -131063, 14, 0, -131062, 14, 0, -131061, 14, 0, -131060, 14, 0, -131059, 8, 0, 131099, 0, 0, 131100, 1, 0, 131101, 1, 0, 131102, 1, 0, 131103, 1, 0, 131104, 1, 0, 131105, 1, 0, 131106, 1, 0, 131107, 1, 0, 131108, 1, 0, 131109, 1, 0, 131110, 1, 0, 131111, 1, 0, 196622, 0, 0, 196623, 2, 0, 196635, 14, 0, 196636, 14, 0, 196637, 14, 0, 196638, 14, 0, 196639, 14, 0, 196640, 14, 0, 196641, 14, 0, 196642, 14, 0, 196643, 14, 0, 196644, 14, 0, 196645, 14, 0, 196646, 14, 0, 196647, 14, 0, 393227, 0, 0, 393228, 1, 0, 393229, 2, 0, 458773, 3, 0, 458774, 4, 0, 458775, 5, 0, 524308, 12, 0, 524309, 9, 0, 524310, 10, 0, 524311, 11, 0, 589832, 39, 0, 589833, 0, 0, 589834, 2, 0, 589844, 24, 0, 589845, 21, 0, 589846, 22, 0, 589847, 23, 0, 589860, 0, 0, 589861, 1, 0, 589862, 1, 0, 589863, 1, 0, 655364, 26, 0, 655365, 31, 0, 655366, 31, 0, 655367, 0, 0, 655368, 1, 0, 655369, 1, 0, 655370, 1, 0, 655371, 2, 0, 655372, 12, 0, 655380, 24, 0, 655396, 6, 0, 655397, 7, 0, 655398, 7, 0, 655399, 7, 0, 720896, 31, 0, 720897, 31, 0, 720898, 31, 0, 720899, 31, 0, 720900, 34, 0, 720903, 6, 0, 720904, 7, 0, 720905, 7, 0, 720906, 7, 0, 720907, 8, 0, 720908, 24, 0, 720914, 26, 0, 720915, 26, 0, 720916, 24, 0, 720930, 0, 0, 720931, 1, 0, 720932, 14, 0, 720933, 7, 0, 720934, 7, 0, 720935, 7, 0, 786439, 6, 0, 786440, 7, 0, 786441, 7, 0, 786442, 7, 0, 786443, 8, 0, 786444, 24, 0, 786448, 26, 0, 786449, 26, 0, 786450, 26, 0, 786451, 26, 0, 786452, 24, 0, 786466, 13, 0, 786467, 7, 0, 786468, 7, 0, 786469, 14, 0, 786470, 14, 0, 786471, 14, 0, 851968, 1, 0, 851969, 1, 0, 851970, 1, 0, 851971, 1, 0, 851972, 1, 0, 851973, 1, 0, 851974, 1, 0, 851975, 1, 0, 851976, 1, 0, 851977, 1, 0, 851978, 1, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 1, 0, 851992, 1, 0, 851993, 1, 0, 851994, 1, 0, 851995, 1, 0, 851996, 1, 0, 851997, 1, 0, 851998, 1, 0, 851999, 1, 0, 852000, 1, 0, 852001, 1, 0, 852002, 1, 0, 852003, 1, 0, 852004, 1, 0, 852005, 1, 0, 852006, 1, 0, 852007, 1, 0, 917504, 7, 0, 917505, 7, 0, 917506, 7, 0, 917507, 7, 0, 917508, 7, 0, 917509, 7, 0, 917510, 7, 0, 917511, 7, 0, 917512, 7, 0, 917513, 7, 0, 917514, 7, 0, 917515, 7, 0, 917516, 7, 0, 917517, 7, 0, 917518, 7, 0, 917519, 7, 0, 917520, 7, 0, 917521, 7, 0, 917522, 7, 0, 917523, 7, 0, 917524, 7, 0, 917525, 7, 0, 917526, 7, 0, 917527, 7, 0, 917528, 7, 0, 917529, 7, 0, 917530, 7, 0, 917531, 7, 0, 917532, 7, 0, 917533, 7, 0, 917534, 7, 0, 917535, 7, 0, 917536, 7, 0, 917537, 7, 0, 917538, 7, 0, 917539, 7, 0, 917540, 7, 0, 917541, 7, 0, 917542, 7, 0, 917543, 7, 0 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Player" parent="." index="6" instance=ExtResource( 7 )]
+[node name="Player" parent="." index="5" instance=ExtResource( 7 )]
 
 show_behind_parent = true
 position = Vector2( 245, 412 )
 _sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Pickable", "Transform", "Visibility", "collision" ]
 
-[node name="ScreenLeft" type="StaticBody2D" parent="." index="7"]
+[node name="ScreenLeft" type="StaticBody2D" parent="." index="6"]
 
 editor/display_folded = true
 position = Vector2( 0, 500 )
@@ -228,7 +228,7 @@ _sections_unfolded = [ "Transform" ]
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ScreenRight" type="StaticBody2D" parent="." index="8"]
+[node name="ScreenRight" type="StaticBody2D" parent="." index="7"]
 
 editor/display_folded = true
 position = Vector2( 640, 500 )
@@ -246,13 +246,13 @@ _sections_unfolded = [ "Collision", "Transform" ]
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Mover" parent="." index="9" instance=ExtResource( 8 )]
+[node name="Mover" parent="." index="8" instance=ExtResource( 8 )]
 
 position = Vector2( 437, 409 )
 motion = Vector2( 0, 16 )
 cycle = 16.0
 
-[node name="Mover2" parent="." index="10" instance=ExtResource( 8 )]
+[node name="Mover2" parent="." index="9" instance=ExtResource( 8 )]
 
 position = Vector2( 316, 273 )
 motion = Vector2( 16, 0 )
