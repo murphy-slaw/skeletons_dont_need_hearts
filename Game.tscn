@@ -117,7 +117,7 @@ fill_mode = 3
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
-_sections_unfolded = [ "Radial Fill", "Rect", "Textures" ]
+_sections_unfolded = [ "Mouse", "Radial Fill", "Rect", "Textures" ]
 
 [node name="Navigation2D" type="Navigation2D" parent="." index="1"]
 
