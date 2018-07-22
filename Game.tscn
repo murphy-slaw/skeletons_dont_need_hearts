@@ -116,8 +116,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 2.0
-margin_right = 642.0
+margin_right = 640.0
 margin_bottom = 480.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -127,7 +126,7 @@ size_flags_horizontal = 2
 size_flags_vertical = 1
 texture = ExtResource( 3 )
 stretch_mode = 2
-_sections_unfolded = [ "Rect", "Visibility" ]
+_sections_unfolded = [ "Rect" ]
 
 [node name="MobPath" type="Path2D" parent="." index="2"]
 
