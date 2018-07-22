@@ -108,6 +108,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Progress" type="ProgressBar" parent="UICanvas/MarginContainer/Container" index="0"]
 
+visible = false
 anchor_left = 1.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -152,7 +153,6 @@ color = Color( 1, 0, 0, 1 )
 
 [node name="Light2D" type="Light2D" parent="UICanvas/MarginContainer/Container" index="2"]
 
-visible = false
 enabled = true
 editor_only = false
 texture = ExtResource( 3 )
