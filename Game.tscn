@@ -9,14 +9,14 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Mover.tscn" type="PackedScene" id=8]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=5]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-bg_color = Color( 0.886719, 0.0504637, 0.697255, 1 )
-draw_center = false
+bg_color = Color( 1, 0, 0, 1 )
+draw_center = true
 border_width_left = 0
 border_width_top = 0
 border_width_right = 0
@@ -148,7 +148,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
-custom_styles/fg = SubResource( 3 )
+custom_styles/fg = SubResource( 5 )
 custom_styles/bg = SubResource( 4 )
 min_value = 0.0
 max_value = 10.0
