@@ -9,6 +9,6 @@ windows:
 	godot project.godot --export "Windows Desktop" artifacts/prototype.exe
 
 itch: 
-	cd artifacts; butler push prototype murphy-slaw/SDNH:html5
+	cd artifacts; butler push prototype murphy-slaw/skeletons-dont-need-hearts-or-do-they:html5
 clean:
 	find artifacts -type f -exec rm {} \;
