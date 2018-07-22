@@ -88,6 +88,7 @@ Mob = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
 
+visible = false
 show_behind_parent = true
 light_mask = 0
 anchor_left = 0.0
@@ -108,7 +109,7 @@ _sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="TextureRect" type="TextureRect" parent="." index="1"]
 
-self_modulate = Color( 0.733967, 0.668826, 0.914062, 1 )
+self_modulate = Color( 0.656233, 0.769531, 0.53179, 1 )
 show_behind_parent = true
 light_mask = 0
 anchor_left = 0.0
