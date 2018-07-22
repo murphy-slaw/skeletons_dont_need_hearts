@@ -99,37 +99,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Progress" type="ProgressBar" parent="UICanvas" index="0"]
-
-light_mask = 2
-material = SubResource( 7 )
-anchor_left = 1.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 0.0
-margin_left = -320.0
-margin_right = -288.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 32, 32 )
-rect_pivot_offset = Vector2( 16, 16 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
-custom_styles/fg = SubResource( 5 )
-custom_styles/bg = SubResource( 4 )
-min_value = 0.0
-max_value = 10.0
-step = 1.0
-page = 0.0
-value = 3.0
-exp_edit = false
-rounded = false
-percent_visible = false
-_sections_unfolded = [ "Material", "Percent", "Radial Fill", "Textures", "Visibility" ]
-
-[node name="Light2D" type="Light2D" parent="UICanvas" index="1"]
+[node name="Light2D" type="Light2D" parent="UICanvas" index="0"]
 
 show_behind_parent = true
 light_mask = 2
@@ -154,6 +124,36 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
+
+[node name="Progress" type="ProgressBar" parent="UICanvas" index="1"]
+
+light_mask = 2
+material = SubResource( 7 )
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = -320.0
+margin_right = -288.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 16, 16 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+custom_styles/fg = SubResource( 5 )
+custom_styles/bg = SubResource( 4 )
+min_value = 0.0
+max_value = 10.0
+step = 1.0
+page = 0.0
+value = 9.0
+exp_edit = false
+rounded = false
+percent_visible = false
+_sections_unfolded = [ "Material", "Percent", "Radial Fill", "Textures", "Visibility" ]
 
 [node name="MobPath" type="Path2D" parent="." index="2"]
 
