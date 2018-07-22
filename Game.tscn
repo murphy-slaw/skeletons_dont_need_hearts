@@ -109,7 +109,7 @@ _sections_unfolded = [ "Rect" ]
 [node name="Light2D" type="Light2D" parent="UICanvas/MarginContainer/Container" index="0"]
 
 visible = false
-position = Vector2( 280, 32 )
+position = Vector2( 280, 0 )
 enabled = true
 editor_only = false
 texture = ExtResource( 3 )
