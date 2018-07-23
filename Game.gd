@@ -37,6 +37,8 @@ func get_spawn_point():
 	
 
 func spawn_mob():
+	if mob_count >= max_mobs:
+		return
 	$MobPath/MobSpawnLocation.set_offset(randi())
 	var mob = Mob.instance()
 	
