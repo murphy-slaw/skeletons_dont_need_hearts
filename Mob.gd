@@ -42,7 +42,7 @@ func is_near_edge():
 	var test_motion = Vector2(-16,3)
 	if get_flip_sprite():
 		test_motion = Vector2(16,3)
-	return test_move(transform, test_motion)
+	return not test_move(transform, test_motion)
 	
 #	return edge_ray.is_colliding()
 	
