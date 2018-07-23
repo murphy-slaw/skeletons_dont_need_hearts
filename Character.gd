@@ -1,11 +1,11 @@
 extends KinematicBody2D
 
 export var walk_accel = 7
-export var friction = 0.01
+export var friction = 0.03
 export var gravity = 9.8
 export var jump_power = -13
 var jump_speed = gravity * jump_power
-export var bounce = .7
+export var bounce = .99
 export var nudge_factor = 0.15
 
 var FOV = 45
@@ -61,13 +61,11 @@ func move(delta, the_move):
     # always add gravity. it's good and good for you!
     my_motion.y += gravity
 
-
-
     # reduce the actual horizontal movement by
     # our current linear velocity * frictional constant
     if is_on_floor():
-      the_move.x -= my_motion.x * friction
-		
+        the_move.x -= my_motion.x * friction
+
     # add the requested motion to our vector
     my_motion += the_move
 
@@ -83,7 +81,6 @@ func move(delta, the_move):
     # object. Then we move and slide with our linear
     # velocity plus the floor velocity.
     var floor_vec = get_floor_velocity()
-	
     my_motion = move_and_slide(my_motion + floor_vec, Vector2(0,-1),1,1,0.872665)
 
     # And now we REMOVE the floor velocity from our remaining
