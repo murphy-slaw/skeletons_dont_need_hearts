@@ -13,7 +13,7 @@ walk_accel = 7
 friction = 0.03
 gravity = 9.8
 jump_power = -13
-bounce = 0.5
+bounce = 0
 nudge_factor = 0.15
 
 [node name="VisionArea" type="Area2D" parent="." index="0"]
