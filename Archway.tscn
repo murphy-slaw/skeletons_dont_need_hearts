@@ -13,6 +13,7 @@ texture = ExtResource( 1 )
 [node name="SpawnPoint" type="Position2D" parent="." index="1"]
 
 position = Vector2( 0, 4 )
-_sections_unfolded = [ "Transform" ]
+z_index = -1
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 
