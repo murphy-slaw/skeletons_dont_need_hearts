@@ -5,8 +5,8 @@ signal die
 onready var target = get_parent().get_node("Player")
 
 func _ready():
-	bounce = .9
-	walk_accel = 7
+
+	walk_accel = 3
 	if target == null:
 		target = self
 
