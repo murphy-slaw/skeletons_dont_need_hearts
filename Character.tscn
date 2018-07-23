@@ -10,10 +10,10 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 walk_accel = 7
-friction = 0.03
+friction = 0.5
 gravity = 9.8
 jump_power = -13
-bounce = 0.99
+bounce = 0
 nudge_factor = 0.15
 
 [node name="VisionArea" type="Area2D" parent="." index="0"]
