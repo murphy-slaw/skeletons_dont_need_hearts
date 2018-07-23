@@ -39,7 +39,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 1, 2, 3, 4, 5, 1 ]
 }
 
-[node name="Mob" type="KinematicBody2D"]
+[node name="Mob" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -50,7 +50,7 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 walk_accel = 7
 friction = 0.01
 gravity = 9.8
-jump_power = -13
+jump_power = -30
 bounce = 0
 nudge_factor = 0.15
 
