@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export var walk_accel = 7
-export var friction = 0.03
+export var friction = 0.02
 export var gravity = 9.8
 export var jump_power = -13
 var jump_speed = gravity * jump_power
@@ -57,7 +57,6 @@ func can_climb():
     return false
 
 func move(delta, the_move):
-    my_motion -= floor_vec
 
     # always add gravity. it's good and good for you!
     my_motion.y += gravity
