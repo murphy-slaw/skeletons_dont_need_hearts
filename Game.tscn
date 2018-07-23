@@ -131,7 +131,6 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="MobPath" type="Path2D" parent="." index="2"]
 
-editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 position = Vector2( 1, 0 )
 curve = SubResource( 1 )

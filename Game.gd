@@ -26,11 +26,11 @@ func get_spawn_point():
 	if spawners.size() == 0:
 		spawners = used_spawners.duplicate()
 		used_spawners = []
-	i = randi() % spawners.size()
+	var i = randi() % spawners.size()
 	spawner = spawners[i]
 	spawners.remove(i)
 	used_spawners.append(spawner)
-	return spawner/SpawnPoint
+	return get_local(spawner/SpawnPoint.position)
 	
 
 	
@@ -38,4 +38,5 @@ func spawn_mob():
 	$MobPath/MobSpawnLocation.set_offset(randi())
 	var mob = Mob.instance()
 	call_deferred("add_child",mob)
-	mob.position = $MobPath/MobSpawnLocation.position
+	mob.position = get_spawn_point()
+#	mob.position = $MobPath/MobSpawnLocation.position
