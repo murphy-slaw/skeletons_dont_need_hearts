@@ -36,11 +36,16 @@ func get_spawn_point():
 	return spawner.to_global(spawn_point)
 	
 
-	
 func spawn_mob():
 	$MobPath/MobSpawnLocation.set_offset(randi())
 	var mob = Mob.instance()
+	
+	connect("die",mob,"_on_mob_died")
+	
 	call_deferred("add_child",mob)
 	mob.position = get_spawn_point()
 	mob_count += 1
 #	mob.position = $MobPath/MobSpawnLocation.position
+
+func on_mob_died(mob):
+	mob_count -=1
