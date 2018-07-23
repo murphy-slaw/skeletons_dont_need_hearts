@@ -83,10 +83,10 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="edge_ray" type="RayCast2D" parent="." index="4"]
 
-position = Vector2( 16, 0 )
+position = Vector2( 16, 13 )
 enabled = true
 exclude_parent = true
-cast_to = Vector2( 0, 12 )
+cast_to = Vector2( 0, 4 )
 collision_mask = 1
 _sections_unfolded = [ "Transform", "Z Index" ]
 
