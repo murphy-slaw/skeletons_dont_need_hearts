@@ -27,10 +27,10 @@ func get_spawn_point():
 		spawners = used_spawners.duplicate()
 		used_spawners = []
 	var i = randi() % spawners.size()
-	spawner = spawners[i]
+	var spawner = spawners[i]
 	spawners.remove(i)
 	used_spawners.append(spawner)
-	return get_local(spawner/SpawnPoint.position)
+	return get_local(spawner.SpawnPoint.position)
 	
 
 	
