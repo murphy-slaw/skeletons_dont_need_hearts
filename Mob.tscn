@@ -15,11 +15,10 @@
 [ext_resource path="res://FSM-mob/transitions/on_path_clear/on_path_clear.tscn" type="PackedScene" id=13]
 [ext_resource path="res://FSM-mob/transitions/on_near_edge/on_near_edge.tscn" type="PackedScene" id=14]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-radius = 8.80341
-height = 6.69801
+extents = Vector2( 8, 12 )
 
 [sub_resource type="Animation" id=2]
 
@@ -64,7 +63,7 @@ _sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="ground_ray" type="RayCast2D" parent="." index="2"]
 
