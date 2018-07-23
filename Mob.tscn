@@ -51,7 +51,7 @@ walk_accel = 7
 friction = 0.03
 gravity = 9.8
 jump_power = -13
-bounce = 0.5
+bounce = 0
 nudge_factor = 0.15
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
@@ -63,6 +63,7 @@ _sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+position = Vector2( 0, 1 )
 shape = SubResource( 3 )
 
 [node name="ground_ray" type="RayCast2D" parent="." index="2"]
