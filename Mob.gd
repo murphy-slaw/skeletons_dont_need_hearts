@@ -6,7 +6,7 @@ onready var target = get_parent().get_node("Player")
 
 func _ready():
 	bounce = .9
-	walk_accel = 3
+	walk_accel = 7
 	if target == null:
 		target = self
 
