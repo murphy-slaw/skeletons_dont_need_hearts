@@ -87,7 +87,7 @@ func move(delta, the_move):
     # movement vector, because otherwise we'll gradually
     # accelerate instead of just keeping pace with the thing
     # we're standing on!
-    my_motion -= floor_vec
+#    my_motion -= floor_vec
 
 func walk(delta, normal_vec):
     var walk_vec = Vector2(walk_accel,0)
