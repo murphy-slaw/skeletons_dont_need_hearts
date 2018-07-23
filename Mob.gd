@@ -38,10 +38,10 @@ func check_ahead():
 	test_motion *= 5
 	return test_move(transform, test_motion)
 	
-func check_for_edge():
-	var test_motion = Vector2(16,3)
+func is_near_edge():
+	var test_motion = Vector2(-16,3)
 	if get_flip_sprite():
-		test_motion = Vector2(-16,3)
+		test_motion = Vector2(16,3)
 	return test_move(transform, test_motion)
 	
 #	return edge_ray.is_colliding()
