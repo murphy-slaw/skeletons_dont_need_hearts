@@ -32,7 +32,7 @@ func _ready():
 #        if is_on_floor():
 #            motion.y = jump_speed
 
-onready var edge_ray = get_node("edge_ray")
+#onready var edge_ray = get_node("edge_ray")
 
 func _on_Lifespan_timeout():
 	emit_signal("die")
@@ -52,7 +52,13 @@ func check_ahead():
 	return test_move(transform, test_motion)
 	
 func check_for_edge():
-	return edge_ray.is_colliding()
+	var test_motion = Vector2(1,1)
+	if get_flip_sprite():
+		test_motion = Vector2(-1,1)
+	test_motion *= 5
+	return test_move(transform, test_motion)
+	
+#	return edge_ray.is_colliding()
 	
 func set_flip_sprite(active):
 	.set_flip_sprite(active)
