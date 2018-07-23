@@ -17,6 +17,7 @@ func move(delta,the_movement):
 	var i
 	for i in range(slide_count):
 		sliders.append(get_slide_collision(i-1))
+	return
 	
 	
 	
