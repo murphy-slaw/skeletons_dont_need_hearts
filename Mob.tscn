@@ -83,7 +83,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="edge_ray" type="RayCast2D" parent="." index="4"]
 
-position = Vector2( 16, 11 )
+position = Vector2( 10, 11 )
 enabled = true
 exclude_parent = true
 cast_to = Vector2( 0, 4 )
