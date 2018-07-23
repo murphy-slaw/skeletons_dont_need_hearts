@@ -42,7 +42,7 @@ func check_for_edge():
 	var test_motion = Vector2(10,1)
 	if get_flip_sprite():
 		test_motion = Vector2(-10,1)
-	return not test_move(transform, test_motion)
+	return test_move(transform, test_motion)
 	
 #	return edge_ray.is_colliding()
 	
