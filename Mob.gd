@@ -60,6 +60,6 @@ func check_for_edge():
 	
 #	return edge_ray.is_colliding()
 	
-func set_flip_sprite(active):
-	.set_flip_sprite(active)
-	edge_ray.position *= Vector2(-1,1)
+#func set_flip_sprite(active):
+#	.set_flip_sprite(active)
+#	edge_ray.position *= Vector2(-1,1)
