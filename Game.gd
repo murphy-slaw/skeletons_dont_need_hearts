@@ -4,14 +4,16 @@ export (PackedScene) var Mob
 
 var spawners = []
 var used_spawners = []
+var mob_count = 0
+var max_mobs = 0
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	$MobSpawnTimer.start()
 	randomize()
-	
 	spawners = get_tree().get_nodes_in_group("arches")
+	max_mobs = spawners.size()
 
 func _on_Boinger_boing(boing_vec,body):
 	if body.get("vel") !=null:
@@ -40,4 +42,5 @@ func spawn_mob():
 	var mob = Mob.instance()
 	call_deferred("add_child",mob)
 	mob.position = get_spawn_point()
+	mob_count += 1
 #	mob.position = $MobPath/MobSpawnLocation.position
