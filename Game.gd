@@ -30,7 +30,7 @@ func get_spawn_point():
 	var spawner = spawners[i]
 	spawners.remove(i)
 	used_spawners.append(spawner)
-	return to_global(spawner.find_node("SpawnPoint").position)
+	return spawner.find_node("SpawnPoint").position
 	
 
 	
