@@ -34,7 +34,6 @@ func _ready():
     $VisionArea/CollisionPolygon2D.polygon = circle_sector
     $VisionArea/CollisionPolygon2D.rotation_degrees = 90
 
-#onready var ground_ray = get_node("ground_ray")
 onready var facing_ray = get_node("facing_ray")
 
 func set_flip_sprite(active=true):
@@ -82,7 +81,7 @@ func move(delta, the_move):
     # object. Then we move and slide with our linear
     # velocity plus the floor velocity.
     var floor_vec = get_floor_velocity()
-    my_motion = move_and_slide(my_motion + floor_vec, Vector2(0,-1),1,1)
+    my_motion = move_and_slide(my_motion + floor_vec, Vector2(0,-1),5,4)
 
     # And now we REMOVE the floor velocity from our remaining
     # movement vector, because otherwise we'll gradually
