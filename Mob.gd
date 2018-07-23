@@ -6,20 +6,7 @@ onready var target = get_parent().get_node("Player")
 
 func _ready():
 	if target == null:
-		target = self
-
-#func move(delta,the_movement):
-#	.move(delta,the_movement)
-#	var slide_count = get_slide_count()
-#	var sliders = []
-#	var i
-#	for i in range(slide_count):
-#		var slide = get_slide_collision(i)
-#		sliders.append(slide)
-#	return
-	
-	
-	
+		target = self	
 
 #func get_acc_x():
 #	var direction = (target.global_position - global_position).normalized()
