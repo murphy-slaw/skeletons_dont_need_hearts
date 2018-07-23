@@ -5,7 +5,7 @@ export (PackedScene) var Mob
 var spawners = []
 var used_spawners = []
 var mob_count = 0
-var max_mobs = 0
+var max_mobs = 1
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -13,7 +13,7 @@ func _ready():
 	$MobSpawnTimer.start()
 	randomize()
 	spawners = get_tree().get_nodes_in_group("arches")
-	max_mobs = spawners.size()
+#	max_mobs = spawners.size()
 	$UILayer/Label.text = str(mob_count)
 
 func _on_Boinger_boing(boing_vec,body):
