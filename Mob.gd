@@ -10,6 +10,17 @@ func _ready():
 	if target == null:
 		target = self
 
+func move(delta,the_movement):
+	.move(delta,the_movement)
+	var slide_count = get_slide_count()
+	var sliders = []
+	var i
+	for i in slide_count:
+		sliders.append(get_slide_collision(i-1))
+	
+	
+	
+
 #func get_acc_x():
 #	var direction = (target.global_position - global_position).normalized()
 #	acc.x = direction.x
