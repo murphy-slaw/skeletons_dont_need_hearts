@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Mob.gd" type="Script" id=1]
 [ext_resource path="res://art/skellingtorn.png" type="Texture" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://FSM-mob/transitions/on_left_ground/on_left_ground.tscn" type="PackedScene" id=11]
 [ext_resource path="res://FSM-mob/transitions/on_collision/on_collision.tscn" type="PackedScene" id=12]
 [ext_resource path="res://FSM-mob/transitions/on_path_clear/on_path_clear.tscn" type="PackedScene" id=13]
+[ext_resource path="res://FSM-mob/transitions/on_near_edge/on_near_edge.tscn" type="PackedScene" id=14]
+[ext_resource path="res://FSM-mob/transitions/on_near_edge/on_near_edge.gd" type="Script" id=15]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -109,7 +111,6 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="FSM2D" type="Node2D" parent="." index="7"]
 
-editor/display_folded = true
 script = ExtResource( 3 )
 _sections_unfolded = [ "Create new:" ]
 __meta__ = {
@@ -187,6 +188,13 @@ intervalBetweenChecks = 0.1
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Reversing") ]
 path2Target_state = NodePath("../../States/Patrolling")
+
+[node name="on_near_edge" type="Node" parent="FSM2D/Transitions" index="4" instance=ExtResource( 14 )]
+
+script = ExtResource( 15 )
+path2SourceStates = [ NodePath("") ]
+path2Target_state = null
+intervalBetweenChecks = -1.0
 
 [node name="VisionArea" type="Area2D" parent="." index="8"]
 
