@@ -42,8 +42,4 @@ func check_for_edge():
 	
 func set_flip_sprite(active):
 	.set_flip_sprite(active)
-	if active:
-		edge_ray.scale = Vector2(-1,1)
-	else:
-		edge_ray.scale = Vector2(1,1)
-	
+	edge_ray.scale *= Vector2(-1,1)
