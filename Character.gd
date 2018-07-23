@@ -64,7 +64,7 @@ func move(delta, the_move):
     # reduce the actual horizontal movement by
     # our current linear velocity * frictional constant
     if is_on_floor():
-        my_motion.x -= my_motion.x * friction * delta
+        my_motion.x -= my_motion.x * friction
 
     # add the requested motion to our vector
     my_motion += the_move
@@ -81,7 +81,7 @@ func move(delta, the_move):
     # object. Then we move and slide with our linear
     # velocity plus the floor velocity.
     var floor_vec = get_floor_velocity()
-    my_motion = move_and_slide(my_motion + floor_vec, Vector2(0,-1),5,4,0.872665)
+    my_motion = move_and_slide(my_motion + floor_vec, Vector2(0,-1),5,1,0.872665)
 
     # And now we REMOVE the floor velocity from our remaining
     # movement vector, because otherwise we'll gradually
