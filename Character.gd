@@ -82,8 +82,7 @@ func move(delta, the_move):
     # object. Then we move and slide with our linear
     # velocity plus the floor velocity.
     var floor_vec = get_floor_velocity()
-#    my_motion = 
- 	move_and_slide(my_motion + floor_vec)
+    my_motion = move_and_slide(my_motion + floor_vec)
 
     # And now we REMOVE the floor velocity from our remaining
     # movement vector, because otherwise we'll gradually
