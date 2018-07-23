@@ -17,7 +17,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 639, 0 )
 }
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=2]
 
 size = 24
 use_mipmaps = true
@@ -25,7 +25,7 @@ use_filter = true
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Resource", "Settings" ]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=3]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -53,7 +53,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=4]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -82,7 +82,7 @@ anti_aliasing = true
 anti_aliasing_size = 1
 _sections_unfolded = [ "Corner Radius" ]
 
-[sub_resource type="SegmentShape2D" id=4]
+[sub_resource type="SegmentShape2D" id=5]
 
 custom_solver_bias = 0.0
 a = Vector2( 0, -1000 )
@@ -213,8 +213,6 @@ show_behind_parent = true
 position = Vector2( 245, 412 )
 z_index = 2
 _sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
-friction = 1
-bounce = 0
 
 [node name="UILayer" type="CanvasLayer" parent="." index="11"]
 
@@ -238,7 +236,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 percent_visible = 1.0
 lines_skipped = 0
@@ -277,8 +275,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
-custom_styles/fg = SubResource( 2 )
-custom_styles/bg = SubResource( 3 )
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
 min_value = 0.0
 max_value = 10.0
 step = 1.0
@@ -331,7 +329,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenLeft" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="ScreenRight" type="StaticBody2D" parent="." index="13"]
@@ -349,7 +347,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ScreenRight" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Mover" parent="." index="14" instance=ExtResource( 9 )]
