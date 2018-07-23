@@ -47,7 +47,8 @@ func spawn_mob():
 	call_deferred("add_child",mob)
 	mob.position = get_spawn_point()
 	mob_count += 1
+	$UILayer/MarginContainer/Label.text = str(mob_count)
 #	mob.position = $MobPath/MobSpawnLocation.position
 
 func on_mob_died(mob):
-	mob_count -=1
+	mob_count -= 1
