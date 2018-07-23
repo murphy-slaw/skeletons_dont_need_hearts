@@ -51,7 +51,7 @@ func set_flip_sprite(active=true):
 
 func is_landed():
     return is_on_floor() or is_near_floor()
-#return is_on_floor() or ground_ray.is_colliding()
+
 
 func can_climb():
     return false
@@ -90,7 +90,7 @@ func move(delta, the_move):
     my_motion -= floor_vec
 	
 func is_near_floor():
-	var test_motion = Vector2(0,1)
+	var test_motion = Vector2(0,2)
 	return test_move(transform,test_motion)
 
 func walk(delta, normal_vec):
