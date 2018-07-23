@@ -14,7 +14,7 @@ texture = ExtResource( 1 )
 
 show_behind_parent = true
 position = Vector2( 0, 4 )
-z_index = 1
+z_index = -1
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 
