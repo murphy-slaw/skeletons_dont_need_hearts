@@ -91,7 +91,7 @@ func move(delta, the_move):
 	
 func is_near_floor():
 	var test_motion = Vector2(0,1)
-	return test_move(test_motion,transform)
+	return test_move(transform,test_motion)
 
 func walk(delta, normal_vec):
     var walk_vec = Vector2(walk_accel,0)
