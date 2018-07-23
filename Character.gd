@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export var walk_accel = 7
-export var friction = 20
+export var friction = -0.5
 export var gravity = 9.8
 export var jump_power = -15
 var jump_speed = gravity * jump_power
@@ -64,7 +64,7 @@ func move(delta, the_move):
     # reduce the actual horizontal movement by
     # our current linear velocity * frictional constant
     if is_landed():
-        my_motion.x -= my_motion.x * friction * delta
+        my_motion.x -= my_motion.x * friction
 
     # add the requested motion to our vector
     my_motion += the_move
