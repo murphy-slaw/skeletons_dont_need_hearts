@@ -19,6 +19,8 @@ func _ready():
 #        if is_on_floor():
 #            motion.y = jump_speed
 
+onready var edge_ray = get_node("edge_ray")
+
 func _on_Lifespan_timeout():
 	queue_free()
 
@@ -34,3 +36,7 @@ func check_ahead():
 		test_motion = Vector2(-1,0)
 	test_motion *= 5
 	return test_move(transform, test_motion)
+	
+func check_for_edge():
+	return edge_ray.is_colliding()
+	
