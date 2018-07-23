@@ -64,7 +64,8 @@ func move(delta, the_move):
     # reduce the actual horizontal movement by
     # our current linear velocity * frictional constant
     if is_on_floor():
-        the_move.x -= my_motion.x * friction
+		pass
+#        the_move.x -= my_motion.x * friction
 
     # add the requested motion to our vector
     my_motion += the_move
