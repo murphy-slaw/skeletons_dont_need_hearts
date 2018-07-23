@@ -12,7 +12,7 @@ script = ExtResource( 1 )
 walk_accel = 7
 friction = 0.01
 gravity = 9.8
-jump_power = -40
+jump_power = -30
 bounce = 0
 nudge_factor = 0.15
 
