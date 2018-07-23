@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export var walk_accel = 7
-export var friction = 0.02
+export var friction = 0.001
 export var gravity = 9.8
 export var jump_power = -13
 var jump_speed = gravity * jump_power
@@ -82,7 +82,7 @@ func move(delta, the_move):
     # velocity plus the floor velocity.
     var floor_vec = get_floor_velocity()
 	
-    move_and_slide(my_motion + floor_vec, Vector2(0,-1),1,1,0.872665)
+    my_motion = move_and_slide(my_motion + floor_vec, Vector2(0,-1),1,1,0.872665)
 
     # And now we REMOVE the floor velocity from our remaining
     # movement vector, because otherwise we'll gradually
