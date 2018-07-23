@@ -38,7 +38,7 @@ func check_ahead():
 	return test_move(transform, test_motion)
 	
 func check_for_edge():
-	return edge_ray.is_colliding()
+	return not edge_ray.is_colliding()
 	
 func set_flip_sprite(active):
 	.set_flip_sprite(active)
