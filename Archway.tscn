@@ -2,7 +2,9 @@
 
 [ext_resource path="res://art/archway.png" type="Texture" id=1]
 
-[node name="Archway" type="Node2D" index="0"]
+[node name="Archway" type="Node2D" index="0" groups=[
+"arches",
+]]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

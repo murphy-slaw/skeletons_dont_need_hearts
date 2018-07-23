@@ -2,11 +2,15 @@ extends Node2D
 
 export (PackedScene) var Mob
 
+var spawners = {}
+var used_spawners = {}
+
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	$MobSpawnTimer.start()
 	randomize()
+	get_tree().get_nodes_in_group
 
 func _on_Boinger_boing(boing_vec,body):
 	if body.get("vel") !=null:
