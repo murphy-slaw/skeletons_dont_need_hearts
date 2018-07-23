@@ -81,16 +81,16 @@ func move(delta, the_move):
     # (which will be non-zero if we're standing on a moving
     # object. Then we move and slide with our linear
     # velocity plus the floor velocity.
-    var floor_vec = get_floor_velocity(
+    var floor_vec = get_floor_velocity()
 	
-	)
-    my_motion = move_and_collide((my_motion + floor_vec) * delta)
+#    my_motion = 
+	move_and_collide((my_motion + floor_vec) * delta)
 
     # And now we REMOVE the floor velocity from our remaining
     # movement vector, because otherwise we'll gradually
     # accelerate instead of just keeping pace with the thing
     # we're standing on!
-    my_motion -= floor_vec
+#    my_motion -= floor_vec
 
 func walk(delta, normal_vec):
     var walk_vec = Vector2(walk_accel,0)
