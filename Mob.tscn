@@ -18,7 +18,7 @@
 [sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
-radius = 12.0
+radius = 13.0
 
 [sub_resource type="Animation" id=2]
 
