@@ -49,10 +49,10 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 walk_accel = 7
-friction = 0.01
+friction = 0.03
 gravity = 9.8
 jump_power = -13
-bounce = 0.0
+bounce = 1
 nudge_factor = 0.15
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
