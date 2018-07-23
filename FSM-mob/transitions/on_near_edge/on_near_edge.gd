@@ -14,4 +14,4 @@ func prepare(new_state, args = []):
 
 func transition_condition(delta, args = []): 
 	# Return true/false
-	return not logic_root.check_for_edge()
+	return logic_root.is_near_edge()
