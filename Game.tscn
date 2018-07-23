@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://art/heart-mask.png" type="Texture" id=6]
 [ext_resource path="res://Mover.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Archway.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -78,7 +79,7 @@ custom_solver_bias = 0.0
 a = Vector2( 0, -1000 )
 b = Vector2( 0, 0 )
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -184,6 +185,7 @@ _sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Pick
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="6"]
 
+editor/display_folded = true
 layer = 0
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -308,6 +310,18 @@ cycle = 16.0
 position = Vector2( 316, 273 )
 motion = Vector2( 16, 0 )
 cycle = 8.0
+
+[node name="Archway2" parent="." index="11" instance=ExtResource( 8 )]
+
+position = Vector2( 59, 432.25 )
+
+[node name="Archway" parent="." index="12" instance=ExtResource( 8 )]
+
+position = Vector2( 105, 176 )
+
+[node name="Archway3" parent="." index="13" instance=ExtResource( 8 )]
+
+position = Vector2( 480, 432 )
 
 [connection signal="timeout" from="MobSpawnTimer" to="." method="_on_MobSpawnTimer_timeout"]
 
