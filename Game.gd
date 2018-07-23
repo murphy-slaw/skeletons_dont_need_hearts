@@ -42,7 +42,7 @@ func spawn_mob():
 	$MobPath/MobSpawnLocation.set_offset(randi())
 	var mob = Mob.instance()
 	
-	connect("die",mob,"_on_mob_died")
+	mob.connect("die",self,"_on_mob_died")
 	
 	call_deferred("add_child",mob)
 	mob.position = get_spawn_point()
