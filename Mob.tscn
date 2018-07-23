@@ -121,7 +121,7 @@ only_active_state_on_scene = false
 init_manually = false
 update_mode = 2
 receive_singals_only_on_activated_items = false
-debug_enabled = false
+debug_enabled = true
 "Initial state:" = "Idle"
 "Create new:/Subdirectory for FSM nodes:" = "FSM-mob"
 "Create new:/Create state with name:" = null
@@ -152,6 +152,7 @@ GraphData = {
 "on_left_ground_": Vector2( 870, 193 ),
 "on_left_ground__": Vector2( 191, 47 ),
 "on_near_edge": Vector2( 1438, 618 ),
+"on_near_edge_": Vector2( 1438, 618 ),
 "on_path_clear": Vector2( 705, 604 ),
 "on_path_clear_": Vector2( 705, 604 )
 }
