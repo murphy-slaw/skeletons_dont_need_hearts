@@ -50,7 +50,7 @@ func set_flip_sprite(active=true):
 
 
 func is_landed():
-    return is_on_floor()
+    return is_on_floor() or is_near_floor()
 #return is_on_floor() or ground_ray.is_colliding()
 
 func can_climb():
