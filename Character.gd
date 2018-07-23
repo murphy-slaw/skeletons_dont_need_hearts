@@ -59,12 +59,11 @@ func can_climb():
 func move(delta, the_move):
 
     # always add gravity. it's good and good for you!
-    if not is_on_floor():
-        my_motion.y += gravity
+    my_motion.y += gravity
 
     # reduce the actual horizontal movement by
     # our current linear velocity * frictional constant
-    if is_landed():
+    if is_on_floor()
         my_motion.x -= my_motion.x * friction
 
     # add the requested motion to our vector
