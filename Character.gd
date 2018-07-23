@@ -88,6 +88,10 @@ func move(delta, the_move):
     # accelerate instead of just keeping pace with the thing
     # we're standing on!
     my_motion -= floor_vec
+	
+func is_near_floor():
+	var test_motion = Vector2(0,1)
+	return test_move(test_motion,transform)
 
 func walk(delta, normal_vec):
     var walk_vec = Vector2(walk_accel,0)
