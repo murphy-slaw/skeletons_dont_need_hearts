@@ -15,7 +15,7 @@ func move(delta,the_movement):
 	var slide_count = get_slide_count()
 	var sliders = []
 	var i
-	for i in slide_count:
+	for i in range(slide_count):
 		sliders.append(get_slide_collision(i-1))
 	
 	
