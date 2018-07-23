@@ -1,5 +1,7 @@
 extends "res://Character.gd"
 
+signal die
+
 onready var target = get_parent().get_node("Player")
 
 func _ready():
@@ -22,6 +24,7 @@ func _ready():
 onready var edge_ray = get_node("edge_ray")
 
 func _on_Lifespan_timeout():
+	emit_signal("die")
 	queue_free()
 
 func get_vision_normal():
