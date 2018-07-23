@@ -47,7 +47,7 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
-walk_accel = 2
+walk_accel = 7
 friction = 0.07
 gravity = 9.8
 jump_power = -25
@@ -108,7 +108,7 @@ __meta__ = {
 "_editor_icon": ExtResource( 4 )
 }
 logic_root_path = NodePath("..")
-only_active_state_on_scene = false
+only_active_state_on_scene = true
 init_manually = false
 update_mode = 2
 receive_singals_only_on_activated_items = false
