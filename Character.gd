@@ -61,13 +61,13 @@ func move(delta, the_move):
     # always add gravity. it's good and good for you!
     my_motion.y += gravity
 
+    # add the requested motion to our vector
+    my_motion += the_move
+
     # reduce the actual horizontal movement by
     # our current linear velocity * frictional constant
     if is_landed():
         my_motion.x -= my_motion.x * friction
-
-    # add the requested motion to our vector
-    my_motion += the_move
 
     # bounce is how perfectly we rebound. Without these
     # we stop dead when hiting walls or ceilings.
