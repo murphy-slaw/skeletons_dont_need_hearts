@@ -83,6 +83,8 @@ func move(delta, the_move):
     var floor_vec = get_floor_velocity()
     my_motion = move_and_slide((my_motion + floor_vec), Vector2(0,-1))
 
+    var sliders = get_slide_collision()
+
     # And now we REMOVE the floor velocity from our remaining
     # movement vector, because otherwise we'll gradually
     # accelerate instead of just keeping pace with the thing
