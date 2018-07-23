@@ -88,7 +88,7 @@ custom_solver_bias = 0.0
 a = Vector2( 0, -1000 )
 b = Vector2( 0, 0 )
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -329,13 +329,13 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Mover" parent="." index="9" instance=ExtResource( 8 )]
 
-position = Vector2( 437, 409 )
+position = Vector2( 444, 450 )
 motion = Vector2( 0, 16 )
 cycle = 16.0
 
 [node name="Mover2" parent="." index="10" instance=ExtResource( 8 )]
 
-position = Vector2( 316, 273 )
+position = Vector2( 354, 249 )
 motion = Vector2( 16, 0 )
 cycle = 8.0
 
