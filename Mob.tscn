@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Mob.gd" type="Script" id=1]
 [ext_resource path="res://art/skellingtorn.png" type="Texture" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://FSM-mob/transitions/on_collision/on_collision.tscn" type="PackedScene" id=12]
 [ext_resource path="res://FSM-mob/transitions/on_path_clear/on_path_clear.tscn" type="PackedScene" id=13]
 [ext_resource path="res://FSM-mob/transitions/on_near_edge/on_near_edge.tscn" type="PackedScene" id=14]
-[ext_resource path="res://FSM-mob/transitions/on_near_edge/on_near_edge.gd" type="Script" id=15]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -191,12 +190,10 @@ intervalBetweenChecks = 0.1
 path2SourceStates = [ NodePath(""), NodePath("../../States/Reversing") ]
 path2Target_state = NodePath("../../States/Patrolling")
 
-[node name="on_near_edge" type="Node" parent="FSM2D/Transitions" index="4" instance=ExtResource( 14 )]
+[node name="on_near_edge" parent="FSM2D/Transitions" index="4" instance=ExtResource( 14 )]
 
-script = ExtResource( 15 )
 path2SourceStates = [ NodePath("../../States/Patrolling") ]
 path2Target_state = NodePath("../../States/Reversing")
-intervalBetweenChecks = -1.0
 
 [node name="VisionArea" type="Area2D" parent="." index="8"]
 
