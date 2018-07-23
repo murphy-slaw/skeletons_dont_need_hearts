@@ -5,7 +5,7 @@ export var friction = 0.01
 export var gravity = 9.8
 export var jump_power = -13
 var jump_speed = gravity * jump_power
-export var bounce = 0
+export var bounce = .7
 export var nudge_factor = 0.15
 
 var FOV = 45
@@ -66,7 +66,7 @@ func move(delta, the_move):
 
     # reduce the actual horizontal movement by
     # our current linear velocity * frictional constant
-    if is_landed():
+    if is_on_floor():
         my_motion.x -= my_motion.x * friction
 
     # bounce is how perfectly we rebound. Without these
