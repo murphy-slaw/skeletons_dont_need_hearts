@@ -89,7 +89,7 @@ walk_accel = 7
 friction = 0.03
 gravity = 9.8
 jump_power = -13
-bounce = 0.99
+bounce = 0.0
 nudge_factor = 0.15
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
