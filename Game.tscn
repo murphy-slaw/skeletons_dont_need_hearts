@@ -213,7 +213,7 @@ show_behind_parent = true
 position = Vector2( 245, 412 )
 z_index = 2
 _sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
-friction = 0.75
+friction = 0.05
 
 [node name="UILayer" type="CanvasLayer" parent="." index="11"]
 
