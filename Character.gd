@@ -34,7 +34,7 @@ func _ready():
     $VisionArea/CollisionPolygon2D.polygon = circle_sector
     $VisionArea/CollisionPolygon2D.rotation_degrees = 90
 
-onready var ground_ray = get_node("ground_ray")
+#onready var ground_ray = get_node("ground_ray")
 onready var facing_ray = get_node("facing_ray")
 
 func set_flip_sprite(active=true):
@@ -51,7 +51,8 @@ func set_flip_sprite(active=true):
 
 
 func is_landed():
-    return is_on_floor() or ground_ray.is_colliding()
+    return is_on_floor()
+#return is_on_floor() or ground_ray.is_colliding()
 
 func can_climb():
     return false

@@ -153,16 +153,7 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Drag Margin", "Limit", "Offset", "Transform" ]
 
-[node name="ground_ray" type="RayCast2D" parent="." index="5"]
-
-position = Vector2( -1, 0 )
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 16 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="facing_ray" type="RayCast2D" parent="." index="6"]
+[node name="facing_ray" type="RayCast2D" parent="." index="5"]
 
 enabled = true
 exclude_parent = true
@@ -170,7 +161,7 @@ cast_to = Vector2( 10, 0 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
-[node name="FSM2D" type="Node2D" parent="." index="7"]
+[node name="FSM2D" type="Node2D" parent="." index="6"]
 
 script = ExtResource( 3 )
 _sections_unfolded = [ "Create new:" ]
@@ -275,7 +266,7 @@ path2Target_state = NodePath("../../States/Jumping")
 path2SourceStates = [ NodePath(""), NodePath("../../States/Walking"), NodePath("../../States/Idle"), NodePath("../../States/Falling") ]
 path2Target_state = NodePath("../../States/Climbing")
 
-[node name="VisionArea" type="Area2D" parent="." index="8"]
+[node name="VisionArea" type="Area2D" parent="." index="7"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
