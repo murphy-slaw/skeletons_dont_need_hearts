@@ -46,7 +46,7 @@ func move(delta, acceleration):
     # reduce the actual horizontal movement by
     # our current linear velocity * frictional constant
     if acceleration.x == 0:
-        velocity.x *= 1 - friction
+        acc.x = friction * velocity * delta
 
     # add the requested motion to our vector
     velocity += acceleration
