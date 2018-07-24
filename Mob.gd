@@ -74,8 +74,8 @@ func _on_VisionArea_body_exited(body):
         target_in_range = false
 
 func start_aggro():
-    max_speed *= 4
-    walk_accel *= 2
+    max_speed *= 5
+    walk_accel *= 4
     aggro_exhausted = false
     $AggroTimer.start()
     
