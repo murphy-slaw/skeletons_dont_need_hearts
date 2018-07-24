@@ -6,6 +6,7 @@
 
 [node name="rough0" type="Sprite" parent="." index="0"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 vframes = 3
 hframes = 9
@@ -29,6 +30,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="rough1" type="Sprite" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 16, 0 )
 texture = ExtResource( 1 )
 vframes = 3
@@ -54,6 +56,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="rough2" type="Sprite" parent="." index="2"]
 
+editor/display_folded = true
 position = Vector2( 32, 0 )
 texture = ExtResource( 1 )
 vframes = 3
@@ -79,6 +82,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="rough3" type="Sprite" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( 48, 0 )
 texture = ExtResource( 1 )
 vframes = 3
@@ -104,6 +108,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="rough4" type="Sprite" parent="." index="4"]
 
+editor/display_folded = true
 position = Vector2( 64, 0 )
 texture = ExtResource( 1 )
 vframes = 3
@@ -129,6 +134,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="rough5" type="Sprite" parent="." index="5"]
 
+editor/display_folded = true
 position = Vector2( 80, 0 )
 texture = ExtResource( 1 )
 vframes = 3
@@ -154,6 +160,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="rough9" type="Sprite" parent="." index="6"]
 
+editor/display_folded = true
 position = Vector2( 0, 16 )
 texture = ExtResource( 1 )
 vframes = 3
@@ -179,6 +186,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="rough10" type="Sprite" parent="." index="7"]
 
+editor/display_folded = true
 position = Vector2( 16, 16 )
 texture = ExtResource( 1 )
 vframes = 3
@@ -204,6 +212,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="rough11" type="Sprite" parent="." index="8"]
 
+editor/display_folded = true
 position = Vector2( 32, 16 )
 texture = ExtResource( 1 )
 vframes = 3
@@ -229,6 +238,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="rough12" type="Sprite" parent="." index="9"]
 
+editor/display_folded = true
 position = Vector2( 48, 16 )
 texture = ExtResource( 1 )
 vframes = 3
@@ -254,6 +264,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="rough13" type="Sprite" parent="." index="10"]
 
+editor/display_folded = true
 position = Vector2( 64, 16 )
 texture = ExtResource( 1 )
 vframes = 3
@@ -279,6 +290,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="rough14" type="Sprite" parent="." index="11"]
 
+editor/display_folded = true
 position = Vector2( 80, 16 )
 texture = ExtResource( 1 )
 vframes = 3
@@ -314,6 +326,7 @@ region_rect = Rect2( 96, 16, 16, 16 )
 
 [node name="rough18" type="Sprite" parent="." index="13"]
 
+editor/display_folded = true
 position = Vector2( 0, 32 )
 texture = ExtResource( 1 )
 vframes = 3
@@ -339,6 +352,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="rough19" type="Sprite" parent="." index="14"]
 
+editor/display_folded = true
 position = Vector2( 16, 32 )
 texture = ExtResource( 1 )
 vframes = 3
@@ -364,6 +378,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="rough20" type="Sprite" parent="." index="15"]
 
+editor/display_folded = true
 position = Vector2( 32, 32 )
 texture = ExtResource( 1 )
 vframes = 3
@@ -389,6 +404,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="rough21" type="Sprite" parent="." index="16"]
 
+editor/display_folded = true
 position = Vector2( 48, 32 )
 texture = ExtResource( 1 )
 vframes = 3
@@ -414,6 +430,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="rough22" type="Sprite" parent="." index="17"]
 
+editor/display_folded = true
 position = Vector2( 64, 32 )
 texture = ExtResource( 1 )
 vframes = 3
@@ -439,6 +456,7 @@ polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="rough23" type="Sprite" parent="." index="18"]
 
+editor/display_folded = true
 position = Vector2( 80, 32 )
 texture = ExtResource( 1 )
 vframes = 3
