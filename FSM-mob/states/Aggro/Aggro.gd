@@ -20,7 +20,7 @@ func update(delta, args=null):
     var movement = Vector2()
     movement.x= (logic_root.target.global_position - logic_root.global_position).normalized().x
     
-    logic_root.flip_sprite = (movement.x >= 1 and not logic_root.flip_sprite)
+    logic_root.flip_sprite = (movement.x)
 
     logic_root.walk(delta, movement)
 
