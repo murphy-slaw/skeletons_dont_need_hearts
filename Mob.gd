@@ -65,5 +65,11 @@ func _on_VisionArea_body_exited(body):
     if body == target:
         can_see_target = false
 
+func start_aggro():
+    pass
+    
+func end_aggro():
+    pass
+
 func _on_AggroTimer_timeout():
-    aggro_exhausted = true
+    end_aggro()
