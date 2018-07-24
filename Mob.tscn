@@ -47,12 +47,13 @@ tracks/0/keys = {
 
 [node name="Mob" type="KinematicBody2D" index="0"]
 
+z_index = 1
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Z Index", "collision" ]
 walk_accel = 3
 friction = 0.07
 max_speed = 50
@@ -118,6 +119,7 @@ autostart = false
 
 [node name="VisionArea" type="Area2D" parent="." index="7"]
 
+editor/display_folded = true
 position = Vector2( 0.0241985, 0.0446415 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -134,6 +136,7 @@ polygon = PoolVector2Array(  )
 
 [node name="FSM2D" type="Node2D" parent="." index="8"]
 
+editor/display_folded = true
 script = ExtResource( 3 )
 _sections_unfolded = [ "Create new:" ]
 __meta__ = {
