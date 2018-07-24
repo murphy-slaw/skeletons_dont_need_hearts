@@ -3,7 +3,7 @@ extends "res://Character.gd"
 signal die
 
 onready var target = get_parent().get_node("Player")
-onready var ground_ray = get_node("ground_ray")
+onready var edge_ray = get_node("edge_ray")
 
 func _ready():
 	if target == null:
