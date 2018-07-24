@@ -34,7 +34,10 @@ func _ready():
 
 
 func _physics_process(delta):
-    if 
+    if target_in_range:
+        can_see_target = true
+    else:
+        can_see_target = false
 
 
 func _on_Lifespan_timeout():
