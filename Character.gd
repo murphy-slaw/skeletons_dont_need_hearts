@@ -70,7 +70,7 @@ func move(delta, the_move):
     # movement vector, because otherwise we'll gradually
     # accelerate instead of just keeping pace with the thing
     # we're standing on!
-    my_motion -= floor_vec
+#    my_motion -= floor_vec
     
 func is_near_floor():
     var test_motion = Vector2(0,2)
