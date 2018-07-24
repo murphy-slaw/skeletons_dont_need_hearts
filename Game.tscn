@@ -43,7 +43,6 @@ Mob = ExtResource( 2 )
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
 
 visible = false
-show_behind_parent = true
 light_mask = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -80,7 +79,7 @@ size_flags_horizontal = 2
 size_flags_vertical = 1
 texture = ExtResource( 3 )
 stretch_mode = 2
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Visibility" ]
 
 [node name="MobPath" type="Path2D" parent="." index="2"]
 
@@ -161,7 +160,7 @@ max_speed = 100
 
 [node name="UILayer" type="CanvasLayer" parent="." index="11"]
 
-layer = 0
+layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
