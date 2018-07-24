@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export var walk_accel = 8
-export var friction = -500
+export var friction = -8
 export var max_speed = 100
 export var gravity = 9.8
 export var jump_power = -25
@@ -40,8 +40,8 @@ func can_climb():
 func move(delta, acceleration):
 
 
-#    if not is_on_floor():
-    velocity.y += gravity
+    if not is_on_floor():
+        velocity.y += gravity
         
     # reduce the actual horizontal movement by
     # our current linear velocity * frictional constant
