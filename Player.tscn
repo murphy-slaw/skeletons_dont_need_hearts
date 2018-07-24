@@ -77,7 +77,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 position = Vector2( 0, 0.0353484 )
 input_pickable = false
@@ -87,7 +87,7 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Pickable", "Transform" ]
 walk_accel = 8
-friction = 0.07
+friction = 100
 max_speed = 250
 gravity = 9.8
 jump_power = -25
@@ -266,6 +266,24 @@ path2Target_state = NodePath("../../States/Jumping")
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Walking"), NodePath("../../States/Idle"), NodePath("../../States/Falling") ]
 path2Target_state = NodePath("../../States/Climbing")
+
+[node name="Label" type="Label" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [connection signal="timeout" from="JumpTimer" to="." method="_on_JumpTimer_timeout"]
 
