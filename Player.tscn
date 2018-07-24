@@ -77,7 +77,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 position = Vector2( 0, 0.0353484 )
 input_pickable = false
@@ -266,26 +266,6 @@ path2Target_state = NodePath("../../States/Jumping")
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Walking"), NodePath("../../States/Idle"), NodePath("../../States/Falling") ]
 path2Target_state = NodePath("../../States/Climbing")
-
-[node name="VisionArea" type="Area2D" parent="." index="7"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-monitoring = false
-monitorable = false
-collision_layer = 0
-collision_mask = 0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionArea" index="0"]
-
-build_mode = 0
-polygon = PoolVector2Array(  )
 
 [connection signal="timeout" from="JumpTimer" to="." method="_on_JumpTimer_timeout"]
 
