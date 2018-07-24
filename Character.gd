@@ -57,7 +57,7 @@ func move(delta, acceleration):
         velocity.y *= bounce
     if is_on_wall():
         velocity.x *= -bounce
-    velocity.x = clamp(velocity.x,-max_speed,max_speed)
+#    velocity.x = clamp(velocity.x,-max_speed,max_speed)
 
     # This is dark magic. We get the velocity of the floor
     # (which will be non-zero if we're standing on a moving
