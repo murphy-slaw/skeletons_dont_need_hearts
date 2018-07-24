@@ -67,5 +67,3 @@ func _on_VisionArea_body_exited(body):
 
 func _on_AggroTimer_timeout():
     aggro_exhausted = true
-    
-    pass # replace with function body
