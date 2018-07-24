@@ -96,7 +96,7 @@ cycle = 7.0
 
 [node name="Mover2" parent="." index="5" instance=ExtResource( 5 )]
 
-position = Vector2( 309, 456 )
+position = Vector2( 360, 432 )
 motion = Vector2( 72, 0 )
 cycle = 7.0
 
