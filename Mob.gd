@@ -2,6 +2,7 @@ extends "res://Character.gd"
 
 signal die
 
+var target_in_range = false
 var can_see_target = false
 var aggro_exhausted = true
 var original_max_speed
@@ -32,7 +33,8 @@ func _ready():
     original_walk_accel = walk_accel
 
 
-#
+func _physics_process(delta):
+    if 
 
 
 func _on_Lifespan_timeout():
@@ -62,12 +64,12 @@ func set_flip_sprite(active):
 
 func _on_VisionArea_body_entered(body):
     if body == target:
-        can_see_target = true
+        target_in_range = true
         
         
 func _on_VisionArea_body_exited(body):
     if body == target:
-        can_see_target = false
+        target_in_range = false
 
 func start_aggro():
     max_speed *= 4
