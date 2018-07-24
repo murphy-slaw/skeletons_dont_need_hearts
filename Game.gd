@@ -40,11 +40,8 @@ func get_spawn_point():
 func spawn_mob():
     if mob_count >= max_mobs:
         return
-    $MobPath/MobSpawnLocation.set_offset(randi())
     var mob = Mob.instance()
-    
     mob.connect("die",self,"_on_mob_died")
-    
     call_deferred("add_child",mob)
     mob.position = get_spawn_point()
     mob_count += 1
