@@ -4,6 +4,8 @@ signal die
 
 var can_see_target = false
 var aggro_exhausted = true
+var original_max_speed = max_speed
+var original_walk_accel = walk_accel
 
 export (int) var FOV = 45
 export (int) var sight_radius = 150
@@ -66,10 +68,14 @@ func _on_VisionArea_body_exited(body):
         can_see_target = false
 
 func start_aggro():
-    pass
+    max_speed *= 4
+    walk_accel *= 2
+    aggro_exhausted = false
     
 func end_aggro():
-    pass
+    max_speed = original_max_speed
+    walk_accel = original_walk_accel
+    aggro_exhausted = true
 
 func _on_AggroTimer_timeout():
     end_aggro()

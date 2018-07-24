@@ -109,7 +109,14 @@ anims/Idle = SubResource( 2 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="VisionArea" type="Area2D" parent="." index="6"]
+[node name="AggroTimer" type="Timer" parent="." index="6"]
+
+process_mode = 0
+wait_time = 5.0
+one_shot = false
+autostart = false
+
+[node name="VisionArea" type="Area2D" parent="." index="7"]
 
 position = Vector2( 0.0241985, 0.0446415 )
 input_pickable = true
@@ -125,7 +132,7 @@ audio_bus_name = "Master"
 build_mode = 0
 polygon = PoolVector2Array(  )
 
-[node name="FSM2D" type="Node2D" parent="." index="7"]
+[node name="FSM2D" type="Node2D" parent="." index="8"]
 
 script = ExtResource( 3 )
 _sections_unfolded = [ "Create new:" ]
@@ -196,13 +203,6 @@ GraphData = {
 
 script = ExtResource( 10 )
 
-[node name="AggroTimer" type="Timer" parent="FSM2D/States/Aggro" index="0"]
-
-process_mode = 0
-wait_time = 5.0
-one_shot = false
-autostart = false
-
 [node name="Transitions" type="Node2D" parent="FSM2D" index="1"]
 
 [node name="on_landed" parent="FSM2D/Transitions" index="0" instance=ExtResource( 11 )]
@@ -248,10 +248,10 @@ intervalBetweenChecks = -1.0
 
 [connection signal="timeout" from="Lifespan" to="." method="_on_Lifespan_timeout"]
 
+[connection signal="timeout" from="AggroTimer" to="." method="_on_AggroTimer_timeout"]
+
 [connection signal="body_entered" from="VisionArea" to="." method="_on_VisionArea_body_entered"]
 
 [connection signal="body_exited" from="VisionArea" to="." method="_on_VisionArea_body_exited"]
-
-[connection signal="timeout" from="FSM2D/States/Aggro/AggroTimer" to="." method="_on_AggroTimer_timeout"]
 
 
