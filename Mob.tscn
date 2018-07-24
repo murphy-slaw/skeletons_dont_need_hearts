@@ -93,8 +93,8 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Lifespan" type="Timer" parent="." index="4"]
 
-process_mode = 1
-wait_time = 60.0
+process_mode = 0
+wait_time = 600.0
 one_shot = false
 autostart = true
 
@@ -199,7 +199,7 @@ script = ExtResource( 10 )
 [node name="AggroTimer" type="Timer" parent="FSM2D/States/Aggro" index="0"]
 
 process_mode = 0
-wait_time = 10.0
+wait_time = 5.0
 one_shot = false
 autostart = false
 
