@@ -14,7 +14,7 @@ func _ready():
     randomize()
     spawners = get_tree().get_nodes_in_group("arches")
     max_mobs = spawners.size()
-    $UILayer/Label.text = str(mob_count)
+    $UILayer/Label.text = str(mob_count)jj
 
 func _on_Boinger_boing(boing_vec,body):
     if body.get("vel") !=null:
