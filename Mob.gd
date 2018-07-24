@@ -2,6 +2,7 @@ extends "res://Character.gd"
 
 signal die
 
+var can_see_target = false
 
 export (int) var FOV = 45
 export (int) var sight_radius = 150

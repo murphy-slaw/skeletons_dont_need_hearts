@@ -18,7 +18,7 @@ func enter(from_state = null, from_transition = null, args = []):
 func update(delta, args=null):
     .update(delta, args)
     var movement = Vector2()
-    movement.x= (target.global_position - global_position).normalized().x
+    movement.x= (logic_root.target.global_position - logic_root.global_position).normalized().x
 
 #when exiting state
 func exit(to_state=null):
