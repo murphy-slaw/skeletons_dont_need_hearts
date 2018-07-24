@@ -160,7 +160,7 @@ max_speed = 100
 
 [node name="UILayer" type="CanvasLayer" parent="." index="11"]
 
-layer = 1
+layer = 0
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
@@ -222,14 +222,13 @@ size_flags_vertical = 1
 color = Color( 1, 1, 1, 1 )
 _sections_unfolded = [ "Material", "Visibility" ]
 
-[node name="TextureProgress" type="TextureProgress" parent="UILayer/MarginContainer" index="1"]
+[node name="TextureProgress" type="TextureProgress" parent="UILayer/MarginContainer/ColorRect" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 8.0
-margin_right = 40.0
+margin_right = 32.0
 margin_bottom = 32.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -253,9 +252,10 @@ radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
 _sections_unfolded = [ "Radial Fill", "Textures", "Visibility" ]
 
-[node name="Light2D" type="Light2D" parent="UILayer/MarginContainer" index="2"]
+[node name="Light2D" type="Light2D" parent="UILayer/MarginContainer/ColorRect" index="1"]
 
 light_mask = 3
+position = Vector2( -8, 0 )
 z_as_relative = false
 enabled = true
 editor_only = false
