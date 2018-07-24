@@ -9,7 +9,7 @@ var jump_speed = gravity * jump_power
 export var bounce = 0
 export var nudge_factor = 0.15
 
-var my_motion = Vector2()
+var velocity = Vector2()
 
 var flip_sprite = false setget set_flip_sprite, get_flip_sprite
 
@@ -41,35 +41,36 @@ func move(delta, the_move):
 
 
     if not is_on_floor():
-        my_motion.y += gravity
+        velocity.y += gravity
+        
     # reduce the actual horizontal movement by
     # our current linear velocity * frictional constant
     if is_landed():
-        my_motion.x *= 1 - friction
+        velocity.x *= 1 - friction
 
     # add the requested motion to our vector
-    my_motion += the_move
+    velocity += the_move
 
     # bounce is how perfectly we rebound. Without these
     # we stop dead when hiting walls or ceilings.
     if is_on_ceiling():
-        my_motion.y *= bounce
+        velocity.y *= bounce
     if is_on_wall():
-        my_motion.x *= -bounce
-    my_motion.x = clamp(my_motion.x,-max_speed,max_speed)
+        velocity.x *= -bounce
+    velocity.x = clamp(velocity.x,-max_speed,max_speed)
 
     # This is dark magic. We get the velocity of the floor
     # (which will be non-zero if we're standing on a moving
     # object. Then we move and slide with our linear
     # velocity plus the floor velocity.
     var floor_vec = get_floor_velocity()
-    my_motion = move_and_slide(my_motion + floor_vec, Vector2(0,-1))
+    velocity = move_and_slide(velocity + floor_vec, Vector2(0,-1))
 
     # And now we REMOVE the floor velocity from our remaining
     # movement vector, because otherwise we'll gradually
     # accelerate instead of just keeping pace with the thing
     # we're standing on!
-#    my_motion -= floor_vec
+#    velocity -= floor_vec
     
 func is_near_floor():
     var test_motion = Vector2(0,2)
