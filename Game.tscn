@@ -1,13 +1,14 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=2]
 [ext_resource path="res://art/brinstone.png" type="Texture" id=3]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://art/roughtiles.tres" type="TileSet" id=5]
-[ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://art/heart-back.png" type="Texture" id=7]
-[ext_resource path="res://art/heart-mask.png" type="Texture" id=8]
+[ext_resource path="res://Mover.tscn" type="PackedScene" id=5]
+[ext_resource path="res://art/roughtiles.tres" type="TileSet" id=6]
+[ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://art/heart-back.png" type="Texture" id=8]
+[ext_resource path="res://art/heart-mask.png" type="Texture" id=9]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -21,7 +22,7 @@ _data = {
 size = 24
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Resource", "Settings" ]
 
 [sub_resource type="SegmentShape2D" id=5]
@@ -112,10 +113,16 @@ z_index = 2
 _sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
 max_speed = 100
 
-[node name="TileMap" type="TileMap" parent="." index="5"]
+[node name="Mover" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 224, 393 )
+motion = Vector2( 0, 96 )
+cycle = 4.0
+
+[node name="TileMap" type="TileMap" parent="." index="6"]
 
 mode = 0
-tile_set = ExtResource( 5 )
+tile_set = ExtResource( 6 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -130,10 +137,10 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 1310720, 2, 0, 1310725, 0, 0, 1310726, 1, 0, 1310727, 1, 0, 1310728, 1, 0, 1310729, 1, 0, 1310730, 1, 0, 1310731, 1, 0, 1310732, 2, 0, 1376256, 14, 0, 1376257, 8, 0, 1376261, 6, 0, 1376262, 14, 0, 1376263, 14, 0, 1376264, 14, 0, 1376265, 14, 0, 1376266, 14, 0, 1376267, 20, 0, 1376268, 20, 0, 1441792, 14, 0, 1441793, 14, 0, 1441794, 8, 0, 1441803, 6, 0, 1441804, 8, 0, 1507328, 14, 0, 1507329, 14, 0, 1507330, 14, 0, 1507331, 8, 0, 1507339, 6, 0, 1507340, 8, 0, 1572864, 14, 0, 1572865, 14, 0, 1572866, 14, 0, 1572867, 14, 0, 1572868, 8, 0, 1572875, 6, 0, 1572876, 8, 0, 1638400, 7, 0, 1638401, 7, 0, 1638402, 7, 0, 1638403, 7, 0, 1638404, 7, 0, 1638405, 7, 0, 1638411, 6, 0, 1638412, 8, 0, 1703943, 0, 0, 1703944, 1, 0, 1703945, 2, 0, 1703947, 6, 0, 1703948, 8, 0, 1900544, 1, 0, 1900545, 1, 0, 1900546, 1, 0, 1900547, 1, 0, 1900548, 1, 0, 1900549, 1, 0, 1900550, 1, 0, 1900551, 1, 0, 1900552, 1, 0, 1900553, 1, 0, 1900554, 1, 0, 1900555, 1, 0, 1900556, 1, 0, 1900557, 1, 0, 1900558, 1, 0, 1900559, 1, 0, 1900560, 1, 0, 1900561, 1, 0, 1900562, 1, 0, 1900563, 1, 0, 1900564, 1, 0, 1900565, 1, 0, 1900566, 1, 0, 1900567, 1, 0, 1900568, 1, 0, 1900569, 1, 0, 1900570, 1, 0, 1900571, 1, 0, 1900572, 1, 0, 1900573, 1, 0, 1900574, 1, 0, 1900575, 1, 0, 1900576, 1, 0, 1900577, 1, 0, 1900578, 1, 0, 1900579, 1, 0, 1900580, 1, 0, 1900581, 1, 0, 1900582, 1, 0, 1900583, 1, 0 )
+tile_data = PoolIntArray( 983040, 1, 0, 983041, 1, 0, 983042, 1, 0, 983043, 1, 0, 983044, 1, 0, 983045, 1, 0, 983046, 1, 0, 983047, 1, 0, 983048, 1, 0, 983049, 1, 0, 983050, 1, 0, 983051, 1, 0, 983052, 1, 0, 1048576, 7, 0, 1048577, 7, 0, 1048578, 7, 0, 1048579, 7, 0, 1048580, 7, 0, 1048581, 7, 0, 1048582, 7, 0, 1048583, 7, 0, 1048584, 7, 0, 1048585, 7, 0, 1048586, 7, 0, 1048587, 7, 0, 1048588, 7, 0, 1310720, 2, 0, 1310725, 0, 0, 1310726, 1, 0, 1310727, 1, 0, 1310728, 1, 0, 1310729, 1, 0, 1310730, 1, 0, 1310731, 1, 0, 1310732, 2, 0, 1310735, 0, 0, 1310736, 2, 0, 1376256, 14, 0, 1376257, 8, 0, 1376261, 6, 0, 1376262, 14, 0, 1376263, 14, 0, 1376264, 14, 0, 1376265, 14, 0, 1376266, 14, 0, 1376267, 7, 0, 1376268, 20, 0, 1376271, 6, 0, 1376272, 8, 0, 1441792, 14, 0, 1441793, 14, 0, 1441794, 8, 0, 1441803, 6, 0, 1441804, 8, 0, 1441807, 6, 0, 1441808, 8, 0, 1507328, 14, 0, 1507329, 14, 0, 1507330, 14, 0, 1507331, 8, 0, 1507339, 6, 0, 1507340, 8, 0, 1507343, 6, 0, 1507344, 8, 0, 1572864, 14, 0, 1572865, 14, 0, 1572866, 14, 0, 1572867, 14, 0, 1572868, 8, 0, 1572875, 6, 0, 1572876, 8, 0, 1572879, 6, 0, 1572880, 8, 0, 1638400, 7, 0, 1638401, 7, 0, 1638402, 7, 0, 1638403, 7, 0, 1638404, 7, 0, 1638405, 7, 0, 1638411, 6, 0, 1638412, 8, 0, 1638415, 6, 0, 1638416, 8, 0, 1703943, 0, 0, 1703944, 1, 0, 1703945, 2, 0, 1703947, 13, 0, 1703948, 15, 0, 1703951, 13, 0, 1703952, 15, 0, 1900544, 1, 0, 1900545, 1, 0, 1900546, 1, 0, 1900547, 1, 0, 1900548, 1, 0, 1900549, 1, 0, 1900550, 1, 0, 1900551, 1, 0, 1900552, 1, 0, 1900553, 1, 0, 1900554, 1, 0, 1900555, 1, 0, 1900556, 1, 0, 1900557, 1, 0, 1900558, 1, 0, 1900559, 1, 0, 1900560, 1, 0, 1900561, 1, 0, 1900562, 1, 0, 1900563, 1, 0, 1900564, 1, 0, 1900565, 1, 0, 1900566, 1, 0, 1900567, 1, 0, 1900568, 1, 0, 1900569, 1, 0, 1900570, 1, 0, 1900571, 1, 0, 1900572, 1, 0, 1900573, 1, 0, 1900574, 1, 0, 1900575, 1, 0, 1900576, 1, 0, 1900577, 1, 0, 1900578, 1, 0, 1900579, 1, 0, 1900580, 1, 0, 1900581, 1, 0, 1900582, 1, 0, 1900583, 1, 0 )
 _sections_unfolded = [ "Cell" ]
 
-[node name="UILayer" type="CanvasLayer" parent="." index="6"]
+[node name="UILayer" type="CanvasLayer" parent="." index="7"]
 
 layer = 0
 offset = Vector2( 0, 0 )
@@ -220,7 +227,7 @@ exp_edit = false
 rounded = false
 texture_under = null
 texture_over = null
-texture_progress = ExtResource( 7 )
+texture_progress = ExtResource( 8 )
 fill_mode = 3
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
@@ -234,7 +241,7 @@ position = Vector2( -8, 0 )
 z_as_relative = false
 enabled = true
 editor_only = false
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 offset = Vector2( 24, 16 )
 texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
@@ -255,7 +262,7 @@ shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Range", "Transform", "Visibility", "Z Index" ]
 
-[node name="ScreenLeft" type="StaticBody2D" parent="." index="7"]
+[node name="ScreenLeft" type="StaticBody2D" parent="." index="8"]
 
 editor/display_folded = true
 position = Vector2( 0, 500 )
@@ -273,7 +280,7 @@ _sections_unfolded = [ "Transform" ]
 shape = SubResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ScreenRight" type="StaticBody2D" parent="." index="8"]
+[node name="ScreenRight" type="StaticBody2D" parent="." index="9"]
 
 editor/display_folded = true
 position = Vector2( 640, 500 )
