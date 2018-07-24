@@ -3,6 +3,7 @@ extends "res://Character.gd"
 signal die
 
 onready var target = get_parent().get_node("Player")
+onready var ground_ray = get_node("ground_ray")
 
 func _ready():
 	if target == null:
@@ -39,13 +40,8 @@ func check_ahead():
 	return test_move(transform, test_motion)
 	
 func is_near_edge():
-	var test_motion = Vector2(16,1)
-	if get_flip_sprite():
-		test_motion = Vector2(-16,1)
-	return not test_move(transform, test_motion)
+	return not edge_ray.is_colliding()
 	
-#	return edge_ray.is_colliding()
-	
-#func set_flip_sprite(active):
-#	.set_flip_sprite(active)
-#	edge_ray.position *= Vector2(-1,1)
+func set_flip_sprite(active):
+	.set_flip_sprite(active)
+	edge_ray.position *= Vector2(-1,1)
