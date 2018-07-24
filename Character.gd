@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var walk_accel = 8
 var friction = 0.1
-var max_speed = 100
+var max_speed = 250
 var gravity = 9.8
 var jump_power = -25
 var jump_speed = gravity * jump_power
@@ -57,7 +57,7 @@ func move(delta, acceleration):
         velocity.y *= bounce
     if is_on_wall():
         velocity.x *= -bounce
-#    velocity.x = clamp(velocity.x,-max_speed,max_speed)
+    velocity.x = clamp(velocity.x,-max_speed,max_speed)
 
     # This is dark magic. We get the velocity of the floor
     # (which will be non-zero if we're standing on a moving
