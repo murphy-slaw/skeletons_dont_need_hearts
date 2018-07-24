@@ -40,9 +40,7 @@ func can_climb():
 func move(delta, the_move):
 
 
-    if is_on_floor():
-        my_motion.y = 0
-    else:
+    if not is_on_floor():
         my_motion.y += gravity
     # reduce the actual horizontal movement by
     # our current linear velocity * frictional constant
