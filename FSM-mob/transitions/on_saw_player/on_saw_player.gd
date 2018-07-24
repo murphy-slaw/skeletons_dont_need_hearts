@@ -14,4 +14,5 @@ func prepare(new_state, args = []):
 
 func transition_condition(delta, args = []): 
     # Return true/false
+    logic_root.overlaps_target()
     return logic_root.can_see_target
