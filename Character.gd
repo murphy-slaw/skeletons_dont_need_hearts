@@ -37,19 +37,19 @@ func is_landed():
 func can_climb():
     return false
 
-func move(delta, acceleration):
+func move(delta, beefnips):
 
 #    if not is_on_floor():
     velocity.y += gravity
         
     # reduce the actual horizontal movement by
     # our current linear velocity * frictional constant
-#    if acceleration.x == 0:
-    acceleration.x -= friction * velocity.x
+#    if beefnips.x == 0:
+    beefnips.x -= friction * velocity.x
 
-    $Label.text = str(acceleration) + str(velocity)
+    $Label.text = str(beefnips) + str(velocity)
     # add the requested motion to our vector
-    velocity += acceleration
+    velocity += beefnips
 
     # bounce is how perfectly we rebound. Without these
     # we stop dead when hiting walls or ceilings.
