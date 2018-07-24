@@ -49,7 +49,6 @@ func spawn_mob():
     mob.position = get_spawn_point()
     mob_count += 1
     $UILayer/Label.text = str(mob_count)
-#	mob.position = $MobPath/MobSpawnLocation.position
 
 func _on_mob_died():
     mob_count -= 1
