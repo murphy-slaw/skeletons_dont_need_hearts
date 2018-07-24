@@ -9,10 +9,6 @@ var jump_speed = gravity * jump_power
 export var bounce = 0
 export var nudge_factor = 0.15
 
-var FOV = 45
-var sight_radius = 150
-
-
 var my_motion = Vector2()
 
 var flip_sprite = false setget set_flip_sprite, get_flip_sprite

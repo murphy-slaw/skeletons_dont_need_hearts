@@ -2,10 +2,12 @@ extends "res://Character.gd"
 
 signal die
 
+
+export (int) var FOV = 45
+export (int) var sight_radius = 150
+
 onready var target = get_parent().get_node("Player")
 onready var edge_ray = get_node("edge_ray")
-
-
 
 func get_circle_arc_poly(center, radius, angle_from, angle_to):
     var nb_points = 32
