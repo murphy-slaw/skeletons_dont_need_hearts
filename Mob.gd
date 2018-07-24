@@ -30,8 +30,8 @@ func _ready():
     $VisionArea/CollisionPolygon2D.polygon = circle_sector
     $VisionArea/CollisionPolygon2D.rotation_degrees = 90
     if target == null: target = self
-    walk_accel = 4
-    max_speed = 100
+    walk_accel = 5
+    max_speed = 50
     original_max_speed = max_speed
     original_walk_accel = walk_accel
 
