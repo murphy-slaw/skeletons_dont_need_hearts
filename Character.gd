@@ -1,13 +1,13 @@
 extends KinematicBody2D
 
-export var walk_accel = 8
-export var friction = 0.1
-export var max_speed = 100
-export var gravity = 9.8
-export var jump_power = -25
+var walk_accel = 8
+var friction = 0.1
+var max_speed = 100
+var gravity = 9.8
+var jump_power = -25
 var jump_speed = gravity * jump_power
-export var bounce = 0
-export var nudge_factor = 0.15
+var bounce = 0
+var nudge_factor = 0.15
 
 var velocity = Vector2()
 
