@@ -34,10 +34,9 @@ func _ready():
 
 
 func _physics_process(delta):
-    if target_in_range:
-        var space_state = get_world_2d().direct_space_state
-        var result = space_state.intersect_ray(global_position, target.global_position, [self])
-        can_see_target = (result.collider == target)
+    var space_state = get_world_2d().direct_space_state
+    var result = space_state.intersect_ray(global_position, target.global_position, [self])
+    can_see_target = (result.collider == target)
 
 func _on_Lifespan_timeout():
     emit_signal("die")
@@ -80,7 +79,7 @@ func overlaps_target():
         return target_in_range
 
 func start_aggro():
-    max_speed *= 5
+    max_speed *= 4.5
     walk_accel *= 4
     aggro_exhausted = false
     $AggroTimer.start()
