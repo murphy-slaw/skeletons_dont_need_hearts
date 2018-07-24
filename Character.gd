@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export var walk_accel = 8
-export var friction = .003
+export var friction = -10
 export var max_speed = 100
 export var gravity = 9.8
 export var jump_power = -25
@@ -37,7 +37,7 @@ func is_landed():
 func can_climb():
     return false
 
-func move(delta, the_move):
+func move(delta, acceleration):
 
 
     if not is_on_floor():
@@ -45,11 +45,11 @@ func move(delta, the_move):
         
     # reduce the actual horizontal movement by
     # our current linear velocity * frictional constant
-    if is_landed():
+    if acceleration.x == 0:
         velocity.x *= 1 - friction
 
     # add the requested motion to our vector
-    velocity += the_move
+    velocity += acceleration
 
     # bounce is how perfectly we rebound. Without these
     # we stop dead when hiting walls or ceilings.
