@@ -39,15 +39,15 @@ func can_climb():
 
 func move(delta, acceleration):
 
-
     if not is_on_floor():
         velocity.y += gravity
         
     # reduce the actual horizontal movement by
     # our current linear velocity * frictional constant
     if acceleration.x == 0:
-        acceleration.x -= friction * velocity.x
+        acceleration.x = friction * velocity.x
 
+    $Label.text = str(acceleration)
     # add the requested motion to our vector
     velocity += acceleration
 
