@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export var walk_accel = 8
-export var friction = 1
+export var friction = .5
 export var max_speed = 100
 export var gravity = 9.8
 export var jump_power = -25
@@ -47,7 +47,7 @@ func move(delta, acceleration):
     if acceleration.x == 0:
         acceleration.x -= friction * velocity.x
 
-    $Label.text = str(velocity)
+    $Label.text = str(acceleration)
     # add the requested motion to our vector
     velocity += acceleration
 
