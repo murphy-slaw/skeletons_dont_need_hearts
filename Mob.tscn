@@ -39,7 +39,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 1, 2, 3, 4, 5, 1 ]
 }
 
-[node name="Mob" type="KinematicBody2D" index="0"]
+[node name="Mob" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -54,8 +54,8 @@ gravity = 9.8
 jump_power = -25
 bounce = 0
 nudge_factor = 0.15
-FOV = 35
-sight_radius = 200
+FOV = 40
+sight_radius = 100
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
