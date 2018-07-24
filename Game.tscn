@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=2]
@@ -7,8 +7,11 @@
 [ext_resource path="res://art/roughtiles.tres" type="TileSet" id=5]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://art/heart-mask.png" type="Texture" id=8]
-[ext_resource path="res://Mover.tscn" type="PackedScene" id=9]
+[ext_resource path="res://art/navtile.png" type="Texture" id=8]
+[ext_resource path="res://art/rough_tile.png" type="Texture" id=9]
+[ext_resource path="res://art/heart-back.png" type="Texture" id=10]
+[ext_resource path="res://art/heart-mask.png" type="Texture" id=11]
+[ext_resource path="res://Mover.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -25,70 +28,13 @@ use_filter = true
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Resource", "Settings" ]
 
-[sub_resource type="StyleBoxFlat" id=3]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-bg_color = Color( 1, 0, 0, 1 )
-draw_center = true
-border_width_left = 0
-border_width_top = 0
-border_width_right = 0
-border_width_bottom = 0
-border_color = Color( 0.8, 0.8, 0.8, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
-
-[sub_resource type="StyleBoxFlat" id=4]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-bg_color = Color( 1, 1, 1, 1 )
-draw_center = true
-border_width_left = 0
-border_width_top = 0
-border_width_right = 0
-border_width_bottom = 0
-border_color = Color( 0.8, 0.8, 0.8, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
-_sections_unfolded = [ "Corner Radius" ]
-
 [sub_resource type="SegmentShape2D" id=5]
 
 custom_solver_bias = 0.0
 a = Vector2( 0, -1000 )
 b = Vector2( 0, 0 )
 
-[node name="Game" type="Node2D" index="0"]
+[node name="Game" type="Node2D"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -213,9 +159,7 @@ show_behind_parent = true
 position = Vector2( 245, 412 )
 z_index = 2
 _sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
-walk_accel = 8
-friction = 0.03
-jump_power = -25
+max_speed = 100
 
 [node name="UILayer" type="CanvasLayer" parent="." index="11"]
 
@@ -262,7 +206,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="Progress" type="ProgressBar" parent="UILayer/MarginContainer" index="0"]
+[node name="TextureProgress" type="TextureProgress" parent="UILayer/MarginContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -271,24 +215,27 @@ anchor_bottom = 0.0
 margin_left = 8.0
 margin_right = 40.0
 margin_bottom = 32.0
-rect_min_size = Vector2( 32, 32 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 0
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 0
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 4 )
+size_flags_vertical = 1
 min_value = 0.0
 max_value = 10.0
 step = 1.0
 page = 0.0
-value = 5.0
+value = 3.0
 exp_edit = false
 rounded = false
-percent_visible = false
-_sections_unfolded = [ "Anchor", "Margin", "Material", "Percent", "Radial Fill", "Rect", "Textures", "custom_styles" ]
+texture_under = ExtResource( 8 )
+texture_over = ExtResource( 9 )
+texture_progress = ExtResource( 10 )
+fill_mode = 3
+radial_fill_degrees = 360.0
+radial_center_offset = Vector2( 0, 0 )
+nine_patch_stretch = false
+_sections_unfolded = [ "Radial Fill", "Textures", "Visibility" ]
 
 [node name="Light2D" type="Light2D" parent="UILayer/MarginContainer" index="1"]
 
@@ -296,7 +243,7 @@ light_mask = 3
 z_as_relative = false
 enabled = true
 editor_only = false
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 offset = Vector2( 24, 16 )
 texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
@@ -353,13 +300,13 @@ _sections_unfolded = [ "Collision", "Transform" ]
 shape = SubResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Mover" parent="." index="14" instance=ExtResource( 9 )]
+[node name="Mover" parent="." index="14" instance=ExtResource( 12 )]
 
 position = Vector2( 444, 450 )
 motion = Vector2( 0, 16 )
 cycle = 16.0
 
-[node name="Mover2" parent="." index="15" instance=ExtResource( 9 )]
+[node name="Mover2" parent="." index="15" instance=ExtResource( 12 )]
 
 position = Vector2( 354, 249 )
 motion = Vector2( 16, 0 )
