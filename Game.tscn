@@ -117,7 +117,7 @@ max_speed = 100
 
 position = Vector2( 224, 393 )
 motion = Vector2( 0, 96 )
-cycle = 4.0
+cycle = 6.0
 
 [node name="TileMap" type="TileMap" parent="." index="6"]
 
