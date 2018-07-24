@@ -54,8 +54,8 @@ gravity = 9.8
 jump_power = -25
 bounce = 0
 nudge_factor = 0.15
-FOV = 45
-sight_radius = 150
+FOV = 35
+sight_radius = 200
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
