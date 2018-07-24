@@ -39,7 +39,8 @@ func _ready():
 func _physics_process(delta):
     var space_state = get_world_2d().direct_space_state
     var result = space_state.intersect_ray(global_position, target.global_position, [self])
-    can_see_target = (result.collider == target)
+    if result:
+        can_see_target = (result.collider == target)
 
 func _on_Lifespan_timeout():
     emit_signal("die")
