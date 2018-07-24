@@ -4,8 +4,8 @@ signal die
 
 var can_see_target = false
 var aggro_exhausted = true
-var original_max_speed = max_speed
-var original_walk_accel = walk_accel
+var original_max_speed
+var original_walk_accel
 
 export (int) var FOV = 45
 export (int) var sight_radius = 150
@@ -27,7 +27,9 @@ func _ready():
     var circle_sector = get_circle_arc_poly(Vector2(), sight_radius, FOV/2, -FOV/2)
     $VisionArea/CollisionPolygon2D.polygon = circle_sector
     $VisionArea/CollisionPolygon2D.rotation_degrees = 90
-    if target == null: target = self	
+    if target == null: target = self
+    original_max_speed = max_speed
+    original_walk_accel = walk_accel
 
 
 #
