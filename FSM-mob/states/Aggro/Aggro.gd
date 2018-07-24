@@ -15,8 +15,6 @@ func update(delta, args=null):
     .update(delta, args)
     var movement = Vector2()
     movement.x= (target.global_position - global_position).normalized().x
-#	movement.x = direction.x
-
 
 #when exiting state
 func exit(to_state=null):
