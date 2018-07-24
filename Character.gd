@@ -38,6 +38,8 @@ func can_climb():
     return false
 
 func move(delta, the_move):
+    
+    my_motion.x = 0
 
     # always add gravity. it's good and good for you!
     if not is_on_floor():
