@@ -26,6 +26,7 @@ bounce = 0.0
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+one_way_collision = true
 
 [node name="rough1" type="Sprite" parent="." index="1"]
 
@@ -51,6 +52,7 @@ bounce = 0.0
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+one_way_collision = true
 
 [node name="rough2" type="Sprite" parent="." index="2"]
 
@@ -76,6 +78,7 @@ bounce = 0.0
 
 build_mode = 0
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+one_way_collision = true
 
 [node name="rough3" type="Sprite" parent="." index="3"]
 
