@@ -19,6 +19,7 @@ func update(delta, args=null):
     .update(delta, args)
     var movement = Vector2()
     movement.x= (logic_root.target.global_position - logic_root.global_position).normalized().x
+    logic_root.walk(delta, movement)
 
 #when exiting state
 func exit(to_state=null):
