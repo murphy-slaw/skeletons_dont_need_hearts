@@ -190,7 +190,6 @@ path2Target_state = NodePath("../../States/Reversing")
 
 [node name="VisionArea" type="Area2D" parent="." index="7"]
 
-editor/display_folded = true
 position = Vector2( 0.0241985, 0.0446415 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

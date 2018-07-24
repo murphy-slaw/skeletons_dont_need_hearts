@@ -37,25 +37,26 @@ func _ready():
 #onready var edge_ray = get_node("edge_ray")
 
 func _on_Lifespan_timeout():
-	emit_signal("die")
-	queue_free()
+    emit_signal("die")
+    queue_free()
 
 func get_vision_normal():
     return ($facing_ray.position * $facing_ray.cast_to).normalized()
 
 #func get_normalized_motion():
 #	return Vector2(0,0)
-	
+    
 func check_ahead():
-	var test_motion = Vector2(1,0)
-	if get_flip_sprite():
-		test_motion = Vector2(-1,0)
-	test_motion *= 5
-	return test_move(transform, test_motion)
-	
+    var test_motion = Vector2(1,0)
+    if get_flip_sprite():
+        test_motion = Vector2(-1,0)
+    test_motion *= 5
+    return test_move(transform, test_motion)
+    
 func is_near_edge():
-	return not edge_ray.is_colliding()
-	
+    return not edge_ray.is_colliding()
+    
 func set_flip_sprite(active):
-	.set_flip_sprite(active)
-	edge_ray.position *= Vector2(-1,1)
+    .set_flip_sprite(active)
+    $VisionArea/CollisionPolygon2D.rotation_degrees += 180
+    edge_ray.position *= Vector2(-1,1)

@@ -4,18 +4,18 @@ func get_FSM(): return fsm; #defined in parent class
 func get_logic_root(): return logic_root; #defined in parent class
 
 func state_init(args = null):
-	.state_init()
+    .state_init()
 
 #when entering state, usually you will want to reset internal state here somehow
 func enter(from_state = null, from_transition = null, args = []):
-	.enter(from_state, from_transition, args)
+    .enter(from_state, from_transition, args)
 
 #when updating state, paramx can be used only if updating fsm manually
 func update(delta, args=null):
-	.update(delta, args)
-	var motion = Vector2(0,logic_root.jump_speed)
-	logic_root.move(delta,motion)
+    .update(delta, args)
+    var motion = Vector2(0,logic_root.jump_speed)
+    logic_root.move(delta,motion)
 
 #when exiting state
 func exit(to_state=null):
-	.exit(to_state)
+    .exit(to_state)

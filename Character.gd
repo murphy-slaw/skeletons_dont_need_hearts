@@ -28,7 +28,6 @@ func set_flip_sprite(active=true):
     else:
         $Sprite.flip_h = active
         $facing_ray.global_rotation_degrees += 180
-        $VisionArea/CollisionPolygon2D.rotation_degrees += 180
         if $Sprite.flip_h:
             $Sprite.offset = Vector2(2,0)
         else:
@@ -76,10 +75,10 @@ func move(delta, the_move):
     # accelerate instead of just keeping pace with the thing
     # we're standing on!
     my_motion -= floor_vec
-	
+    
 func is_near_floor():
-	var test_motion = Vector2(0,2)
-	return test_move(transform,test_motion)
+    var test_motion = Vector2(0,2)
+    return test_move(transform,test_motion)
 
 func walk(delta, normal_vec):
     var walk_vec = Vector2(walk_accel,0)
