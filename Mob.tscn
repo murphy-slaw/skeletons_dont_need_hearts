@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Mob.gd" type="Script" id=1]
 [ext_resource path="res://art/skellingtorn.png" type="Texture" id=2]
@@ -8,12 +8,18 @@
 [ext_resource path="res://FSM-mob/states/Idle/Idle.tscn" type="PackedScene" id=6]
 [ext_resource path="res://FSM-mob/states/Falling/Falling.tscn" type="PackedScene" id=7]
 [ext_resource path="res://FSM-mob/states/Reversing/Reversing.tscn" type="PackedScene" id=8]
-[ext_resource path="res://FSM-mob/transitions/on_landed/on_landed.tscn" type="PackedScene" id=9]
-[ext_resource path="res://FSM/transitions/on_landed/on_landed.gd" type="Script" id=10]
-[ext_resource path="res://FSM-mob/transitions/on_left_ground/on_left_ground.tscn" type="PackedScene" id=11]
-[ext_resource path="res://FSM-mob/transitions/on_collision/on_collision.tscn" type="PackedScene" id=12]
-[ext_resource path="res://FSM-mob/transitions/on_path_clear/on_path_clear.tscn" type="PackedScene" id=13]
-[ext_resource path="res://FSM-mob/transitions/on_near_edge/on_near_edge.tscn" type="PackedScene" id=14]
+[ext_resource path="res://FSM-mob/states/Aggro/Aggro.tscn" type="PackedScene" id=9]
+[ext_resource path="res://FSM-mob/states/Aggro/Aggro.gd" type="Script" id=10]
+[ext_resource path="res://FSM-mob/transitions/on_landed/on_landed.tscn" type="PackedScene" id=11]
+[ext_resource path="res://FSM/transitions/on_landed/on_landed.gd" type="Script" id=12]
+[ext_resource path="res://FSM-mob/transitions/on_left_ground/on_left_ground.tscn" type="PackedScene" id=13]
+[ext_resource path="res://FSM-mob/transitions/on_collision/on_collision.tscn" type="PackedScene" id=14]
+[ext_resource path="res://FSM-mob/transitions/on_path_clear/on_path_clear.tscn" type="PackedScene" id=15]
+[ext_resource path="res://FSM-mob/transitions/on_near_edge/on_near_edge.tscn" type="PackedScene" id=16]
+[ext_resource path="res://FSM-mob/transitions/on_saw_player/on_saw_player.tscn" type="PackedScene" id=17]
+[ext_resource path="res://FSM-mob/transitions/on_saw_player/on_saw_player.gd" type="Script" id=18]
+[ext_resource path="res://FSM-mob/transitions/on_aggro_expired/on_aggro_expired.tscn" type="PackedScene" id=19]
+[ext_resource path="res://FSM-mob/transitions/on_aggro_expired/on_aggro_expired.gd" type="Script" id=20]
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -39,7 +45,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 1, 2, 3, 4, 5, 1 ]
 }
 
-[node name="Mob" type="KinematicBody2D"]
+[node name="Mob" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -103,7 +109,23 @@ anims/Idle = SubResource( 2 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="FSM2D" type="Node2D" parent="." index="6"]
+[node name="VisionArea" type="Area2D" parent="." index="6"]
+
+position = Vector2( 0.0241985, 0.0446415 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionArea" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array(  )
+
+[node name="FSM2D" type="Node2D" parent="." index="7"]
 
 script = ExtResource( 3 )
 _sections_unfolded = [ "Create new:" ]
@@ -121,6 +143,9 @@ debug_enabled = true
 "Create new:/Create state with name:" = null
 "Create new:/Create transition with name:" = null
 GraphData = {
+"Aggro": Vector2( 1493, 243 ),
+"Aggro_": Vector2( 1493, 243 ),
+"Aggro__": Vector2( 1493, 243 ),
 "Falling": Vector2( 556, 89 ),
 "Falling_": Vector2( 556, 89 ),
 "Falling__": Vector2( 556, 89 ),
@@ -129,13 +154,14 @@ GraphData = {
 "Idle2_": Vector2( 627, 210 ),
 "Idle2__": Vector2( 627, 210 ),
 "Idle_": Vector2( 1207, 75 ),
-"Idle__": Vector2( 242, 411 ),
+"Idle__": Vector2( 1207, 75 ),
 "Patrolling": Vector2( 925, 389 ),
 "Patrolling_": Vector2( 925, 389 ),
-"Patrolling__": Vector2( 965, 484 ),
+"Patrolling__": Vector2( 925, 389 ),
 "Reversing": Vector2( 473, 812 ),
 "Reversing_": Vector2( 473, 812 ),
-"Reversing__": Vector2( 462, 755 ),
+"Reversing__": Vector2( 473, 812 ),
+"on_aggro_expired": Vector2( 1426, 133 ),
 "on_collision": Vector2( 943, 832 ),
 "on_collision_": Vector2( 943, 832 ),
 "on_collision__": Vector2( 943, 832 ),
@@ -144,11 +170,16 @@ GraphData = {
 "on_landed__": Vector2( 518, 476 ),
 "on_left_ground": Vector2( 870, 193 ),
 "on_left_ground_": Vector2( 870, 193 ),
-"on_left_ground__": Vector2( 191, 47 ),
+"on_left_ground__": Vector2( 870, 193 ),
 "on_near_edge": Vector2( 1438, 618 ),
 "on_near_edge_": Vector2( 1438, 618 ),
+"on_near_edge__": Vector2( 1438, 618 ),
 "on_path_clear": Vector2( 705, 604 ),
-"on_path_clear_": Vector2( 705, 604 )
+"on_path_clear_": Vector2( 705, 604 ),
+"on_path_clear__": Vector2( 705, 604 ),
+"on_saw_player": Vector2( 1286, 403 ),
+"on_saw_player_": Vector2( 1286, 403 ),
+"on_saw_player__": Vector2( 1286, 403 )
 }
 
 [node name="States" type="Node2D" parent="FSM2D" index="0"]
@@ -161,51 +192,64 @@ GraphData = {
 
 [node name="Reversing" parent="FSM2D/States" index="3" instance=ExtResource( 8 )]
 
-[node name="Transitions" type="Node2D" parent="FSM2D" index="1"]
-
-[node name="on_landed" parent="FSM2D/Transitions" index="0" instance=ExtResource( 9 )]
+[node name="Aggro" type="Node" parent="FSM2D/States" index="4" instance=ExtResource( 9 )]
 
 script = ExtResource( 10 )
+
+[node name="AggroTimer" type="Timer" parent="FSM2D/States/Aggro" index="0"]
+
+process_mode = 0
+wait_time = 10.0
+one_shot = false
+autostart = false
+
+[node name="Transitions" type="Node2D" parent="FSM2D" index="1"]
+
+[node name="on_landed" parent="FSM2D/Transitions" index="0" instance=ExtResource( 11 )]
+
+script = ExtResource( 12 )
 path2SourceStates = [ NodePath(""), NodePath("../../States/Falling"), NodePath("../../States/Idle") ]
 path2Target_state = NodePath("../../States/Patrolling")
 
-[node name="on_left_ground" parent="FSM2D/Transitions" index="1" instance=ExtResource( 11 )]
+[node name="on_left_ground" parent="FSM2D/Transitions" index="1" instance=ExtResource( 13 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Idle"), NodePath("../../States/Patrolling") ]
 path2Target_state = NodePath("../../States/Falling")
 
-[node name="on_collision" parent="FSM2D/Transitions" index="2" instance=ExtResource( 12 )]
+[node name="on_collision" parent="FSM2D/Transitions" index="2" instance=ExtResource( 14 )]
 
 path2SourceStates = [ NodePath("../../States/Patrolling") ]
 path2Target_state = NodePath("../../States/Reversing")
 intervalBetweenChecks = 0.1
 
-[node name="on_path_clear" parent="FSM2D/Transitions" index="3" instance=ExtResource( 13 )]
+[node name="on_path_clear" parent="FSM2D/Transitions" index="3" instance=ExtResource( 15 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Reversing") ]
 path2Target_state = NodePath("../../States/Patrolling")
 
-[node name="on_near_edge" parent="FSM2D/Transitions" index="4" instance=ExtResource( 14 )]
+[node name="on_near_edge" parent="FSM2D/Transitions" index="4" instance=ExtResource( 16 )]
 
 path2SourceStates = [ NodePath("../../States/Patrolling") ]
 path2Target_state = NodePath("../../States/Reversing")
 
-[node name="VisionArea" type="Area2D" parent="." index="7"]
+[node name="on_saw_player" type="Node" parent="FSM2D/Transitions" index="5" instance=ExtResource( 17 )]
 
-position = Vector2( 0.0241985, 0.0446415 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
+script = ExtResource( 18 )
+path2SourceStates = [ NodePath(""), NodePath("../../States/Patrolling") ]
+path2Target_state = NodePath("../../States/Aggro")
+intervalBetweenChecks = -1.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionArea" index="0"]
+[node name="on_aggro_expired" type="Node" parent="FSM2D/Transitions" index="6" instance=ExtResource( 19 )]
 
-build_mode = 0
-polygon = PoolVector2Array(  )
+script = ExtResource( 20 )
+path2SourceStates = [ NodePath(""), NodePath("../../States/Aggro") ]
+path2Target_state = NodePath("../../States/Idle")
+intervalBetweenChecks = -1.0
 
 [connection signal="timeout" from="Lifespan" to="." method="_on_Lifespan_timeout"]
+
+[connection signal="body_entered" from="VisionArea" to="." method="_on_VisionArea_body_entered"]
+
+[connection signal="body_exited" from="VisionArea" to="." method="_on_VisionArea_body_exited"]
 
 

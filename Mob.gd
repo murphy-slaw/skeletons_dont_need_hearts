@@ -62,3 +62,13 @@ func set_flip_sprite(active):
     .set_flip_sprite(active)
     $VisionArea/CollisionPolygon2D.rotation_degrees += 180
     edge_ray.position *= Vector2(-1,1)
+
+
+func _on_VisionArea_body_entered(body):
+    if body == target:
+        can_see_target = true
+        
+        
+func _on_VisionArea_body_exited(body):
+    if body == target:
+        can_see_target = false
