@@ -252,4 +252,6 @@ intervalBetweenChecks = -1.0
 
 [connection signal="body_exited" from="VisionArea" to="." method="_on_VisionArea_body_exited"]
 
+[connection signal="timeout" from="FSM2D/States/Aggro/AggroTimer" to="." method="_on_AggroTimer_timeout"]
+
 

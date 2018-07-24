@@ -3,6 +3,7 @@ extends "res://Character.gd"
 signal die
 
 var can_see_target = false
+var aggro_exhausted = true
 
 export (int) var FOV = 45
 export (int) var sight_radius = 150
@@ -63,3 +64,8 @@ func _on_VisionArea_body_entered(body):
 func _on_VisionArea_body_exited(body):
     if body == target:
         can_see_target = false
+
+func _on_AggroTimer_timeout():
+    aggro_exhausted = true
+    
+    pass # replace with function body
