@@ -46,7 +46,8 @@ func move(delta, acceleration):
     # our current linear velocity * frictional constant
     if acceleration.x == 0:
         acceleration.x -= friction * velocity.x
-
+    
+    $Label.text = str(velocity) + str(acceleration) + friction
     # add the requested motion to our vector
     velocity += acceleration
 
