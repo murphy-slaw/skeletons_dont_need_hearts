@@ -230,4 +230,6 @@ autoplay = true
 mix_target = 0
 bus = "Master"
 
+[connection signal="pressed" from="Margin/MarginContainer/VBoxContainer/LinkButton" to="." method="_on_LinkButton_pressed"]
+
 
