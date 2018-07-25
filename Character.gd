@@ -52,9 +52,13 @@ func move(delta, acceleration):
     velocity = \
     move_and_slide(velocity, Vector2(0,-1),5,10)
     process_collisions()
-
+    
 func process_collisions():
-    pass
+    var count = get_slide_count()
+    for i in range(count):
+        var collision = get_slide_collision(i)
+        if collision.collider.has_method("hit"):
+                collision.collider.hit()
     
 func is_near_floor():
     var test_motion = Vector2(0,2)
