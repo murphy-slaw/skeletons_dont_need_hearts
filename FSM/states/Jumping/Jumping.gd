@@ -13,6 +13,10 @@ func enter(from_state = null, from_transition = null, args = []):
 #when updating state, paramx can be used only if updating fsm manually
 func update(delta, args=null):
     .update(delta, args)
+    var vel = logic_root.jump_speed
+    if not Input.is_action_pressed():
+        vel *= .5
+        
     var motion = Vector2(0,logic_root.jump_speed)
     logic_root.move(delta,motion)
 
