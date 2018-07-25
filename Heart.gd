@@ -22,6 +22,9 @@ func _ready():
 
 func _physics_process(delta):
     walk(delta,direction)
+    
+func _process_collisions():
+    pass
 
 func _on_PoofTimer_timeout():
     queue_free()
