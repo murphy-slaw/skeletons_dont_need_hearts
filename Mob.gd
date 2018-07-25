@@ -47,7 +47,7 @@ func _on_Lifespan_timeout():
     queue_free()
     
 func check_ahead():
-    test_motion = 5 * facing_normal
+    var test_motion = 5 * facing_normal
     return test_move(transform, test_motion)
     
 func is_near_edge():
