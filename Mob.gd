@@ -87,3 +87,6 @@ func end_aggro():
 
 func _on_AggroTimer_timeout():
     end_aggro()
+
+func set_label(text):
+    $Label.text = text
