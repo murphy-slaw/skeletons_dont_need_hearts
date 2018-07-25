@@ -27,8 +27,8 @@ func get_circle_arc_poly(center, radius, angle_from, angle_to):
 
 func _ready():
     var circle_sector = get_circle_arc_poly(Vector2(), sight_radius, FOV/2, -FOV/2)
-    $VisionArea/CollisionPolygon2D.polygon = circle_sector
-    $VisionArea/CollisionPolygon2D.rotation_degrees = 90
+#    $VisionArea/CollisionPolygon2D.polygon = circle_sector
+#    $VisionArea/CollisionPolygon2D.rotation_degrees = 90
     if target == null: target = self
     walk_accel = 5
     max_speed = 50

@@ -42,7 +42,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 1, 2, 3, 4, 5, 1 ]
 }
 
-[node name="Mob" type="KinematicBody2D"]
+[node name="Mob" type="KinematicBody2D" index="0"]
 
 position = Vector2( 0.06884, 0 )
 z_index = 1
@@ -100,23 +100,7 @@ wait_time = 5.0
 one_shot = false
 autostart = false
 
-[node name="VisionArea" type="Area2D" parent="." index="6"]
-
-position = Vector2( 0.0241985, 0.0446415 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionArea" index="0"]
-
-build_mode = 0
-polygon = PoolVector2Array(  )
-
-[node name="FSM2D" type="Node2D" parent="." index="7"]
+[node name="FSM2D" type="Node2D" parent="." index="6"]
 
 script = ExtResource( 3 )
 _sections_unfolded = [ "Create new:" ]
@@ -225,7 +209,7 @@ path2Target_state = NodePath("../../States/Aggro")
 path2SourceStates = [ NodePath(""), NodePath("../../States/Aggro") ]
 path2Target_state = NodePath("../../States/Idle")
 
-[node name="Label" type="Label" parent="." index="8"]
+[node name="Label" type="Label" parent="." index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -246,9 +230,5 @@ max_lines_visible = -1
 [connection signal="timeout" from="Lifespan" to="." method="_on_Lifespan_timeout"]
 
 [connection signal="timeout" from="AggroTimer" to="." method="_on_AggroTimer_timeout"]
-
-[connection signal="body_entered" from="VisionArea" to="." method="_on_VisionArea_body_entered"]
-
-[connection signal="body_exited" from="VisionArea" to="." method="_on_VisionArea_body_exited"]
 
 
