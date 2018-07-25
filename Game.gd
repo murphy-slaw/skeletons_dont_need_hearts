@@ -24,7 +24,7 @@ func _process(delta):
         if $Player.hearts <= 0:
             get_tree().change_scene("res://TheEnd.tscn")
         elif $Player.hearts == win_hearts:
-            pass
+            get_tree().change_scene("res://TheEnd.tscn")
         
 func _on_Boinger_boing(boing_vec,body):
     if body.get("vel") !=null:
