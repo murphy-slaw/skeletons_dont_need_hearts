@@ -58,18 +58,9 @@ func move(delta, acceleration):
         velocity.x *= -bounce
     velocity.x = clamp(velocity.x,-max_speed,max_speed)
 
-    # This is dark magic. We get the velocity of the floor
-    # (which will be non-zero if we're standing on a moving
-    # object. Then we move and slide with our linear
-    # velocity plus the floor velocity.
-    velocity.y += floor_vec.y
     velocity = \
     move_and_slide(velocity, Vector2(0,-1))
 
-    # And now we REMOVE the floor velocity from our remaining
-    # movement vector, because otherwise we'll gradually
-    # accelerate instead of just keeping pace with the thing
-    # we're standing on!
     var floor_vec = get_floor_velocity()
     velocity += floor_vec
     
