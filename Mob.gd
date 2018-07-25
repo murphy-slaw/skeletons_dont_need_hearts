@@ -57,7 +57,7 @@ func die():
     heart.global_position = global_position
     heart.velocity = facing_normal
     get_parent().call_deferred("add_child",heart)
-    heart.connect(parent,"caught")
+    heart.connect("caught",parent,"_on_heart_caught")
     queue_free()
 
 func hit():
