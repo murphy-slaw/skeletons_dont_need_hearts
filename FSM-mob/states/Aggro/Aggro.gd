@@ -1,7 +1,7 @@
 extends "res://addons/moe.ero-one.fsm/content/FSMState.gd"
 
 func get_FSM(): return fsm; #defined in parent class
-func get_logic_root(): return logic_root; #defined in parent class 
+func get_logic_root(): return logic_root; #defined in parent class
 
 func state_init(args = null):
     .state_init()
