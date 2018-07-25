@@ -8,6 +8,7 @@ func get_normalized_motion():
 
 func hit():
     take_heart()
+    move(0,facing_normal * -1500)
     
 func give_heart():
     hearts += 1
