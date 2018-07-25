@@ -43,7 +43,8 @@ func move(delta, acceleration):
         
     # reduce the actual horizontal movement by
     # our current linear velocity * frictional constant
-    if acceleration.x == 0:
+    if acceleration.x == 0\
+    and get_floor_velocity() != Vector2(0,0)
         acceleration.x -= friction * velocity.x
     
 #    $Label.text = str(velocity) + str(acceleration) + str(friction)
@@ -57,9 +58,6 @@ func move(delta, acceleration):
     if is_on_wall():
         velocity.x *= -bounce
     velocity.x = clamp(velocity.x,-max_speed,max_speed)
-
-    var floor_vec = get_floor_velocity()
-    velocity -= floor_vec
 
     velocity = \
     move_and_slide(velocity, Vector2(0,-1))
