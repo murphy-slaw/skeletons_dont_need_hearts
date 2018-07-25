@@ -61,22 +61,6 @@ func reverse_facing():
     edge_ray.position *= Vector2(-1,1)
     .reverse_facing()
 
-
-func _on_VisionArea_body_entered(body):
-    if body == target:
-        target_in_range = true
-        
-        
-func _on_VisionArea_body_exited(body):
-    if body == target:
-        target_in_range = false
-        
-        
-func overlaps_target():
-    if $VisionArea.overlaps_body(target):
-        target_in_range = true
-        return target_in_range
-
 func start_aggro():
     max_speed *= 3
     walk_accel *= 2
