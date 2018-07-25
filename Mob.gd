@@ -44,8 +44,8 @@ func _physics_process(delta):
         var space_state = get_world_2d().direct_space_state
         var result = space_state.intersect_ray(global_position, target.global_position, [self])
         if result:
+            set_label(str(result.collider))
             can_see_target = (result.collider == target)
-    set_label(str(can_see_target))
 
         
 func _on_Lifespan_timeout():
@@ -60,7 +60,6 @@ func is_near_edge():
     return not edge_ray.is_colliding()
     
 func reverse_facing():
-    $VisionArea/CollisionPolygon2D.rotation_degrees += 180
     edge_ray.position *= Vector2(-1,1)
     .reverse_facing()
 
