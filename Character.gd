@@ -12,26 +12,16 @@ var nudge_factor = 0.15
 var velocity = Vector2()
 var facing_normal = Vector2(1,0)
 
-var flip_sprite = false setget set_flip_sprite, get_flip_sprite
-
-func get_flip_sprite():
-    return $Sprite.flip_h
-
-
-func set_flip_sprite(active=true):
-    if $Sprite.flip_h == active:
-        return
+func reverse_facing():
+    $Sprite.flip_h = not $Sprite.flip_h
+    facing_normal *= (-1,0)
+    if $Sprite.flip_h:
+        $Sprite.offset = Vector2(2,0)
     else:
-        $Sprite.flip_h = active
-        if $Sprite.flip_h:
-            $Sprite.offset = Vector2(2,0)
-        else:
-            $Sprite.offset = Vector2(0,0)
-
+        $Sprite.offset = Vector2(0,0)
 
 func is_landed():
     return is_on_floor() or is_near_floor()
-
 
 func can_climb():
     return false
@@ -46,7 +36,6 @@ func move(delta, acceleration):
 #    and get_floor_velocity() != Vector2(0,0):
         acceleration.x -= friction * velocity.x
     
-#    $Label.text = str(velocity) + str(acceleration) + str(friction)
     # add the requested motion to our vector
     velocity += acceleration
 
@@ -60,8 +49,6 @@ func move(delta, acceleration):
 
     velocity = \
     move_and_slide(velocity, Vector2(0,-1))
-
-    
     
 func is_near_floor():
     var test_motion = Vector2(0,2)
