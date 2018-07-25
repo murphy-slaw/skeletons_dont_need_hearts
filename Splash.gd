@@ -16,5 +16,5 @@ func _ready():
 #    # Update game logic here.
 #    pass
 
-_on_LinkButton_pressed():
-    emit("start_game")
+func _on_LinkButton_pressed():
+    emit_signal("start_game")
