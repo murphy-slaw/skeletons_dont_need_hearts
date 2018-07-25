@@ -18,7 +18,7 @@ func enter(from_state = null, from_transition = null, args = []):
 func update(delta, args=null):
     .update(delta, args)
     var movement = logic_root.target.global_position - logic_root.global_position
-    karl = movement.normalized()
+    var karl = movement.normalized()
     logic_root.set_label( str(logic_root.facing_normal) + "\n" + str(karl))
 
     if logic_root.facing_normal.x * movement.x == -1:
