@@ -15,7 +15,7 @@ func update(delta, args=null):
     .update(delta, args)
     var vel = logic_root.jump_speed
     if not Input.is_action_pressed("ui_up"):
-        vel *= .5
+        vel *= .25
         
     var motion = Vector2(0,vel)
     logic_root.move(delta,motion)
