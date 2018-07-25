@@ -19,7 +19,7 @@ func update(delta, args=null):
     .update(delta, args)
     var movement = Vector2()
     movement.x = (logic_root.target.global_position - logic_root.global_position).normalized().x
-    logic_root.set_label( str(logic_root.facing_normal) + str(movement))
+    logic_root.set_label( str(logic_root.facing_normal.x) + str(movement.x))
 
     if logic_root.facing_normal.x * movement.x == -1:
         logic_root.reverse_facing()
