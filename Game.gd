@@ -19,15 +19,12 @@ func _ready():
     $UILayer/MarginContainer/ColorRect/TextureProgress.max_value = win_hearts
     $UILayer/MarginContainer/ColorRect/TextureProgress.value = $Player.hearts
     
-    if $Player.hearts <= 0:
-        get_tree().change_scene("res://TheEnd.tscn")
-
-    elif $Player.hearts == win_hearts:
-        pass
-
-
 func _process(delta):
         $UILayer/MarginContainer/ColorRect/TextureProgress.value = $Player.hearts
+        if $Player.hearts <= 0:
+            get_tree().change_scene("res://TheEnd.tscn")
+        elif $Player.hearts == win_hearts:
+            pass
         
 func _on_Boinger_boing(boing_vec,body):
     if body.get("vel") !=null:
