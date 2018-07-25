@@ -54,12 +54,7 @@ func move(delta, acceleration):
     process_collisions()
 
 func process_collisions():
-    var count = get_slide_count()
-    for i in range(count):
-        var collision = get_slide_collision(i)
-        $Label.text = str(collision.collider)
-        if collision.collider.is_class("KinematicBody2D"):
-                emit_signal("hit",collision.collider)
+    pass
     
 func is_near_floor():
     var test_motion = Vector2(0,2)
