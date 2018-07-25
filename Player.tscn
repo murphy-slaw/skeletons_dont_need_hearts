@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://art/newguy.png" type="Texture" id=2]
@@ -9,12 +9,14 @@
 [ext_resource path="res://FSM/states/Falling/Falling.tscn" type="PackedScene" id=7]
 [ext_resource path="res://FSM/states/Jumping/Jumping.tscn" type="PackedScene" id=8]
 [ext_resource path="res://FSM/states/Climbing/Climbing.tscn" type="PackedScene" id=9]
-[ext_resource path="res://FSM/transitions/on_move/on_move.tscn" type="PackedScene" id=10]
-[ext_resource path="res://FSM/transitions/on_left_ground/on_left_ground.tscn" type="PackedScene" id=11]
-[ext_resource path="res://FSM/transitions/on_landed/on_landed.tscn" type="PackedScene" id=12]
-[ext_resource path="res://FSM/transitions/on_no_input/on_no_input.tscn" type="PackedScene" id=13]
-[ext_resource path="res://FSM/transitions/on_jump_input/on_jump_input.tscn" type="PackedScene" id=14]
-[ext_resource path="res://FSM/transitions/on_up_near_wall/on_up_near_wall.tscn" type="PackedScene" id=15]
+[ext_resource path="res://FSM/states/Staggered/Staggered.tscn" type="PackedScene" id=10]
+[ext_resource path="res://FSM/states/Staggered/Staggered.gd" type="Script" id=11]
+[ext_resource path="res://FSM/transitions/on_move/on_move.tscn" type="PackedScene" id=12]
+[ext_resource path="res://FSM/transitions/on_left_ground/on_left_ground.tscn" type="PackedScene" id=13]
+[ext_resource path="res://FSM/transitions/on_landed/on_landed.tscn" type="PackedScene" id=14]
+[ext_resource path="res://FSM/transitions/on_no_input/on_no_input.tscn" type="PackedScene" id=15]
+[ext_resource path="res://FSM/transitions/on_jump_input/on_jump_input.tscn" type="PackedScene" id=16]
+[ext_resource path="res://FSM/transitions/on_up_near_wall/on_up_near_wall.tscn" type="PackedScene" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -114,11 +116,11 @@ anims/Walk = SubResource( 4 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="JumpTimer" type="Timer" parent="." index="3"]
+[node name="StaggerTimer" type="Timer" parent="." index="3"]
 
 process_mode = 0
-wait_time = 0.25
-one_shot = false
+wait_time = 0.5
+one_shot = true
 autostart = false
 
 [node name="PlayerCamera" type="Camera2D" parent="." index="4"]
@@ -149,6 +151,7 @@ _sections_unfolded = [ "Drag Margin", "Limit", "Offset", "Transform" ]
 
 [node name="FSM2D" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 script = ExtResource( 3 )
 _sections_unfolded = [ "Create new:" ]
 __meta__ = {
@@ -177,6 +180,7 @@ GraphData = {
 "Jumping": Vector2( 266, 804 ),
 "Jumping_": Vector2( 266, 804 ),
 "Jumping__": Vector2( 1219, 1019 ),
+"Staggered": Vector2( 1109, 899 ),
 "Walking": Vector2( 420, 616 ),
 "Walking_": Vector2( 420, 616 ),
 "Walking__": Vector2( 394, 612 ),
@@ -218,36 +222,40 @@ GraphData = {
 
 [node name="Climbing" parent="FSM2D/States" index="4" instance=ExtResource( 9 )]
 
+[node name="Staggered" type="Node" parent="FSM2D/States" index="5" instance=ExtResource( 10 )]
+
+script = ExtResource( 11 )
+
 [node name="Transitions" type="Node2D" parent="FSM2D" index="1"]
 
 position = Vector2( -1, 1 )
 
-[node name="on_move" parent="FSM2D/Transitions" index="0" instance=ExtResource( 10 )]
+[node name="on_move" parent="FSM2D/Transitions" index="0" instance=ExtResource( 12 )]
 
 path2SourceStates = [ NodePath("../../States/Idle") ]
 path2Target_state = NodePath("../../States/Walking")
 
-[node name="on_left_ground" parent="FSM2D/Transitions" index="1" instance=ExtResource( 11 )]
+[node name="on_left_ground" parent="FSM2D/Transitions" index="1" instance=ExtResource( 13 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Idle"), NodePath("../../States/Walking"), NodePath("../../States/Jumping"), NodePath("../../States/Climbing") ]
 path2Target_state = NodePath("../../States/Falling")
 
-[node name="on_landed" parent="FSM2D/Transitions" index="2" instance=ExtResource( 12 )]
+[node name="on_landed" parent="FSM2D/Transitions" index="2" instance=ExtResource( 14 )]
 
 path2SourceStates = [ NodePath("../../States/Falling") ]
 path2Target_state = NodePath("../../States/Idle")
 
-[node name="on_no_input" parent="FSM2D/Transitions" index="3" instance=ExtResource( 13 )]
+[node name="on_no_input" parent="FSM2D/Transitions" index="3" instance=ExtResource( 15 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Walking"), NodePath("../../States/Climbing") ]
 path2Target_state = NodePath("../../States/Idle")
 
-[node name="on_jump_input" parent="FSM2D/Transitions" index="4" instance=ExtResource( 14 )]
+[node name="on_jump_input" parent="FSM2D/Transitions" index="4" instance=ExtResource( 16 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Idle"), NodePath("../../States/Walking") ]
 path2Target_state = NodePath("../../States/Jumping")
 
-[node name="on_up_near_wall" parent="FSM2D/Transitions" index="5" instance=ExtResource( 15 )]
+[node name="on_up_near_wall" parent="FSM2D/Transitions" index="5" instance=ExtResource( 17 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Walking"), NodePath("../../States/Idle"), NodePath("../../States/Falling") ]
 path2Target_state = NodePath("../../States/Climbing")
@@ -270,6 +278,6 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[connection signal="timeout" from="JumpTimer" to="." method="_on_JumpTimer_timeout"]
+[connection signal="timeout" from="StaggerTimer" to="." method="_on_JumpTimer_timeout"]
 
 
