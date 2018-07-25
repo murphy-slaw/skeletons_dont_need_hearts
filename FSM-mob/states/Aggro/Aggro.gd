@@ -18,9 +18,11 @@ func enter(from_state = null, from_transition = null, args = []):
 func update(delta, args=null):
     .update(delta, args)
     var movement = Vector2()
-    movement.x= (logic_root.target.global_position - logic_root.global_position).normalized().x
-    
-    logic_root.flip_sprite = (movement.x < 0)
+    movement.x = (logic_root.target.global_position - logic_root.global_position).normalized().x
+   
+    if movement.normalized().x >= logic_root.velocity.normalized().x:
+        logic_root.reverse_facing
+
     logic_root.walk(delta, movement)
 
 #when exiting state
