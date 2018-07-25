@@ -54,11 +54,11 @@ func move(delta, acceleration):
     process_collisions()
 
 func process_collisions():
-    count = get_slide_count()
+    var count = get_slide_count()
     for i in range(count):
-        collision = get_slide_collision(i)
-        if collider.is_type("Character"):
-                emit_signal(hit,collider)
+        var collision = get_slide_collision(i)
+        if collision.collider.is_type("Character"):
+                emit_signal(hit,collision.collider)
 
 
     
