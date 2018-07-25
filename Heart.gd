@@ -16,3 +16,6 @@ func _ready():
 
 func _physics_process(delta):
     move(delta,Vector2())
+
+func _on_PoofTimer_timeout():
+    queue_free()

@@ -26,4 +26,13 @@ position = Vector2( 0, -1 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="PoofTimer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="PoofTimer" to="." method="_on_PoofTimer_timeout"]
+
 
