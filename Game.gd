@@ -6,6 +6,7 @@ var spawners = []
 var used_spawners = []
 var mob_count = 0
 var max_mobs = 0
+export (int) var win_hearts = 10
 
 func _ready():
     # Called when the node is added to the scene for the first time.
@@ -26,7 +27,6 @@ func _on_Boinger_boing(boing_vec,body):
         body.vel = boing_vec
 
 func _on_MobSpawnTimer_timeout():
-#	for i in range(randi() % 2):
     call_deferred("spawn_mob")
 
 func get_spawn_point():

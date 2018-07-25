@@ -32,6 +32,7 @@ __meta__ = {
 "_edit_vertical_guides_": [ 205.75 ]
 }
 Mob = ExtResource( 2 )
+win_hearts = 10
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
 
