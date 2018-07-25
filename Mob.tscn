@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Mob.gd" type="Script" id=1]
 [ext_resource path="res://art/skellingtorn.png" type="Texture" id=2]
@@ -9,14 +9,18 @@
 [ext_resource path="res://FSM-mob/states/Falling/Falling.tscn" type="PackedScene" id=7]
 [ext_resource path="res://FSM-mob/states/Reversing/Reversing.tscn" type="PackedScene" id=8]
 [ext_resource path="res://FSM-mob/states/Aggro/Aggro.tscn" type="PackedScene" id=9]
-[ext_resource path="res://FSM-mob/transitions/on_landed/on_landed.tscn" type="PackedScene" id=10]
-[ext_resource path="res://FSM/transitions/on_landed/on_landed.gd" type="Script" id=11]
-[ext_resource path="res://FSM-mob/transitions/on_left_ground/on_left_ground.tscn" type="PackedScene" id=12]
-[ext_resource path="res://FSM-mob/transitions/on_collision/on_collision.tscn" type="PackedScene" id=13]
-[ext_resource path="res://FSM-mob/transitions/on_path_clear/on_path_clear.tscn" type="PackedScene" id=14]
-[ext_resource path="res://FSM-mob/transitions/on_near_edge/on_near_edge.tscn" type="PackedScene" id=15]
-[ext_resource path="res://FSM-mob/transitions/on_saw_player/on_saw_player.tscn" type="PackedScene" id=16]
-[ext_resource path="res://FSM-mob/transitions/on_aggro_expired/on_aggro_expired.tscn" type="PackedScene" id=17]
+[ext_resource path="res://FSM-mob/states/Hitting/Hitting.tscn" type="PackedScene" id=10]
+[ext_resource path="res://FSM-mob/states/Hitting/Hitting.gd" type="Script" id=11]
+[ext_resource path="res://FSM-mob/transitions/on_landed/on_landed.tscn" type="PackedScene" id=12]
+[ext_resource path="res://FSM/transitions/on_landed/on_landed.gd" type="Script" id=13]
+[ext_resource path="res://FSM-mob/transitions/on_left_ground/on_left_ground.tscn" type="PackedScene" id=14]
+[ext_resource path="res://FSM-mob/transitions/on_collision/on_collision.tscn" type="PackedScene" id=15]
+[ext_resource path="res://FSM-mob/transitions/on_path_clear/on_path_clear.tscn" type="PackedScene" id=16]
+[ext_resource path="res://FSM-mob/transitions/on_near_edge/on_near_edge.tscn" type="PackedScene" id=17]
+[ext_resource path="res://FSM-mob/transitions/on_saw_player/on_saw_player.tscn" type="PackedScene" id=18]
+[ext_resource path="res://FSM-mob/transitions/on_aggro_expired/on_aggro_expired.tscn" type="PackedScene" id=19]
+[ext_resource path="res://FSM-mob/transitions/on_hit/on_hit.tscn" type="PackedScene" id=20]
+[ext_resource path="res://FSM-mob/transitions/on_hit/on_hit.gd" type="Script" id=21]
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -118,12 +122,15 @@ debug_enabled = false
 "Create new:/Create state with name:" = null
 "Create new:/Create transition with name:" = null
 GraphData = {
-"Aggro": Vector2( 1493, 243 ),
+"Aggro": Vector2( 1489, 283 ),
 "Aggro_": Vector2( 1493, 243 ),
 "Aggro__": Vector2( 1493, 243 ),
 "Falling": Vector2( 556, 89 ),
 "Falling_": Vector2( 556, 89 ),
 "Falling__": Vector2( 556, 89 ),
+"Hitting": Vector2( 1731, 489 ),
+"Hitting_": Vector2( 91, 127 ),
+"Hitting__": Vector2( 91, 127 ),
 "Idle": Vector2( 1207, 75 ),
 "Idle2": Vector2( 627, 210 ),
 "Idle2_": Vector2( 627, 210 ),
@@ -138,9 +145,13 @@ GraphData = {
 "Reversing__": Vector2( 473, 812 ),
 "on_aggro_expired": Vector2( 1426, 133 ),
 "on_aggro_expired_": Vector2( 1426, 133 ),
+"on_aggro_expired__": Vector2( 1426, 133 ),
 "on_collision": Vector2( 943, 832 ),
+"on_collision2_": Vector2( 191, 47 ),
+"on_collision2__": Vector2( 191, 47 ),
 "on_collision_": Vector2( 943, 832 ),
 "on_collision__": Vector2( 943, 832 ),
+"on_hit": Vector2( 1515, 758 ),
 "on_landed": Vector2( 518, 476 ),
 "on_landed_": Vector2( 518, 476 ),
 "on_landed__": Vector2( 518, 476 ),
@@ -170,44 +181,55 @@ GraphData = {
 
 [node name="Aggro" parent="FSM2D/States" index="4" instance=ExtResource( 9 )]
 
-[node name="Transitions" type="Node2D" parent="FSM2D" index="1"]
-
-[node name="on_landed" parent="FSM2D/Transitions" index="0" instance=ExtResource( 10 )]
+[node name="Hitting" type="Node" parent="FSM2D/States" index="5" instance=ExtResource( 10 )]
 
 script = ExtResource( 11 )
+
+[node name="Transitions" type="Node2D" parent="FSM2D" index="1"]
+
+[node name="on_landed" parent="FSM2D/Transitions" index="0" instance=ExtResource( 12 )]
+
+script = ExtResource( 13 )
 path2SourceStates = [ NodePath(""), NodePath("../../States/Falling"), NodePath("../../States/Idle") ]
 path2Target_state = NodePath("../../States/Patrolling")
 
-[node name="on_left_ground" parent="FSM2D/Transitions" index="1" instance=ExtResource( 12 )]
+[node name="on_left_ground" parent="FSM2D/Transitions" index="1" instance=ExtResource( 14 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Idle"), NodePath("../../States/Patrolling") ]
 path2Target_state = NodePath("../../States/Falling")
 
-[node name="on_collision" parent="FSM2D/Transitions" index="2" instance=ExtResource( 13 )]
+[node name="on_collision" parent="FSM2D/Transitions" index="2" instance=ExtResource( 15 )]
 
 path2SourceStates = [ NodePath("../../States/Patrolling") ]
 path2Target_state = NodePath("../../States/Reversing")
 intervalBetweenChecks = 0.1
 
-[node name="on_path_clear" parent="FSM2D/Transitions" index="3" instance=ExtResource( 14 )]
+[node name="on_path_clear" parent="FSM2D/Transitions" index="3" instance=ExtResource( 16 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Reversing") ]
 path2Target_state = NodePath("../../States/Patrolling")
 
-[node name="on_near_edge" parent="FSM2D/Transitions" index="4" instance=ExtResource( 15 )]
+[node name="on_near_edge" parent="FSM2D/Transitions" index="4" instance=ExtResource( 17 )]
 
 path2SourceStates = [ NodePath("../../States/Patrolling") ]
 path2Target_state = NodePath("../../States/Reversing")
 
-[node name="on_saw_player" parent="FSM2D/Transitions" index="5" instance=ExtResource( 16 )]
+[node name="on_saw_player" parent="FSM2D/Transitions" index="5" instance=ExtResource( 18 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Patrolling") ]
 path2Target_state = NodePath("../../States/Aggro")
 
-[node name="on_aggro_expired" parent="FSM2D/Transitions" index="6" instance=ExtResource( 17 )]
+[node name="on_aggro_expired" parent="FSM2D/Transitions" index="6" instance=ExtResource( 19 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Aggro") ]
 path2Target_state = NodePath("../../States/Idle")
+
+[node name="on_hit" type="Node" parent="FSM2D/Transitions" index="7" instance=ExtResource( 20 )]
+
+script = ExtResource( 21 )
+path2SourceStates = [ NodePath(""), NodePath("../../States/Aggro"), NodePath("../../States/Patrolling") ]
+path2Target_state = NodePath("../../States/Aggro")
+intervalBetweenChecks = -1.0
 
 [node name="Label" type="Label" parent="." index="7"]
 
