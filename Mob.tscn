@@ -57,7 +57,7 @@ collision/safe_margin = 0.001
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index", "collision" ]
 FOV = 40
-sight_radius = 50
+sight_radius = 100
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
