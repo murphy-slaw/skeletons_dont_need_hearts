@@ -90,7 +90,7 @@ _sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Pick
 
 [node name="Mover" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 224, 401 )
+position = Vector2( 224, 393 )
 motion = Vector2( 0, 72 )
 cycle = 7.0
 
