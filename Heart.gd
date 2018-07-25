@@ -27,4 +27,5 @@ func _on_PoofTimer_timeout():
     queue_free()
     
 func hit():
+    emit_signal("caught")
     queue_free()

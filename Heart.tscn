@@ -39,6 +39,7 @@ script = ExtResource( 1 )
 
 texture = ExtResource( 2 )
 hframes = 2
+frame = 1
 _sections_unfolded = [ "Animation" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
