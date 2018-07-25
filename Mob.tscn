@@ -42,7 +42,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 1, 2, 3, 4, 5, 1 ]
 }
 
-[node name="Mob" type="KinematicBody2D" index="0"]
+[node name="Mob" type="KinematicBody2D"]
 
 position = Vector2( 0.06884, 0 )
 z_index = 1
@@ -66,15 +66,7 @@ _sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
 shape = SubResource( 3 )
 
-[node name="facing_ray" type="RayCast2D" parent="." index="2"]
-
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 8, 0 )
-collision_mask = 1
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="edge_ray" type="RayCast2D" parent="." index="3"]
+[node name="edge_ray" type="RayCast2D" parent="." index="2"]
 
 position = Vector2( 10, 12 )
 enabled = true
@@ -83,14 +75,14 @@ cast_to = Vector2( 0, 4 )
 collision_mask = 1
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Lifespan" type="Timer" parent="." index="4"]
+[node name="Lifespan" type="Timer" parent="." index="3"]
 
 process_mode = 0
 wait_time = 600.0
 one_shot = false
 autostart = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
 
 root_node = NodePath("..")
 autoplay = "Idle"
@@ -101,14 +93,14 @@ anims/Idle = SubResource( 2 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="AggroTimer" type="Timer" parent="." index="6"]
+[node name="AggroTimer" type="Timer" parent="." index="5"]
 
 process_mode = 0
 wait_time = 5.0
 one_shot = false
 autostart = false
 
-[node name="VisionArea" type="Area2D" parent="." index="7"]
+[node name="VisionArea" type="Area2D" parent="." index="6"]
 
 position = Vector2( 0.0241985, 0.0446415 )
 input_pickable = true
@@ -124,7 +116,7 @@ audio_bus_name = "Master"
 build_mode = 0
 polygon = PoolVector2Array(  )
 
-[node name="FSM2D" type="Node2D" parent="." index="8"]
+[node name="FSM2D" type="Node2D" parent="." index="7"]
 
 script = ExtResource( 3 )
 _sections_unfolded = [ "Create new:" ]
@@ -233,7 +225,7 @@ path2Target_state = NodePath("../../States/Aggro")
 path2SourceStates = [ NodePath(""), NodePath("../../States/Aggro") ]
 path2Target_state = NodePath("../../States/Idle")
 
-[node name="Label" type="Label" parent="." index="9"]
+[node name="Label" type="Label" parent="." index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
