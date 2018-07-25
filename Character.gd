@@ -13,7 +13,7 @@ var velocity = Vector2()
 var facing_normal = Vector2(1,0)
 
 func reverse_facing():
-    $Sprite.flip_h = not $Sprite.flip_h
+    $Sprite.flip_h = (not $Sprite.flip_h)
     facing_normal *= (-1,0)
     if $Sprite.flip_h:
         $Sprite.offset = Vector2(2,0)
