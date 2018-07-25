@@ -9,6 +9,12 @@ func state_init(args = null):
 #when entering state, usually you will want to reset internal state here somehow
 func enter(from_state = null, from_transition = null, args = []):
     .enter(from_state, from_transition, args)
+    logic_root.is_hit = false
+    if not logic_root.can_see_target:
+        logic_root.die()
+    else:
+        logic_root.target.hit()
+    exit(from_state)
 
 #when updating state, paramx can be used only if updating fsm manually
 func update(delta, args=null):
