@@ -19,12 +19,14 @@ func _ready():
     $UILayer/MarginContainer/ColorRect/TextureProgress.max_value = win_hearts
     $UILayer/MarginContainer/ColorRect/TextureProgress.value = $Player.hearts
     
-func _process(delta):
+func _physics_process(delta):
         $UILayer/MarginContainer/ColorRect/TextureProgress.value = $Player.hearts
+        $UILayer/Label.text = str($Player.hearts)
         if $Player.hearts <= 0:
             get_parent().get_tree().change_scene("res://TheEnd.tscn")
         elif $Player.hearts == win_hearts:
             get_parent().get_tree().change_scene("res://TheEnd.tscn")
+            
         
 func _on_Boinger_boing(boing_vec,body):
     if body.get("vel") !=null:
@@ -53,7 +55,6 @@ func spawn_mob():
     call_deferred("add_child",mob)
     mob.position = get_spawn_point()
     mob_count += 1
-    $UILayer/Label.text = str(mob_count)
 
 func _on_mob_died():
     mob_count -= 1
