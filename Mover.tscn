@@ -3,8 +3,6 @@
 [ext_resource path="res://Mover.gd" type="Script" id=1]
 [ext_resource path="res://art/stupid_tiles.png" type="Texture" id=2]
 
-
-
 [node name="Mover" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
@@ -16,8 +14,8 @@ cycle = 1.0
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
-collision/safe_margin = 0.08
-_sections_unfolded = [ "Collision" ]
+collision/safe_margin = 0.001
+_sections_unfolded = [ "Collision", "Pickable", "collision" ]
 
 [node name="Sprite2" type="Sprite" parent="platform" index="0"]
 
@@ -39,5 +37,6 @@ _sections_unfolded = [ "Region", "Transform" ]
 
 build_mode = 0
 polygon = PoolVector2Array( -16, -8, 16, -8, 16, -2, -16, -2 )
+one_way_collision = true
 
 
