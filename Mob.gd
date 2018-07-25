@@ -78,7 +78,7 @@ func overlaps_target():
         return target_in_range
 
 func start_aggro():
-    max_speed *= 4
+    max_speed *= 3
     walk_accel *= 2
     aggro_exhausted = false
     $AggroTimer.start()
