@@ -27,14 +27,11 @@ func get_circle_arc_poly(center, radius, angle_from, angle_to):
 
 func _ready():
     var circle_sector = get_circle_arc_poly(Vector2(), sight_radius, FOV/2, -FOV/2)
-#    $VisionArea/CollisionPolygon2D.polygon = circle_sector
-#    $VisionArea/CollisionPolygon2D.rotation_degrees = 90
     if target == null: target = self
     walk_accel = 5
     max_speed = 50
     original_max_speed = max_speed
     original_walk_accel = walk_accel
-
 
 func _physics_process(delta):
     var vec_to_target = target.global_position - global_position
@@ -44,9 +41,7 @@ func _physics_process(delta):
         var space_state = get_world_2d().direct_space_state
         var result = space_state.intersect_ray(global_position, target.global_position, [self])
         if result:
-            set_label(str(result.collider))
             can_see_target = (result.collider == target)
-
         
 func _on_Lifespan_timeout():
     emit_signal("die")
