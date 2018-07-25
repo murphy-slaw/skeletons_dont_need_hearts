@@ -49,3 +49,7 @@ func spawn_mob():
 
 func _on_mob_died():
     mob_count -= 1
+
+
+func _on_Player_hit():
+    pass # replace with function body

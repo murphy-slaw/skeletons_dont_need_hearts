@@ -290,4 +290,6 @@ position = Vector2( 139, 304 )
 
 [connection signal="timeout" from="MobSpawnTimer" to="." method="_on_MobSpawnTimer_timeout"]
 
+[connection signal="hit" from="Player" to="." method="_on_Player_hit"]
+
 
