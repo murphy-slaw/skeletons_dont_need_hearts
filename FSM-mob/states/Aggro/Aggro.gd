@@ -21,7 +21,7 @@ func update(delta, args=null):
     movement.x = (logic_root.target.global_position - logic_root.global_position).normalized().x
    
     if movement.normalized().x >= logic_root.velocity.normalized().x:
-        logic_root.reverse_facing
+        logic_root.reverse_facing()
 
     logic_root.walk(delta, movement)
 

@@ -44,6 +44,7 @@ tracks/0/keys = {
 
 [node name="Mob" type="KinematicBody2D" index="0"]
 
+position = Vector2( 0.06884, 0 )
 z_index = 1
 input_pickable = false
 collision_layer = 1
