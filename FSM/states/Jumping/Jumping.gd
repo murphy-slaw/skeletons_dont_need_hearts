@@ -14,10 +14,10 @@ func enter(from_state = null, from_transition = null, args = []):
 func update(delta, args=null):
     .update(delta, args)
     var vel = logic_root.jump_speed
-    if not Input.is_action_pressed():
+    if not Input.is_action_pressed("ui_up"):
         vel *= .5
         
-    var motion = Vector2(0,logic_root.jump_speed)
+    var motion = Vector2(0,vel)
     logic_root.move(delta,motion)
 
 #when exiting state
