@@ -57,7 +57,7 @@ func hit():
 func become_invuln():
     is_invuln = true
     $IFrameTimer.start()
-    set_collision_mask_bit(1,false)
+    set_collision_mask_bit(0,false)
     
 func _on_Lifespan_timeout():
     die()
@@ -94,4 +94,4 @@ func set_label(text):
 
 func _on_IFrameTimer_timeout():
     is_invuln = false
-    set_collision_mask_bit(1,true)
+    set_collision_mask_bit(0,true)
