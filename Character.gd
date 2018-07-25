@@ -44,7 +44,7 @@ func move(delta, acceleration):
     # reduce the actual horizontal movement by
     # our current linear velocity * frictional constant
     if acceleration.x == 0\
-    and get_floor_velocity() != Vector2(0,0)
+    and get_floor_velocity() != Vector2(0,0):
         acceleration.x -= friction * velocity.x
     
 #    $Label.text = str(velocity) + str(acceleration) + str(friction)
