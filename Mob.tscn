@@ -46,7 +46,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 1, 2, 3, 4, 5, 1 ]
 }
 
-[node name="Mob" type="KinematicBody2D"]
+[node name="Mob" type="KinematicBody2D" index="0"]
 
 position = Vector2( 0.06884, 0 )
 z_index = 1
@@ -100,7 +100,7 @@ autostart = true
 [node name="AggroTimer" type="Timer" parent="." index="5"]
 
 process_mode = 0
-wait_time = 0.01
+wait_time = 1.0
 one_shot = false
 autostart = false
 
