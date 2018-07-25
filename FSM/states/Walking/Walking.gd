@@ -14,10 +14,10 @@ func enter(from_state = null, from_transition = null, args = []):
 #when updating state, paramx can be used only if updating fsm manually
 func update(delta, args=null):
     .update(delta, args)
-    logic_root.flip_sprite = Input.is_action_pressed("ui_left")\
-            or logic_root.flip_sprite and not Input.is_action_pressed("ui_right")
     var motion = Vector2()
     motion.x = (int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left")))
+    if motion != logic_root.facing_normal:
+        logic_root.reverse_facing
     logic_root.walk(delta, motion)
 
 
