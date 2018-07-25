@@ -47,10 +47,7 @@ func _on_Lifespan_timeout():
     queue_free()
     
 func check_ahead():
-    var test_motion = Vector2(1,0)
-    if get_flip_sprite():
-        test_motion = Vector2(-1,0)
-    test_motion *= 5
+    test_motion = 5 * facing_normal
     return test_move(transform, test_motion)
     
 func is_near_edge():
