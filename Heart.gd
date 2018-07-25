@@ -10,7 +10,7 @@ func _ready():
     # Called when the node is added to the scene for the first time.
     # Initialization here
     friction = 0.03
-    gravity = -0.05
+    gravity = -0.1
     direction = velocity.normalized()
 
 #func _process(delta):
