@@ -11,3 +11,6 @@ func process_collisions():
         $Label.text = str(collision.collider)
         if collision.collider.has_method("hit"):
                 collision.collider.hit()
+
+func hit():
+    pass
