@@ -17,7 +17,7 @@ func update(delta, args=null):
     var motion = Vector2()
     motion.x = (int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left")))
     if motion != logic_root.facing_normal:
-        logic_root.reverse_facing
+        logic_root.reverse_facing()
     logic_root.walk(delta, motion)
 
 
