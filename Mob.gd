@@ -78,6 +78,7 @@ func start_aggro():
     $AggroTimer.start()
     
 func end_aggro():
+    $AggroTimer.stop()
     max_speed = original_max_speed
     walk_accel = original_walk_accel
     aggro_exhausted = true
