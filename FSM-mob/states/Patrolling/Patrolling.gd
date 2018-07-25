@@ -13,10 +13,7 @@ func enter(from_state = null, from_transition = null, args = []):
 #when updating state, paramx can be used only if updating fsm manually
 func update(delta, args=null):
     .update(delta, args)
-    var movement = Vector2(1,0)
-    if logic_root.get_flip_sprite():
-        movement = Vector2(-1,0)
-    logic_root.walk(delta, movement)
+    logic_root.walk(delta, logic_root.facing_normal)
 
 #when exiting state
 func exit(to_state=null):
