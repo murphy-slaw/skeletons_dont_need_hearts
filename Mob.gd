@@ -38,7 +38,7 @@ func _ready():
 
 func _physics_process(delta):
     var vec_to_target = target.global_position - global_position
-    distance_to_target = vec_to_target.length()
+    var distance_to_target = vec_to_target.length()
     set_label(str(distance_to_target))
     if distance_to_target <= sight_radius \
             and vec_to_target.normalized().dot(facing_normal) >= 0:
