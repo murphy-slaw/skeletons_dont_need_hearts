@@ -58,10 +58,7 @@ func process_collisions():
     for i in range(count):
         var collision = get_slide_collision(i)
         if collision.collider.is_type("Character"):
-                emit_signal(hit,collision.collider)
-
-
-    
+                emit_signal("hit",collision.collider)
     
 func is_near_floor():
     var test_motion = Vector2(0,2)

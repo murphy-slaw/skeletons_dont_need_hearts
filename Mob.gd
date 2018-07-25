@@ -1,7 +1,6 @@
 extends "res://Character.gd"
 
 signal die
-signal hit
 
 var target_in_range = false
 var can_see_target = false
