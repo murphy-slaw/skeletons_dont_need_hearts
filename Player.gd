@@ -13,3 +13,9 @@ func process_collisions():
 
 func hit():
     pass
+    
+func give_heart():
+    hearts += 1
+    
+func take_heart():
+    hearts -= 1
