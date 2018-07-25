@@ -27,7 +27,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[node name="Heart" type="KinematicBody2D" index="0"]
+[node name="Heart" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -58,9 +58,9 @@ autostart = true
 
 root_node = NodePath("..")
 autoplay = "Beat"
-playback_process_mode = 1
+playback_process_mode = 0
 playback_default_blend_time = 0.0
-playback_speed = 1.0
+playback_speed = 4.0
 anims/Beat = SubResource( 2 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
