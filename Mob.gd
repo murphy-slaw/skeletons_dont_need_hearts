@@ -51,11 +51,13 @@ func _physics_process(delta):
             can_see_target = (result.collider == target)
        
 func die():
+    var parent = get_parent()
     emit_signal("die")
     var heart = Heart.instance()
     heart.global_position = global_position
     heart.velocity = facing_normal
     get_parent().call_deferred("add_child",heart)
+    heart.connect(parent,"caught")
     queue_free()
 
 func hit():
