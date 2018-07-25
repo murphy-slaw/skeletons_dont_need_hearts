@@ -9,7 +9,7 @@ func _ready():
     # Initialization here
     friction = 0.03
     gravity = -0.05
-    direction = velocity.normalized()
+    var direction = velocity.normalized()
 
 #func _process(delta):
 #    # Called every frame. Delta is time since last frame.
@@ -17,7 +17,7 @@ func _ready():
 #    pass
 
 func _physics_process(delta):
-    walk(delta,Vector2(1,0))
+    walk(delta,direction)
 
 func _on_PoofTimer_timeout():
     queue_free()
