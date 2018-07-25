@@ -42,16 +42,9 @@ func _physics_process(delta):
     if result:
         can_see_target = (result.collider == target)
         
-
-
-
 func _on_Lifespan_timeout():
     emit_signal("die")
     queue_free()
-
-func get_vision_normal():
-    return ($facing_ray.position * $facing_ray.cast_to).normalized()
-
     
 func check_ahead():
     var test_motion = Vector2(1,0)
