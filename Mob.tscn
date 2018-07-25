@@ -123,14 +123,14 @@ debug_enabled = false
 "Create new:/Create transition with name:" = null
 GraphData = {
 "Aggro": Vector2( 1489, 283 ),
-"Aggro_": Vector2( 1493, 243 ),
-"Aggro__": Vector2( 1493, 243 ),
+"Aggro_": Vector2( 1489, 283 ),
+"Aggro__": Vector2( 1489, 283 ),
 "Falling": Vector2( 556, 89 ),
 "Falling_": Vector2( 556, 89 ),
 "Falling__": Vector2( 556, 89 ),
 "Hitting": Vector2( 1731, 489 ),
-"Hitting_": Vector2( 91, 127 ),
-"Hitting__": Vector2( 91, 127 ),
+"Hitting_": Vector2( 1731, 489 ),
+"Hitting__": Vector2( 1731, 489 ),
 "Idle": Vector2( 1207, 75 ),
 "Idle2": Vector2( 627, 210 ),
 "Idle2_": Vector2( 627, 210 ),
@@ -152,6 +152,8 @@ GraphData = {
 "on_collision_": Vector2( 943, 832 ),
 "on_collision__": Vector2( 943, 832 ),
 "on_hit": Vector2( 1515, 758 ),
+"on_hit_": Vector2( 1515, 758 ),
+"on_hit__": Vector2( 1515, 758 ),
 "on_landed": Vector2( 518, 476 ),
 "on_landed_": Vector2( 518, 476 ),
 "on_landed__": Vector2( 518, 476 ),
@@ -227,8 +229,8 @@ path2Target_state = NodePath("../../States/Idle")
 [node name="on_hit" type="Node" parent="FSM2D/Transitions" index="7" instance=ExtResource( 20 )]
 
 script = ExtResource( 21 )
-path2SourceStates = [ NodePath(""), NodePath("../../States/Aggro"), NodePath("../../States/Patrolling") ]
-path2Target_state = NodePath("../../States/Aggro")
+path2SourceStates = [ NodePath("../../States/Patrolling"), NodePath("../../States/Aggro") ]
+path2Target_state = NodePath("../../States/Hitting")
 intervalBetweenChecks = -1.0
 
 [node name="Label" type="Label" parent="." index="7"]
