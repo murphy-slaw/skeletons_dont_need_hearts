@@ -19,8 +19,8 @@ func update(delta, args=null):
     .update(delta, args)
     var movement = Vector2()
     movement.x = (logic_root.target.global_position - logic_root.global_position).normalized().x
-   
-    if (movement.normalized().x - logic_root.velocity.normalized().x == 0):
+
+    if movement.x != 0 and logic_root.facing_normal.x != movement_x:
         logic_root.reverse_facing()
 
     logic_root.walk(delta, movement)
