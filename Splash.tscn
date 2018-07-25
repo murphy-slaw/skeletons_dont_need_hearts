@@ -21,7 +21,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Splash" type="CanvasLayer"]
+[node name="Splash" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -143,7 +143,6 @@ size_flags_vertical = 4
 custom_styles/normal = SubResource( 1 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 text = "My Ex broke my heart. Now I have to punk skeletons to get enough heart stuff to make a new one."
 autowrap = true
 percent_visible = -0.012987
