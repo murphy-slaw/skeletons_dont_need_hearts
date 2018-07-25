@@ -39,9 +39,9 @@ func _ready():
 func _physics_process(delta):
     var vec_to_target = target.global_position - global_position
     var distance_to_target = vec_to_target.length()
-    set_label(str(distance_to_target))
-    if distance_to_target <= sight_radius \
-            and vec_to_target.normalized().dot(facing_normal) >= 0:
+    var target_dot = vec_to_target.normalized().dot(facing_normal)
+    set_label(str(target_dot))
+    if distance_to_target <= sight_radius and target_dot > 0:
         var space_state = get_world_2d().direct_space_state
         var result = space_state.intersect_ray(global_position, target.global_position, [self])
         if result:
