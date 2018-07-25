@@ -19,7 +19,7 @@ func _ready():
     $UILayer/MarginContainer/ColorRect/TextureProgress.max_value = win_hearts
     $UILayer/MarginContainer/ColorRect/TextureProgress.value = $Player.hearts
     
-    if $Player.hearts >= 0:
+    if $Player.hearts <= 0:
         get_tree().change_scene("res://TheEnd.tscn")
 
     elif $Player.hearts == win_hearts:
