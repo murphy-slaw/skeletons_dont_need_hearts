@@ -83,8 +83,8 @@ tracks/0/keys = {
 
 position = Vector2( 0, 0.0353484 )
 input_pickable = false
-collision_layer = 6145
-collision_mask = 1
+collision_layer = 1
+collision_mask = 0
 collision/safe_margin = 0.001
 script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Pickable", "Transform", "collision" ]
