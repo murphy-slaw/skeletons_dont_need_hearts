@@ -40,12 +40,12 @@ func _physics_process(delta):
     var vec_to_target = target.global_position - global_position
     var distance_to_target = vec_to_target.length()
     var target_dot = vec_to_target.normalized().dot(facing_normal)
-    set_label(str(target_dot))
     if distance_to_target <= sight_radius and target_dot > 0:
         var space_state = get_world_2d().direct_space_state
         var result = space_state.intersect_ray(global_position, target.global_position, [self])
         if result:
             can_see_target = (result.collider == target)
+     set_label(can_see_target)
         
 func _on_Lifespan_timeout():
     emit_signal("die")
