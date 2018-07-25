@@ -1,6 +1,6 @@
 extends "res://Character.gd"
 
-var heart = PackedScene("res://Heart.tscn")
+var Heart = PackedScene("res://Heart.tscn")
 
 signal die
 
@@ -50,8 +50,9 @@ func _physics_process(delta):
        
 func die():
     emit_signal("die")
-    heart = Heart.instance()
+    var heart = Heart.instance()
     heart.global_position = global_position
+    .call_deferred("add_child",heart)
     queue_free()
 
 func hit():
