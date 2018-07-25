@@ -16,6 +16,7 @@ func enter(from_state = null, from_transition = null, args = []):
     if not logic_root.can_see_target:
         logic_root.die()
     else:
+        logic_root.become_invuln()
         logic_root.target.hit()
 
 #when updating state, paramx can be used only if updating fsm manually

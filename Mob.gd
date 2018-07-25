@@ -52,6 +52,10 @@ func die():
 func hit():
     if not is_invuln:
         is_hit = true
+        
+func become_invuln():
+    is_invuln = true
+    $IFrameTimer.start()
     
 func _on_Lifespan_timeout():
     die()
