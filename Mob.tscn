@@ -100,7 +100,7 @@ autostart = true
 [node name="AggroTimer" type="Timer" parent="." index="5"]
 
 process_mode = 0
-wait_time = 2.0
+wait_time = 0.5
 one_shot = false
 autostart = false
 
