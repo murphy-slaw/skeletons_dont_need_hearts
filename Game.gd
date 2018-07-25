@@ -15,13 +15,13 @@ func _ready():
     randomize()
     spawners = get_tree().get_nodes_in_group("arches")
     max_mobs = spawners.size() * 1.5
-    $UILayer/MarginContainer/ColorRect/Label.text = str($Player.hearts)
+    $UILayer/MarginContainer/Label.text = str($Player.hearts)
     $UILayer/MarginContainer/ColorRect/TextureProgress.max_value = win_hearts
     $UILayer/MarginContainer/ColorRect/TextureProgress.value = $Player.hearts
     
 func _physics_process(delta):
         $UILayer/MarginContainer/ColorRect/TextureProgress.value = $Player.hearts
-        $UILayer/MarginContainer/ColorRect/Label.text = str($Player.hearts)
+        $UILayer/MarginContainer//Label.text = str($Player.hearts)
         if $Player.hearts <= 0:
             get_parent().get_tree().change_scene("res://TheEnd.tscn")
         elif $Player.hearts == win_hearts:
