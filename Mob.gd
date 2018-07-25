@@ -30,12 +30,14 @@ func get_circle_arc_poly(center, radius, angle_from, angle_to):
     return points_arc
 
 func _ready():
-    var circle_sector = get_circle_arc_poly(Vector2(), sight_radius, FOV/2, -FOV/2)
+#    var circle_sector = get_circle_arc_poly(Vector2(), sight_radius, FOV/2, -FOV/2)
     if target == null: target = self
     walk_accel = 5
     max_speed = 50
     original_max_speed = max_speed
     original_walk_accel = walk_accel
+    if (randi() % 2 == 1):
+        reverse_facing()
 
 func _physics_process(delta):
     $Label.text = str(is_invuln)
