@@ -36,6 +36,7 @@ func _ready():
     original_walk_accel = walk_accel
 
 func _physics_process(delta):
+    $Label.text = str(is_invuln)
     var vec_to_target = target.global_position - global_position
     var distance_to_target = vec_to_target.length()
     var target_dot = vec_to_target.normalized().dot(facing_normal)
