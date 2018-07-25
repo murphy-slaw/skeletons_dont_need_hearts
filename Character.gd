@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal hit
+
 var walk_accel = 7
 var friction = 0.1
 var max_speed = 250
@@ -49,6 +51,17 @@ func move(delta, acceleration):
 
     velocity = \
     move_and_slide(velocity, Vector2(0,-1))
+    process_collisions()
+
+func process_collisions():
+    count = get_slide_count()
+    for i in range(count):
+        collision = get_slide_collision(i)
+        if collider.is_type("Character":
+                emit_signal(hit,collider)
+
+
+    
     
 func is_near_floor():
     var test_motion = Vector2(0,2)
