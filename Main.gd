@@ -20,7 +20,7 @@ func _ready():
 
 
 func _on_Splash_start_game():
-    get_tree().change_scene("res://Game.tscn")
+    get_child(0).change_scene("res://Game.tscn")
 
 func _on_End_restart_game():
     get_tree().change_scene("res://Game.tscn")
