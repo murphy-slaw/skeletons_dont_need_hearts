@@ -52,6 +52,7 @@ func die():
     emit_signal("die")
     var heart = Heart.instance()
     heart.global_position = global_position
+    heart.velocity = facing_normal * 10
     get_parent().call_deferred("add_child",heart)
     queue_free()
 
