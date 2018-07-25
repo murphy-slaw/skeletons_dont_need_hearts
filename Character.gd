@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-var walk_accel = 8
-var friction = 0.05
+var walk_accel = 7
+var friction = 0.1
 var max_speed = 250
 var gravity = 9.8
 var jump_power = -25
