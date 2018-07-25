@@ -7,7 +7,7 @@ extends "res://Character.gd"
 func _ready():
     # Called when the node is added to the scene for the first time.
     # Initialization here
-    pass
+    friction = 0.0001
 
 #func _process(delta):
 #    # Called every frame. Delta is time since last frame.
