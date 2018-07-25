@@ -20,3 +20,6 @@ func _physics_process(delta):
 
 func _on_PoofTimer_timeout():
     queue_free()
+    
+func hit():
+    queue_free()
