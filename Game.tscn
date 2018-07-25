@@ -58,6 +58,7 @@ _sections_unfolded = [ "Rect", "Visibility" ]
 
 self_modulate = Color( 0.438395, 0.535156, 0.332116, 0.756353 )
 show_behind_parent = true
+light_mask = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -191,7 +192,7 @@ range_z_min = -1024
 range_z_max = 1024
 range_layer_min = 0
 range_layer_max = 5
-range_item_cull_mask = 3
+range_item_cull_mask = 1
 shadow_enabled = false
 shadow_color = Color( 0, 0, 0, 0 )
 shadow_buffer_size = 2048
