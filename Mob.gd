@@ -1,6 +1,6 @@
 extends "res://Character.gd"
 
-var Heart = PackedScene("res://Heart.tscn")
+var Heart = PackedScene.new("res://Heart.tscn")
 
 signal die
 
