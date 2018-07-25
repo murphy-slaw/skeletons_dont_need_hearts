@@ -53,11 +53,10 @@ func check_ahead():
 func is_near_edge():
     return not edge_ray.is_colliding()
     
-func set_flip_sprite(active):
-    if $Sprite.flip_h == active: return
+func reverse_facing():
     $VisionArea/CollisionPolygon2D.rotation_degrees += 180
     edge_ray.position *= Vector2(-1,1)
-    .set_flip_sprite(active)
+    .reverse_facing()
 
 
 func _on_VisionArea_body_entered(body):
