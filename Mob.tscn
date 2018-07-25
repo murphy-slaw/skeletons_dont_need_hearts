@@ -100,7 +100,7 @@ autostart = true
 [node name="AggroTimer" type="Timer" parent="." index="5"]
 
 process_mode = 0
-wait_time = 5.0
+wait_time = 2.0
 one_shot = false
 autostart = false
 
@@ -162,7 +162,7 @@ GraphData = {
 "on_hit_": Vector2( 1515, 758 ),
 "on_hit__": Vector2( 1515, 758 ),
 "on_hit_complete": Vector2( 1088, 300 ),
-"on_hit_complete_": Vector2( 191, 47 ),
+"on_hit_complete_": Vector2( 1088, 300 ),
 "on_landed": Vector2( 518, 476 ),
 "on_landed_": Vector2( 518, 476 ),
 "on_landed__": Vector2( 518, 476 ),
