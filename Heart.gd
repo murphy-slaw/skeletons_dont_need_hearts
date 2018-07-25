@@ -13,3 +13,6 @@ func _ready():
 #    # Called every frame. Delta is time since last frame.
 #    # Update game logic here.
 #    pass
+
+func _physics_process(delta):
+    move_and_slide(Vector2(),Vector2(0,-1))
