@@ -62,7 +62,7 @@ func move(delta, acceleration):
     move_and_slide(velocity, Vector2(0,-1))
 
     var floor_vec = get_floor_velocity()
-    velocity += floor_vec
+    velocity.y += floor_vec.y * delta
     
 func is_near_floor():
     var test_motion = Vector2(0,2)
