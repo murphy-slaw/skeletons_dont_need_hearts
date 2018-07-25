@@ -57,7 +57,7 @@ func process_collisions():
     count = get_slide_count()
     for i in range(count):
         collision = get_slide_collision(i)
-        if collider.is_type("Character":
+        if collider.is_type("Character"):
                 emit_signal(hit,collider)
 
 
