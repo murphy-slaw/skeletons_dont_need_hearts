@@ -9,6 +9,7 @@ func _ready():
     # Initialization here
     friction = 0.03
     gravity = -0.05
+    direction = velocity.normalized()
 
 #func _process(delta):
 #    # Called every frame. Delta is time since last frame.
