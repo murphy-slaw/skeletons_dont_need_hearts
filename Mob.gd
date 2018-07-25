@@ -52,7 +52,7 @@ func die():
     emit_signal("die")
     var heart = Heart.instance()
     heart.global_position = global_position
-    .call_deferred("add_child",heart)
+    get_parent().call_deferred("add_child",heart)
     queue_free()
 
 func hit():
