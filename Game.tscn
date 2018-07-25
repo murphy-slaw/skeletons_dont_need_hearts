@@ -103,7 +103,6 @@ cycle = 7.0
 
 [node name="UILayer" type="CanvasLayer" parent="." index="6"]
 
-editor/display_folded = true
 layer = 0
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -180,17 +179,17 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-min_value = 0.0
+min_value = 1.0
 max_value = 10.0
 step = 1.0
 page = 0.0
 value = 3.0
 exp_edit = false
-rounded = false
+rounded = true
 texture_under = null
 texture_over = null
 texture_progress = ExtResource( 7 )
-fill_mode = 3
+fill_mode = 4
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
