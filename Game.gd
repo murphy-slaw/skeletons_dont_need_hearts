@@ -17,6 +17,10 @@ func _ready():
     $UILayer/Label.text = str(mob_count)
     $UILayer/MarginContainer/ColorRect/TextureProgress.value = $Player.hearts
 
+
+func _process(delta):
+        $UILayer/MarginContainer/ColorRect/TextureProgress.value = $Player.hearts
+        
 func _on_Boinger_boing(boing_vec,body):
     if body.get("vel") !=null:
         body.vel = boing_vec
@@ -24,7 +28,6 @@ func _on_Boinger_boing(boing_vec,body):
 func _on_MobSpawnTimer_timeout():
 #	for i in range(randi() % 2):
     call_deferred("spawn_mob")
-
 
 func get_spawn_point():
     if spawners.size() == 0:
@@ -58,5 +61,4 @@ func _on_Player_hit(body):
         
 func _on_heart_caught():
     $Player.give_heart()
-    $UILayer/MarginContainer/ColorRect/TextureProgress.value = $Player.hearts
     

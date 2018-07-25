@@ -14,7 +14,7 @@ func process_collisions():
                 collision.collider.hit()
 
 func hit():
-    pass
+    take_heart()
     
 func give_heart():
     hearts += 1
