@@ -29,3 +29,4 @@ func update(delta, args=null):
 #when exiting state
 func exit(to_state=null):
     .exit(to_state)
+    logic_root.end_aggro()
