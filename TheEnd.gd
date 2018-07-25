@@ -9,7 +9,7 @@ signal start_game
 func _ready():
     # Called when the node is added to the scene for the first time.
     # Initialization here
-    pass
+    connect("start_game",get_parent(),"_on_Splash_start_game")
 
 #func _process(delta):
 #    # Called every frame. Delta is time since last frame.
