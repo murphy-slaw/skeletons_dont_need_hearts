@@ -102,7 +102,6 @@ cycle = 7.0
 
 [node name="UILayer" type="CanvasLayer" parent="." index="6"]
 
-editor/display_folded = true
 layer = 0
 offset = Vector2( 0, 0 )
 rotation = 0.0

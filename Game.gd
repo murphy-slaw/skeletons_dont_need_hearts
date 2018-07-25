@@ -15,6 +15,7 @@ func _ready():
     spawners = get_tree().get_nodes_in_group("arches")
     max_mobs = spawners.size() * 1.5
     $UILayer/Label.text = str(mob_count)
+    $UILayer/MarginContainer/ColorRect/TextureProgress.value = $Player.hearts
 
 func _on_Boinger_boing(boing_vec,body):
     if body.get("vel") !=null:
