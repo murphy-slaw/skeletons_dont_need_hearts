@@ -48,7 +48,8 @@ func die():
     queue_free()
 
 func hit():
-    die()
+    if not can_see_target:
+        die()
     
 func _on_Lifespan_timeout():
     die()
