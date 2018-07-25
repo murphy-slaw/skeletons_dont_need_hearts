@@ -79,14 +79,7 @@ cast_to = Vector2( 0, 4 )
 collision_mask = 1
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Lifespan" type="Timer" parent="." index="3"]
-
-process_mode = 0
-wait_time = 600.0
-one_shot = false
-autostart = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 
 root_node = NodePath("..")
 autoplay = "Idle"
@@ -97,6 +90,13 @@ anims/Idle = SubResource( 2 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
+[node name="Lifespan" type="Timer" parent="." index="4"]
+
+process_mode = 0
+wait_time = 600.0
+one_shot = false
+autostart = true
+
 [node name="AggroTimer" type="Timer" parent="." index="5"]
 
 process_mode = 0
@@ -104,7 +104,14 @@ wait_time = 5.0
 one_shot = false
 autostart = false
 
-[node name="FSM2D" type="Node2D" parent="." index="6"]
+[node name="IFrameTimer" type="Timer" parent="." index="6"]
+
+process_mode = 0
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="FSM2D" type="Node2D" parent="." index="7"]
 
 script = ExtResource( 3 )
 _sections_unfolded = [ "Create new:" ]
@@ -238,7 +245,7 @@ path2SourceStates = [ NodePath("../../States/Hitting") ]
 path2Target_state = NodePath("../../States/Idle")
 intervalBetweenChecks = -1.0
 
-[node name="Label" type="Label" parent="." index="7"]
+[node name="Label" type="Label" parent="." index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -259,5 +266,7 @@ max_lines_visible = -1
 [connection signal="timeout" from="Lifespan" to="." method="_on_Lifespan_timeout"]
 
 [connection signal="timeout" from="AggroTimer" to="." method="_on_AggroTimer_timeout"]
+
+[connection signal="timeout" from="IFrameTimer" to="." method="_on_IFrameTimer_timeout"]
 
 
