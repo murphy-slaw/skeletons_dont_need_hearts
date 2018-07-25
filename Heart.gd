@@ -16,7 +16,7 @@ func _ready():
 #    pass
 
 func _physics_process(delta):
-    move(delta,Vector2())
+    walk(delta,Vector2(1,0))
 
 func _on_PoofTimer_timeout():
     queue_free()
