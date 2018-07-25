@@ -13,7 +13,7 @@ func _ready():
     $MobSpawnTimer.start()
     randomize()
     spawners = get_tree().get_nodes_in_group("arches")
-    max_mobs = 10 # spawners.size()
+    max_mobs = spawners.size() * 1.5
     $UILayer/Label.text = str(mob_count)
 
 func _on_Boinger_boing(boing_vec,body):
