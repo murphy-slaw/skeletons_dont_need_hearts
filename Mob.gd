@@ -62,6 +62,7 @@ func die():
 func hit():
     if not is_invuln:
         is_hit = true
+    move(0,facing_normal * -100)
         
 func become_invuln():
     is_invuln = true
