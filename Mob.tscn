@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Mob.gd" type="Script" id=1]
 [ext_resource path="res://art/skellingtorn.png" type="Texture" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://FSM-mob/transitions/on_saw_player/on_saw_player.tscn" type="PackedScene" id=17]
 [ext_resource path="res://FSM-mob/transitions/on_aggro_expired/on_aggro_expired.tscn" type="PackedScene" id=18]
 [ext_resource path="res://FSM-mob/transitions/on_hit/on_hit.tscn" type="PackedScene" id=19]
+[ext_resource path="res://FSM-mob/transitions/on_hit_complete/on_hit_complete.tscn" type="PackedScene" id=20]
+[ext_resource path="res://FSM-mob/transitions/on_hit_complete/on_hit_complete.gd" type="Script" id=21]
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -152,6 +154,7 @@ GraphData = {
 "on_hit": Vector2( 1515, 758 ),
 "on_hit_": Vector2( 1515, 758 ),
 "on_hit__": Vector2( 1515, 758 ),
+"on_hit_complete": Vector2( 191, 47 ),
 "on_landed": Vector2( 518, 476 ),
 "on_landed_": Vector2( 518, 476 ),
 "on_landed__": Vector2( 518, 476 ),
@@ -226,6 +229,13 @@ path2Target_state = NodePath("../../States/Idle")
 
 path2SourceStates = [ NodePath("../../States/Patrolling"), NodePath("../../States/Aggro") ]
 path2Target_state = NodePath("../../States/Hitting")
+
+[node name="on_hit_complete" type="Node" parent="FSM2D/Transitions" index="8" instance=ExtResource( 20 )]
+
+script = ExtResource( 21 )
+path2SourceStates = [ NodePath("../../States/Hitting") ]
+path2Target_state = NodePath("../../States/Idle")
+intervalBetweenChecks = -1.0
 
 [node name="Label" type="Label" parent="." index="7"]
 
