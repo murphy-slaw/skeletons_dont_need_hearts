@@ -55,4 +55,8 @@ func _on_mob_died():
 func _on_Player_hit(body):
     if body.is_class("Mob"):
         body.die()
+        
+func _on_heart_caught():
+    $Player.give_heart()
+    $UILayer/MarginContainer/ColorRect/TextureProgress.value = $Player.hearts
     
