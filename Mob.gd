@@ -43,11 +43,11 @@ func _physics_process(delta):
         if result:
             can_see_target = (result.collider == target)
        
-func die:
+func die():
     emit_signal("die")
     queue_free()
 
-func hit:
+func hit():
     die()
     
 func _on_Lifespan_timeout():
