@@ -62,7 +62,6 @@ func move(delta, acceleration):
     # (which will be non-zero if we're standing on a moving
     # object. Then we move and slide with our linear
     # velocity plus the floor velocity.
-    var floor_vec = get_floor_velocity()
     velocity.y += floor_vec.y
     velocity = \
     move_and_slide(velocity, Vector2(0,-1))
@@ -71,7 +70,8 @@ func move(delta, acceleration):
     # movement vector, because otherwise we'll gradually
     # accelerate instead of just keeping pace with the thing
     # we're standing on!
-    velocity.x -= floor_vec.x
+    var floor_vec = get_floor_velocity()
+    velocity += floor_vec
     
 func is_near_floor():
     var test_motion = Vector2(0,2)
