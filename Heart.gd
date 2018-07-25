@@ -8,7 +8,7 @@ func _ready():
     # Called when the node is added to the scene for the first time.
     # Initialization here
     friction = 0.03
-    gravity = -0.001
+    gravity = -0.05
 
 #func _process(delta):
 #    # Called every frame. Delta is time since last frame.
