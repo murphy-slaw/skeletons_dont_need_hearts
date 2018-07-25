@@ -17,4 +17,4 @@ func _ready():
 #    pass
 
 func _on_LinkButton_pressed():
-    emit_signal("start_game")
+    get_tree().change_scene("res://Game.tscn")
