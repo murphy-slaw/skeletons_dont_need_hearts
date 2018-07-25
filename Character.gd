@@ -58,7 +58,7 @@ func process_collisions():
     for i in range(count):
         var collision = get_slide_collision(i)
         $Label.text = str(collision.collider)
-        if collision.collider.is_class("Character"):
+        if collision.collider.is_class("KinematicBody2D"):
                 emit_signal("hit",collision.collider)
     
 func is_near_floor():
