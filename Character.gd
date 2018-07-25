@@ -10,20 +10,19 @@ var bounce = 0
 var nudge_factor = 0.15
 
 var velocity = Vector2()
+var facing_normal = Vector2(1,0)
 
 var flip_sprite = false setget set_flip_sprite, get_flip_sprite
 
 func get_flip_sprite():
     return $Sprite.flip_h
 
-onready var facing_ray = get_node("facing_ray")
 
 func set_flip_sprite(active=true):
     if $Sprite.flip_h == active:
         return
     else:
         $Sprite.flip_h = active
-        $facing_ray.global_rotation_degrees += 180
         if $Sprite.flip_h:
             $Sprite.offset = Vector2(2,0)
         else:
