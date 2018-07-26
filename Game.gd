@@ -15,6 +15,8 @@ func _ready():
     randomize()
     spawners = get_tree().get_nodes_in_group("arches")
     max_mobs = spawners.size()
+    for i in range(max_mobs):
+        spawn_mob()
     $UILayer/MarginContainer/Label.text = str($Player.hearts)
     $UILayer/MarginContainer/ColorRect/TextureProgress.max_value = win_hearts
     $UILayer/MarginContainer/ColorRect/TextureProgress.value = $Player.hearts
