@@ -98,5 +98,4 @@ func set_label(text):
     $Label.text = text
 
 func _on_StuckTimer_timeout():
-    var lumpo = edge_count
     edge_count = 0
