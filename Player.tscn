@@ -118,8 +118,8 @@ _sections_unfolded = [ "Playback Options" ]
 [node name="IFrameTimer" type="Timer" parent="." index="3"]
 
 process_mode = 0
-wait_time = 0.5
-one_shot = true
+wait_time = 1.0
+one_shot = false
 autostart = false
 
 [node name="PlayerCamera" type="Camera2D" parent="." index="4"]
@@ -275,6 +275,6 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[connection signal="timeout" from="IFrameTimer" to="." method="_on_JumpTimer_timeout"]
+[connection signal="timeout" from="IFrameTimer" to="." method="_on_IFrameTimer_timeout"]
 
 
