@@ -80,6 +80,7 @@ func start_aggro():
     max_speed *= 3
     walk_accel *= 2
     aggro_exhausted = false
+    self_modulate = (1,0,0,.5)
     $AggroTimer.start()
     
 func end_aggro():
