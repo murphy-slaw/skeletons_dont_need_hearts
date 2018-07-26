@@ -60,7 +60,7 @@ func process_collisions():
     for i in range(count):
         var collision = get_slide_collision(i)
         if collision.collider.has_method("hit"):
-                collision.collider.hit()
+                collision.collider.hit(self)
                 
 func become_invuln():
     is_invuln = true
