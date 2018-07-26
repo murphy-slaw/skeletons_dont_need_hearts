@@ -93,7 +93,7 @@ _sections_unfolded = [ "Playback Options" ]
 [node name="Lifespan" type="Timer" parent="." index="4"]
 
 process_mode = 0
-wait_time = 600.0
+wait_time = 30.0
 one_shot = false
 autostart = true
 

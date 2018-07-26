@@ -24,7 +24,7 @@ custom_solver_bias = 0.0
 a = Vector2( 0, -1000 )
 b = Vector2( 0, 0 )
 
-[node name="Game" type="Node2D" index="0"]
+[node name="Game" type="Node2D"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -77,7 +77,7 @@ _sections_unfolded = [ "Visibility" ]
 [node name="MobSpawnTimer" type="Timer" parent="." index="2"]
 
 process_mode = 1
-wait_time = 5.0
+wait_time = 2.0
 one_shot = false
 autostart = false
 
