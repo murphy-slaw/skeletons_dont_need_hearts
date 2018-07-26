@@ -160,7 +160,7 @@ GraphData = {
 "Patrolling__": Vector2( 1084, 472 ),
 "Peef_": Vector2( 1519, 936 ),
 "Peef__": Vector2( 1519, 936 ),
-"Reversing": Vector2( 743, 921 ),
+"Reversing": Vector2( 640, 941 ),
 "Reversing_": Vector2( 743, 921 ),
 "Reversing__": Vector2( 743, 921 ),
 "Wandering": Vector2( 910, 1225 ),
