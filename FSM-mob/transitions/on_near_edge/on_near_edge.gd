@@ -20,12 +20,9 @@ func transition_condition(delta, args = []):
     # Return true/false
     if edge_count > 5:
         return false
-        
-    if logic_root.is_near_edge()
+    
+    if logic_root.is_near_edge():
         edge_count +=1 
         return true
-    elif edge_count >= 5:
-        edge_count = 0
-        
     else:
         return false
