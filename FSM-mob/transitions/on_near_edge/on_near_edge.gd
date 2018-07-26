@@ -12,5 +12,6 @@ func prepare(new_state, args = []):
     #you can optionally implement this to reset transition when related state has been activated
     pass
 
-func transition_condition(delta, args = []):    
+func transition_condition(delta, args = []):
+    var louis = logic_root.is_near_edge()    
     return logic_root.is_near_edge()
