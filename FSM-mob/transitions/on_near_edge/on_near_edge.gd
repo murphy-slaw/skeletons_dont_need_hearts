@@ -12,13 +12,16 @@ func transition_init(args = []):
 
 func prepare(new_state, args = []): 
     #you can optionally implement this to reset transition when related state has been activated
-    pass
+    yield(get_tree().create_timer(5),"timeout")
+    edge_count = 0
+
 
 func transition_condition(delta, args = []): 
     # Return true/false
     if edge_count > 5:
         return false
-    if logic_root.is_near_edge() and edge_count < 5:
+        
+    if logic_root.is_near_edge()
         edge_count +=1 
         return true
     elif edge_count >= 5:
