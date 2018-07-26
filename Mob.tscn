@@ -163,7 +163,7 @@ GraphData = {
 "Reversing": Vector2( 743, 921 ),
 "Reversing_": Vector2( 743, 921 ),
 "Reversing__": Vector2( 743, 921 ),
-"Wandering": Vector2( 1073, 1170 ),
+"Wandering": Vector2( 910, 1225 ),
 "Wandering_": Vector2( 1073, 1170 ),
 "Wandering__": Vector2( 1073, 1170 ),
 "on_aggro_expired": Vector2( 1426, 133 ),
@@ -234,7 +234,7 @@ path2Target_state = NodePath("../../States/Falling")
 
 [node name="on_collision" parent="FSM2D/Transitions" index="2" instance=ExtResource( 15 )]
 
-path2SourceStates = [ NodePath("../../States/Patrolling") ]
+path2SourceStates = [ NodePath("../../States/Patrolling"), NodePath("../../States/Wandering") ]
 path2Target_state = NodePath("../../States/Reversing")
 intervalBetweenChecks = 0.1
 
