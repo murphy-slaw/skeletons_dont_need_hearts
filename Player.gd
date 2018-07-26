@@ -4,6 +4,8 @@ var hearts = 3
 
 func _ready():
     enemy_layer = 1
+    bounce = 1
+    
 func get_normalized_motion():
     return (int(Input.is_action_pressed("ui_right"))\
             - int(Input.is_action_pressed("ui_left")))
