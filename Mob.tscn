@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Mob.gd" type="Script" id=1]
 [ext_resource path="res://art/skellingtorn.png" type="Texture" id=2]
@@ -23,7 +23,6 @@
 [ext_resource path="res://FSM-mob/transitions/on_hit_complete/on_hit_complete.tscn" type="PackedScene" id=21]
 [ext_resource path="res://FSM-mob/transitions/on_stuck/on_stuck.tscn" type="PackedScene" id=22]
 [ext_resource path="res://FSM-mob/transitions/on_wander_done/on_wander_done.tscn" type="PackedScene" id=23]
-[ext_resource path="res://FSM-mob/transitions/on_wander_done/on_wander_done.gd" type="Script" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -155,7 +154,7 @@ GraphData = {
 "Idle2__": Vector2( 627, 210 ),
 "Idle_": Vector2( 1207, 75 ),
 "Idle__": Vector2( 1207, 75 ),
-"Patrolling": Vector2( 1020, 483 ),
+"Patrolling": Vector2( 1003, 464 ),
 "Patrolling_": Vector2( 1020, 483 ),
 "Patrolling__": Vector2( 1020, 483 ),
 "Peef_": Vector2( 1519, 936 ),
@@ -169,7 +168,7 @@ GraphData = {
 "on_aggro_expired": Vector2( 1426, 133 ),
 "on_aggro_expired_": Vector2( 1426, 133 ),
 "on_aggro_expired__": Vector2( 1426, 133 ),
-"on_collision": Vector2( 873, 683 ),
+"on_collision": Vector2( 902, 735 ),
 "on_collision2_": Vector2( 191, 47 ),
 "on_collision2__": Vector2( 191, 47 ),
 "on_collision_": Vector2( 873, 683 ),
@@ -186,7 +185,7 @@ GraphData = {
 "on_left_ground": Vector2( 870, 193 ),
 "on_left_ground_": Vector2( 870, 193 ),
 "on_left_ground__": Vector2( 870, 193 ),
-"on_near_edge": Vector2( 1055, 730 ),
+"on_near_edge": Vector2( 1089, 866 ),
 "on_near_edge_": Vector2( 1055, 730 ),
 "on_near_edge__": Vector2( 1055, 730 ),
 "on_path_clear": Vector2( 631, 744 ),
@@ -272,12 +271,10 @@ path2Target_state = NodePath("../../States/Idle")
 path2SourceStates = [ NodePath(""), NodePath("../../States/Patrolling") ]
 path2Target_state = NodePath("../../States/Wandering")
 
-[node name="on_wander_done" type="Node" parent="FSM2D/Transitions" index="10" instance=ExtResource( 23 )]
+[node name="on_wander_done" parent="FSM2D/Transitions" index="10" instance=ExtResource( 23 )]
 
-script = ExtResource( 24 )
 path2SourceStates = [ NodePath(""), NodePath("../../States/Wandering") ]
 path2Target_state = NodePath("../../States/Patrolling")
-intervalBetweenChecks = -1.0
 
 [node name="Label" type="Label" parent="." index="9"]
 
