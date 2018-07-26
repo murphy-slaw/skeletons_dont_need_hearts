@@ -58,10 +58,10 @@ func die():
     heart.connect("caught",parent,"_on_heart_caught")
     queue_free()
 
-func hit():
+func hit(body):
     if not is_invuln:
         is_hit = true
-    move(0,facing_normal * -1500)
+    move(0,body.facing_normal * -1500)
         
 
     

@@ -17,7 +17,7 @@ func enter(from_state = null, from_transition = null, args = []):
         logic_root.die()
     else:
         logic_root.become_invuln()
-        logic_root.target.hit()
+        logic_root.target.hit(self)
 
 #when updating state, paramx can be used only if updating fsm manually
 func update(delta, args=null):
