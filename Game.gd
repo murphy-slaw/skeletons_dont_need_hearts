@@ -26,7 +26,7 @@ func _physics_process(delta):
         $UILayer/MarginContainer/Label.text= str($Player.hearts)
         if $Player.hearts <= 0:
             get_parent().get_tree().change_scene("res://TheEnd.tscn")
-        elif $Player.hearts == win_hearts:
+        elif $Player.hearts >= win_hearts:
             get_parent().get_tree().change_scene("res://TheEnd.tscn")
             
         
