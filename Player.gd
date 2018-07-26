@@ -15,8 +15,8 @@ func hit(body):
     if not is_invuln:
         take_heart()
         become_invuln()
-    if body.get("facing_normal"):
-            move(0,body.facing_normal * -1500)
+        if body.get("facing_normal"):
+                move(0,body.facing_normal * -1500)
         
     
 func give_heart():
