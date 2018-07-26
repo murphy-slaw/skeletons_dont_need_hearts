@@ -64,14 +64,7 @@ func hit():
         is_hit = true
     move(0,facing_normal * -1500)
         
-func become_invuln():
-    is_invuln = true
-    $IFrameTimer.start()
-    set_collision_mask_bit(0,false)
-    
-func _on_IFrameTimer_timeout():
-    is_invuln = false
-    set_collision_mask_bit(0,true)
+
     
 func _on_Lifespan_timeout():
     die()

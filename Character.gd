@@ -61,6 +61,15 @@ func process_collisions():
         var collision = get_slide_collision(i)
         if collision.collider.has_method("hit"):
                 collision.collider.hit()
+                
+func become_invuln():
+    is_invuln = true
+    $IFrameTimer.start()
+    set_collision_mask_bit(enemy_layer,false)
+    
+func _on_IFrameTimer_timeout():
+    is_invuln = false
+    set_collision_mask_bit(enemy_layer,true)
     
 func is_near_floor():
     var test_motion = Vector2(0,2)

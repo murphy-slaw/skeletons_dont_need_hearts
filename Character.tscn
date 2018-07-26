@@ -4,7 +4,6 @@
 
 [node name="Character" type="KinematicBody2D" index="0"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1

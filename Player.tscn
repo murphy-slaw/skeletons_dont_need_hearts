@@ -78,7 +78,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 position = Vector2( 0, 0.0353484 )
 input_pickable = false
@@ -115,7 +115,7 @@ anims/Walk = SubResource( 4 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="StaggerTimer" type="Timer" parent="." index="3"]
+[node name="IFrameTimer" type="Timer" parent="." index="3"]
 
 process_mode = 0
 wait_time = 0.5
@@ -275,6 +275,6 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[connection signal="timeout" from="StaggerTimer" to="." method="_on_JumpTimer_timeout"]
+[connection signal="timeout" from="IFrameTimer" to="." method="_on_JumpTimer_timeout"]
 
 
