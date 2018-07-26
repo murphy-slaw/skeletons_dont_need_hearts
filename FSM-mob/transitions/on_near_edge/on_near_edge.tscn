@@ -2,7 +2,7 @@
 
 [ext_resource path="res://FSM-mob/transitions/on_near_edge/on_near_edge.gd" type="Script" id=1]
 
-[node name="on_near_edge" type="Node"]
+[node name="on_near_edge" type="Node" index="0"]
 
 script = ExtResource( 1 )
 path2SourceStates = [ NodePath("") ]
