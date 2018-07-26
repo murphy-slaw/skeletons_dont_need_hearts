@@ -12,7 +12,7 @@ func transition_init(args = []):
 
 func prepare(new_state, args = []): 
     #you can optionally implement this to reset transition when related state has been activated
-    yield(get_tree().create_timer(5),"timeout")
+    yield(get_tree().create_timer(10),"timeout")
     edge_count = 0
 
 
