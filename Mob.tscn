@@ -134,7 +134,7 @@ only_active_state_on_scene = false
 init_manually = false
 update_mode = 2
 receive_singals_only_on_activated_items = false
-debug_enabled = false
+debug_enabled = true
 "Initial state:" = "Aggro"
 "Create new:/Subdirectory for FSM nodes:" = "FSM-mob"
 "Create new:/Create state with name:" = null
@@ -161,7 +161,7 @@ GraphData = {
 "Peef_": Vector2( 1519, 936 ),
 "Peef__": Vector2( 1519, 936 ),
 "Reversing": Vector2( 743, 921 ),
-"Reversing_": Vector2( 686, 895 ),
+"Reversing_": Vector2( 743, 921 ),
 "Reversing__": Vector2( 686, 895 ),
 "Wandering": Vector2( 1073, 1170 ),
 "Wandering_": Vector2( 1073, 1170 ),
@@ -172,7 +172,7 @@ GraphData = {
 "on_collision": Vector2( 873, 683 ),
 "on_collision2_": Vector2( 191, 47 ),
 "on_collision2__": Vector2( 191, 47 ),
-"on_collision_": Vector2( 902, 834 ),
+"on_collision_": Vector2( 873, 683 ),
 "on_collision__": Vector2( 902, 834 ),
 "on_hit": Vector2( 1639, 865 ),
 "on_hit_": Vector2( 1639, 865 ),
@@ -190,13 +190,13 @@ GraphData = {
 "on_near_edge_": Vector2( 1055, 730 ),
 "on_near_edge__": Vector2( 1055, 730 ),
 "on_path_clear": Vector2( 631, 744 ),
-"on_path_clear_": Vector2( 662, 743 ),
+"on_path_clear_": Vector2( 631, 744 ),
 "on_path_clear__": Vector2( 662, 743 ),
 "on_saw_player": Vector2( 1236, 414 ),
 "on_saw_player_": Vector2( 1236, 414 ),
 "on_saw_player__": Vector2( 1236, 414 ),
-"on_stuck": Vector2( 1514, 1014 ),
-"on_stuck_": Vector2( 1514, 1014 ),
+"on_stuck": Vector2( 1437, 890 ),
+"on_stuck_": Vector2( 1437, 890 ),
 "on_stuck__": Vector2( 1514, 1014 ),
 "on_wander_done": Vector2( 196, 883 ),
 "on_wander_done_": Vector2( 196, 883 ),
