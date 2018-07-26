@@ -65,10 +65,12 @@ func process_collisions():
 func become_invuln():
     is_invuln = true
     $IFrameTimer.start()
+    modulate = Color(1,1,1,.5)
     set_collision_mask_bit(enemy_layer,false)
     
 func _on_IFrameTimer_timeout():
     is_invuln = false
+    modulate = Color(1,1,1,1)
     set_collision_mask_bit(enemy_layer,true)
     
 func is_near_floor():
