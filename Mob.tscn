@@ -302,6 +302,8 @@ max_lines_visible = -1
 
 [connection signal="timeout" from="AggroTimer" to="." method="_on_AggroTimer_timeout"]
 
+[connection signal="timeout" from="StuckTimer" to="." method="_on_StuckTimer_timeout"]
+
 [connection signal="timeout" from="IFrameTimer" to="." method="_on_IFrameTimer_timeout"]
 
 

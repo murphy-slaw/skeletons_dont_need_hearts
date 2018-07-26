@@ -97,5 +97,5 @@ func _on_AggroTimer_timeout():
 func set_label(text):
     $Label.text = text
 
-
-
+func _on_StuckTimer_timeout():
+    edge_count = 0
