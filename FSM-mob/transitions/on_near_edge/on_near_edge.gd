@@ -16,8 +16,8 @@ func prepare(new_state, args = []):
 
 func transition_condition(delta, args = []): 
     # Return true/false
-    edge_count += 1
     if logic_root.is_near_edge() and edge_count < 5:
+        edge_count +=1 
         return true
     elif edge_count >= 5:
         yield(get_tree().create_timer(10),"timeout")
