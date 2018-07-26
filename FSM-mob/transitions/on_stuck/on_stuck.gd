@@ -13,5 +13,4 @@ func prepare(new_state, args = []):
     pass
 
 func transition_condition(delta, args = []): 
-    # Return true/false
-    return false;
+    return logic_root.edge_count >=> 5

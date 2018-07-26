@@ -265,9 +265,6 @@ path2Target_state = NodePath("../../States/Idle")
 
 [node name="on_stuck" parent="FSM2D/Transitions" index="8" instance=ExtResource( 21 )]
 
-path2SourceStates = [ NodePath(""), NodePath("../../States/Patrolling") ]
-path2Target_state = NodePath("../../States/Wandering")
-
 [node name="on_wander_done" parent="FSM2D/Transitions" index="9" instance=ExtResource( 22 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Wandering") ]
