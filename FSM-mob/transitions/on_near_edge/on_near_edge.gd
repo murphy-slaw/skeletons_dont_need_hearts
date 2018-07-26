@@ -13,5 +13,6 @@ func prepare(new_state, args = []):
     pass
 
 func transition_condition(delta, args = []):
-    var louis = logic_root.is_near_edge()    
+    var louis = logic_root.is_near_edge()
+    return true    
     return logic_root.is_near_edge()
