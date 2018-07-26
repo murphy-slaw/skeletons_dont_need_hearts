@@ -59,7 +59,6 @@ func die():
     queue_free()
 
 func hit(body):
-    if not is_invuln:
         is_hit = true
     
 func _on_Lifespan_timeout():
