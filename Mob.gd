@@ -10,6 +10,7 @@ var aggro_exhausted = true
 var original_max_speed
 var original_walk_accel
 var is_hit = false
+var edge_count = 0
 
 export (int) var FOV = 45
 export (int) var sight_radius = 150
