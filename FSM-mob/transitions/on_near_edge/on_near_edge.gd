@@ -18,7 +18,7 @@ func prepare(new_state, args = []):
 
 func transition_condition(delta, args = []): 
     # Return true/false
-    if edge_count > 5:
+    if edge_count > 100:
         return false
     
     if logic_root.is_near_edge():
