@@ -10,8 +10,7 @@ func transition_init(args = []):
 
 func prepare(new_state, args = []): 
     #you can optionally implement this to reset transition when related state has been activated
-
-    edge_count = 0
+    pass
 
 
 func transition_condition(delta, args = []): 

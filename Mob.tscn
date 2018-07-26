@@ -220,9 +220,6 @@ path2Target_state = NodePath("../../States/Patrolling")
 
 [node name="on_near_edge" parent="FSM2D/Transitions" index="4" instance=ExtResource( 16 )]
 
-path2SourceStates = [ NodePath("../../States/Patrolling") ]
-path2Target_state = NodePath("../../States/Reversing")
-
 [node name="on_saw_player" parent="FSM2D/Transitions" index="5" instance=ExtResource( 17 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Patrolling") ]
