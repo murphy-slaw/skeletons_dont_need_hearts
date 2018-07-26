@@ -52,7 +52,7 @@ func move(delta, acceleration):
     velocity.x = clamp(velocity.x,-max_speed,max_speed)
 
     velocity = \
-    move_and_slide(velocity, Vector2(0,-1),5,10)
+    move_and_slide(velocity, Vector2(0,-1),5,4)
     process_collisions()
     
 func process_collisions():
