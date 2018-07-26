@@ -69,6 +69,10 @@ func become_invuln():
     $IFrameTimer.start()
     set_collision_mask_bit(0,false)
     
+func _on_IFrameTimer_timeout():
+    is_invuln = false
+    set_collision_mask_bit(0,true)
+    
 func _on_Lifespan_timeout():
     die()
     
@@ -102,6 +106,4 @@ func set_label(text):
     $Label.text = text
 
 
-func _on_IFrameTimer_timeout():
-    is_invuln = false
-    set_collision_mask_bit(0,true)
+

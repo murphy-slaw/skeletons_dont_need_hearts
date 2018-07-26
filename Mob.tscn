@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Mob.gd" type="Script" id=1]
 [ext_resource path="res://art/skellingtorn.png" type="Texture" id=2]
@@ -20,9 +20,8 @@
 [ext_resource path="res://FSM-mob/transitions/on_aggro_expired/on_aggro_expired.tscn" type="PackedScene" id=18]
 [ext_resource path="res://FSM-mob/transitions/on_hit/on_hit.tscn" type="PackedScene" id=19]
 [ext_resource path="res://FSM-mob/transitions/on_hit_complete/on_hit_complete.tscn" type="PackedScene" id=20]
-[ext_resource path="res://FSM-mob/transitions/on_hit_complete/on_hit_complete.gd" type="Script" id=21]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 12 )
@@ -69,7 +68,7 @@ _sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="edge_ray" type="RayCast2D" parent="." index="2"]
 
@@ -240,12 +239,10 @@ path2Target_state = NodePath("../../States/Idle")
 path2SourceStates = [ NodePath("../../States/Patrolling"), NodePath("../../States/Aggro") ]
 path2Target_state = NodePath("../../States/Hitting")
 
-[node name="on_hit_complete" type="Node" parent="FSM2D/Transitions" index="8" instance=ExtResource( 20 )]
+[node name="on_hit_complete" parent="FSM2D/Transitions" index="8" instance=ExtResource( 20 )]
 
-script = ExtResource( 21 )
 path2SourceStates = [ NodePath("../../States/Hitting") ]
 path2Target_state = NodePath("../../States/Idle")
-intervalBetweenChecks = -1.0
 
 [node name="Label" type="Label" parent="." index="8"]
 

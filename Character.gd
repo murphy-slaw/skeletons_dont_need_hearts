@@ -11,6 +11,8 @@ var jump_speed = gravity * jump_power
 var bounce = 0
 var nudge_factor = 0.15
 
+var enemy_layer = 0
+
 var velocity = Vector2()
 var facing_normal = Vector2(1,0)
 
