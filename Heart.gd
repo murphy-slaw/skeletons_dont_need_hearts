@@ -29,6 +29,6 @@ func _process_collisions():
 func _on_PoofTimer_timeout():
     queue_free()
     
-func hit():
+func hit(body):
     emit_signal("caught")
     queue_free()
