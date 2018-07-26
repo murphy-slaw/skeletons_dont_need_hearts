@@ -80,7 +80,7 @@ position = Vector2( 10, 12 )
 enabled = true
 exclude_parent = true
 cast_to = Vector2( 0, 4 )
-collision_mask = 1
+collision_mask = 7
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
