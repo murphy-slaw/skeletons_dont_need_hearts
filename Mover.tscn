@@ -3,7 +3,7 @@
 [ext_resource path="res://Mover.gd" type="Script" id=1]
 [ext_resource path="res://art/stupid_tiles.png" type="Texture" id=2]
 
-[node name="Mover" type="Node2D"]
+[node name="Mover" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 motion = Vector2( 0, 0 )

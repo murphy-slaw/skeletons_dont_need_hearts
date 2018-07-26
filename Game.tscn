@@ -24,7 +24,7 @@ custom_solver_bias = 0.0
 a = Vector2( 0, -1000 )
 b = Vector2( 0, 0 )
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {

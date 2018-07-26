@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Mob.gd" type="Script" id=1]
 [ext_resource path="res://art/skellingtorn.png" type="Texture" id=2]
@@ -22,6 +22,10 @@
 [ext_resource path="res://FSM-mob/transitions/on_aggro_expired/on_aggro_expired.tscn" type="PackedScene" id=20]
 [ext_resource path="res://FSM-mob/transitions/on_hit/on_hit.tscn" type="PackedScene" id=21]
 [ext_resource path="res://FSM-mob/transitions/on_hit_complete/on_hit_complete.tscn" type="PackedScene" id=22]
+[ext_resource path="res://FSM-mob/transitions/on_stuck/on_stuck.tscn" type="PackedScene" id=23]
+[ext_resource path="res://FSM-mob/transitions/on_stuck/on_stuck.gd" type="Script" id=24]
+[ext_resource path="res://FSM-mob/transitions/on_wander_done/on_wander_done.tscn" type="PackedScene" id=25]
+[ext_resource path="res://FSM-mob/transitions/on_wander_done/on_wander_done.gd" type="Script" id=26]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -153,13 +157,15 @@ GraphData = {
 "Idle2__": Vector2( 627, 210 ),
 "Idle_": Vector2( 1207, 75 ),
 "Idle__": Vector2( 1207, 75 ),
-"Patrolling": Vector2( 924, 429 ),
-"Patrolling_": Vector2( 924, 429 ),
-"Patrolling__": Vector2( 925, 389 ),
+"Patrolling": Vector2( 960, 499 ),
+"Patrolling_": Vector2( 960, 499 ),
+"Patrolling__": Vector2( 960, 499 ),
 "Reversing": Vector2( 473, 812 ),
 "Reversing_": Vector2( 473, 812 ),
 "Reversing__": Vector2( 473, 812 ),
 "Wandering": Vector2( 1310, 950 ),
+"Wandering_": Vector2( 1310, 950 ),
+"Wandering__": Vector2( 1310, 950 ),
 "on_aggro_expired": Vector2( 1426, 133 ),
 "on_aggro_expired_": Vector2( 1426, 133 ),
 "on_aggro_expired__": Vector2( 1426, 133 ),
@@ -173,6 +179,7 @@ GraphData = {
 "on_hit__": Vector2( 1515, 758 ),
 "on_hit_complete": Vector2( 1088, 300 ),
 "on_hit_complete_": Vector2( 1088, 300 ),
+"on_hit_complete__": Vector2( 1088, 300 ),
 "on_landed": Vector2( 518, 476 ),
 "on_landed_": Vector2( 518, 476 ),
 "on_landed__": Vector2( 518, 476 ),
@@ -187,7 +194,12 @@ GraphData = {
 "on_path_clear__": Vector2( 705, 604 ),
 "on_saw_player": Vector2( 1286, 403 ),
 "on_saw_player_": Vector2( 1286, 403 ),
-"on_saw_player__": Vector2( 1286, 403 )
+"on_saw_player__": Vector2( 1286, 403 ),
+"on_stuck": Vector2( 1283, 783 ),
+"on_stuck_": Vector2( 1283, 783 ),
+"on_stuck__": Vector2( 1283, 783 ),
+"on_wander_done": Vector2( 191, 47 ),
+"on_wander_done_": Vector2( 191, 47 )
 }
 
 [node name="States" type="Node2D" parent="FSM2D" index="0"]
@@ -253,6 +265,20 @@ path2Target_state = NodePath("../../States/Hitting")
 
 path2SourceStates = [ NodePath("../../States/Hitting") ]
 path2Target_state = NodePath("../../States/Idle")
+
+[node name="on_stuck" type="Node" parent="FSM2D/Transitions" index="9" instance=ExtResource( 23 )]
+
+script = ExtResource( 24 )
+path2SourceStates = [ NodePath(""), NodePath("../../States/Patrolling") ]
+path2Target_state = NodePath("../../States/Wandering")
+intervalBetweenChecks = -1.0
+
+[node name="on_wander_done" type="Node" parent="FSM2D/Transitions" index="10" instance=ExtResource( 25 )]
+
+script = ExtResource( 26 )
+path2SourceStates = [ NodePath("") ]
+path2Target_state = null
+intervalBetweenChecks = -1.0
 
 [node name="Label" type="Label" parent="." index="9"]
 
