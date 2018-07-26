@@ -66,12 +66,12 @@ func become_invuln():
     is_invuln = true
     $IFrameTimer.start()
     modulate = Color(1,1,1,.3)
-    set_collision_mask_bit(enemy_layer,false)
+    set_collision_layer_bit(enemy_layer,false)
     
 func _on_IFrameTimer_timeout():
     is_invuln = false
     modulate = Color(1,1,1,1)
-    set_collision_mask_bit(enemy_layer,true)
+    set_collision_layer_bit(enemy_layer,true)
     
 func is_near_floor():
     var test_motion = Vector2(0,2)
