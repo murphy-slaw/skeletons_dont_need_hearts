@@ -1,22 +1,21 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=2]
 [ext_resource path="res://art/brinstone.png" type="Texture" id=3]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Mover.tscn" type="PackedScene" id=5]
-[ext_resource path="res://art/heart-back.png" type="Texture" id=6]
-[ext_resource path="res://art/heart-mask.png" type="Texture" id=7]
-[ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://art/roughtiles.tres" type="TileSet" id=9]
-[ext_resource path="res://Archway.tscn" type="PackedScene" id=10]
+[ext_resource path="res://art/heart-back.png" type="Texture" id=5]
+[ext_resource path="res://art/heart-mask.png" type="Texture" id=6]
+[ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://art/roughtiles.tres" type="TileSet" id=8]
+[ext_resource path="res://Archway.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 14
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 8 )
+font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Resource", "Settings" ]
 
 [sub_resource type="SegmentShape2D" id=2]
@@ -89,19 +88,7 @@ position = Vector2( 50, 451 )
 z_index = 2
 _sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
 
-[node name="Mover" parent="." index="4" instance=ExtResource( 5 )]
-
-position = Vector2( 224, 389 )
-motion = Vector2( 0, 72 )
-cycle = 7.0
-
-[node name="Mover2" parent="." index="5" instance=ExtResource( 5 )]
-
-position = Vector2( 360, 432 )
-motion = Vector2( 72, 0 )
-cycle = 7.0
-
-[node name="UILayer" type="CanvasLayer" parent="." index="6"]
+[node name="UILayer" type="CanvasLayer" parent="." index="4"]
 
 layer = 0
 offset = Vector2( 0, 0 )
@@ -167,7 +154,7 @@ exp_edit = true
 rounded = false
 texture_under = null
 texture_over = null
-texture_progress = ExtResource( 6 )
+texture_progress = ExtResource( 5 )
 fill_mode = 3
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
@@ -181,7 +168,7 @@ position = Vector2( -8, 0 )
 z_as_relative = false
 enabled = true
 editor_only = false
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 offset = Vector2( 24, 16 )
 texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
@@ -229,10 +216,10 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Theme", "Visibility", "custom_colors", "custom_fonts" ]
 
-[node name="TileMap" type="TileMap" parent="." index="7"]
+[node name="TileMap" type="TileMap" parent="." index="5"]
 
 mode = 0
-tile_set = ExtResource( 9 )
+tile_set = ExtResource( 8 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -247,10 +234,10 @@ collision_layer = 1
 collision_mask = 3
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 983040, 1, 0, 983041, 1, 0, 983042, 1, 0, 983043, 1, 0, 983044, 1, 0, 983045, 1, 0, 983046, 1, 0, 983047, 1, 0, 983048, 1, 0, 983049, 1, 0, 983050, 1, 0, 983051, 1, 0, 983052, 2, 0, 1048576, 7, 0, 1048577, 7, 0, 1048578, 7, 0, 1048579, 7, 0, 1048580, 7, 0, 1048581, 7, 0, 1048582, 7, 0, 1048583, 7, 0, 1048584, 7, 0, 1048585, 7, 0, 1048586, 7, 0, 1048587, 7, 0, 1048588, 20, 0, 1310720, 1, 0, 1310721, 2, 0, 1310726, 0, 0, 1310727, 1, 0, 1310728, 1, 0, 1310729, 1, 0, 1310730, 1, 0, 1310731, 1, 0, 1310732, 2, 0, 1310735, 0, 0, 1310736, 2, 0, 1376256, 14, 0, 1376257, 8, 0, 1376262, 13, 0, 1376263, 14, 0, 1376264, 14, 0, 1376265, 14, 0, 1376266, 14, 0, 1376267, 7, 0, 1376268, 20, 0, 1376271, 6, 0, 1376272, 8, 0, 1441792, 14, 0, 1441793, 14, 0, 1441794, 1, 0, 1441795, 2, 0, 1441803, 6, 0, 1441804, 8, 0, 1441807, 6, 0, 1441808, 8, 0, 1507328, 14, 0, 1507329, 14, 0, 1507330, 14, 0, 1507331, 8, 0, 1507339, 6, 0, 1507340, 8, 0, 1507343, 6, 0, 1507344, 8, 0, 1572864, 14, 0, 1572865, 14, 0, 1572866, 14, 0, 1572867, 14, 0, 1572868, 1, 0, 1572869, 2, 0, 1572875, 6, 0, 1572876, 8, 0, 1572879, 6, 0, 1572880, 8, 0, 1638400, 7, 0, 1638401, 7, 0, 1638402, 7, 0, 1638403, 7, 0, 1638404, 7, 0, 1638405, 15, 0, 1638411, 6, 0, 1638412, 8, 0, 1638415, 6, 0, 1638416, 8, 0, 1703940, 13, 0, 1703941, 14, 0, 1703942, 1, 0, 1703943, 2, 0, 1703947, 13, 0, 1703948, 15, 0, 1703951, 13, 0, 1703952, 15, 0, 1900544, 1, 0, 1900545, 1, 0, 1900546, 1, 0, 1900547, 1, 0, 1900548, 1, 0, 1900549, 1, 0, 1900550, 1, 0, 1900551, 1, 0, 1900552, 1, 0, 1900553, 1, 0, 1900554, 1, 0, 1900555, 1, 0, 1900556, 1, 0, 1900557, 1, 0, 1900558, 1, 0, 1900559, 1, 0, 1900560, 1, 0, 1900561, 1, 0, 1900562, 1, 0, 1900563, 1, 0, 1900564, 1, 0, 1900565, 1, 0, 1900566, 1, 0, 1900567, 1, 0, 1900568, 1, 0, 1900569, 1, 0, 1900570, 1, 0, 1900571, 1, 0, 1900572, 1, 0, 1900573, 1, 0, 1900574, 1, 0, 1900575, 1, 0, 1900576, 1, 0, 1900577, 1, 0, 1900578, 1, 0, 1900579, 1, 0, 1900580, 1, 0, 1900581, 1, 0, 1900582, 1, 0, 1900583, 1, 0, 1966080, 14, 0, 1966081, 14, 0, 1966082, 14, 0, 1966083, 14, 0, 1966084, 14, 0, 1966085, 14, 0, 1966086, 14, 0, 1966087, 14, 0, 1966088, 14, 0, 1966089, 14, 0, 1966090, 14, 0, 1966091, 14, 0, 1966092, 14, 0, 1966093, 14, 0, 1966094, 14, 0, 1966095, 14, 0, 1966096, 14, 0, 1966097, 14, 0, 1966098, 14, 0, 1966099, 14, 0, 1966100, 14, 0, 1966101, 14, 0, 1966102, 14, 0, 1966103, 14, 0, 1966104, 14, 0, 1966105, 14, 0, 1966106, 14, 0, 1966107, 14, 0, 1966108, 14, 0, 1966109, 14, 0, 1966110, 14, 0, 1966111, 14, 0, 1966112, 14, 0, 1966113, 14, 0, 1966114, 14, 0, 1966115, 14, 0, 1966116, 14, 0, 1966117, 14, 0, 1966118, 14, 0, 1966119, 14, 0 )
+tile_data = PoolIntArray( 1048578, 1, 0, 1048579, 1, 0, 1048580, 1, 0, 1048581, 1, 0, 1048582, 1, 0, 1048583, 1, 0, 1048584, 1, 0, 1048585, 1, 0, 1048586, 1, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 2, 0, 1048592, 0, 0, 1048593, 2, 0, 1114123, 6, 0, 1114124, 8, 0, 1114128, 6, 0, 1114129, 8, 0, 1179648, 2, 0, 1179659, 6, 0, 1179660, 8, 0, 1179663, 0, 0, 1179664, 6, 0, 1179665, 8, 0, 1245195, 6, 0, 1245196, 8, 0, 1245200, 6, 0, 1245201, 8, 0, 1310720, 1, 0, 1310721, 1, 0, 1310722, 1, 0, 1310723, 1, 0, 1310724, 1, 0, 1310725, 1, 0, 1310726, 1, 0, 1310727, 2, 0, 1310728, 2, 0, 1310731, 6, 0, 1310732, 8, 0, 1310733, 2, 0, 1310736, 6, 0, 1310737, 8, 0, 1376267, 6, 0, 1376268, 8, 0, 1376272, 6, 0, 1376273, 8, 0, 1441802, 0, 0, 1441803, 14, 0, 1441804, 8, 0, 1441807, 0, 0, 1441808, 6, 0, 1441809, 8, 0, 1507336, 0, 0, 1507337, 2, 0, 1507339, 6, 0, 1507340, 8, 0, 1507344, 6, 0, 1507345, 8, 0, 1572870, 0, 0, 1572871, 2, 0, 1572875, 6, 0, 1572876, 8, 0, 1572877, 2, 0, 1572880, 6, 0, 1572881, 8, 0, 1638404, 0, 0, 1638405, 2, 0, 1638411, 6, 0, 1638412, 8, 0, 1638416, 6, 0, 1638417, 8, 0, 1703938, 0, 0, 1703939, 2, 0, 1703947, 13, 0, 1703948, 15, 0, 1703951, 0, 0, 1703952, 13, 0, 1703953, 15, 0, 1900544, 1, 0, 1900545, 1, 0, 1900546, 1, 0, 1900547, 1, 0, 1900548, 1, 0, 1900549, 1, 0, 1900550, 1, 0, 1900551, 1, 0, 1900552, 1, 0, 1900553, 1, 0, 1900554, 1, 0, 1900555, 1, 0, 1900556, 1, 0, 1900557, 1, 0, 1900558, 1, 0, 1900559, 1, 0, 1900560, 1, 0, 1900561, 1, 0, 1900562, 1, 0, 1900563, 1, 0, 1900564, 1, 0, 1900565, 1, 0, 1900566, 1, 0, 1900567, 1, 0, 1900568, 1, 0, 1900569, 1, 0, 1900570, 1, 0, 1900571, 1, 0, 1900572, 1, 0, 1900573, 1, 0, 1900574, 1, 0, 1900575, 1, 0, 1900576, 1, 0, 1900577, 1, 0, 1900578, 1, 0, 1900579, 1, 0, 1900580, 1, 0, 1900581, 1, 0, 1900582, 1, 0, 1900583, 1, 0, 1966080, 14, 0, 1966081, 14, 0, 1966082, 14, 0, 1966083, 14, 0, 1966084, 14, 0, 1966085, 14, 0, 1966086, 14, 0, 1966087, 14, 0, 1966088, 14, 0, 1966089, 14, 0, 1966090, 14, 0, 1966091, 14, 0, 1966092, 14, 0, 1966093, 14, 0, 1966094, 14, 0, 1966095, 14, 0, 1966096, 14, 0, 1966097, 14, 0, 1966098, 14, 0, 1966099, 14, 0, 1966100, 14, 0, 1966101, 14, 0, 1966102, 14, 0, 1966103, 14, 0, 1966104, 14, 0, 1966105, 14, 0, 1966106, 14, 0, 1966107, 14, 0, 1966108, 14, 0, 1966109, 14, 0, 1966110, 14, 0, 1966111, 14, 0, 1966112, 14, 0, 1966113, 14, 0, 1966114, 14, 0, 1966115, 14, 0, 1966116, 14, 0, 1966117, 14, 0, 1966118, 14, 0, 1966119, 14, 0 )
 _sections_unfolded = [ "Cell", "Collision", "Z Index" ]
 
-[node name="ScreenLeft" type="StaticBody2D" parent="." index="8"]
+[node name="ScreenLeft" type="StaticBody2D" parent="." index="6"]
 
 editor/display_folded = true
 position = Vector2( 0, 500 )
@@ -268,7 +255,7 @@ _sections_unfolded = [ "Transform" ]
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ScreenRight" type="StaticBody2D" parent="." index="9"]
+[node name="ScreenRight" type="StaticBody2D" parent="." index="7"]
 
 editor/display_folded = true
 position = Vector2( 640, 500 )
@@ -286,11 +273,11 @@ _sections_unfolded = [ "Collision", "Transform" ]
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Archway" parent="." index="10" instance=ExtResource( 10 )]
+[node name="Archway" parent="." index="8" instance=ExtResource( 9 )]
 
 position = Vector2( 297, 448 )
 
-[node name="Archway2" parent="." index="11" instance=ExtResource( 10 )]
+[node name="Archway2" parent="." index="9" instance=ExtResource( 9 )]
 
 position = Vector2( 139, 304 )
 
