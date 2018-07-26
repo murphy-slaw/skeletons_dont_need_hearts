@@ -134,7 +134,7 @@ only_active_state_on_scene = false
 init_manually = false
 update_mode = 2
 receive_singals_only_on_activated_items = false
-debug_enabled = true
+debug_enabled = false
 "Initial state:" = "Aggro"
 "Create new:/Subdirectory for FSM nodes:" = "FSM-mob"
 "Create new:/Create state with name:" = null
@@ -143,9 +143,9 @@ GraphData = {
 "Aggro": Vector2( 1506, 338 ),
 "Aggro_": Vector2( 1506, 338 ),
 "Aggro__": Vector2( 1506, 338 ),
-"Falling": Vector2( 556, 89 ),
-"Falling_": Vector2( 556, 89 ),
-"Falling__": Vector2( 556, 89 ),
+"Falling": Vector2( 216, 293 ),
+"Falling_": Vector2( 216, 293 ),
+"Falling__": Vector2( 376, 211 ),
 "Hitting": Vector2( 1731, 489 ),
 "Hitting_": Vector2( 1731, 489 ),
 "Hitting__": Vector2( 1731, 489 ),
@@ -160,47 +160,47 @@ GraphData = {
 "Patrolling__": Vector2( 1084, 472 ),
 "Peef_": Vector2( 1519, 936 ),
 "Peef__": Vector2( 1519, 936 ),
-"Reversing": Vector2( 640, 941 ),
-"Reversing_": Vector2( 640, 941 ),
-"Reversing__": Vector2( 743, 921 ),
-"Wandering": Vector2( 910, 1225 ),
-"Wandering_": Vector2( 910, 1225 ),
-"Wandering__": Vector2( 1073, 1170 ),
+"Reversing": Vector2( 757, 1061 ),
+"Reversing_": Vector2( 757, 1061 ),
+"Reversing__": Vector2( 757, 1061 ),
+"Wandering": Vector2( 192, 1167 ),
+"Wandering_": Vector2( 192, 1167 ),
+"Wandering__": Vector2( 192, 1167 ),
 "on_aggro_expired": Vector2( 1426, 133 ),
 "on_aggro_expired_": Vector2( 1426, 133 ),
 "on_aggro_expired__": Vector2( 1426, 133 ),
-"on_collision": Vector2( 927, 717 ),
+"on_collision": Vector2( 590, 858 ),
 "on_collision2_": Vector2( 191, 47 ),
 "on_collision2__": Vector2( 191, 47 ),
-"on_collision_": Vector2( 927, 717 ),
-"on_collision__": Vector2( 854, 667 ),
+"on_collision_": Vector2( 590, 858 ),
+"on_collision__": Vector2( 590, 858 ),
 "on_hit": Vector2( 1639, 865 ),
 "on_hit_": Vector2( 1639, 865 ),
 "on_hit__": Vector2( 1639, 865 ),
 "on_hit_complete": Vector2( 1751, 50 ),
 "on_hit_complete_": Vector2( 1751, 50 ),
 "on_hit_complete__": Vector2( 1751, 50 ),
-"on_landed": Vector2( 472, 491 ),
-"on_landed_": Vector2( 472, 491 ),
-"on_landed__": Vector2( 472, 491 ),
-"on_left_ground": Vector2( 870, 193 ),
-"on_left_ground_": Vector2( 870, 193 ),
-"on_left_ground__": Vector2( 870, 193 ),
+"on_landed": Vector2( 540, 292 ),
+"on_landed_": Vector2( 540, 292 ),
+"on_landed__": Vector2( 540, 292 ),
+"on_left_ground": Vector2( 135, 718 ),
+"on_left_ground_": Vector2( 135, 718 ),
+"on_left_ground__": Vector2( 135, 718 ),
 "on_near_edge": Vector2( 1089, 866 ),
 "on_near_edge_": Vector2( 1089, 866 ),
 "on_near_edge__": Vector2( 1089, 866 ),
-"on_path_clear": Vector2( 631, 744 ),
-"on_path_clear_": Vector2( 631, 744 ),
-"on_path_clear__": Vector2( 631, 744 ),
+"on_path_clear": Vector2( 850, 804 ),
+"on_path_clear_": Vector2( 850, 804 ),
+"on_path_clear__": Vector2( 850, 804 ),
 "on_saw_player": Vector2( 1147, 309 ),
 "on_saw_player_": Vector2( 1147, 309 ),
 "on_saw_player__": Vector2( 1147, 309 ),
-"on_stuck": Vector2( 1437, 890 ),
-"on_stuck_": Vector2( 1437, 890 ),
-"on_stuck__": Vector2( 1437, 890 ),
-"on_wander_done": Vector2( 196, 883 ),
-"on_wander_done_": Vector2( 196, 883 ),
-"on_wander_done__": Vector2( 196, 883 )
+"on_stuck": Vector2( 1496, 1145 ),
+"on_stuck_": Vector2( 1496, 1145 ),
+"on_stuck__": Vector2( 1496, 1145 ),
+"on_wander_done": Vector2( 259, 886 ),
+"on_wander_done_": Vector2( 259, 886 ),
+"on_wander_done__": Vector2( 259, 886 )
 }
 
 [node name="States" type="Node2D" parent="FSM2D" index="0"]
@@ -229,7 +229,7 @@ path2Target_state = NodePath("../../States/Patrolling")
 
 [node name="on_left_ground" parent="FSM2D/Transitions" index="1" instance=ExtResource( 14 )]
 
-path2SourceStates = [ NodePath(""), NodePath("../../States/Idle"), NodePath("../../States/Patrolling") ]
+path2SourceStates = [ NodePath(""), NodePath("../../States/Idle"), NodePath("../../States/Patrolling"), NodePath("../../States/Wandering") ]
 path2Target_state = NodePath("../../States/Falling")
 
 [node name="on_collision" parent="FSM2D/Transitions" index="2" instance=ExtResource( 15 )]
