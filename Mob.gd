@@ -61,9 +61,6 @@ func die():
 func hit(body):
     if not is_invuln:
         is_hit = true
-    move(0,body.facing_normal * -15000)
-        
-
     
 func _on_Lifespan_timeout():
     die()
