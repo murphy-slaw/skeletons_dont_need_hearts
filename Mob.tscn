@@ -109,7 +109,7 @@ autostart = false
 process_mode = 1
 wait_time = 5.0
 one_shot = false
-autostart = false
+autostart = true
 
 [node name="IFrameTimer" type="Timer" parent="." index="7"]
 

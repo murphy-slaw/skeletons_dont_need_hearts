@@ -40,6 +40,7 @@ func _ready():
         reverse_facing()
 
 func _physics_process(delta):
+    assert (global_position.x > 0 and global_position.x < 320)
     var vec_to_target = target.global_position - global_position
     var distance_to_target = vec_to_target.length()
     var target_dot = vec_to_target.normalized().dot(facing_normal)
