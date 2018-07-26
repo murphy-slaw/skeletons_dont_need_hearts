@@ -80,7 +80,7 @@ func start_aggro():
     max_speed *= 3
     walk_accel *= 2
     aggro_exhausted = false
-    self_modulate = Color(1,0,0,1)
+    modulate = Color(1,0,0,.5)
     $AggroTimer.start()
     
 func end_aggro():
@@ -88,7 +88,7 @@ func end_aggro():
     max_speed = original_max_speed
     walk_accel = original_walk_accel
     aggro_exhausted = true
-    self_modulate = Color()
+    modulate = Color(1,1,1,1)
 
 func _on_AggroTimer_timeout():
     end_aggro()
