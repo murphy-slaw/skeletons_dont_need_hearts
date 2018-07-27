@@ -11,9 +11,6 @@ export (int) var win_hearts = 10
 
 func _ready():
     modulate = Color(0,0,0,1)
-    if OS.get_name()=="HTML5": #hack around chrome input bug?
-        Input.action_press("ui_right")
-    $MobSpawnTimer.start()
     randomize()
     spawners = get_tree().get_nodes_in_group("arches")
     max_mobs = spawners.size()
