@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=2]
@@ -18,11 +18,15 @@ use_filter = false
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Resource", "Settings" ]
 
-[sub_resource type="SegmentShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-a = Vector2( 0, -1000 )
-b = Vector2( 0, 0 )
+extents = Vector2( 32, 500 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 500 )
 
 [node name="Game" type="Node2D" index="0"]
 
@@ -243,7 +247,6 @@ _sections_unfolded = [ "Cell", "Collision", "Visibility", "Z Index" ]
 
 [node name="ScreenLeft" type="StaticBody2D" parent="." index="6"]
 
-editor/display_folded = true
 position = Vector2( 0, 500 )
 input_pickable = false
 collision_layer = 1
@@ -256,13 +259,13 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenLeft" index="0"]
 
+position = Vector2( -32, -500 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="ScreenRight" type="StaticBody2D" parent="." index="7"]
 
-editor/display_folded = true
-position = Vector2( 640, 500 )
+position = Vector2( 672, 500 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 3
@@ -274,7 +277,8 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ScreenRight" index="0"]
 
-shape = SubResource( 2 )
+position = Vector2( 0, -500 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Archway" parent="." index="8" instance=ExtResource( 9 )]
