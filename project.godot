@@ -1,0 +1,62 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=3
+
+[application]
+
+config/name="Skeletons Don't Need Hearts"
+run/main_scene="res://Main.tscn"
+config/icon="res://art/skel_icon.png"
+
+[display]
+
+window/size/width=320
+window/size/height=240
+window/size/fullscreen=true
+window/dpi/allow_hidpi=true
+window/handheld/emulate_mouse_from_touch=false
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+window/stretch/shrink="1"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "..", "ch.fischspiele.tilesethelper", "godot-git-control.funabab", "moe.ero-one.fsm" )
+
+[importer_defaults]
+
+texture={
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": true,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+
+[physics]
+
+2d/default_linear_damp=0.5
+
+[rendering]
+
+quality/intended_usage/framebuffer_allocation=1
+quality/2d/use_pixel_snap=true
+quality/filters/anisotropic_filter_level=1
+quality/dynamic_fonts/use_oversampling=true
