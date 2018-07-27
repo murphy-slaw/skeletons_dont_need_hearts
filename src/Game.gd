@@ -43,7 +43,7 @@ func _physics_process(delta):
             good_ending()
             
 func good_ending():
-    get_parent().get_tree().change_scene("res://TheEnd.tscn")
+    get_parent().get_tree().change_scene("res://Victory.tscn")
     
 func bad_ending():
     yield($Player/AnimationPlayer,"animation_finished")

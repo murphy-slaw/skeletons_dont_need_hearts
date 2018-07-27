@@ -21,7 +21,7 @@ _sections_unfolded = [ "Font", "Resource", "Settings" ]
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 32, 500 )
+extents = Vector2( 32, 00 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
