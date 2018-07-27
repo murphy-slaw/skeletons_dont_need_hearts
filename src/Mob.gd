@@ -42,6 +42,7 @@ func _ready():
         reverse_facing()
 
 func _physics_process(delta):
+    assert not (is_dying and not is_hit)
     check_in_bounds()
     check_target_visibility()
 
