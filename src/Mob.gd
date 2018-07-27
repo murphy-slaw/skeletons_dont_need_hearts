@@ -35,7 +35,7 @@ func get_circle_arc_poly(center, radius, angle_from, angle_to):
 func _ready():
     if target == null: target = self
     walk_accel = 5
-    max_speed = 50
+    max_walk_speed = 50
     original_max_speed = max_speed
     original_walk_accel = walk_accel
     if (randi() % 2 == 1):
@@ -106,7 +106,7 @@ func start_aggro():
     emit_signal("aggro")
     audio_player.stream = load("res://audio/sounds/ugh.wav")
     audio_player.play()
-    max_speed *= 3
+    max_walk_speed *= 3
     walk_accel *= 2
     aggro_exhausted = false
     modulate = Color(1,.7,.7,1)
@@ -115,7 +115,7 @@ func start_aggro():
 func end_aggro():
     emit_signal("calm")
     $AggroTimer.stop()
-    max_speed = original_max_speed
+    max_walk_speed = original_max_speed
     walk_accel = original_walk_accel
     aggro_exhausted = true
     modulate = Color(1,1,1,1)

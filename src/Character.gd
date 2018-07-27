@@ -4,7 +4,8 @@ signal hit
 
 var walk_accel = 7
 var friction = 0.1
-var max_speed = 250
+var max_speed = 300
+var max_walk_speed = 250
 var gravity = 9.8
 var jump_power = -25
 var jump_speed = gravity * jump_power
@@ -51,7 +52,10 @@ func move(delta, acceleration):
         velocity.y *= bounce
     if is_on_wall():
         velocity.x *= -bounce
-    velocity.x = clamp(velocity.x,-max_speed,max_speed)
+    velocity.x = clamp(velocity.x,-max_walk_speed,max_walk_speed)
+    
+    if abs(velocity.length()) > max_speed:
+        velocity = velocity.normalized() * max_speed
 
     velocity = \
     move_and_slide(velocity, Vector2(0,-1),5,2)
