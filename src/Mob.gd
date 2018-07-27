@@ -36,7 +36,7 @@ func _ready():
     if target == null: target = self
     walk_accel = 5
     max_walk_speed = 50
-    original_max_speed = max_speed
+    original_max_speed = max_walk_speed
     original_walk_accel = walk_accel
     if (randi() % 2 == 1):
         reverse_facing()
