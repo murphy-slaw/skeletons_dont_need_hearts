@@ -9,12 +9,14 @@ var gravity = 9.8
 var jump_power = -25
 var jump_speed = gravity * jump_power
 var bounce = 0
-var nudge_factor = 0.15
+var nudge_factor = 0.25
 var is_invuln = false
 var enemy_layer = 0
 
 var velocity = Vector2()
 var facing_normal = Vector2(1,0)
+
+onready var audio_player = get_node("AudioStreamPlayer2D")
 
 func reverse_facing():
     $Sprite.flip_h = (not $Sprite.flip_h)
@@ -52,20 +54,23 @@ func move(delta, acceleration):
     velocity.x = clamp(velocity.x,-max_speed,max_speed)
 
     velocity = \
-    move_and_slide(velocity, Vector2(0,-1),5,4)
+    move_and_slide(velocity, Vector2(0,-1),5,2)
     process_collisions()
     
 func process_collisions():
     var count = get_slide_count()
+    var colliders = Dictionary()
     for i in range(count):
         var collision = get_slide_collision(i)
-        if collision.collider.has_method("hit"):
-                collision.collider.hit(self)
+        colliders[collision.collider] = 1
+    for collider in colliders.keys():
+        if collider.has_method("hit"):
+            collider.hit(self)
                 
 func become_invuln():
     is_invuln = true
     $IFrameTimer.start()
-    modulate = Color(1,1,1,.3)
+    modulate = Color(1,1,1,.5)
     set_collision_mask_bit(enemy_layer,false)
     
 func _on_IFrameTimer_timeout():

@@ -13,7 +13,8 @@ func _ready():
     # Initialization here
     friction = 0.03
     gravity = -0.1
-    direction = velocity.normalized()
+    
+#    direction = velocity.normalized()
 
 #func _process(delta):
 #    # Called every frame. Delta is time since last frame.
@@ -21,7 +22,7 @@ func _ready():
 #    pass
 
 func _physics_process(delta):
-    walk(delta,direction)
+    move(delta,direction)
     
 func _process_collisions():
     pass

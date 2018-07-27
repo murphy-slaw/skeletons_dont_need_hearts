@@ -4,23 +4,7 @@
 [ext_resource path="res://art/brinstone.png" type="Texture" id=2]
 [ext_resource path="res://fonts/romance_fatal_pix.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://art/skel_icon.png" type="Texture" id=4]
-[ext_resource path="res://audio/skelesplash.wav" type="AudioStream" id=5]
-
-[sub_resource type="StyleBoxEmpty" id=3]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-_sections_unfolded = [ "Content Margin" ]
-
-[sub_resource type="DynamicFont" id=4]
-
-size = 32
-use_mipmaps = false
-use_filter = true
-font_data = ExtResource( 3 )
-_sections_unfolded = [ "Font", "Settings" ]
+[ext_resource path="res://audio/skelesplash_2.wav" type="AudioStream" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -32,11 +16,28 @@ _sections_unfolded = [ "Content Margin" ]
 
 [sub_resource type="DynamicFont" id=2]
 
-size = 16
+size = 32
 use_mipmaps = false
 use_filter = true
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+_sections_unfolded = [ "Content Margin" ]
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 16
+use_mipmaps = false
+use_filter = true
+extra_spacing_space = 3
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [node name="Splash" type="CanvasLayer" index="0"]
 
@@ -46,6 +47,8 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 1 )
+transition_duration = 1.5
+transition_type = 1
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
 
@@ -158,8 +161,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Skeletons Don't Need Hearts
 (Or Do They?)"
@@ -186,27 +189,27 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 1 )
-custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "My Ex broke my heart. Now I have to punk skeletons
  to get enough heart stuff to make a new one."
 align = 1
 autowrap = true
-percent_visible = -0.012987
+percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin", "custom_colors", "custom_fonts", "custom_styles" ]
 
 [node name="LinkButton" type="Button" parent="Margin/MarginContainer/VBoxContainer" index="2"]
 
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -130.0
-margin_top = -38.0
-margin_right = 130.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 110.0
+margin_right = 260.0
+margin_bottom = 148.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -231,6 +234,15 @@ pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
+
+[node name="Tween" type="Tween" parent="." index="3"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
 
 [connection signal="pressed" from="Margin/MarginContainer/VBoxContainer/LinkButton" to="." method="_on_LinkButton_pressed"]
 

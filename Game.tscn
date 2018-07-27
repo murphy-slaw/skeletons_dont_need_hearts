@@ -4,8 +4,8 @@
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=2]
 [ext_resource path="res://art/brinstone.png" type="Texture" id=3]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://art/heart-back.png" type="Texture" id=5]
-[ext_resource path="res://art/heart-mask.png" type="Texture" id=6]
+[ext_resource path="res://art/heart-mask.png" type="Texture" id=5]
+[ext_resource path="res://art/heart-back.png" type="Texture" id=6]
 [ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://art/roughtiles.tres" type="TileSet" id=8]
 [ext_resource path="res://Archway.tscn" type="PackedScene" id=9]
@@ -24,9 +24,10 @@ custom_solver_bias = 0.0
 a = Vector2( 0, -1000 )
 b = Vector2( 0, 0 )
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Pause", "Visibility" ]
 __meta__ = {
 "_edit_vertical_guides_": [ 205.75 ]
 }
@@ -84,9 +85,9 @@ autostart = false
 [node name="Player" parent="." index="3" instance=ExtResource( 4 )]
 
 show_behind_parent = true
-position = Vector2( 50, 451 )
+position = Vector2( 20, 450 )
 z_index = 2
-_sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
+_sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Pause", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
 
 [node name="UILayer" type="CanvasLayer" parent="." index="4"]
 
@@ -98,6 +99,7 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="MarginContainer" type="MarginContainer" parent="UILayer" index="0"]
 
+editor/display_folded = true
 anchor_left = 1.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -114,6 +116,7 @@ _sections_unfolded = [ "Margin", "Material", "Rect", "Visibility" ]
 
 [node name="ColorRect" type="ColorRect" parent="UILayer/MarginContainer" index="0"]
 
+editor/display_folded = true
 show_behind_parent = true
 anchor_left = 0.0
 anchor_top = 0.0
@@ -131,7 +134,36 @@ size_flags_vertical = 1
 color = Color( 1, 1, 1, 1 )
 _sections_unfolded = [ "Material", "Visibility" ]
 
-[node name="TextureProgress" type="TextureProgress" parent="UILayer/MarginContainer/ColorRect" index="0"]
+[node name="Light2D" type="Light2D" parent="UILayer/MarginContainer/ColorRect" index="0"]
+
+light_mask = 3
+position = Vector2( -8, 0 )
+z_index = 1
+z_as_relative = false
+enabled = true
+editor_only = false
+texture = ExtResource( 5 )
+offset = Vector2( 24, 16 )
+texture_scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 3
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 5
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+_sections_unfolded = [ "Range", "Transform", "Visibility", "Z Index" ]
+
+[node name="TextureProgress" type="TextureProgress" parent="UILayer/MarginContainer/ColorRect" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -154,51 +186,22 @@ exp_edit = true
 rounded = false
 texture_under = null
 texture_over = null
-texture_progress = ExtResource( 5 )
+texture_progress = ExtResource( 6 )
 fill_mode = 3
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
 _sections_unfolded = [ "Radial Fill", "Textures", "Visibility" ]
 
-[node name="Light2D" type="Light2D" parent="UILayer/MarginContainer/ColorRect" index="1"]
-
-light_mask = 3
-position = Vector2( -8, 0 )
-z_as_relative = false
-enabled = true
-editor_only = false
-texture = ExtResource( 6 )
-offset = Vector2( 24, 16 )
-texture_scale = 1.0
-color = Color( 1, 1, 1, 1 )
-energy = 1.0
-mode = 3
-range_height = 0.0
-range_z_min = -1024
-range_z_max = 1024
-range_layer_min = 0
-range_layer_max = 5
-range_item_cull_mask = 1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 0 )
-shadow_buffer_size = 2048
-shadow_gradient_length = 0.0
-shadow_filter = 0
-shadow_filter_smooth = 0.0
-shadow_item_cull_mask = 1
-_sections_unfolded = [ "Range", "Transform", "Visibility", "Z Index" ]
-
-[node name="Label" type="Label" parent="UILayer/MarginContainer" index="1"]
+[node name="Label" type="Label" parent="UILayer/MarginContainer/ColorRect" index="2"]
 
 light_mask = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 8.0
 margin_top = 7.0
-margin_right = 40.0
+margin_right = 32.0
 margin_bottom = 25.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -218,6 +221,7 @@ _sections_unfolded = [ "Theme", "Visibility", "custom_colors", "custom_fonts" ]
 
 [node name="TileMap" type="TileMap" parent="." index="5"]
 
+position = Vector2( 1, 0 )
 mode = 0
 tile_set = ExtResource( 8 )
 cell_size = Vector2( 16, 16 )
@@ -234,8 +238,8 @@ collision_layer = 1
 collision_mask = 3
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 1048579, 0, 0, 1048580, 1, 0, 1048581, 1, 0, 1048582, 1, 0, 1048583, 1, 0, 1048584, 1, 0, 1048585, 1, 0, 1048586, 1, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 2, 0, 1048593, 0, 0, 1048594, 1, 0, 1048595, 1, 0, 1048596, 1, 0, 1048597, 1, 0, 1048598, 1, 0, 1048599, 1, 0, 1048600, 1, 0, 1048601, 1, 0, 1048602, 2, 0, 1114123, 6, 0, 1114124, 8, 0, 1114129, 6, 0, 1114130, 8, 0, 1114143, 0, 0, 1114144, 1, 0, 1114145, 2, 0, 1179659, 6, 0, 1179660, 8, 0, 1179664, 0, 0, 1179665, 7, 0, 1179666, 8, 0, 1179677, 0, 0, 1179678, 1, 0, 1179679, 2, 0, 1245184, 1, 0, 1245185, 2, 0, 1245195, 6, 0, 1245196, 8, 0, 1245201, 6, 0, 1245202, 8, 0, 1245211, 0, 0, 1245212, 1, 0, 1245213, 2, 0, 1310720, 1, 0, 1310721, 1, 0, 1310722, 1, 0, 1310723, 1, 0, 1310724, 1, 0, 1310725, 1, 0, 1310726, 1, 0, 1310727, 1, 0, 1310728, 2, 0, 1310731, 6, 0, 1310732, 7, 0, 1310733, 2, 0, 1310745, 0, 0, 1310746, 1, 0, 1310747, 2, 0, 1376267, 6, 0, 1376268, 8, 0, 1376279, 0, 0, 1376280, 1, 0, 1376281, 2, 0, 1441803, 6, 0, 1441804, 8, 0, 1441808, 0, 0, 1441809, 1, 0, 1441810, 1, 0, 1441811, 1, 0, 1441812, 1, 0, 1441813, 1, 0, 1441814, 1, 0, 1441815, 1, 0, 1441816, 1, 0, 1507336, 0, 0, 1507337, 1, 0, 1507338, 1, 0, 1507339, 14, 0, 1507340, 8, 0, 1507345, 6, 0, 1507346, 8, 0, 1572870, 0, 0, 1572871, 1, 0, 1572872, 2, 0, 1572875, 6, 0, 1572876, 7, 0, 1572877, 2, 0, 1572881, 6, 0, 1572882, 8, 0, 1638404, 0, 0, 1638405, 1, 0, 1638406, 2, 0, 1638411, 6, 0, 1638412, 8, 0, 1638417, 6, 0, 1638418, 8, 0, 1703938, 0, 0, 1703939, 1, 0, 1703940, 2, 0, 1703947, 13, 0, 1703948, 15, 0, 1703952, 0, 0, 1703953, 7, 0, 1703954, 8, 0, 1900544, 1, 0, 1900545, 1, 0, 1900546, 1, 0, 1900547, 1, 0, 1900548, 1, 0, 1900549, 1, 0, 1900550, 1, 0, 1900551, 1, 0, 1900552, 1, 0, 1900553, 1, 0, 1900554, 1, 0, 1900555, 1, 0, 1900556, 1, 0, 1900557, 1, 0, 1900558, 1, 0, 1900559, 1, 0, 1900560, 1, 0, 1900561, 1, 0, 1900562, 1, 0, 1900563, 1, 0, 1900564, 1, 0, 1900565, 1, 0, 1900566, 1, 0, 1900567, 1, 0, 1900568, 1, 0, 1900569, 1, 0, 1900570, 1, 0, 1900571, 1, 0, 1900572, 1, 0, 1900573, 1, 0, 1900574, 1, 0, 1900575, 1, 0, 1900576, 1, 0, 1900577, 1, 0, 1900578, 1, 0, 1900579, 1, 0, 1900580, 1, 0, 1900581, 1, 0, 1900582, 1, 0, 1900583, 1, 0, 1966080, 14, 0, 1966081, 14, 0, 1966082, 14, 0, 1966083, 14, 0, 1966084, 14, 0, 1966085, 14, 0, 1966086, 14, 0, 1966087, 14, 0, 1966088, 14, 0, 1966089, 14, 0, 1966090, 14, 0, 1966091, 14, 0, 1966092, 14, 0, 1966093, 14, 0, 1966094, 14, 0, 1966095, 14, 0, 1966096, 14, 0, 1966097, 14, 0, 1966098, 14, 0, 1966099, 14, 0, 1966100, 14, 0, 1966101, 14, 0, 1966102, 14, 0, 1966103, 14, 0, 1966104, 14, 0, 1966105, 14, 0, 1966106, 14, 0, 1966107, 14, 0, 1966108, 14, 0, 1966109, 14, 0, 1966110, 14, 0, 1966111, 14, 0, 1966112, 14, 0, 1966113, 14, 0, 1966114, 14, 0, 1966115, 14, 0, 1966116, 14, 0, 1966117, 14, 0, 1966118, 14, 0, 1966119, 14, 0 )
-_sections_unfolded = [ "Cell", "Collision", "Z Index" ]
+tile_data = PoolIntArray( 196623, 7, 0, 196624, 7, 0, 196625, 7, 0, 196626, 7, 0, 196627, 7, 0, 196628, 7, 0, 196629, 7, 0, 196630, 7, 0, 196631, 7, 0, 196632, 7, 0, 196633, 7, 0, 262159, 8, 0, 327695, 8, 0, 393231, 8, 0, 458767, 8, 0, 524303, 7, 0, 524304, 1, 0, 524305, 1, 0, 524306, 1, 0, 524307, 1, 0, 524308, 1, 0, 524309, 1, 0, 524310, 1, 0, 524311, 1, 0, 524312, 1, 0, 524313, 2, 0, 720924, 0, 0, 720925, 1, 0, 720926, 2, 0, 720930, 0, 0, 720931, 1, 0, 720932, 2, 0, 917542, 0, 0, 917543, 1, 0, 1048579, 0, 0, 1048580, 1, 0, 1048581, 1, 0, 1048582, 1, 0, 1048583, 1, 0, 1048584, 1, 0, 1048585, 1, 0, 1048586, 1, 0, 1048587, 1, 0, 1048588, 2, 0, 1048593, 0, 0, 1048594, 1, 0, 1048595, 1, 0, 1048596, 1, 0, 1048597, 1, 0, 1048598, 1, 0, 1048599, 1, 0, 1048600, 1, 0, 1048601, 1, 0, 1048602, 2, 0, 1114123, 6, 0, 1114124, 8, 0, 1114129, 6, 0, 1114130, 8, 0, 1114143, 0, 0, 1114144, 1, 0, 1114145, 1, 0, 1114146, 1, 0, 1114147, 1, 0, 1114148, 1, 0, 1114149, 1, 0, 1114150, 1, 0, 1114151, 1, 0, 1179659, 6, 0, 1179660, 8, 0, 1179664, 0, 0, 1179665, 7, 0, 1179666, 8, 0, 1179677, 0, 0, 1179678, 1, 0, 1179679, 2, 0, 1245184, 1, 0, 1245185, 2, 0, 1245195, 6, 0, 1245196, 8, 0, 1245211, 0, 0, 1245212, 1, 0, 1245213, 2, 0, 1310720, 1, 0, 1310721, 1, 0, 1310722, 1, 0, 1310723, 1, 0, 1310724, 1, 0, 1310725, 1, 0, 1310726, 1, 0, 1310727, 1, 0, 1310728, 2, 0, 1310731, 6, 0, 1310732, 8, 0, 1310745, 0, 0, 1310746, 1, 0, 1310747, 2, 0, 1376267, 6, 0, 1376268, 7, 0, 1376269, 2, 0, 1376279, 0, 0, 1376280, 1, 0, 1376281, 2, 0, 1376290, 0, 0, 1376291, 1, 0, 1376292, 1, 0, 1376293, 1, 0, 1376294, 1, 0, 1376295, 1, 0, 1441803, 6, 0, 1441804, 8, 0, 1441809, 0, 0, 1441810, 1, 0, 1441811, 1, 0, 1441812, 1, 0, 1441813, 1, 0, 1441814, 1, 0, 1441815, 1, 0, 1441816, 1, 0, 1507336, 0, 0, 1507337, 1, 0, 1507338, 1, 0, 1507339, 14, 0, 1507340, 8, 0, 1507345, 6, 0, 1507346, 8, 0, 1572870, 0, 0, 1572871, 1, 0, 1572872, 2, 0, 1572875, 6, 0, 1572876, 7, 0, 1572877, 1, 0, 1572878, 2, 0, 1572881, 6, 0, 1572882, 8, 0, 1572894, 0, 0, 1572895, 1, 0, 1572896, 2, 0, 1638404, 0, 0, 1638405, 1, 0, 1638406, 2, 0, 1638411, 6, 0, 1638412, 8, 0, 1638417, 6, 0, 1638418, 8, 0, 1703938, 0, 0, 1703939, 1, 0, 1703940, 2, 0, 1703947, 13, 0, 1703948, 15, 0, 1703952, 0, 0, 1703953, 7, 0, 1703954, 8, 0, 1703970, 0, 0, 1703971, 1, 0, 1703972, 2, 0, 1900544, 1, 0, 1900545, 1, 0, 1900546, 1, 0, 1900547, 1, 0, 1900548, 1, 0, 1900549, 1, 0, 1900550, 1, 0, 1900551, 1, 0, 1900552, 1, 0, 1900553, 1, 0, 1900554, 1, 0, 1900555, 1, 0, 1900556, 1, 0, 1900557, 1, 0, 1900558, 1, 0, 1900559, 1, 0, 1900560, 1, 0, 1900561, 1, 0, 1900562, 1, 0, 1900563, 1, 0, 1900564, 1, 0, 1900565, 1, 0, 1900566, 1, 0, 1900567, 1, 0, 1900568, 1, 0, 1900569, 1, 0, 1900570, 1, 0, 1900571, 1, 0, 1900572, 1, 0, 1900573, 1, 0, 1900574, 1, 0, 1900575, 1, 0, 1900576, 1, 0, 1900577, 1, 0, 1900578, 1, 0, 1900579, 1, 0, 1900580, 1, 0, 1900581, 1, 0, 1900582, 1, 0, 1900583, 1, 0, 1966080, 14, 0, 1966081, 14, 0, 1966082, 14, 0, 1966083, 14, 0, 1966084, 14, 0, 1966085, 14, 0, 1966086, 14, 0, 1966087, 14, 0, 1966088, 14, 0, 1966089, 14, 0, 1966090, 14, 0, 1966091, 14, 0, 1966092, 14, 0, 1966093, 14, 0, 1966094, 14, 0, 1966095, 14, 0, 1966096, 14, 0, 1966097, 14, 0, 1966098, 14, 0, 1966099, 14, 0, 1966100, 14, 0, 1966101, 14, 0, 1966102, 14, 0, 1966103, 14, 0, 1966104, 14, 0, 1966105, 14, 0, 1966106, 14, 0, 1966107, 14, 0, 1966108, 14, 0, 1966109, 14, 0, 1966110, 14, 0, 1966111, 14, 0, 1966112, 14, 0, 1966113, 14, 0, 1966114, 14, 0, 1966115, 14, 0, 1966116, 14, 0, 1966117, 14, 0, 1966118, 14, 0, 1966119, 14, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Visibility", "Z Index" ]
 
 [node name="ScreenLeft" type="StaticBody2D" parent="." index="6"]
 
@@ -243,12 +247,12 @@ editor/display_folded = true
 position = Vector2( 0, 500 )
 input_pickable = false
 collision_layer = 1
-collision_mask = 1
+collision_mask = 3
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.5
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScreenLeft" index="0"]
 
@@ -261,7 +265,7 @@ editor/display_folded = true
 position = Vector2( 640, 500 )
 input_pickable = false
 collision_layer = 1
-collision_mask = 1
+collision_mask = 3
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
@@ -277,17 +281,45 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 352, 448 )
 
-[node name="Archway2" parent="." index="9" instance=ExtResource( 9 )]
+[node name="Archway6" parent="." index="9" instance=ExtResource( 9 )]
+
+position = Vector2( 608, 320 )
+
+[node name="Archway2" parent="." index="10" instance=ExtResource( 9 )]
 
 position = Vector2( 80, 304 )
 
-[node name="Archway3" parent="." index="10" instance=ExtResource( 9 )]
+[node name="Archway3" parent="." index="11" instance=ExtResource( 9 )]
 
 position = Vector2( 161, 240 )
 
-[node name="Archway4" parent="." index="11" instance=ExtResource( 9 )]
+[node name="Archway4" parent="." index="12" instance=ExtResource( 9 )]
 
 position = Vector2( 528, 256 )
+
+[node name="Archway5" parent="." index="13" instance=ExtResource( 9 )]
+
+position = Vector2( 288, 112 )
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." index="14"]
+
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Tween" type="Tween" parent="." index="15"]
+
+pause_mode = 2
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+_sections_unfolded = [ "Pause" ]
 
 [connection signal="timeout" from="MobSpawnTimer" to="." method="_on_MobSpawnTimer_timeout"]
 
