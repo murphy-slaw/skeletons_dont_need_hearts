@@ -10,10 +10,11 @@ func state_init(args = null):
 
 #when entering state, usually you will want to reset internal state here somehow
 func enter(from_state = null, from_transition = null, args = []):
-    vel = logic_root.jump_speed
     .enter(from_state, from_transition, args)
-    if not Input.is_action_just_pressed("ui_up"):
-        vel *= .25
+    vel = logic_root.jump_speed
+    logic_root.audio_player.stream = load("res://audio/sounds/jump.wav")
+    logic_root.audio_player.play()
+
 
 #when updating state, paramx can be used only if updating fsm manually
 func update(delta, args=null):

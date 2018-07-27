@@ -13,4 +13,5 @@ func prepare(new_state, args = []):
     pass
 
 func transition_condition(delta, args = []): 
-    return (logic_root.edge_count >= 3) 
+    # Return true/false
+    return not logic_root.is_hit and not logic_root.is_dying
