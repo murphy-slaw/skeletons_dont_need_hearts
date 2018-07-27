@@ -1,12 +1,11 @@
 all: build itch
 build: html5 osx windows
 osx:
-	sh -c 'pushd src; godot project.godot --export "Mac OSX" ../artifacts/prototype.dmg; popd'
+	godot project.godot --path src/ --export "Mac OSX" ../artifacts/prototype.dmg
 html5: 
-	mkdir -p artifacts/prototype
-	sh -c 'pushd src; godot project.godot --export HTML5 ../artifacts/prototype/index.html; popd'
+	godot project.godot --path src/ --export "HTML5" ../artifacts/prototype.dmg
 windows:
-	sh -c 'pushd src; godot project.godot --export "Windows Desktop" ../artifacts/prototype.exe; popd'
+	godot project.godot --path src/ --export "Windows Desktop" ../artifacts/prototype.dmg
 
 itch: itch-osx itch-html5 itch-windows
 itch-osx: 
