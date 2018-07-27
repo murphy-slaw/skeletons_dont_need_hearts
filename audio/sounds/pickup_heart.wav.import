@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pickup_heart.wav-ccb8f87d02517ba38a1f66101a7abcea.sample"
+
+[deps]
+
+source_file="res://audio/sounds/pickup_heart.wav"
+dest_files=[ "res://.import/pickup_heart.wav-ccb8f87d02517ba38a1f66101a7abcea.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

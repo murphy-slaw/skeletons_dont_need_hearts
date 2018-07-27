@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/skelesplash.wav-72c1bdef1a44c5f23d696bbd9351a553.sample"
+
+[deps]
+
+source_file="res://audio/music/skelesplash.wav"
+dest_files=[ "res://.import/skelesplash.wav-72c1bdef1a44c5f23d696bbd9351a553.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
