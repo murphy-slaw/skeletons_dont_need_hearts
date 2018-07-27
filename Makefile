@@ -5,7 +5,7 @@ osx:
 html5: 
 	godot project.godot --path src/ --export "HTML5" ../artifacts/prototype/index.html
 windows:
-	godot project.godot --path src/ --export "Windows Desktop" ../artifacts/prototype.dmg
+	godot project.godot --path src/ --export "Windows Desktop" ../artifacts/prototype.exe
 
 itch: itch-osx itch-html5 itch-windows
 itch-osx: 
