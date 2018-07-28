@@ -6,6 +6,7 @@ html5:
 	mkdir -p artifacts/html5
 	godot project.godot --path src/ --export "HTML5" ../artifacts/html5/index.html
 windows:
+	mkdir -p artifacts/windows
 	godot project.godot --path src/ --export-debug "Windows Desktop" ../artifacts/windows/skeletons.exe
 
 itch: itch-osx itch-html5 itch-windows
