@@ -1,4 +1,4 @@
-all: build itch
+all: clean build itch
 build: html5 osx windows
 osx:
 	godot project.godot --path src/ --export "Mac OSX" ../artifacts/skeletons.dmg
