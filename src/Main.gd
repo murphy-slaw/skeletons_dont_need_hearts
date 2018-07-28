@@ -14,8 +14,7 @@ func _ready():
         
         for action in InputMap.get_actions():
             for event in InputMap.get_action_list(action):
-                if event.is_action_type(event.JOYSTICK_MOTION)\
-                    or event.is_action_type(event.JOYSTICK_BUTTON):
+                if not event.action(event.KEY):
                     InputMap.action_erase_event(action,event)
     
     OS.set_window_position(screen_size*0.5 - window_size*0.5)
