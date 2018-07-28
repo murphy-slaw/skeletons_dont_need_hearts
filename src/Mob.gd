@@ -72,14 +72,14 @@ func out_of_bounds():
 func die():
     audio_player.stream = load("res://audio/sounds/die.wav")
     audio_player.play()
-    var parent = get_parent()
+    var parent = get_parent().get_parent()
     emit_signal("die")
     visible = false
     set_collision_layer_bit(1,false)
     var heart = Heart.instance()
     heart.global_position = global_position + (facing_normal * 16)
     heart.velocity = facing_normal  * 100
-    get_parent().call_deferred("add_child",heart)
+    parent.call_deferred("add_child",heart)
     heart.connect("caught",parent,"_on_heart_caught")
     yield(audio_player,"finished")
     queue_free()

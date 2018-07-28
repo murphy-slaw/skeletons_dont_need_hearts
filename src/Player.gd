@@ -5,6 +5,8 @@ var is_hit = false
 var is_dying = false
 var attack_dir = Vector2()
 
+onready var animation_player = get_node("AnimationPlayer")
+
 func _ready():
     enemy_layer = 1
     
@@ -28,6 +30,6 @@ func take_heart():
     hearts -= 1
     
 func die():
-    $AnimationPlayer.stop()
-    $AnimationPlayer.play("Dying")
+    animation_player.stop()
+    animation_player.play("Dying")
     

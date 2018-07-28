@@ -9,6 +9,8 @@ var max_mobs = 0
 var angry_mob_count = 0
 export (int) var win_hearts = 10
 
+onready var player = find_node("Player")
+
 func _ready():
     modulate = Color(0,0,0,1)
     randomize()
@@ -16,9 +18,9 @@ func _ready():
     max_mobs = spawners.size()
     for i in range(max_mobs):
         call_deferred("spawn_mob")
-    $UILayer/MarginContainer/Label.text = str($Player.hearts)
+    $UILayer/MarginContainer/Label.text = str(player.hearts)
     $UILayer/MarginContainer/TextureProgress.max_value = win_hearts
-    $UILayer/MarginContainer/TextureProgress.value = $Player.hearts
+    $UILayer/MarginContainer/TextureProgress.value = player.hearts
     
     var tween_in = get_node("Tween")
     var transition_type = Tween.TRANS_LINEAR
@@ -35,18 +37,18 @@ func _ready():
 
     
 func _physics_process(delta):
-        $UILayer/MarginContainer/TextureProgress.value = $Player.hearts
-        $UILayer/MarginContainer/Label.text= str($Player.hearts)
-        if $Player.hearts <= 0:
+        $UILayer/MarginContainer/TextureProgress.value = player.hearts
+        $UILayer/MarginContainer/Label.text= str(player.hearts)
+        if player.hearts <= 0:
             bad_ending()
-        elif $Player.hearts >= win_hearts:
+        elif player.hearts >= win_hearts:
             good_ending()
             
 func good_ending():
     get_parent().get_tree().change_scene("res://Victory.tscn")
     
 func bad_ending():
-    yield($Player/AnimationPlayer,"animation_finished")
+    yield(player.animation_player,"animation_finished")
     var tween_out = get_node("Tween")
     var transition_type = tween_out.TRANS_LINEAR
     var transition_duration = 3
@@ -84,7 +86,7 @@ func spawn_mob():
     mob.connect("die",self,"_on_mob_died")
     mob.connect("aggro",self,"_on_mob_aggro")
     mob.connect("calm",self,"_on_mob_calm")
-    call_deferred("add_child",mob)
+    $TileMap.call_deferred("add_child",mob)
     mob.position = get_spawn_point()
     mob_count += 1
 
@@ -105,5 +107,5 @@ func _on_Player_hit(body):
         body.die()
         
 func _on_heart_caught():
-    $Player.give_heart()
+    player.give_heart()
     
