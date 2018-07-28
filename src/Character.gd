@@ -4,10 +4,10 @@ signal hit
 
 var walk_accel = 7
 var friction = 0.1
-var max_speed = 300
+var max_speed = 400
 var max_walk_speed = 250
 var gravity = 9.8
-var jump_power = -25
+var jump_power = -27
 var jump_speed = gravity * jump_power
 var bounce = 0
 var nudge_factor = 0.25
@@ -39,7 +39,7 @@ func move(delta, acceleration):
         
     # reduce the actual horizontal movement by
     # our current linear velocity * frictional constant
-    if acceleration.x == 0:
+    if acceleration.x == 0 and is_on_floor():
 #    and get_floor_velocity() != Vector2(0,0):
         acceleration.x -= friction * velocity.x
     

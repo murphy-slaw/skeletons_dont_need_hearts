@@ -16,9 +16,9 @@ func _ready():
     max_mobs = spawners.size()
     for i in range(max_mobs):
         call_deferred("spawn_mob")
-    $UILayer/MarginContainer/ColorRect/Label.text = str($Player.hearts)
-    $UILayer/MarginContainer/ColorRect/TextureProgress.max_value = win_hearts
-    $UILayer/MarginContainer/ColorRect/TextureProgress.value = $Player.hearts
+    $UILayer/MarginContainer/Label.text = str($Player.hearts)
+    $UILayer/MarginContainer/TextureProgress.max_value = win_hearts
+    $UILayer/MarginContainer/TextureProgress.value = $Player.hearts
     
     var tween_in = get_node("Tween")
     var transition_type = Tween.TRANS_LINEAR
@@ -35,8 +35,8 @@ func _ready():
 
     
 func _physics_process(delta):
-        $UILayer/MarginContainer/ColorRect/TextureProgress.value = $Player.hearts
-        $UILayer/MarginContainer/ColorRect/Label.text= str($Player.hearts)
+        $UILayer/MarginContainer/TextureProgress.value = $Player.hearts
+        $UILayer/MarginContainer/Label.text= str($Player.hearts)
         if $Player.hearts <= 0:
             bad_ending()
         elif $Player.hearts >= win_hearts:
@@ -69,7 +69,7 @@ func get_spawn_point():
     if spawners.size() == 0:
         spawners = used_spawners.duplicate()
         used_spawners = []
-#    var i = randi() % spawners.size()
+    var i = randi() % spawners.size()
     var spawner = spawners[0]
     spawners.remove(0)
     used_spawners.append(spawner)
