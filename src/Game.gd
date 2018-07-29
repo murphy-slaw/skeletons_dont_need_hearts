@@ -10,7 +10,7 @@ var angry_mob_count = 0
 export (int) var win_hearts = 10
 
 onready var player = find_node("Player")
-
+onready var tween = get_node("Tween")
 func _ready():
     modulate = Color(0,0,0,1)
     randomize()
@@ -22,18 +22,21 @@ func _ready():
     $UILayer/MarginContainer/TextureProgress.max_value = win_hearts
     $UILayer/MarginContainer/TextureProgress.value = player.hearts
     
-    var tween_in = get_node("Tween")
+
     var transition_type = Tween.TRANS_LINEAR
     var transition_duration = 3
-    tween_in.interpolate_property(self, "modulate", Color(0,0,0,1), Color(1,1,1,1), transition_duration, transition_type, Tween.EASE_IN, 0)
-    $MusicPlayer.stream = load("res://audio/music/skelestart.wav")
-    $MusicPlayer.play()
-    tween_in.start()
+    tween.interpolate_property(self, "modulate", Color(0,0,0,1), Color(1,1,1,1), transition_duration, transition_type, Tween.EASE_IN, 0)
+    $MusicPlayerFight.stream = load("res://audio/music/skelestart.wav")
+    $MusicPlayerFight.play()
+    tween.start()
     get_tree().paused = true
-    yield(tween_in,"tween_completed")
+    yield(tween,"tween_completed")
     get_tree().paused = false
-    yield($MusicPlayer,"finished")
-    $MusicPlayer.stream = load("res://audio/music/skelefight.wav")
+    yield($MusicPlayerFight,"finished")
+    $MusicPlayerFight.stream = load("res://audio/music/skelefight.wav")
+    $MusicPlayerFight.volume_db = -36
+    $MusicPlayerFight.play()
+    $MusicPlayerSneak.play()
 
     
 func _physics_process(delta):
@@ -95,12 +98,34 @@ func _on_mob_died():
     angry_mob_count -= 1
 
 func _on_mob_aggro():
-    if not $MusicPlayer.is_playing():
-        $MusicPlayer.play()       
     angry_mob_count += 1
+#    if tween.is_active():
+#        yield(tween,"tween_completed")
+    tween.remove_all()
+    var transition_type = Tween.TRANS_SINE
+    var transition_duration = 0.5
+    tween.interpolate_property($MusicPlayerFight, "volume_db",
+        $MusicPlayerFight.volume_db, 0,
+        transition_duration, transition_type, Tween.EASE_OUT, 0)
+    tween.interpolate_property($MusicPlayerSneak, "volume_db",
+        $MusicPlayerSneak.volume_db, -36,
+        transition_duration, transition_type, Tween.EASE_IN, 0)
+    tween.start()
 
 func _on_mob_calm():
     angry_mob_count -=1
+#    if tween.is_active():
+#        yield(tween,"tween_completed")
+    tween.remove_all()
+    var transition_type = Tween.TRANS_SINE
+    var transition_duration = 1
+    tween.interpolate_property($MusicPlayerSneak, "volume_db",
+        $MusicPlayerSneak.volume_db, 0,
+        transition_duration, transition_type, Tween.EASE_OUT, 0)
+    tween.interpolate_property($MusicPlayerFight, "volume_db",
+        $MusicPlayerFight.volume_db, -36,
+        transition_duration, transition_type, Tween.EASE_IN, 0)
+    tween.start()
 
 func _on_Player_hit(body):
     if body.is_class("Mob"):

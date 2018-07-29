@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://art/heart-back.png" type="Texture" id=8]
 [ext_resource path="res://fonts/Xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://art/heart-mask.png" type="Texture" id=10]
+[ext_resource path="res://audio/music/skelesneak.wav" type="AudioStream" id=11]
+[ext_resource path="res://audio/music/skelefight.wav" type="AudioStream" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -62,6 +64,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="TileMap" type="TileMap" parent="." index="1"]
 
+editor/display_folded = true
 light_mask = 0
 position = Vector2( -1, 0 )
 mode = 0
@@ -272,16 +275,25 @@ wait_time = 0.5
 one_shot = false
 autostart = true
 
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="." index="4"]
+[node name="MusicPlayerSneak" type="AudioStreamPlayer" parent="." index="4"]
 
-stream = null
+stream = ExtResource( 11 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="Tween" type="Tween" parent="." index="5"]
+[node name="MusicPlayerFight" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 12 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Tween" type="Tween" parent="." index="6"]
 
 pause_mode = 2
 repeat = false
