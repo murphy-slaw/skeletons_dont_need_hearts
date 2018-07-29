@@ -18,6 +18,12 @@ func enter(from_state = null, from_transition = null, args = []):
 func update(delta, args=null):
     .update(delta, args)
     var movement = logic_root.target.global_position - logic_root.global_position
+    
+    if movement.length() <8: 
+        movement.x = 0
+        movement.y = -500 * delta
+        logic_root.move_and_collide(movement)
+        return
     movement.y = 0
     movement = movement.normalized()
 

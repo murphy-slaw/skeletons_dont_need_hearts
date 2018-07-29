@@ -33,7 +33,7 @@ func is_landed():
 func can_climb():
     return false
 
-func move(delta, acceleration):
+func move(delta, acceleration = Vector2()):
 
     velocity.y += gravity
         
