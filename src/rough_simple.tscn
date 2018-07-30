@@ -1,0 +1,484 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://art/rough_simple.png" type="Texture" id=1]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[sub_resource type="OccluderPolygon2D" id=4]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[sub_resource type="OccluderPolygon2D" id=6]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[sub_resource type="OccluderPolygon2D" id=7]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[sub_resource type="OccluderPolygon2D" id=8]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[sub_resource type="OccluderPolygon2D" id=9]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[sub_resource type="OccluderPolygon2D" id=10]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[sub_resource type="OccluderPolygon2D" id=11]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[sub_resource type="OccluderPolygon2D" id=12]
+
+closed = true
+cull_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="rough_simple0" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 6
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="rough_simple0" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough_simple0/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="rough_simple0" index="1"]
+
+occluder = SubResource( 1 )
+light_mask = 1
+
+[node name="rough_simple1" type="Sprite" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 16, 0 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 6
+frame = 1
+region_enabled = true
+region_rect = Rect2( 16, 0, 16, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="rough_simple1" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough_simple1/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="rough_simple1" index="1"]
+
+occluder = SubResource( 2 )
+light_mask = 1
+
+[node name="rough_simple2" type="Sprite" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 32, 0 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 6
+frame = 2
+region_enabled = true
+region_rect = Rect2( 32, 0, 16, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="rough_simple2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough_simple2/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="rough_simple2" index="1"]
+
+occluder = SubResource( 3 )
+light_mask = 1
+
+[node name="rough_simple3" type="Sprite" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 48, 0 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 6
+frame = 3
+region_enabled = true
+region_rect = Rect2( 48, 0, 16, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="rough_simple3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough_simple3/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="rough_simple3" index="1"]
+
+occluder = SubResource( 4 )
+light_mask = 1
+
+[node name="rough_simple4" type="Sprite" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( 64, 0 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 6
+frame = 4
+region_enabled = true
+region_rect = Rect2( 64, 0, 16, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="rough_simple4" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough_simple4/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="rough_simple4" index="1"]
+
+occluder = SubResource( 5 )
+light_mask = 1
+
+[node name="rough_simple5" type="Sprite" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( 80, 0 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 6
+frame = 5
+region_enabled = true
+region_rect = Rect2( 80, 0, 16, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="rough_simple5" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough_simple5/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="rough_simple5" index="1"]
+
+occluder = SubResource( 6 )
+light_mask = 1
+
+[node name="rough_simple6" type="Sprite" parent="." index="6"]
+
+editor/display_folded = true
+position = Vector2( 0, 16 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 6
+frame = 6
+region_enabled = true
+region_rect = Rect2( 0, 16, 16, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="rough_simple6" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough_simple6/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="rough_simple6" index="1"]
+
+occluder = SubResource( 7 )
+light_mask = 1
+
+[node name="rough_simple7" type="Sprite" parent="." index="7"]
+
+editor/display_folded = true
+position = Vector2( 16, 16 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 6
+frame = 7
+region_enabled = true
+region_rect = Rect2( 16, 16, 16, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="rough_simple7" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough_simple7/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="rough_simple7" index="1"]
+
+occluder = SubResource( 8 )
+light_mask = 1
+
+[node name="rough_simple8" type="Sprite" parent="." index="8"]
+
+editor/display_folded = true
+position = Vector2( 32, 16 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 6
+frame = 8
+region_enabled = true
+region_rect = Rect2( 32, 16, 16, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="rough_simple8" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough_simple8/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="rough_simple8" index="1"]
+
+occluder = SubResource( 9 )
+light_mask = 1
+
+[node name="rough_simple12" type="Sprite" parent="." index="9"]
+
+editor/display_folded = true
+position = Vector2( 0, 32 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 6
+frame = 12
+region_enabled = true
+region_rect = Rect2( 0, 32, 16, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="rough_simple12" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough_simple12/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="rough_simple12" index="1"]
+
+occluder = SubResource( 10 )
+light_mask = 1
+
+[node name="rough_simple13" type="Sprite" parent="." index="10"]
+
+editor/display_folded = true
+position = Vector2( 16, 32 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 6
+frame = 13
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="rough_simple13" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough_simple13/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="rough_simple13" index="1"]
+
+occluder = SubResource( 11 )
+light_mask = 1
+
+[node name="rough_simple14" type="Sprite" parent="." index="11"]
+
+editor/display_folded = true
+position = Vector2( 31.9375, 32 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 6
+frame = 14
+region_enabled = true
+region_rect = Rect2( 32, 32, 16, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="rough_simple14" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rough_simple14/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="rough_simple14" index="1"]
+
+occluder = SubResource( 12 )
+light_mask = 1
+
+
