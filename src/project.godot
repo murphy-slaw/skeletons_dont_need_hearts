@@ -27,7 +27,7 @@ window/stretch/shrink="1"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "..", "ch.fischspiele.tilesethelper", "godot-git-control.funabab", "moe.ero-one.fsm" )
+enabled=PoolStringArray( "ch.fischspiele.tilesethelper", "godot-git-control.funabab", "moe.ero-one.fsm" )
 
 [importer_defaults]
 

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Player/FSM/states/Staggered/Staggered.gd" type="Script" id=1]
+
+
+[node name="Staggered" type="Node"]
+
+script = ExtResource( 1 )
+
+

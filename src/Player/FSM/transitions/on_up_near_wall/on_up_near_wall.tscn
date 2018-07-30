@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Player/FSM/transitions/on_up_near_wall/on_up_near_wall.gd" type="Script" id=1]
+
+
+[node name="on_up_near_wall" type="Node"]
+
+script = ExtResource( 1 )
+path2SourceStates = [ NodePath("") ]
+path2Target_state = null
+intervalBetweenChecks = -1.0
+
+

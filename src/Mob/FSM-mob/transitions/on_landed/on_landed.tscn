@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Mob/FSM-mob/transitions/on_landed/on_landed.gd" type="Script" id=1]
+
+
+[node name="on_landed" type="Node"]
+
+script = ExtResource( 1 )
+path2SourceStates = [ NodePath("") ]
+path2Target_state = null
+intervalBetweenChecks = -1.0
+
+
