@@ -20,9 +20,7 @@ func update(delta, args=null):
     var movement = logic_root.target.global_position - logic_root.global_position
     
     if movement.length() <8: 
-        movement.x = 0
-        movement.y = -500 * delta
-        logic_root.move_and_collide(movement)
+        logic_root.move(delta, Vector2())
         return
     movement.y = 0
     movement = movement.normalized()
