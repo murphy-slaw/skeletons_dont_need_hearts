@@ -25,7 +25,7 @@ func hit(body):
         if not attack_dir: attack_dir = Vector2()
     
 func give_heart():
-    audio_player.stream = load("res://audio/sounds/pickup_heart.wav")
+    audio_player.stream = load("res://audio/sounds/pickup_heart2.wav")
     audio_player.play()
     hearts += 1
     

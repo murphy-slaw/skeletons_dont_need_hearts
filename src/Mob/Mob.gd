@@ -78,7 +78,7 @@ func die():
     set_collision_layer_bit(1,false)
     var heart = Heart.instance()
     heart.global_position = global_position + (facing_normal * 16)
-    heart.velocity = facing_normal  * 100
+    heart.apply_impulse(Vector2(),facing_normal * 300)
     parent.call_deferred("add_child",heart)
     heart.connect("caught",parent,"_on_heart_caught")
     yield(audio_player,"finished")
