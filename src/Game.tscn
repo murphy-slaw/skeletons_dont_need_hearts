@@ -193,11 +193,12 @@ _sections_unfolded = [ "Pause" ]
 [node name="CanvasModulate" type="CanvasModulate" parent="." index="6"]
 
 light_mask = 3
-color = Color( 0, 0, 0, 0.784314 )
+color = Color( 0.137255, 0.137255, 0.137255, 1 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="UILayer" type="CanvasLayer" parent="." index="7"]
 
+editor/display_folded = true
 layer = 0
 offset = Vector2( 0, 0 )
 rotation = 0.0

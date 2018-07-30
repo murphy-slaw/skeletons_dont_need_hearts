@@ -17,6 +17,11 @@ func _ready():
     yield(get_tree().create_timer(30),"timeout")
     fade_out($AudioStreamPlayer,10)
 
+func _process(delta):
+    if Input.is_action_pressed("ui_accept"):
+        $Margin/MarginContainer/VBoxContainer/LinkButton.pressed=true
+        _on_LinkButton_pressed()
+        
 func fade_out(stream_player,duration):
     # tween music volume down to 0
     tween_out.interpolate_property(stream_player, "volume_db", 0, -80, duration, transition_type, Tween.EASE_IN, 0)

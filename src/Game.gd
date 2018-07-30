@@ -11,6 +11,8 @@ export (int) var win_hearts = 10
 
 onready var player = find_node("Player")
 onready var tween = get_node("Tween")
+
+
 func _ready():
     modulate = Color(0,0,0,1)
     randomize()
@@ -51,8 +53,10 @@ func _physics_process(delta):
         elif player.hearts >= win_hearts:
             good_ending()
             
+            
 func good_ending():
     get_parent().get_tree().change_scene("res://Victory.tscn")
+    
     
 func bad_ending():
     yield(player.animation_player,"animation_finished")
@@ -71,8 +75,10 @@ func _on_Boinger_boing(boing_vec,body):
     if body.get("vel") !=null:
         body.vel = boing_vec
 
+
 func _on_MobSpawnTimer_timeout():
     call_deferred("spawn_mob")
+
 
 func get_spawn_point():
     if spawners.size() == 0:
@@ -97,9 +103,11 @@ func spawn_mob():
     mob.position = get_spawn_point()
     mob_count += 1
 
+
 func _on_mob_died():
     mob_count -= 1
     angry_mob_count -= 1
+
 
 func _on_mob_aggro():
     angry_mob_count += 1
@@ -116,6 +124,7 @@ func _on_mob_aggro():
         transition_duration, transition_type, Tween.EASE_IN, 0)
     tween.start()
 
+
 func _on_mob_calm():
     angry_mob_count -=1
     tween.remove_all()
@@ -129,10 +138,11 @@ func _on_mob_calm():
         transition_duration, transition_type, Tween.EASE_IN, 0)
     tween.start()
 
+
 func _on_Player_hit(body):
     if body.is_class("Mob"):
         body.die()
+
         
 func _on_heart_caught():
     player.give_heart()
-    
