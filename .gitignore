@@ -7,3 +7,4 @@ project.godot
 .DS_Store
 artifacts/
 archive/
+*.import
