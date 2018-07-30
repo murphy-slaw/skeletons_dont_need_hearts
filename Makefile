@@ -18,3 +18,5 @@ itch-windows:
 	cd artifacts; butler push windows murphy-slaw/skeletons-dont-need-hearts-or-do-they:win
 clean:
 	find artifacts -type f -exec rm {} \;
+status:
+	butler status murphy-slaw/skeletons-dont-need-hearts-or-do-they	
