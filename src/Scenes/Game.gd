@@ -55,7 +55,7 @@ func _physics_process(delta):
             
             
 func good_ending():
-    get_parent().get_tree().change_scene("res://Victory.tscn")
+    get_parent().get_tree().change_scene("res://Scenes/Victory.tscn")
     
     
 func bad_ending():
@@ -68,7 +68,7 @@ func bad_ending():
     get_tree().paused = true
     yield(tween_out,"tween_completed")
     get_tree().paused = false
-    get_parent().get_tree().change_scene("res://TheEnd.tscn")
+    get_parent().get_tree().change_scene("res://Scenes/TheEnd.tscn")
 
         
 func _on_Boinger_boing(boing_vec,body):
