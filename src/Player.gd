@@ -7,6 +7,9 @@ var attack_dir = Vector2()
 
 onready var animation_player = get_node("AnimationPlayer")
 
+func _physics_process(delta):
+    $AnimationPlayer.playback_speed = abs(velocity.x / 100) + 0.5
+
 func _ready():
     enemy_layer = 1
     
