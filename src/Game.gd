@@ -23,18 +23,22 @@ func _ready():
     $UILayer/MarginContainer/TextureProgress.value = player.hearts
     
 
-    var transition_type = Tween.TRANS_LINEAR
-    var transition_duration = 3
+    var transition_type = Tween.TRANS_SINE
+    var transition_duration = 2
     tween.interpolate_property(self, "modulate", Color(0,0,0,1), Color(1,1,1,1), transition_duration, transition_type, Tween.EASE_IN, 0)
     $MusicPlayerFight.stream = load("res://audio/music/skelestart.wav")
     $MusicPlayerFight.play()
     tween.start()
     get_tree().paused = true
     yield(tween,"tween_completed")
+    
+    tween.interpolate_property($MusicPlayerFight, "volume_db",
+        $MusicPlayerFight.volume_db, -36,
+        2, transition_type, Tween.EASE_IN, 0)
+    
     get_tree().paused = false
-    yield($MusicPlayerFight,"finished")
+    yield(tween,"tween_completed")
     $MusicPlayerFight.stream = load("res://audio/music/skelefight.wav")
-    $MusicPlayerFight.volume_db = -36
     $MusicPlayerFight.play()
     $MusicPlayerSneak.play()
 
@@ -53,7 +57,7 @@ func good_ending():
 func bad_ending():
     yield(player.animation_player,"animation_finished")
     var tween_out = get_node("Tween")
-    var transition_type = tween_out.TRANS_LINEAR
+    var transition_type = tween_out.TRANS_SINE
     var transition_duration = 3
     tween_out.interpolate_property(self, "modulate", Color(1,1,1,1), Color(0,0,0,1), transition_duration, transition_type, Tween.EASE_OUT, 0)
     tween_out.start()
@@ -114,8 +118,6 @@ func _on_mob_aggro():
 
 func _on_mob_calm():
     angry_mob_count -=1
-#    if tween.is_active():
-#        yield(tween,"tween_completed")
     tween.remove_all()
     var transition_type = Tween.TRANS_SINE
     var transition_duration = 1
