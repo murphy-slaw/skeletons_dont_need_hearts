@@ -19,7 +19,6 @@ func update(delta, args=null):
     else:
         logic_root.is_hit = false
         logic_root.target.hit(self)
-        yield(get_tree().create_timer(2), "timeout");
 
 #when exiting state
 func exit(to_state=null):

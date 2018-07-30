@@ -14,8 +14,8 @@ func _ready():
     find_node('Title').text = title_text
     find_node('Blurb').text = blurb_text
     find_node('LinkButton').text = link_text
-    yield(get_tree().create_timer(30),"timeout")
-    fade_out($AudioStreamPlayer,10)
+#    yield(get_tree().create_timer(30),"timeout")
+#    fade_out($AudioStreamPlayer,10)
 
 func _process(delta):
     if Input.is_action_pressed("ui_accept"):
