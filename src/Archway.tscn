@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://art/archway.png" type="Texture" id=1]
-[ext_resource path="res://art/dark.png" type="Texture" id=2]
 
 [node name="Archway" type="Node2D" groups=[
 "arches",
@@ -17,29 +16,5 @@ show_behind_parent = true
 position = Vector2( 0, 4 )
 z_index = -1
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
-
-[node name="Light2D" type="Light2D" parent="." index="2"]
-
-enabled = true
-editor_only = false
-texture = ExtResource( 2 )
-offset = Vector2( 0, 0 )
-texture_scale = 0.3
-color = Color( 0.601562, 0.129368, 0.129368, 1 )
-energy = 0.7
-mode = 0
-range_height = 0.0
-range_z_min = -1024
-range_z_max = 1024
-range_layer_min = 0
-range_layer_max = 0
-range_item_cull_mask = 1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 0 )
-shadow_buffer_size = 2048
-shadow_gradient_length = 0.0
-shadow_filter = 0
-shadow_filter_smooth = 0.0
-shadow_item_cull_mask = 1
 
 

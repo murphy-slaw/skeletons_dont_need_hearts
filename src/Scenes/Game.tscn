@@ -64,6 +64,7 @@ _sections_unfolded = [ "Material", "Visibility" ]
 
 [node name="TileMap" type="TileMap" parent="." index="1"]
 
+editor/display_folded = true
 light_mask = 2
 position = Vector2( -1, 0 )
 mode = 0

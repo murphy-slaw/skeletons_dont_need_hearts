@@ -12,10 +12,6 @@
 [ext_resource path="res://art/heart-back.png" type="Texture" id=10]
 [ext_resource path="res://fonts/Xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=11]
 
-
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -45,22 +41,7 @@ __meta__ = {
 Mob = ExtResource( 2 )
 win_hearts = 10
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
-
-layer = -1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-scroll_offset = Vector2( 0, 0 )
-scroll_base_offset = Vector2( 0, 0 )
-scroll_base_scale = Vector2( 1, 1 )
-scroll_limit_begin = Vector2( 0, 0 )
-scroll_limit_end = Vector2( 0, 0 )
-scroll_ignore_camera_zoom = false
-_sections_unfolded = [ "Scroll" ]
-
-[node name="TextureRect" type="TextureRect" parent="ParallaxBackground" index="0"]
+[node name="TextureRect" type="TextureRect" parent="." index="0"]
 
 modulate = Color( 0.302241, 0.417969, 0.314899, 1 )
 show_behind_parent = true
