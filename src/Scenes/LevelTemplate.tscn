@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Game.gd" type="Script" id=1]
-[ext_resource path="res://Mob/Mob.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Characters/Mob/Mob.tscn" type="PackedScene" id=2]
 [ext_resource path="res://art/brinstone.png" type="Texture" id=3]
-[ext_resource path="res://rough_simple.tres" type="TileSet" id=4]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Resources/rough_simple.tres" type="TileSet" id=4]
+[ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://audio/music/skelesneak.wav" type="AudioStream" id=6]
 [ext_resource path="res://audio/music/skelefight.wav" type="AudioStream" id=7]
 [ext_resource path="res://Resources/heart_mask_mat.tres" type="Material" id=8]
@@ -174,7 +174,6 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="UILayer" type="CanvasLayer" parent="." index="7"]
 
-editor/display_folded = true
 layer = 0
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -230,7 +229,7 @@ fill_mode = 3
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
-_sections_unfolded = [ "Material", "Textures", "Visibility" ]
+_sections_unfolded = [ "Material", "Rect", "Textures", "Visibility" ]
 
 [node name="Label" type="Label" parent="UILayer/MarginContainer" index="1"]
 

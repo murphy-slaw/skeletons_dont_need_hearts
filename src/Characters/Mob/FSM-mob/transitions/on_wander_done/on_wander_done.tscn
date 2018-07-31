@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_wander_done/on_wander_done.gd" type="Script" id=1]
+
+
+
+[node name="on_wander_done" type="Node"]
+
+script = ExtResource( 1 )
+path2SourceStates = [ NodePath("") ]
+path2Target_state = null
+intervalBetweenChecks = -1.0
+
+

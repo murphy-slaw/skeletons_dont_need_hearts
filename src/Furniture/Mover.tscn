@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Furniture/Mover.gd" type="Script" id=1]
+[ext_resource path="res://art/stupid_tiles.png" type="Texture" id=2]
+
+
+[node name="Mover" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+motion = Vector2( 0, 0 )
+cycle = 1.0
+
+[node name="platform" type="KinematicBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 4
+collision_mask = 0
+collision/safe_margin = 0.001
+_sections_unfolded = [ "Collision", "Pickable", "collision" ]
+
+[node name="Sprite2" type="Sprite" parent="platform" index="0"]
+
+position = Vector2( 8, 0 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 48, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Sprite" type="Sprite" parent="platform" index="1"]
+
+position = Vector2( -8, 0 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 48, 16, 16 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="platform" index="2"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16, -8, 16, -8, 16, -2, -16, -2 )
+one_way_collision = true
+
+

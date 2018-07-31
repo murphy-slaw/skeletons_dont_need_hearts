@@ -1,17 +1,21 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Game.gd" type="Script" id=1]
-[ext_resource path="res://Mob/Mob.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Characters/Mob/Mob.tscn" type="PackedScene" id=2]
 [ext_resource path="res://art/brinstone.png" type="Texture" id=3]
-[ext_resource path="res://rough_simple.tres" type="TileSet" id=4]
-[ext_resource path="res://Archway.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Resources/rough_simple.tres" type="TileSet" id=4]
+[ext_resource path="res://Furniture/Archway.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://audio/music/skelesneak.wav" type="AudioStream" id=7]
 [ext_resource path="res://audio/music/skelefight.wav" type="AudioStream" id=8]
 [ext_resource path="res://Resources/heart_mask_mat.tres" type="Material" id=9]
 [ext_resource path="res://art/white32.png" type="Texture" id=10]
 [ext_resource path="res://art/heart-back.png" type="Texture" id=11]
 [ext_resource path="res://fonts/Xolonium/Xolonium-Regular.ttf" type="DynamicFontData" id=12]
+
+
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 

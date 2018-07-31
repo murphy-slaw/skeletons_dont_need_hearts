@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Characters/Player/FSM/states/Dying/Dying.gd" type="Script" id=1]
+
+
+
+[node name="Dying" type="Node"]
+
+script = ExtResource( 1 )
+
+

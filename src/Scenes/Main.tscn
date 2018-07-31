@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Main.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Splash.tscn" type="PackedScene" id=2]
+
+
+[node name="Main" type="Node"]
+
+script = ExtResource( 1 )
+
+[node name="Splash" parent="." index="0" instance=ExtResource( 2 )]
+
+title_text = "Skeletons Don't Need Hearts
+(Or Do They?)"
+blurb_text = "My Ex broke my heart. Now I have to punk skeletons
+ to get enough heart stuff to make a new one."
+link_text = "Start"
+
+

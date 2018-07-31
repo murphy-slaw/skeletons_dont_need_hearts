@@ -2,8 +2,10 @@
 
 [ext_resource path="res://Scenes/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Torch.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Archway.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Cobweb.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Furniture/Archway.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Furniture/Cobweb.tscn" type="PackedScene" id=4]
+
+
 
 [node name="Game" instance=ExtResource( 1 )]
 
