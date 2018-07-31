@@ -55,7 +55,7 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 flags = 4
 load_path = "res://.import/skel_icon.png-ac2844bdae99d62fd98f340d0393ea6d.stex"
 
-[node name="Splash" type="CanvasLayer" index="0"]
+[node name="Splash" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )

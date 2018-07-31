@@ -124,7 +124,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 position = Vector2( 0, 0.0353484 )
 input_pickable = false
@@ -176,7 +176,7 @@ rotating = false
 current = true
 zoom = Vector2( 1, 1 )
 limit_left = 0
-limit_top = 0
+limit_top = -64
 limit_right = 640
 limit_bottom = 480
 limit_smoothed = true
