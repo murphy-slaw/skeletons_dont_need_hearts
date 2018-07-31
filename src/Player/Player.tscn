@@ -124,7 +124,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 position = Vector2( 0, 0.0353484 )
 input_pickable = false
@@ -180,8 +180,8 @@ limit_top = -64
 limit_right = 640
 limit_bottom = 480
 limit_smoothed = true
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
 smoothing_enabled = false
 smoothing_speed = 5.0
 offset_v = 0.0
@@ -193,7 +193,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-_sections_unfolded = [ "Drag Margin", "Limit", "Material", "Offset", "Transform" ]
+_sections_unfolded = [ "Drag Margin", "Limit", "Material", "Offset", "Smoothing", "Transform" ]
 
 [node name="FSM2D" type="Node2D" parent="." index="5"]
 

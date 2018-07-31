@@ -14,23 +14,13 @@ var original_walk_accel
 var is_hit = false
 var is_dying = false
 var edge_count = 0
+var mob_seen_count = 0
 
 export (int) var FOV = 45
 export (int) var sight_radius = 150
 
 onready var target = get_parent().get_node("Player")
 onready var edge_ray = get_node("edge_ray")
-
-
-func get_circle_arc_poly(center, radius, angle_from, angle_to):
-    var nb_points = 32
-    var points_arc = PoolVector2Array()
-    points_arc.push_back(center)
-
-    for i in range(nb_points+1):
-        var angle_point = deg2rad(angle_from + i * (angle_to - angle_from) / nb_points - 90)
-        points_arc.push_back(center + Vector2(cos(angle_point), sin(angle_point)) * radius)
-    return points_arc
 
 func _ready():
     if target == null: target = self
@@ -56,14 +46,22 @@ func check_target_visibility():
         if result:
             can_see_target = (result.collider == target)
             if result.collider.is_in_group("mobs"):
+                mob_seen_count +=1
                 edge_count += 2
- 
+                
+        
+func get_state():
+    return $FSM2D.current_state_ID
+    
+        
 func check_in_bounds():
     if out_of_bounds():
         emit_signal("die")
         queue_free()
+        
+func is_on_screen():
+    return $VisibilityNotifier2D.is_on_screen()
     
-      
 func out_of_bounds():
     return (global_position.x < 0 or\
         global_position.x > 640 or\
@@ -73,7 +71,7 @@ func die():
     audio_player.stream = load("res://audio/sounds/die.wav")
     audio_player.play()
     var parent = get_parent().get_parent()
-    emit_signal("die")
+    emit_signal("die",self)
     visible = false
     set_collision_layer_bit(1,false)
     var heart = Heart.instance()
@@ -87,9 +85,14 @@ func die():
 func hit(body):
     is_hit = true
     
+
 func _on_Lifespan_timeout():
-    pass
-#    die()
+    if is_on_screen():
+        yield($VisibilityNotifier2D,"screen_exited")
+        print("death delayed because visible")
+    emit_signal("die",self)
+    print("died offscreen")
+    queue_free()
     
 func check_ahead():
     var test_motion = 5 * facing_normal

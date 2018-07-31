@@ -28,7 +28,8 @@ func reverse_facing():
         $Sprite.offset = Vector2(0,0)
 
 func is_landed():
-    return is_on_floor() or is_near_floor()
+    #return is_on_floor() or is_near_floor()
+    return is_on_floor()
 
 func can_climb():
     return false
@@ -77,10 +78,13 @@ func become_invuln():
     modulate = Color(1,1,1,.5)
     set_collision_mask_bit(enemy_layer,false)
     
-func _on_IFrameTimer_timeout():
+func lose_invuln():
     is_invuln = false
     modulate = Color(1,1,1,1)
     set_collision_mask_bit(enemy_layer,true)
+
+func _on_IFrameTimer_timeout():
+    lose_invuln()
     
 func is_near_floor():
     var test_motion = Vector2(0,2)

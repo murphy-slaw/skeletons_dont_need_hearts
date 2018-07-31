@@ -4,7 +4,7 @@ export (PackedScene) var Mob
 
 var spawners = []
 var used_spawners = []
-var mob_count = 0
+var mobs = {}
 var max_mobs = 0
 var angry_mob_count = 0
 export (int) var win_hearts = 10
@@ -77,45 +77,46 @@ func _on_Boinger_boing(boing_vec,body):
 
 
 func _on_MobSpawnTimer_timeout():
-    call_deferred("spawn_mob")
+    call_deferred("spawn_mob", true)
 
 
-func get_spawn_point():
+func get_spawner():
     if spawners.size() == 0:
         spawners = used_spawners.duplicate()
         used_spawners = []
-    var i = randi() % spawners.size()
-    var spawner = spawners[0]
-    spawners.remove(0)
+    var spawner = spawners.pop_back()
     used_spawners.append(spawner)
-    var spawn_point = spawner.find_node("SpawnPoint").position
-    return spawner.to_global(spawn_point)
-    
+    return spawner
 
-func spawn_mob():
-    if mob_count >= max_mobs:
+func spawn_mob(offscreen_only = false):
+
+    if mobs.size() >= max_mobs:
         return
+    
+    var spawner = get_spawner()
+    var visible = spawner.is_on_screen()
+    if offscreen_only and visible:
+        return
+    
     var mob = Mob.instance()
     mob.connect("die",self,"_on_mob_died")
     mob.connect("aggro",self,"_on_mob_aggro")
     mob.connect("calm",self,"_on_mob_calm")
+    mob.position = spawner.get_spawn_point()
     $TileMap.call_deferred("add_child",mob)
-    mob.position = get_spawn_point()
-    mob_count += 1
+    mobs[mob] = 1
 
 
-func _on_mob_died():
-    mob_count -= 1
-    angry_mob_count -= 1
-
+func _on_mob_died(mob):
+    if mob.get_state() == 'Aggro':
+        angry_mob_count -= 1
+    mobs.erase(mob)
 
 func _on_mob_aggro():
     angry_mob_count += 1
-#    if tween.is_active():
-#        yield(tween,"tween_completed")
     tween.remove_all()
     var transition_type = Tween.TRANS_SINE
-    var transition_duration = 0.5
+    var transition_duration = .25
     tween.interpolate_property($MusicPlayerFight, "volume_db",
         $MusicPlayerFight.volume_db, 0,
         transition_duration, transition_type, Tween.EASE_OUT, 0)
@@ -129,7 +130,7 @@ func _on_mob_calm():
     angry_mob_count -=1
     tween.remove_all()
     var transition_type = Tween.TRANS_SINE
-    var transition_duration = 1
+    var transition_duration = .25
     tween.interpolate_property($MusicPlayerSneak, "volume_db",
         $MusicPlayerSneak.volume_db, 0,
         transition_duration, transition_type, Tween.EASE_OUT, 0)

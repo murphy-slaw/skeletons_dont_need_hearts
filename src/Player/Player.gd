@@ -33,6 +33,7 @@ func take_heart():
     hearts -= 1
     
 func die():
+    lose_invuln()
     animation_player.stop()
     animation_player.play("Dying")
     
