@@ -124,7 +124,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 position = Vector2( 0, 0.0353484 )
 input_pickable = false
@@ -367,6 +367,7 @@ area_mask = 1
 [node name="Light2D" type="Light2D" parent="." index="8"]
 
 light_mask = 4
+position = Vector2( 0, -9.045e-06 )
 enabled = true
 editor_only = false
 texture = ExtResource( 21 )
@@ -385,8 +386,8 @@ shadow_enabled = true
 shadow_color = Color( 0, 0, 0, 1 )
 shadow_buffer_size = 2048
 shadow_gradient_length = 0.0
-shadow_filter = 0
-shadow_filter_smooth = 0.0
+shadow_filter = 3
+shadow_filter_smooth = 2.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Range", "Shadow", "Visibility" ]
 
