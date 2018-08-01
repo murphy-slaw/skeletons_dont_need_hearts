@@ -52,7 +52,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 1, 2, 3, 4, 5, 1 ]
 }
 
-[node name="Mob" type="KinematicBody2D" groups=[
+[node name="Mob" type="KinematicBody2D" index="0" groups=[
 "mobs",
 ]]
 
@@ -155,6 +155,7 @@ autostart = false
 
 [node name="FSM2D" type="Node2D" parent="." index="9"]
 
+editor/display_folded = true
 script = ExtResource( 4 )
 _sections_unfolded = [ "Create new:" ]
 __meta__ = {
@@ -165,7 +166,7 @@ only_active_state_on_scene = false
 init_manually = false
 update_mode = 2
 receive_signals_only_on_activated_items = false
-debug_enabled = true
+debug_enabled = false
 "Initial state:" = "Idle"
 "Create new:/Subdirectory for FSM nodes:" = "FSM-mob"
 "Create new:/Create state with name:" = null
