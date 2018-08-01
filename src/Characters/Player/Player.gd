@@ -3,6 +3,7 @@ extends "res://Characters/Character.gd"
 var hearts = 3
 var is_hit = false
 var is_dying = false
+var is_winning = false
 var attack_dir = Vector2()
 
 onready var animation_player = get_node("AnimationPlayer")
@@ -39,4 +40,7 @@ func die():
     animation_player.stop()
     animation_player.playback_speed = 2
     animation_player.play("Dying")
+    
+func win():
+    is_winning = true
     
