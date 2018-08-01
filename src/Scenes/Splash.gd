@@ -7,6 +7,7 @@ export (String, MULTILINE) var title_text = ""
 export (String, MULTILINE) var blurb_text = ""
 export (String) var link_text = ""
 export (PackedScene) var scene_path
+export (AudioStream) var music_track
 var audio_length = 0
 var audio_loop_max = 4
 var runtime = 0.0
@@ -17,8 +18,9 @@ func _ready():
     find_node('Title').text = title_text
     find_node('Blurb').text = blurb_text
     find_node('LinkButton').text = link_text
-#    yield(get_tree().create_timer(30),"timeout")
-#    fade_out($AudioStreamPlayer,10)
+
+    $AudioStreamPlayer.stream = music_track
+    $AudioStreamPlayer.play()
     Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
     audio_length = $AudioStreamPlayer.stream.get_length()
     
@@ -42,6 +44,6 @@ func fade_out(stream_player,duration):
     
 func _on_LinkButton_pressed():
     var stream = $AudioStreamPlayer.stream
-    stream.loop_mode = stream.LOOP_DISABLED
+#    stream.loop_mode = stream.LOOP_DISABLED
     fade_out($AudioStreamPlayer,3)
     get_tree().change_scene_to(scene_path)

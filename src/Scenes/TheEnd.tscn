@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Splash.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/NewMap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://audio/music/skelefailure.ogg" type="AudioStream" id=3]
 
 [node name="TheEnd" type="Node"]
 
@@ -9,5 +11,7 @@
 title_text = "Game Over"
 blurb_text = "But my heart will go on..."
 link_text = "Try again?"
+scene_path = ExtResource( 2 )
+music_track = ExtResource( 3 )
 
 

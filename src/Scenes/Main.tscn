@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Splash.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/NewMap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://audio/music/skelesplash.ogg" type="AudioStream" id=4]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -16,5 +17,6 @@ blurb_text = "My Ex broke my heart. Now I have to punk skeletons
  to get enough heart stuff to make a new one."
 link_text = "Start"
 scene_path = ExtResource( 3 )
+music_track = ExtResource( 4 )
 
 

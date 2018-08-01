@@ -31,7 +31,7 @@ func _ready():
     var transition_type = Tween.TRANS_SINE
     var transition_duration = 2
     tween.interpolate_property(self, "modulate", Color(0,0,0,1), Color(1,1,1,1), transition_duration, transition_type, Tween.EASE_IN, 0)
-    $MusicPlayerFight.stream = load("res://audio/music/skelestart.wav")
+    $MusicPlayerFight.stream = load("res://audio/music/skelestart.ogg")
     $MusicPlayerFight.play()
     tween.start()
     get_tree().paused = true
@@ -43,7 +43,7 @@ func _ready():
     
     get_tree().paused = false
     yield(tween,"tween_completed")
-    $MusicPlayerFight.stream = load("res://audio/music/skelefight.wav")
+    $MusicPlayerFight.stream = load("res://audio/music/skelefight.ogg")
     $MusicPlayerFight.play()
     $MusicPlayerSneak.play()
 
