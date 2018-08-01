@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Skeletons Don't Need Hearts"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://art/skel_icon.png"
 
 [display]

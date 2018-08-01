@@ -1,4 +1,4 @@
-extends "res://Character.gd"
+extends "res://Characters/Character.gd"
 
 var hearts = 3
 var is_hit = false
@@ -7,7 +7,8 @@ var attack_dir = Vector2()
 
 onready var animation_player = get_node("AnimationPlayer")
 
-func _physics_process(delta):
+func walk(delta, normal):
+    .walk(delta, normal)
     $AnimationPlayer.playback_speed = abs(velocity.x / 100) + 0.5
 
 func _ready():
@@ -35,5 +36,6 @@ func take_heart():
 func die():
     lose_invuln()
     animation_player.stop()
+    animation_player.playback_speed = 2
     animation_player.play("Dying")
     

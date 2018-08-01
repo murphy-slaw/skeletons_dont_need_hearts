@@ -1,6 +1,6 @@
 extends "res://Character.gd"
 
-var Heart = load("res://Heart.tscn")
+var Heart = load("res://Character/Heart.tscn")
 
 signal die
 signal aggro

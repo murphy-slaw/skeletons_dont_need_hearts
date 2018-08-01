@@ -1,4 +1,4 @@
-    extends Node
+extends Node
 
 # class member variables go here, for example:
 # var a = 2
@@ -16,5 +16,5 @@ func _ready():
             for event in InputMap.get_action_list(action):
                 if not event.action(event.KEY):
                     InputMap.action_erase_event(action,event)
-    
+                
     OS.set_window_position(screen_size*0.5 - window_size*0.5)

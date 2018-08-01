@@ -16,10 +16,13 @@ onready var tween = get_node("Tween")
 func _ready():
     modulate = Color(0,0,0,1)
     randomize()
+    
     spawners = get_tree().get_nodes_in_group("arches")
     max_mobs = spawners.size()
     for i in range(max_mobs):
         call_deferred("spawn_mob")
+        
+    Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
     $UILayer/MarginContainer/Label.text = str(player.hearts)
     $UILayer/MarginContainer/TextureProgress.max_value = win_hearts
     $UILayer/MarginContainer/TextureProgress.value = player.hearts

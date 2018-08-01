@@ -3,7 +3,6 @@
 [ext_resource path="res://Furniture/Archway.gd" type="Script" id=1]
 [ext_resource path="res://art/archway.png" type="Texture" id=2]
 
-
 [node name="Archway" type="Node2D" groups=[
 "arches",
 ]]

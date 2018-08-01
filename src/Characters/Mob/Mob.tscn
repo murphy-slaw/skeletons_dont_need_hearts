@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://art/dark.png" type="Texture" id=1]
 [ext_resource path="res://art/skellingtorn.png" type="Texture" id=2]
@@ -25,12 +25,13 @@
 [ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_wander_done/on_wander_done.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_near_edge/on_near_edge.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_death/on_death.tscn" type="PackedScene" id=25]
+[ext_resource path="res://audio/sounds/ugh.wav" type="AudioStream" id=26]
 
 [sub_resource type="GDScript" id=1]
 
-script/source = "extends \"res://Character.gd\"
+script/source = "extends \"res://Characters/Character.gd\"
 
-var Heart = load(\"res://Heart.tscn\")
+var Heart = load(\"res://Characters/Heart.tscn\")
 
 signal die
 signal aggro
@@ -51,6 +52,7 @@ export (int) var sight_radius = 150
 
 onready var target = get_parent().get_node(\"Player\")
 onready var edge_ray = get_node(\"edge_ray\")
+onready var heart = Heart.instance()
 
 func _ready():
     if target == null: target = self
@@ -60,6 +62,7 @@ func _ready():
     original_walk_accel = walk_accel
     if (randi() % 2 == 1):
         reverse_facing()
+    heart.visible = false
 
 func _physics_process(delta):
     assert not (is_dying and not is_hit)
@@ -104,8 +107,8 @@ func die():
     emit_signal(\"die\",self)
     visible = false
     set_collision_layer_bit(1,false)
-    var heart = Heart.instance()
     heart.global_position = global_position + (facing_normal * 16)
+    heart.visible = true
     heart.apply_impulse(Vector2(),facing_normal * 300)
     parent.call_deferred(\"add_child\",heart)
     heart.connect(\"caught\",parent,\"_on_heart_caught\")
@@ -263,7 +266,7 @@ _sections_unfolded = [ "Playback Options" ]
 [node name="Lifespan" type="Timer" parent="." index="5"]
 
 process_mode = 0
-wait_time = 20.0
+wait_time = 30.0
 one_shot = false
 autostart = true
 
@@ -477,7 +480,7 @@ max_lines_visible = -1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="11"]
 
-stream = null
+stream = ExtResource( 26 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
