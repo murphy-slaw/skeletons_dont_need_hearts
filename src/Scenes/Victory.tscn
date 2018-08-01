@@ -1,15 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Splash.tscn" type="PackedScene" id=1]
-[ext_resource path="res://audio/music/skelevictory_loop.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Scenes/NewMap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://audio/music/skelevictory_loop.ogg" type="AudioStream" id=3]
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node" index="0"]
 
 [node name="Splash" parent="." index="0" instance=ExtResource( 1 )]
 
 title_text = "You Win!"
 blurb_text = "I am ready to love again."
 link_text = "Punk more skeletons!"
-music_track = ExtResource( 2 )
+scene_path = ExtResource( 2 )
+music_track = ExtResource( 3 )
 
 
