@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Characters/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://art/newguy.png" type="Texture" id=2]
@@ -12,19 +12,17 @@
 [ext_resource path="res://Characters/Player/FSM/states/Hitting/Hitting.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Characters/Player/FSM/states/Dying/Dying.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Characters/Player/FSM/states/Winning/Winning.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Characters/Player/FSM/states/Winning/Winning.gd" type="Script" id=13]
-[ext_resource path="res://Characters/Player/FSM/transitions/on_move/on_move.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Characters/Player/FSM/transitions/on_left_ground/on_left_ground.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Characters/Player/FSM/transitions/on_landed/on_landed.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Characters/Player/FSM/transitions/on_no_input/on_no_input.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Characters/Player/FSM/transitions/on_jump_input/on_jump_input.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Characters/Player/FSM/transitions/on_up_near_wall/on_up_near_wall.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Characters/Player/FSM/transitions/on_hit/on_hit.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Characters/Player/FSM/transitions/on_hit_complete/on_hit_complete.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Characters/Player/FSM/transitions/on_death/on_death.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Characters/Player/FSM/transitions/on_win/on_win.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Characters/Player/FSM/transitions/on_win/on_win.gd" type="Script" id=24]
-[ext_resource path="res://art/dark.png" type="Texture" id=25]
+[ext_resource path="res://Characters/Player/FSM/transitions/on_move/on_move.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Characters/Player/FSM/transitions/on_left_ground/on_left_ground.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Characters/Player/FSM/transitions/on_landed/on_landed.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Characters/Player/FSM/transitions/on_no_input/on_no_input.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Characters/Player/FSM/transitions/on_jump_input/on_jump_input.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Characters/Player/FSM/transitions/on_up_near_wall/on_up_near_wall.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Characters/Player/FSM/transitions/on_hit/on_hit.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Characters/Player/FSM/transitions/on_hit_complete/on_hit_complete.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Characters/Player/FSM/transitions/on_death/on_death.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Characters/Player/FSM/transitions/on_win/on_win.tscn" type="PackedScene" id=22]
+[ext_resource path="res://art/dark.png" type="Texture" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -128,7 +126,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
 }
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 position = Vector2( 0, 0.0353484 )
 input_pickable = false
@@ -296,65 +294,61 @@ GraphData = {
 
 [node name="Dying" parent="FSM2D/States" index="6" instance=ExtResource( 11 )]
 
-[node name="Winning" type="Node" parent="FSM2D/States" index="7" instance=ExtResource( 12 )]
-
-script = ExtResource( 13 )
+[node name="Winning" parent="FSM2D/States" index="7" instance=ExtResource( 12 )]
 
 [node name="Transitions" type="Node2D" parent="FSM2D" index="1"]
 
 position = Vector2( -1, 1 )
 
-[node name="on_move" parent="FSM2D/Transitions" index="0" instance=ExtResource( 14 )]
+[node name="on_move" parent="FSM2D/Transitions" index="0" instance=ExtResource( 13 )]
 
 path2SourceStates = [ NodePath("../../States/Idle") ]
 path2Target_state = NodePath("../../States/Walking")
 
-[node name="on_left_ground" parent="FSM2D/Transitions" index="1" instance=ExtResource( 15 )]
+[node name="on_left_ground" parent="FSM2D/Transitions" index="1" instance=ExtResource( 14 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Idle"), NodePath("../../States/Walking"), NodePath("../../States/Jumping"), NodePath("../../States/Climbing") ]
 path2Target_state = NodePath("../../States/Falling")
 
-[node name="on_landed" parent="FSM2D/Transitions" index="2" instance=ExtResource( 16 )]
+[node name="on_landed" parent="FSM2D/Transitions" index="2" instance=ExtResource( 15 )]
 
 path2SourceStates = [ NodePath("../../States/Falling") ]
 path2Target_state = NodePath("../../States/Idle")
 
-[node name="on_no_input" parent="FSM2D/Transitions" index="3" instance=ExtResource( 17 )]
+[node name="on_no_input" parent="FSM2D/Transitions" index="3" instance=ExtResource( 16 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Walking"), NodePath("../../States/Climbing") ]
 path2Target_state = NodePath("../../States/Idle")
 
-[node name="on_jump_input" parent="FSM2D/Transitions" index="4" instance=ExtResource( 18 )]
+[node name="on_jump_input" parent="FSM2D/Transitions" index="4" instance=ExtResource( 17 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Idle"), NodePath("../../States/Walking") ]
 path2Target_state = NodePath("../../States/Jumping")
 
-[node name="on_up_near_wall" parent="FSM2D/Transitions" index="5" instance=ExtResource( 19 )]
+[node name="on_up_near_wall" parent="FSM2D/Transitions" index="5" instance=ExtResource( 18 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Walking"), NodePath("../../States/Idle"), NodePath("../../States/Falling") ]
 path2Target_state = NodePath("../../States/Climbing")
 
-[node name="on_hit" parent="FSM2D/Transitions" index="6" instance=ExtResource( 20 )]
+[node name="on_hit" parent="FSM2D/Transitions" index="6" instance=ExtResource( 19 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Walking"), NodePath("../../States/Jumping"), NodePath("../../States/Falling"), NodePath("../../States/Idle") ]
 path2Target_state = NodePath("../../States/Hitting")
 
-[node name="on_hit_complete" parent="FSM2D/Transitions" index="7" instance=ExtResource( 21 )]
+[node name="on_hit_complete" parent="FSM2D/Transitions" index="7" instance=ExtResource( 20 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Hitting") ]
 path2Target_state = NodePath("../../States/Idle")
 
-[node name="on_death" parent="FSM2D/Transitions" index="8" instance=ExtResource( 22 )]
+[node name="on_death" parent="FSM2D/Transitions" index="8" instance=ExtResource( 21 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Hitting") ]
 path2Target_state = NodePath("../../States/Dying")
 
-[node name="on_win" type="Node" parent="FSM2D/Transitions" index="9" instance=ExtResource( 23 )]
+[node name="on_win" parent="FSM2D/Transitions" index="9" instance=ExtResource( 22 )]
 
-script = ExtResource( 24 )
 path2SourceStates = [ NodePath(""), NodePath("../../States/Falling"), NodePath("../../States/Idle"), NodePath("../../States/Jumping"), NodePath("../../States/Walking") ]
 path2Target_state = NodePath("../../States/Winning")
-intervalBetweenChecks = -1.0
 
 [node name="Label" type="Label" parent="." index="6"]
 
@@ -391,7 +385,7 @@ light_mask = 4
 position = Vector2( 0, -9.045e-06 )
 enabled = true
 editor_only = false
-texture = ExtResource( 25 )
+texture = ExtResource( 23 )
 offset = Vector2( 0, 0 )
 texture_scale = 0.8
 color = Color( 1, 1, 1, 1 )

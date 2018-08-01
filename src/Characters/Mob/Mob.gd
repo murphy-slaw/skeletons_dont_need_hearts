@@ -1,6 +1,6 @@
-extends "res://Character.gd"
+extends "res://Characters/Character.gd"
 
-var Heart = load("res://Character/Heart.tscn")
+var Heart = load("res://Characters/Heart.tscn")
 
 signal die
 signal aggro
@@ -68,6 +68,7 @@ func out_of_bounds():
         global_position.y < 0)
         
 func die():
+    print(str(self.get_instance_id()) + " just died in die()")
     audio_player.stream = load("res://audio/sounds/die.wav")
     audio_player.play()
     var parent = get_parent().get_parent()
@@ -87,6 +88,8 @@ func hit(body):
     
 
 func _on_Lifespan_timeout():
+    if is_dying:
+        return
     if is_on_screen():
         yield($VisibilityNotifier2D,"screen_exited")
         print("death delayed because visible")
@@ -120,11 +123,10 @@ func end_aggro():
     $AggroTimer.stop()
     max_walk_speed = original_max_speed
     walk_accel = original_walk_accel
-    aggro_exhausted = true
     modulate = Color(1,1,1,1)
 
 func _on_AggroTimer_timeout():
-    end_aggro()
+    aggro_exhausted = true
 
 func set_label(text):
     $Label.text = text

@@ -1,177 +1,39 @@
 [gd_scene load_steps=30 format=2]
 
-[ext_resource path="res://art/dark.png" type="Texture" id=1]
-[ext_resource path="res://art/skellingtorn.png" type="Texture" id=2]
-[ext_resource path="res://addons/moe.ero-one.fsm/content/fsm.gd" type="Script" id=3]
-[ext_resource path="res://addons/moe.ero-one.fsm/assets/ico2d.png" type="Texture" id=4]
-[ext_resource path="res://Characters/Mob/FSM-mob/states/Patrolling/Patrolling.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Characters/Mob/FSM-mob/states/Idle/Idle.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Characters/Mob/FSM-mob/states/Falling/Falling.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Characters/Mob/FSM-mob/states/Reversing/Reversing.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Characters/Mob/FSM-mob/states/Aggro/Aggro.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Characters/Mob/FSM-mob/states/Hitting/Hitting.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Characters/Mob/FSM-mob/states/Wandering/Wandering.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Characters/Mob/FSM-mob/states/Dying/Dying.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_landed/on_landed.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Characters/Player/FSM/transitions/on_landed/on_landed.gd" type="Script" id=14]
-[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_left_ground/on_left_ground.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_collision/on_collision.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_path_clear/on_path_clear.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_saw_player/on_saw_player.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_aggro_expired/on_aggro_expired.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_hit/on_hit.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_hit_complete/on_hit_complete.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_stuck/on_stuck.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_wander_done/on_wander_done.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_near_edge/on_near_edge.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_death/on_death.tscn" type="PackedScene" id=25]
-[ext_resource path="res://audio/sounds/ugh.wav" type="AudioStream" id=26]
+[ext_resource path="res://Characters/Mob/Mob.gd" type="Script" id=1]
+[ext_resource path="res://art/dark.png" type="Texture" id=2]
+[ext_resource path="res://art/skellingtorn.png" type="Texture" id=3]
+[ext_resource path="res://addons/moe.ero-one.fsm/content/fsm.gd" type="Script" id=4]
+[ext_resource path="res://addons/moe.ero-one.fsm/assets/ico2d.png" type="Texture" id=5]
+[ext_resource path="res://Characters/Mob/FSM-mob/states/Patrolling/Patrolling.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Characters/Mob/FSM-mob/states/Idle/Idle.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Characters/Mob/FSM-mob/states/Falling/Falling.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Characters/Mob/FSM-mob/states/Reversing/Reversing.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Characters/Mob/FSM-mob/states/Aggro/Aggro.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Characters/Mob/FSM-mob/states/Hitting/Hitting.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Characters/Mob/FSM-mob/states/Wandering/Wandering.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Characters/Mob/FSM-mob/states/Dying/Dying.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_landed/on_landed.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Characters/Player/FSM/transitions/on_landed/on_landed.gd" type="Script" id=15]
+[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_left_ground/on_left_ground.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_collision/on_collision.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_path_clear/on_path_clear.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_saw_player/on_saw_player.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_aggro_expired/on_aggro_expired.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_hit/on_hit.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_hit_complete/on_hit_complete.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_stuck/on_stuck.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_wander_done/on_wander_done.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_near_edge/on_near_edge.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Characters/Mob/FSM-mob/transitions/on_death/on_death.tscn" type="PackedScene" id=26]
+[ext_resource path="res://audio/sounds/ugh.wav" type="AudioStream" id=27]
 
-[sub_resource type="GDScript" id=1]
-
-script/source = "extends \"res://Characters/Character.gd\"
-
-var Heart = load(\"res://Characters/Heart.tscn\")
-
-signal die
-signal aggro
-signal calm
-
-var target_in_range = false
-var can_see_target = false
-var aggro_exhausted = true
-var original_max_speed
-var original_walk_accel
-var is_hit = false
-var is_dying = false
-var edge_count = 0
-var mob_seen_count = 0
-
-export (int) var FOV = 45
-export (int) var sight_radius = 150
-
-onready var target = get_parent().get_node(\"Player\")
-onready var edge_ray = get_node(\"edge_ray\")
-onready var heart = Heart.instance()
-
-func _ready():
-    if target == null: target = self
-    walk_accel = 5
-    max_walk_speed = 50
-    original_max_speed = max_walk_speed
-    original_walk_accel = walk_accel
-    if (randi() % 2 == 1):
-        reverse_facing()
-    heart.visible = false
-
-func _physics_process(delta):
-    assert not (is_dying and not is_hit)
-    check_in_bounds()
-    check_target_visibility()
-
-func check_target_visibility():    
-    var vec_to_target = target.global_position - global_position
-    var distance_to_target = vec_to_target.length()
-    var target_dot = vec_to_target.normalized().dot(facing_normal)
-    if distance_to_target <= sight_radius and target_dot > 0:
-        var space_state = get_world_2d().direct_space_state
-        var result = space_state.intersect_ray(global_position, target.global_position, [self])
-        if result:
-            can_see_target = (result.collider == target)
-            if result.collider.is_in_group(\"mobs\"):
-                mob_seen_count +=1
-                edge_count += 2
-                
-        
-func get_state():
-    return $FSM2D.current_state_ID
-    
-        
-func check_in_bounds():
-    if out_of_bounds():
-        emit_signal(\"die\")
-        queue_free()
-        
-func is_on_screen():
-    return $VisibilityNotifier2D.is_on_screen()
-    
-func out_of_bounds():
-    return (global_position.x < 0 or\\
-        global_position.x > 640 or\\
-        global_position.y < 0)
-        
-func die():
-    audio_player.stream = load(\"res://audio/sounds/die.wav\")
-    audio_player.play()
-    var parent = get_parent().get_parent()
-    emit_signal(\"die\",self)
-    visible = false
-    set_collision_layer_bit(1,false)
-    heart.global_position = global_position + (facing_normal * 16)
-    heart.visible = true
-    heart.apply_impulse(Vector2(),facing_normal * 300)
-    parent.call_deferred(\"add_child\",heart)
-    heart.connect(\"caught\",parent,\"_on_heart_caught\")
-    yield(audio_player,\"finished\")
-    queue_free()
-
-func hit(body):
-    is_hit = true
-    
-
-func _on_Lifespan_timeout():
-    if is_on_screen():
-        yield($VisibilityNotifier2D,\"screen_exited\")
-        print(\"death delayed because visible\")
-    emit_signal(\"die\",self)
-    print(\"died offscreen\")
-    queue_free()
-    
-func check_ahead():
-    var test_motion = 5 * facing_normal
-    return test_move(transform, test_motion)
-    
-func is_near_edge():
-    return not edge_ray.is_colliding()
-    
-func reverse_facing():
-    edge_ray.position *= Vector2(-1,1)
-    .reverse_facing()
-
-func start_aggro():
-    emit_signal(\"aggro\")
-    audio_player.stream = load(\"res://audio/sounds/ugh.wav\")
-    audio_player.play()
-    max_walk_speed *= 3
-    walk_accel *= 2
-    aggro_exhausted = false
-    modulate = Color(1,.7,.7,1)
-    $AggroTimer.start()
-    
-func end_aggro():
-    emit_signal(\"calm\")
-    $AggroTimer.stop()
-    max_walk_speed = original_max_speed
-    walk_accel = original_walk_accel
-    aggro_exhausted = true
-    modulate = Color(1,1,1,1)
-
-func _on_AggroTimer_timeout():
-    end_aggro()
-
-func set_label(text):
-    $Label.text = text
-
-func _on_StuckTimer_timeout():
-    edge_count = 0
-"
-
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 6, 12 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 
 resource_name = "Idle"
 length = 7.0
@@ -200,17 +62,17 @@ input_pickable = false
 collision_layer = 2
 collision_mask = 0
 collision/safe_margin = 0.01
-script = SubResource( 1 )
+script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index", "collision" ]
-FOV = 40
-sight_radius = 100
+FOV = 45
+sight_radius = 150
 
 [node name="Light2D" type="Light2D" parent="." index="0"]
 
 visible = false
 enabled = true
 editor_only = false
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 offset = Vector2( 0, -8 )
 texture_scale = 0.07
 color = Color( 0.268583, 0.777344, 0.162991, 1 )
@@ -234,14 +96,14 @@ _sections_unfolded = [ "Shadow" ]
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
 light_mask = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 hframes = 7
 frame = 2
 _sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="edge_ray" type="RayCast2D" parent="." index="3"]
 
@@ -259,7 +121,7 @@ autoplay = "Idle"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 7.0
-anims/Idle = SubResource( 3 )
+anims/Idle = SubResource( 2 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -273,7 +135,7 @@ autostart = true
 [node name="AggroTimer" type="Timer" parent="." index="6"]
 
 process_mode = 0
-wait_time = 2.0
+wait_time = 3.0
 one_shot = false
 autostart = false
 
@@ -293,18 +155,17 @@ autostart = false
 
 [node name="FSM2D" type="Node2D" parent="." index="9"]
 
-editor/display_folded = true
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 _sections_unfolded = [ "Create new:" ]
 __meta__ = {
-"_editor_icon": ExtResource( 4 )
+"_editor_icon": ExtResource( 5 )
 }
 logic_root_path = NodePath("..")
 only_active_state_on_scene = false
 init_manually = false
 update_mode = 2
 receive_signals_only_on_activated_items = false
-debug_enabled = false
+debug_enabled = true
 "Initial state:" = "Idle"
 "Create new:/Subdirectory for FSM nodes:" = "FSM-mob"
 "Create new:/Create state with name:" = null
@@ -380,82 +241,86 @@ GraphData = {
 
 [node name="States" type="Node2D" parent="FSM2D" index="0"]
 
-[node name="Patrolling" parent="FSM2D/States" index="0" instance=ExtResource( 5 )]
+editor/display_folded = true
 
-[node name="Idle" parent="FSM2D/States" index="1" instance=ExtResource( 6 )]
+[node name="Patrolling" parent="FSM2D/States" index="0" instance=ExtResource( 6 )]
 
-[node name="Falling" parent="FSM2D/States" index="2" instance=ExtResource( 7 )]
+[node name="Idle" parent="FSM2D/States" index="1" instance=ExtResource( 7 )]
 
-[node name="Reversing" parent="FSM2D/States" index="3" instance=ExtResource( 8 )]
+[node name="Falling" parent="FSM2D/States" index="2" instance=ExtResource( 8 )]
 
-[node name="Aggro" parent="FSM2D/States" index="4" instance=ExtResource( 9 )]
+[node name="Reversing" parent="FSM2D/States" index="3" instance=ExtResource( 9 )]
 
-[node name="Hitting" parent="FSM2D/States" index="5" instance=ExtResource( 10 )]
+[node name="Aggro" parent="FSM2D/States" index="4" instance=ExtResource( 10 )]
 
-[node name="Wandering" parent="FSM2D/States" index="6" instance=ExtResource( 11 )]
+[node name="Hitting" parent="FSM2D/States" index="5" instance=ExtResource( 11 )]
 
-[node name="Dying" parent="FSM2D/States" index="7" instance=ExtResource( 12 )]
+[node name="Wandering" parent="FSM2D/States" index="6" instance=ExtResource( 12 )]
+
+[node name="Dying" parent="FSM2D/States" index="7" instance=ExtResource( 13 )]
 
 [node name="Transitions" type="Node2D" parent="FSM2D" index="1"]
 
-[node name="on_landed" parent="FSM2D/Transitions" index="0" instance=ExtResource( 13 )]
+editor/display_folded = true
 
-script = ExtResource( 14 )
+[node name="on_landed" parent="FSM2D/Transitions" index="0" instance=ExtResource( 14 )]
+
+script = ExtResource( 15 )
 path2SourceStates = [ NodePath(""), NodePath("../../States/Falling"), NodePath("../../States/Idle") ]
 path2Target_state = NodePath("../../States/Patrolling")
 
-[node name="on_left_ground" parent="FSM2D/Transitions" index="1" instance=ExtResource( 15 )]
+[node name="on_left_ground" parent="FSM2D/Transitions" index="1" instance=ExtResource( 16 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Idle"), NodePath("../../States/Patrolling"), NodePath("../../States/Wandering") ]
 path2Target_state = NodePath("../../States/Falling")
 
-[node name="on_collision" parent="FSM2D/Transitions" index="2" instance=ExtResource( 16 )]
+[node name="on_collision" parent="FSM2D/Transitions" index="2" instance=ExtResource( 17 )]
 
 path2SourceStates = [ NodePath("../../States/Patrolling"), NodePath("../../States/Wandering") ]
 path2Target_state = NodePath("../../States/Reversing")
 intervalBetweenChecks = 0.1
 
-[node name="on_path_clear" parent="FSM2D/Transitions" index="3" instance=ExtResource( 17 )]
+[node name="on_path_clear" parent="FSM2D/Transitions" index="3" instance=ExtResource( 18 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Reversing") ]
 path2Target_state = NodePath("../../States/Patrolling")
 
-[node name="on_saw_player" parent="FSM2D/Transitions" index="4" instance=ExtResource( 18 )]
+[node name="on_saw_player" parent="FSM2D/Transitions" index="4" instance=ExtResource( 19 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Patrolling") ]
 path2Target_state = NodePath("../../States/Aggro")
 
-[node name="on_aggro_expired" parent="FSM2D/Transitions" index="5" instance=ExtResource( 19 )]
+[node name="on_aggro_expired" parent="FSM2D/Transitions" index="5" instance=ExtResource( 20 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Aggro") ]
 path2Target_state = NodePath("../../States/Idle")
 
-[node name="on_hit" parent="FSM2D/Transitions" index="6" instance=ExtResource( 20 )]
+[node name="on_hit" parent="FSM2D/Transitions" index="6" instance=ExtResource( 21 )]
 
 path2SourceStates = [ NodePath("../../States/Patrolling"), NodePath("../../States/Aggro"), NodePath("../../States/Wandering") ]
 path2Target_state = NodePath("../../States/Hitting")
 
-[node name="on_hit_complete" parent="FSM2D/Transitions" index="7" instance=ExtResource( 21 )]
+[node name="on_hit_complete" parent="FSM2D/Transitions" index="7" instance=ExtResource( 22 )]
 
 path2SourceStates = [ NodePath("../../States/Hitting") ]
 path2Target_state = NodePath("../../States/Idle")
 
-[node name="on_stuck" parent="FSM2D/Transitions" index="8" instance=ExtResource( 22 )]
+[node name="on_stuck" parent="FSM2D/Transitions" index="8" instance=ExtResource( 23 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Patrolling"), NodePath("../../States/Wandering") ]
 path2Target_state = NodePath("../../States/Wandering")
 
-[node name="on_wander_done" parent="FSM2D/Transitions" index="9" instance=ExtResource( 23 )]
+[node name="on_wander_done" parent="FSM2D/Transitions" index="9" instance=ExtResource( 24 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Wandering") ]
 path2Target_state = NodePath("../../States/Patrolling")
 
-[node name="on_near_edge" parent="FSM2D/Transitions" index="10" instance=ExtResource( 24 )]
+[node name="on_near_edge" parent="FSM2D/Transitions" index="10" instance=ExtResource( 25 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Patrolling") ]
 path2Target_state = NodePath("../../States/Reversing")
 
-[node name="on_death" parent="FSM2D/Transitions" index="11" instance=ExtResource( 25 )]
+[node name="on_death" parent="FSM2D/Transitions" index="11" instance=ExtResource( 26 )]
 
 path2SourceStates = [ NodePath(""), NodePath("../../States/Hitting") ]
 path2Target_state = NodePath("../../States/Dying")
@@ -480,7 +345,7 @@ max_lines_visible = -1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="11"]
 
-stream = ExtResource( 26 )
+stream = ExtResource( 27 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false

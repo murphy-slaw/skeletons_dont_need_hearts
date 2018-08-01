@@ -15,7 +15,6 @@ func enter(from_state = null, from_transition = null, args = []):
 func update(delta, args=null):
     .update(delta, args)
 
-
 #when exiting state
 func exit(to_state=null):
     .exit(to_state)

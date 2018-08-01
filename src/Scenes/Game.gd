@@ -54,7 +54,6 @@ func _ready():
     audio2.stream = load("res://audio/music/skelefight.ogg")
     audio2.play()
     audio1.play()
-
     
 func _physics_process(delta):
         $UILayer/MarginContainer/TextureProgress.value = player.hearts
@@ -148,18 +147,27 @@ func spawn_mob(offscreen_only = false):
 
 
 func _on_mob_died(mob):
+    print("mob" + str(mob.get_instance_id()) + " died in state: " + mob.get_state())
     if mob.get_state() == 'Aggro':
+        print("on_mob_died, decrementing angry_mob_count")
         angry_mob_count -= 1
+        flip_audio_if_calm()
     mobs.erase(mob)
 
 func _on_mob_aggro():
+    print("on_mob_aggro, incrementing angry_mob_count")
+    print(angry_mob_count)
+    flip_audio_if_calm()
     angry_mob_count += 1
-    crossfade_audio(0.25)
-    
-func _on_mob_calm():
-    angry_mob_count -=1
-    crossfade_audio(0.25)
 
+func _on_mob_calm():
+    print("on_mob_calm, decrementing angry_mob_count")
+    angry_mob_count -=1
+    flip_audio_if_calm()
+
+func flip_audio_if_calm():
+    if angry_mob_count == 0:
+        crossfade_audio(0.25) 
 
 func crossfade_audio(transition_duration = 1, 
     transition_type = Tween.TRANS_SINE, 
