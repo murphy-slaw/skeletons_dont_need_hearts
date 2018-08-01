@@ -7,13 +7,14 @@ var attack_dir = Vector2()
 
 onready var animation_player = get_node("AnimationPlayer")
 
+func _ready():
+    enemy_layer = 1
+
 func walk(delta, normal):
     .walk(delta, normal)
     $AnimationPlayer.playback_speed = abs(velocity.x / 100) + 0.5
 
-func _ready():
-    enemy_layer = 1
-    
+
 func get_normalized_motion():
     return (int(Input.is_action_pressed("ui_right"))\
             - int(Input.is_action_pressed("ui_left")))

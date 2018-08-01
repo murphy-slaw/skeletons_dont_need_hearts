@@ -4,7 +4,6 @@
 [ext_resource path="res://art/tinyheart.png" type="Texture" id=2]
 [ext_resource path="res://art/dark.png" type="Texture" id=3]
 
-
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -29,7 +28,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[node name="Heart" type="RigidBody2D"]
+[node name="Heart" type="RigidBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -67,7 +66,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="PoofTimer" type="Timer" parent="." index="2"]
 
 process_mode = 1
-wait_time = 3.0
+wait_time = 5.0
 one_shot = false
 autostart = true
 
