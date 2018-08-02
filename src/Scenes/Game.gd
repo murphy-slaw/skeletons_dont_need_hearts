@@ -53,8 +53,8 @@ class AudioManager:
         players[1].play()
         
     func fade_active(duration, transition_type):
-            tween.interpolate_property(players[0], "volume_db", 
-            players[0].volume_db, -36, duration, transition_type,
+            tween.interpolate_property( players[0], "volume_db", 
+            players[0].volume_db, -36, duration,
             transition_type, Tween.EASE_IN, 4)       
         
 
