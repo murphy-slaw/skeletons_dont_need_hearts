@@ -9,7 +9,7 @@ export (String) var link_text = ""
 export (PackedScene) var scene_path
 export (AudioStream) var music_track
 var audio_length = 0
-var audio_loop_max = 4
+export var audio_loop_max = 4
 var runtime = 0.0
 var audio_stopping = false
 

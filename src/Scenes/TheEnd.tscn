@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/NewMap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://audio/music/skelefailure_loop.ogg" type="AudioStream" id=3]
 
-[node name="TheEnd" type="Node"]
+[node name="TheEnd" type="Node" index="0"]
 
 [node name="Splash" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -13,5 +13,6 @@ blurb_text = "But my heart will go on..."
 link_text = "Try again?"
 scene_path = ExtResource( 2 )
 music_track = ExtResource( 3 )
+audio_loop_max = 2
 
 

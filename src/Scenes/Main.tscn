@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/NewMap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://audio/music/skelesplash.ogg" type="AudioStream" id=4]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -18,5 +18,6 @@ blurb_text = "My Ex broke my heart. Now I have to punk skeletons
 link_text = "Start"
 scene_path = ExtResource( 3 )
 music_track = ExtResource( 4 )
+audio_loop_max = 3
 
 
