@@ -113,7 +113,8 @@ func _ready():
     yield(tween,"tween_completed")
     audio_manager.play_muted(load("res://audio/music/skelefight.ogg"))
     audio_manager.play_active(load("res://audio/music/skelesneak.ogg"))
-    
+
+
 func _physics_process(delta):
         $UILayer/MarginContainer/TextureProgress.value = player.hearts
         $UILayer/MarginContainer/Label.text= str(player.hearts)
@@ -170,10 +171,6 @@ func bad_ending():
     get_tree().paused = false
     get_parent().get_tree().change_scene("res://Scenes/TheEnd.tscn")
     
-    
-
-    
-
         
 func _on_Boinger_boing(boing_vec,body):
     if body.get("vel") !=null:
@@ -181,7 +178,7 @@ func _on_Boinger_boing(boing_vec,body):
 
 
 func _on_MobSpawnTimer_timeout():
-    call_deferred("spawn_mob", true)
+    call_deferred("spawn_mob", false)
 
 
 func get_spawner():
@@ -192,13 +189,15 @@ func get_spawner():
     used_spawners.append(spawner)
     return spawner
 
+
 func spawn_mob(offscreen_only = false):
 
     if mobs.size() >= max_mobs:
         return
-    
     var spawner = get_spawner()
     var visible = spawner.is_on_screen()
+    if (spawner.get_spawn_point() - player.global_position).length() < 200:
+        return    
     if offscreen_only and visible:
         return
     
@@ -218,13 +217,16 @@ func _on_mob_died(mob):
         angry_mob_count -= 1
     mobs.erase(mob)
 
+
 func _on_mob_aggro():
     print("on_mob_aggro, incrementing angry_mob_count, current count" + str(angry_mob_count))
     angry_mob_count += 1
 
+
 func _on_mob_calm():
     print("on_mob_calm, decrementing angry_mob_count")
     angry_mob_count -=1    
+
 
 func _on_Player_hit(body):
     if body.is_class("Mob"):

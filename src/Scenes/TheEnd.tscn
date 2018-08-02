@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/NewMap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://audio/music/skelefailure_loop.ogg" type="AudioStream" id=3]
 
-[node name="TheEnd" type="Node" index="0"]
+[node name="TheEnd" type="Node"]
 
 [node name="Splash" parent="." index="0" instance=ExtResource( 1 )]
 
